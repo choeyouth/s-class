@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            border: 20px solid cornflowerblue;
+            width: 250px;
+            height: 188px;
+            overflow: hidden;
+        }
+        #list {
+            /* outline: 5px solid black; */
+            width: 1250px;
+            display: flex;
+            transition: all 1s;
+        }
+        /* 
+        #box:hover #list {
+            transform: translate(-750px, 0px);
+        } 
+        */
+        #range1 {
+            width: 290px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex58_css.html -->
+    <h1>고양이</h1>
+    <div id="box">
+        <div id="list">
+            <img src="images/cat01.jpg" alt="">
+            <img src="images/cat02.jpg" alt="">
+            <img src="images/cat03.jpg" alt="">
+            <img src="images/cat04.jpg" alt="">
+            <img src="images/cat05.jpg" alt="">
+        </div>
+    </div>
+    <hr>
+    <select id="sel1">
+        <option value="0">고양이1</option>
+        <option value="1">고양이2</option>
+        <option value="2">고양이3</option>
+        <option value="3">고양이4</option>
+        <option value="4">고양이5</option>
+    </select>
+    <hr>
+    <input type="range" id="range1" min="0" max="4" value="0">
+ 
+    <script>
+
+        const list = document.getElementById('list');
+        const sel1 = document.getElementById('sel1');
+        const range1 = document.getElementById('range1');
+        const box = document.getElementById('box');
+
+        sel1.addEventListener('change', f1);
+        range1.addEventListener('change', f1);
+
+        let index = 0;
+
+        box.addEventListener('mousewheel', function() {
+            //위(-) > 다음 고양이
+            //아래(+) > 이전 고양이
+            //console.log(event.deltaY);
+            //0, 1, 2, 3, 4
+            if (event.deltaY < 0) {
+                index++;
+                if (index > 4) index = 4;
+            } else {
+                index--;
+                if (index < 0) index = 0;
+            }
+
+            list.style.transform = `translate(-${250 * index}px, 0px)`;
+            range1.value = index;
+            sel1.value = index;
+
+        });
+
+
+        function f1 () {
+            //alert(sel1.value);
+            list.style.transform = `translate(-${250 * event.target.value}px, 0px)`;
+
+            if (event.target.nodeName == 'SELECT') {
+                range1.value = event.target.value;
+            } else {
+                sel1.value = event.target.value;
+            }
+
+            index = event.target.value;
+
+        }
+
+    </script>
+
+</body>
+</html>

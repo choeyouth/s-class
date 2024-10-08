@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            박스 모델, Box Model
+            - HTML의 모든 태그는 화면에 출력될 때 사각형으로 출력된다. 
+                > 이 규칙을 기반으로 적용되는 CSS의 규칙(속성)을 박스 모델이라고 한다.
+            
+            1. border, 테두리
+            - 태그의 영역 테두리 제어
+            
+
+        */
+
+        #box2 {
+            border-color: black;   /* 테두리 색상 */
+            border-width: 10px;      /* 테두리 두께 */
+            border-style: solid;     /* 테두리 타입(solid, dashed, dotted, double) */
+        }
+
+        #box1 {
+            border: 10px solid blue; /* 순서 영향X < 중복 패턴X */
+            border-bottom-color: red;
+        }
+
+        /* 한쪽만 테두리 */
+        #box3 {
+            border-top-color: red;
+            border-top-style: solid;
+            border-top-width: 5px; 
+
+            border-bottom-color: blue;
+            border-bottom-style: dashed;
+            border-bottom-width: 10px; 
+
+            border-right-color: gold;
+            border-right-style: double;
+            border-right-width: 15px; 
+
+            border-left-color: green;
+            border-left-style: dotted;
+            border-left-width: 20px; 
+
+            border-left: green dotted 20px;
+        }
+
+
+       /* body {
+            border: 10px solid gold; /* 내용물의 높이만큼 body 영역 > h1 ~ 상자3 까지가 body 영역 * /
+            /* background-color: gold; */ /* body 태그의 한해서만 배경색을 줄 때 전체 페이지에 배경색이 들어감 * /
+        }
+
+        html {
+            border: 10px solid cornflowerblue;
+        } */
+
+
+        .txt {
+            /* border-width: 0; */
+            /* border: 0; /* width, color, style 포함 > 수치를 나타내는 것: width */
+            border: 1px solid blue;
+            background-color: gold;
+        }
+
+
+
+
+
+
+        /* Shift + Alt + A : 영역 주석 */
+    </style>
+</head>
+<body>
+    <!-- ex14_box.html -->
+    <h1>CSS 박스 모델</h1> 
+    
+    <!-- div#box$.box{상자$}*3 -->
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+    
+
+    <h2>컨트롤</h2>
+
+
+    <input type="text" class="txt"><br>
+    <input type="text" class="txt"><br>
+    <input type="text" class="txt"><br>
+
+    <input type="button" value="입력하기" class="btn">
+
+
+
+</body>
+</html>

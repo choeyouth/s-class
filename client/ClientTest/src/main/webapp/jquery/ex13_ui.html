@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/pepper-grinder/jquery-ui.css">
+    <style>
+        #box1 {
+            border: 1px solid black;
+            width: 300px; height: 200px;
+            background-color: gold;
+        }
+        #cat1, #cat2 {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex13_ui.html -->
+    <h1>Interactions <small>Draggable</small></h1>
+
+    <img src="images/catty01.png" id="cat1">
+    <img src="images/catty02.png" id="cat2">
+
+
+    <div id="box1">
+    </div>
+
+    
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+    <script>
+        
+        //- https://jquery.com
+        //- https://jqueryui.com
+
+        //jQuery > jQuery UI
+
+
+        $("#cat1").draggable({
+            // axis: 'y'
+            // grid: [128, 128]
+            snap: '#box1'
+        });
+
+        $('#cat2').draggable({
+            containment: 'parent'
+        });
+
+    </script>
+</body>
+</html>

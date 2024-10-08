@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex03.html -->
+    <h1>jQuery Event</h1>
+
+    <input type="button" value="버튼1" id="btn1" class="btn">
+    <input type="button" value="버튼2" id="btn2" class="btn">
+    <input type="button" value="버튼3" id="btn3" class="btn">
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+
+        /* 
+
+            1. jQuery의 대부분(99.99%)의 기능은 함수로 제공된다. 
+            
+            2. jQuery 함수 패턴
+                a. 전용 함수
+                    - obj.test1() : Getter
+                    - obj.test1(인자) : Setter
+                b. 범용 함수  
+                    - obj.test2(인자) : Getter
+                    - obj.test2(인자, 인자) : Setter 
+
+            3. jQuery 함수는 객체를 인자로 받는 경우가 많다. 
+                - test3('click');
+                - test4(100);
+                - test5(function() {});
+                - test6({}); 
+
+         */
+
+            // 1. BOM
+            // - <input onclic="">
+            // - btn.onclick = function() {};
+            // - btn.onclick = null;
+
+            // 2. DOM
+            // - btn.addEventListener('click', function() {});
+            // - btn.removeEventListener('click', function() {});
+
+            // 3. jQuery
+
+            /*
+                //전용 함수
+                $('#btn1').click(function() { 
+                    alert();
+                });    
+
+                //범용 함수
+                $('#btn2').on('click', function() {
+                    alert();
+                }); 
+
+                $('#btn3').click(function() {
+                    //이벤트 주체?
+                    // alert(event.target); //[object HTMLInputElement]
+                    // alert(event.target.id); //btn3
+                    // alert(this.id); //btn3
+
+                    $('#btn2').off('click');
+                });
+            */
+
+            //버튼 3개 > 일괄 클릭 이벤트 추가
+
+            //DOM
+            // const list = document.querySelectorAll('.btn');
+            // console.log(list.constructor); //ƒ NodeList() { [native code] } > 순수 배열X > forEach 지원해주는 타입
+
+            // list.forEach(btn => {
+            //     btn.onclick = function() {
+            //         alert(event.target.id);
+            //     };
+            // });
+
+
+            //jQuery
+            $('.btn').click(function() {
+                alert(event.target.id);
+            }); //버튼 세 개의 이벤트가 이미 걸려있음 > 자동 루프 
+
+    </script>
+</body>
+</html>

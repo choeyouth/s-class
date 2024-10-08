@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #table1 { border: 1px solid black; border-collapse: collapse; }
+        #table1 td { border: 1px solid black; width: 126px; height: 126px; font-size: 0; }
+    </style>
+</head>
+<body>
+    <!-- ex49_event.html -->
+
+    <h1>테이블</h1>
+
+    <table id="table1">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+
+
+        // window.oncontextmenu = function() { return false; };
+        // window.oncontextmenu = () => false;
+        window.oncontextmenu = function() {
+            event.preventDefault();
+        };
+
+        const list = document.querySelectorAll('#table1 td');
+
+        list.forEach(td => {
+
+            td.onmousedown = function() {
+                
+                //보조키 상태 확인(Control, Shift, Alt)
+                console.clear();
+                console.log(event.ctrlKey);
+                console.log(event.shiftKey);
+                console.log(event.altKey); 
+
+                if (event.buttons == 1 && event.ctrlKey) {
+                    removeImage();
+
+                    const img = document.createElement('img');
+                    img.setAttribute('src', 'images/rect_icon01.png');
+                    event.currentTarget.appendChild(img);
+
+                } else if (event.buttons == 2 && event.ctrlKey) {
+                    removeImage();
+
+                    const img = document.createElement('img');
+                    img.setAttribute('src', 'images/rect_icon02.png');
+                    event.currentTarget.appendChild(img);
+                    
+                } else if (event.buttons == 4) {
+                    
+                    //클릭한 이미지 삭제하기
+                    //- 부모태그.removeChild(자식태그)
+                    // alert(event.target.nodeName); //이미지X > TD //이미지O > IMG > 유턴 객체: img
+
+                    // alert(event.currentTarget.nodeName); //이미지X > TD //이미지O > TD
+
+                    removeImage();
+                }
+            }
+        });
+
+        function removeImage() {
+            if (event.currentTarget.children.length > 0) {
+                event.currentTarget.removeChild(event.
+                currentTarget.firstElementChild);
+            }
+        }
+
+    </script>
+
+</body>
+</html>

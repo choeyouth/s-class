@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* list1을 위한 처리 */
+
+        #list1 {
+            width: 700px;
+        }
+
+        /* 덮어쓰기 */
+        #list1 td.cell5 {
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        /* 테이블 명시 > 가독성을 위함 */
+        #list1 #col1 { width: 50px; }
+        #list1 #col2 { width: 100px; }
+        #list1 #col3 { width: 50px; }
+        #list1 #col4 { width: 60px; }
+        #list1 #col5 { width: auto; }
+        
+        h1 {
+            /* text-decoration: underline; */
+            border-bottom: 1px solid black; /* 영역 전체 밑줄 */
+            width: 700px;
+            padding-bottom: 0px;
+            margin-bottom: 10px; /* 기본적으로 마진이 잡혀있을 때 0을 넣으면 결과가 달라짐 */
+        }
+        
+
+
+        /* list2를 위한 처리 */
+
+        #list2 {
+            width: 300px;
+        }
+
+        #list2 #col6 {
+            width: 170px;
+        }
+
+        #list2 #col7 {
+            width: 130px;
+        }
+
+
+
+        /* 공통 부분 처리 */
+
+        .table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .table th, .table td {
+            border: 1px solid black;
+            font-size: 15px;
+            color: #333;
+            font-family: '맑은 고딕';
+            padding: 3px;
+        }
+
+        .table th {
+            background-color: #EEEEEE;
+        }
+
+        .table td {
+            text-align: center;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <!-- ex18_box.html -->
+    <h1>주소록</h1>
+
+    <!-- table#list>((tr>th*5)+(tr*15>td*5)) -->
+
+    <!-- 따로 만들기 -->
+    <!-- table#list1>tr>th#col$*5 -->
+    <table id="list1" class="table">
+        <tr>
+            <th id="col1">번호</th>
+            <th id="col2">이름</th>
+            <th id="col3">나이</th>
+            <th id="col4">성별</th>
+            <th id="col5">주소</th>
+        </tr>
+        <!-- tr*15>td*5 -->
+        <!-- tr*15>(td.cell1{$})+(td.cell2>lorem1)+(td.cell3{$$})+(td.cell4{남자})+(td.cell5>lorem5) -->
+        <tr>
+            <td class="cell1">1</td>
+            <td class="cell2">Lorem.</td>
+            <td class="cell3">01</td>
+            <td class="cell4">남자</td>
+            <td class="cell5">Lorem ipsum dolor sit amet.</td>
+        </tr>
+        <tr>
+            <td class="cell1">2</td>
+            <td class="cell2">Accusantium.</td>
+            <td class="cell3">02</td>
+            <td class="cell4">남자</td>
+            <td class="cell5">Recusandae eius mollitia nisi consectetur?</td>
+        </tr>
+        <tr>
+            <td class="cell1">3</td>
+            <td class="cell2">Amet!</td>
+            <td class="cell3">03</td>
+            <td class="cell4">남자</td>
+            <td class="cell5">Ipsum omnis sequi quo laboriosam.</td>
+        </tr>
+        <tr>
+            <td class="cell1">4</td>
+            <td class="cell2">Minima?</td>
+            <td class="cell3">04</td>
+            <td class="cell4">남자</td>
+            <td class="cell5">Explicabo recusandae similique quos modi?</td>
+        </tr>
+        <tr>
+            <td class="cell1">5</td>
+            <td class="cell2">Sit!</td>
+            <td class="cell3">05</td>
+            <td class="cell4">남자</td>
+            <td class="cell5">Sapiente illum repellat consectetur repudiandae!</td>
+        </tr>
+        <tr>
+            <td class="cell1">6</td>
+            <td class="cell2">Pariatur.</td>
+            <td class="cell3">06</td>
+            <td class="cell4">남자</td>
+            <td class="cell5">Libero eum qui tempore est!</td>
+        </tr>
+        <tr>
+            <td class="cell1">7</td>
+            <td class="cell2">Labore.</td>
+            <td class="cell3">07</td>
+            <td class="cell4">남자</td>
+            <td class="cell5">Quas unde reiciendis saepe modi!</td>
+        </tr>
+        <tr>
+            <td class="cell1">8</td>
+            <td class="cell2">Unde?</td>
+            <td class="cell3">08</td>
+            <td class="cell4">남자</td>
+            <td class="cell5">Molestiae tempore tempora hic et?</td>
+        </tr>
+        <tr>
+            <td class="cell1">9</td>
+            <td class="cell2">Eos.</td>
+            <td class="cell3">09</td>
+            <td class="cell4">남자</td>
+            <td class="cell5">Repudiandae cumque laudantium voluptatem. Tenetur!</td>
+        </tr>
+        <tr>
+            <td class="cell1">10</td>
+            <td class="cell2">Dolorem!</td>
+            <td class="cell3">10</td>
+            <td class="cell4">남자</td>
+            <td class="cell5">Molestias labore reprehenderit hic beatae.</td>
+        </tr>
+        <tr>
+            <td class="cell1">11</td>
+            <td class="cell2">Laboriosam.</td>
+            <td class="cell3">11</td>
+            <td class="cell4">남자</td>
+            <td class="cell5">Autem nisi dolores asperiores neque.</td>
+        </tr>
+        <tr>
+            <td class="cell1">12</td>
+            <td class="cell2">Quas.</td>
+            <td class="cell3">12</td>
+            <td class="cell4">남자</td>
+            <td class="cell5">Qui omnis accusantium culpa. Aspernatur.</td>
+        </tr>
+        <tr>
+            <td class="cell1">13</td>
+            <td class="cell2">Eaque.</td>
+            <td class="cell3">13</td>
+            <td class="cell4">남자</td>
+            <td class="cell5">Magnam consectetur at deleniti deserunt.</td>
+        </tr>
+        <tr>
+            <td class="cell1">14</td>
+            <td class="cell2">Quasi.</td>
+            <td class="cell3">14</td>
+            <td class="cell4">남자</td>
+            <td class="cell5">Officiis quia maiores rem natus?</td>
+        </tr>
+        <tr>
+            <td class="cell1">15</td>
+            <td class="cell2">Quia!</td>
+            <td class="cell3">15</td>
+            <td class="cell4">남자</td>
+            <td class="cell5">Voluptatum at repudiandae eius obcaecati.</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>모임 정보</h2>
+
+    <table id="list2" class="table">
+        <tr>
+            <th id="col6">날짜</th> <!-- 위의 테이블과 연관X 임시.. 이러면안댐 -->
+            <th id="col7">장소</th>
+        </tr>
+        <tr>
+            <td>2024.08.15</td>
+            <td>광화문</td>
+        </tr>
+        <tr>
+            <td>2024.08.17</td>
+            <td>종로</td>
+        </tr>
+    </table>
+</body>
+</html>

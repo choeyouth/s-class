@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex16_child.html -->
+    <h1>자식 페이지</h1>
+
+    <form name="form1">
+        <input type="text" name="txt1">
+
+        <fieldset>
+            <legend>부모창 자원 접근하기</legend>
+            <input type="button" value="자식창에 있는 텍스트 박스에 접근하기" name="btn1">
+        </fieldset>
+    </form>
+
+    <script>
+        //window.document.form1.txt1.value = '홍길동';
+
+        window.document.form1.btn1.onclick = m1;
+
+        function m1() {
+            //부모의 window.document.form1.txt1
+            // opener == 부모창의 window
+            opener.document.form1.txt1.value = '아무개';
+        }
+        
+    </script>
+</body>
+</html>

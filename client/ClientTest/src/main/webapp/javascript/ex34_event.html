@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex34_event.html -->
+
+    <h1>DOM Event</h1>  
+
+    <button type="button" id="btn1">버튼(BOM)</button>
+    <button type="button" id="btn2">버튼(DOM)</button>
+
+    <hr>
+
+    <select id="cel1">
+        <option value="mouseover">mouseover</option>
+        <option value="click" selected>click</option>
+        <option value="dblclick">double click</option>
+    </select>
+
+    <script>
+
+        var btn1 = document.getElementById('btn1');
+        var btn2 = document.getElementById('btn2');
+
+        //BOM
+        // btn1.onclick = m1;
+        // btn1.onclick = m2; //덮어쓰기
+        // btn1.onclick = m3;
+
+        function m1() {
+            alert('m1');
+        }
+        function m2() {
+            alert('m2');
+        }
+        function m3() {
+            m1();
+            m2();
+        }
+
+        // btn2.onclick = m4;
+        function m4() {
+            //이벤트 제거(BOM)
+            btn1.onclick = null;
+        }
+
+
+        //DOM Event
+        // - btn2.addEventListener(이벤트종류, 함수); //범용 함수
+        // - 콜백 함수 관리 > Invocation List
+
+        btn2.addEventListener('click', m5); //BOM의 이벤트에서 on을 뺀 이름 > DOM 이벤트 종류
+        function m5() {
+            alert('DOM');
+        }
+
+        btn2.addEventListener('click', m6); 
+        function m6() {
+            alert('DOM+');
+        }
+
+        //여러개의 함수를 하나의 이벤트에 넣을 수 있다. 
+
+        //이벤트 제거
+        btn2.removeEventListener('click', m5);
+
+        var type = 'click';
+        
+        document.getElementById('sel1').onchange = m7;
+        function m7() {
+            //type = document.getElementByID('sel1').value;
+            btn2.removeEventListener(type, m6); 
+            type = event.target.value;
+            btn2.addEventListener(type, m6); 
+        }
+
+    </script>
+
+</body>
+</html>

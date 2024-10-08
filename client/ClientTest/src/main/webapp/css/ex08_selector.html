@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            CSS 선택자
+            1.  전체 선택자
+            2.  태그 선택자
+            3.  아이디 선택자
+            4.  클래스 선택자(**********)
+            5.  그룹 선택자
+            6. 자식 선택자
+            7. 자손 선택자
+            8. 인접 형제 선택자
+            9. 형제 선택자
+            
+            10. 의사 클래스, Pseudo Class, 가상 클래스 
+                - 실제 태그에는 class가 정의되어 있지 않지만,
+                  선택자에서 존재하는 class처럼 취급하는 클래스
+                - <a> 태그에만 제공 > 대부분 태그에게 적용 
+                - HTML5 > 대량 증가 [HTML5(CSS3+ES6) > 2014년]
+                
+        */
+
+        /* a {
+            color: black;
+            text-decoration: none;
+        } */
+        
+        /* a태그의 상태 4종류 */
+        /* a:link { color: green; } 한 번도 방문하지 않았던 사이트 
+        a:visited { color: red; } 한 번이라도 방문했던 사이트
+        a:active { color: orange; } 클릭할 때 
+        a:hover { color: cornflowerblue; } 마우스를 올렸을 때 */
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: red;
+            text-decoration: underline;
+        }
+
+        .data {
+            outline: none;
+        }
+        
+        .data:focus {
+            background-color: yellow;
+            color: red;
+        }
+        
+        
+    </style>
+</head>
+
+
+<body>
+    <!-- ex08_selector.html -->
+
+    <h1>링크</h1>
+    <a href="http://google.com">구글</a>
+
+    <hr>
+
+    <h1>입력 업무</h1>
+    
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+    <input type="text" class="data"><br>
+
+
+</body>
+</html>

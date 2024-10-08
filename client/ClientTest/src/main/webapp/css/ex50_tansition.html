@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            border: 10px solid black;
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            margin: 200px
+        }
+    
+        /* 
+        
+            transition, 전환
+            - 객체의 속성(값)이 변화되는 과정을 시간 순으로 보여주는 기술
+            - 수치형 속성값에 한해서
+        
+        */
+
+        #box {
+            /* 적용 대상 속성 */
+            /* transition-property: width, height, font-size; */
+            transition-property: all; /* 변화가 일어나는 모든 속성에 적용 */
+
+            /* 변환 과정을 보여줄 시간 */
+            transition-duration: 1s;
+
+            transition: 1s all;
+            box-sizing: border-box;
+        }
+
+        #box:hover {
+            /* width: 400px; */
+            /* height: 400px; */
+            /* font-size: 5rem; */
+            /* font-family: '궁서체'; 수치형 속성(X) */
+            /* opacity: 0; */
+            /* background-color: cornflowerblue; */
+            /* border-width: 20px; */
+            /* border-radius: 50%; */
+            /* box-shadow: 10px 10px 5px #555; */
+            /* transform: translate(100px, 0px); */
+            /* transform: scale(-1, 1); */
+            transform: rotate(360deg);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex50_tansition.html -->
+    <div id="box">상자</div>
+
+</body>
+</html>

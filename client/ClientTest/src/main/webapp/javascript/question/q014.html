@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        @font-face { font-family: 'BRRA_R'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/BRRA_R.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+        body {
+            margin: 30px;
+        }
+
+        div {
+            height: 610px;
+            width: 950px;
+            border: 1px solid #CCCCCC;
+        }
+
+        textarea {
+            width: 905px;
+            height: 250px;
+            margin-left: 20px;
+            font-family: 'BRRA_R';
+            font-size: 17.5px;
+            color: #444444;
+            outline: none;
+        }
+
+        #ta1 {
+            margin-top: 20px;
+        }
+
+        hr {
+            width: 910px;
+        }
+
+        input {
+            font-family: 'BRRA_R';
+            font-size: 17.5px;
+        }
+
+        #start {
+            margin-left: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <form name="form1"></form>
+        <div>
+            <textarea id="ta1"></textarea>
+            <hr>
+            <textarea id="ta2" name="ta2">
+네, 낮동안에도 찬바람이 강하게 불고있습니다.
+때문에 체감상 느껴지는 온도는 현재기온보다 2~3도가량 낮게 나타나고 있는데요.
+남부해안지역과 제주도를 중심으로는 강풍주의보도 이어지고 있기 때문에 시설물 피해 없도록 주의하셔야겠습니다.
+쌀쌀했던 어제보다도 기온이 더 오르지 못하고있습니다.
+현재기온 서울 7.3도, 대전 9.3도, 부산 6.8도로 이맘때 평년수준을 밑돌고있고요. 
+찬바람이 더해지면서 체감상 느껴지는 날씨는 더 쌀쌀합니다.
+꽃샘추위는 내일 절정을 보이겠습니다. 
+            </textarea>
+            <br>
+            <input type="button" value="시작" id="start">
+            <input type="button" value="정지" id="stop">
+        </div>
+    </form>
+    <script>
+
+        const ta1 = document.getElementById('ta1');
+        const ta2 = document.getElementById('ta2');
+        const start = document.getElementById('start');
+        const stop = document.getElementById('stop');
+        let timer;
+        let num = 0;
+        const str = Array.from(ta2.value);
+        
+
+        start.addEventListener('click', function() {
+
+            timer = setInterval(function() {
+
+                ta1.value += str[num];
+                num++;
+
+                if (num == str.length) {
+                    clearInterval(timer);
+                    num = 0;
+                }
+
+            }, 100);
+
+        });
+
+        stop.addEventListener('click', function() {
+            clearInterval(timer);
+        });
+    
+    </script>
+
+</body>
+</html>

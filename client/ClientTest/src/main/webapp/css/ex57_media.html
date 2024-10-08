@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            Media Query
+            - 반응형 웹(Responsive Web) > 해상도에 따라 다른 화면을 구현하는 CSS 기술
+            - 모바일 웹을 지원하기 위해 사용하기 시작..
+
+        미디어 유형
+        1. all
+        2. screen > 컴퓨터 or 모바일 > 기본값
+        3. print > 프린터 
+        4. tv > 스마트 TV
+        5. projection > 프로젝터 
+
+        미디어 쿼리 연산자
+        1. and
+        2. only
+        3. not
+
+        미디어 쿼리 조건
+        1. 모바일: 화면 <= 480px
+        2. 태블릿: 화면 <= 768px
+        3. 태블릿(가로): 화면 <= 1024px
+        4. 랩탑: 화면 <= 1600px
+        5. 데스크탑: 화면 > 1600px
+
+        */
+
+
+        
+        @media screen and (max-width: 800px) {
+            body {
+                background-color: cornflowerblue;
+            }
+        }
+
+
+        @media screen and (max-width: 1260px) {
+            body {
+                width: 80%;
+                background-color: gold;
+            }
+        }
+
+
+        @media screen and (max-width: 768px) {
+            body {
+                width: 90%;
+                background-color: olivedrab;
+            }
+        }
+
+
+        @media screen and (max-width: 576px) {
+            body {
+                width: 100%;
+                background-color: cornflowerblue;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex57_media.html -->
+</body>
+</html>

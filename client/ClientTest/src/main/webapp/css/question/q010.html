@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #clock {
+            border: 30px dashed #999;
+            height: 700px;
+            width: 700px;
+            /* margin: 30px auto; */
+        }
+
+        #hour, #min, #sec {
+            border: 15px solid #555;
+            width: 50px;
+            position: absolute;
+            left: 347px;
+            font-variant: small-caps;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            margin: 30px auto;
+        }
+
+        #hour > div,
+        #min > div,
+        #sec > div {
+            font-variant: small-caps;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #hour {
+            background-color: tomato;
+            border-radius: 50px;
+            height: 150px;
+            top: 178px;
+        }
+
+        #hour:hover {
+            transform: translate(0px, 10px);
+            transform: rotate(360deg);
+        }
+
+        #clock:hover #hour {
+            animation-name: hour;
+            animation-duration: 60s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes hour {
+            from {
+                transform-origin: bottom;
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform-origin: bottom;
+                transform: rotate(360deg);
+            }
+        }
+
+        #min {
+            background-color: cornflowerblue;
+            border-radius: 50px;
+            height: 220px;
+            top: 108px;
+        }
+
+        #clock:hover #min {
+            animation-name: min;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes min {
+            from {
+                transform-origin: bottom;
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform-origin: bottom;
+                transform: rotate(360deg);
+            }
+        }
+
+        #sec { 
+            background-color: gold;
+            border-radius: 50px;
+            height: 290px;
+            top: 38px;
+        }
+
+        #clock:hover #sec {
+            animation-name: sec;
+            animation-duration: .8s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+
+
+        @keyframes sec {
+            from {
+                transform-origin: center bottom;
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform-origin: center bottom;
+                transform: rotate(360deg);
+
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="clock">
+        <div id="hour"><br>Hour</div>
+            <div></div>
+        <div id="min"><br>Min</div>
+            <div></div>
+        <div id="sec"><br>Sec</div>
+            <div></div>
+    </div>
+
+    <!-- <div style="width: 700px; margin: 30px auto;"> -->
+    <!-- <h1 style="margin-top: 0px;">transform(rotate) + transform-origin + transition</h1>
+    <div style="margin: 20px 0px; border-left: 3px dotted gray; padding-left: 10px;">
+        시계침을 돌리시오.
+    </div>
+    <div id="clock">
+        <div id="hour">
+            <div>Hour</div>
+        </div>
+        <div id="min">
+            <div>Min</div>
+        </div>
+        <div id="sec">
+            <div>Sec</div>
+        </div>
+    </div> -->
+    <!-- </div>	 -->
+</body>
+</html>

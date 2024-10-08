@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #table1 {
+            border: 1px solid gray;
+            border-collapse: collapse;
+            font-size: 0;
+        }
+
+        #table1 td {
+            border: 1px solid gray;
+            width: 126px;
+            height: 126px;
+        }
+
+        #table td img {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex33_content.html -->
+    <table id="table1" oncontextmenu="return false;">
+        <tr>
+            <td><img src="images/rect_icon01.png"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+
+        //오른쪽 버튼 > Context Menu
+        window.oncontextmenu = m2;
+
+        function m2() {
+            return false;
+        }
+
+        //<td> x 25개 이벤트 추가
+        
+        var list = document.querySelectorAll('#table1 td');
+        
+        // alert(list.length);
+
+        for (var i=0; i<list.length; i++) {
+            list[i].onmousedown = m1;
+        }
+
+        function m1() {
+            // alert();
+            // 어떤 <td>를 클릭?
+            // event.srcElement
+            // event.target.bgColor = 'gold';
+            event.target.innerText = 'click';
+            
+            if (event.buttons == 1) {
+                event.target.innerHTML = '<img src="images/rect_icon01.png">';   
+            } else if (event.buttons == 2) {
+                event.target.innerHTML = '<img src="images/rect_icon02.png">';   
+            }
+        }
+    </script>
+</body>
+</html>

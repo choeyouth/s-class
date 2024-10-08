@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex05_function.html -->
+    
+    <script>
+
+        /* 
+
+            Java Method
+            public [static] int m1(int num) {
+                return 10;
+            }
+
+            JavaScript Function
+            function m1(num) { - 선언문 생략
+                return 10;
+            }
+
+        */
+       
+        function m1() {
+            console.log('m1');
+        }
+
+        m1();
+        m1();
+        m1();
+
+        function m2(name, age) {
+            console.log('m2', name, age);
+            // 내장 배열 > 자바스크립트가 스스로 만들어서 제공
+            // - arguments > 매개변수 배열
+            console.log(arguments);       
+            console.log(arguments[0]); 
+            console.log(arguments[1]); 
+            console.log(arguments[2]);     
+        }
+
+        m2('홍길동', 20);
+        m2('아무개');
+        m2();
+        m2('홍길동', 20, '서울시');
+        console.clear();
+
+        function m3() {
+            return 10;
+        }
+
+        var num = m3();
+        console.log(num);
+
+        // 자바 > 정적 타입 언어 > 컴파일 + 자료형 결정
+        // ex) int a = 10;
+        // ex) var a = 10;
+
+        // 자바스크립트 > 동적 타입 언어 > 컴파일 + 자료형 미결정 > 런타임 + 자료형 결정
+        // ex) var a;
+        //     a = 10; >> a -> number 타입 파악 가능
+        
+
+        // JavaScript
+        // - 값이 없다.
+        // 1. undefined > 변수가 선언된 직후 상태(초기화X)
+        // 2. null > 의도적으로 비워둔 상태
+
+        var num1;
+        console.log(num1); // undefined
+
+        var num2;
+        console.log(num2); // null
+
+
+        // 동등 비교 연산자
+        
+        // a. ==, !==
+        //  - 자료형의 비교는 하지 않고, 값만 비교한다. 
+        
+        // b. ===, !===
+        //  - 자료형과 값을 모두 비교한다. 
+        //  - 자바 연산자 
+        //  - 진성 비교 연산자
+
+        console.log(undefined == null); // true
+        console.log(undefined === null); // false
+
+        console.log(undefined, typeof undefined);
+        console.log(null, typeof null);
+
+        console.log(undefined != null); // false
+        console.log(undefined !== null); // true
+
+        console.log(10 == '10'); // true
+        console.log(10 === '10'); // false
+
+
+    </script>
+
+    
+
+</body>
+</html>

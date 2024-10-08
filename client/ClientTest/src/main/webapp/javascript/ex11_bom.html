@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex11_bom.html -->
+    <h1 name="title1">BOM, Browser Object Model</h1>
+    <p>자바스크립트가 HTML 문서 내의 태그에 접근하기 위한 모델 중 하나</p>
+    <p>HTML == 트리구조 -> BOM</p>
+
+    <form name="form1">
+        <input type="text" name="txt1">
+    </form>
+
+    <script>
+        // name: BOM의 식별자 역할
+        window.document.form1.txt1.value = '홍길동';
+  
+        // window.close();
+
+        /* 
+            BOM 모델의 특징
+
+            - 초창기 모델
+            - 현재까지 계속 사용
+            - 선택적 모델(★★★) > BOM 구조가 모든 태그를 포함하지 않는다.
+            - 접근 가능 태그 > 이미지 + 링크 + 폼태그(자식들)
+                - p, h1, div 등… 접근 불가능
+            - id와 class는 인식 못함
+        */
+    </script>
+</body>
+</html>

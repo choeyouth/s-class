@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form > * {
+            display: block;
+            margin-bottom: 10px;
+            outline: none;
+            padding: 5px;
+            resize: none;
+            /* width: 300px; */
+        }
+/* 
+        textarea {
+            /* height: 200px; * /
+        } */
+
+    </style>
+</head>
+<body>
+    <!-- ex14_keyevent.html -->
+    <h1>키 이벤트</h1>
+
+    <form name="form1">
+        <input type="text" name="txt1">
+        <input type="text" name="txt2">
+        <textarea name="txt3"></textarea>
+    </form>
+
+    <script>
+        /* 
+        
+            키 이벤트
+            - onkeyXXX
+
+            1. onkeydown
+                - 키를 눌렀을 때 발생
+                - 물리적인 모든 키에 반응
+                
+            2. onkeyup
+                - 키를 뗄 때 발생
+
+            3. onkeypress
+                - 키를 눌렀을 때 발생
+                - 문자 키에만 반응
+        
+        */
+
+        var txt1 = window.document.form1.txt1;
+        var txt2 = window.document.form1.txt2;
+        var txt3 = window.document.form1.txt3;
+
+        txt1.onkeydown = m1;
+        // txt1.onkeyup = m2;
+        // txt1.onkeypress = m3;
+
+        function m1() {
+            // console.log('keydown');
+            console.log(event.keyCode);
+            
+            /*  if (event.keyCode == 39) {
+                txt3.cols++;
+            } else if (event.keyCode == 37) {
+                txt3.cols--;
+            } else if (event.keyCode == 40) {
+                txt3.rows++;
+            } else if (event.keyCode == 38) {
+                txt3.rows--;
+            } */
+        
+            txt2.value = txt1.value;
+
+        }
+
+        function m2() {
+            console.log('keyup');
+            txt2.value = txt1.value;
+        }
+
+        function m3() {
+            console.log('keypress');
+            console.log(event.keyCode);
+        }
+
+
+    </script>
+</body>
+</html>

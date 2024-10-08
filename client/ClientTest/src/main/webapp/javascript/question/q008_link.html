@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        input {
+            font-family: 'GmarketSansMedium';
+            color: gray;
+            height: 23px;
+            margin: 5px;
+        }
+
+
+    </style>
+</head>
+<body> 
+    <form name="form1">
+        <input type="button" value="서울시 강남구 역삼동" name="btn1"><br>
+        <input type="button" value="서울시 강남구 대치동" name="btn2"><br>
+        <input type="button" value="서울시 강남구 도곡동" name="btn3">
+    </form>
+</body>
+
+    <script>
+
+        var btn1 = document.form1.btn1;
+        var btn2 = document.form1.btn2;
+        var btn3 = document.form1.btn3;
+
+        btn1.onclick = click1;
+        btn2.onclick = click2;
+        btn3.onclick = click3;
+
+        function click1() {
+            opener.document.form1.txt1.value = '06232';
+            opener.document.form1.txt2.value = '서울시 강남구 역삼동';
+            opener.document.form1.txt3.focus();
+            window.close();
+        }
+
+        function click2() {
+            opener.document.form1.txt1.value = '06291';
+            opener.document.form1.txt2.value = '서울시 강남구 대치동';
+            opener.document.form1.txt3.focus();
+            window.close();
+        }
+
+        function click3() {
+            opener.document.form1.txt1.value = '06267';
+            opener.document.form1.txt2.value = '서울시 강남구 도곡동';
+            opener.document.form1.txt3.focus();
+            window.close();
+        }
+
+        // var num;
+        // var address;
+
+        // opener.document.form1.txt1.value = num;
+        // opener.document.form1.txt2.value = address;
+
+    </script>
+</html>

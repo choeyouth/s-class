@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+
+            background
+            1. background-color
+            2. background-image
+            3. background-repeat
+            4. background-position
+            5. background-attachment
+            6. background-size
+
+        */
+
+        #b1 {
+            border: 1px solid black;
+            width: 400px;
+            height: 400px;
+            
+            background-image: url(images/cat05.jpg),
+                              url(images/cat04.jpg),
+                              url(images/cat01.jpg);
+
+            background-repeat: no-repeat;
+            /* background-size: auto 400px; */
+            background-position: center, left top, right bottom;
+
+            /* 
+                영역의 종횡비 <> 배경이미지 종횡비
+                - 영역을 꽉 채우기!! 
+                - 이미지의 장축을 영역에 맞추기 
+                - 이미지의 단축을 영역에 맞추기
+            */
+
+            /* background-size: contain;  /* 400px auto > contain */
+            /* background-size: cover; auto 400px > cover */ 
+            /* background-size: 20px 15px; */
+        }
+
+        #box1 {
+
+        border: 1px solid black;
+        width: 800px;
+        height: 500px;
+
+        /* 그레디언트, Gradient */
+
+        /* background: linear-gradient(45deg, red, blue); */
+
+        /* background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, purple); */
+
+        background: radial-gradient(ellipse, red, yellow, blue);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex41_background.html -->
+    <div id="b1"></div>
+
+    <div id="box1"></div>
+    <hr>
+    <div id="box2"></div>
+
+</body>
+</html>

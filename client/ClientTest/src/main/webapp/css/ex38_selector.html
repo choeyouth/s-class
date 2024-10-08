@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 컨트롤 > 속성 일부 수정 > 브라우저 설정 초기화 */
+        /* input { background-color: gold; } */
+
+        #list > input {
+            display: block;
+            margin-bottom: 5px;
+            border: 1px solid #767676;
+            outline: none;
+            background-color: #FFF;
+        }
+
+        /* #list > input:required { background-color: gold; }
+        #list > input:optional { background-color: tomato; } */
+
+        /* #list > input:disabled { background-color: cornflowerblue; }
+        #list > input:enabled { background-color: tan; } */
+
+        #list > input:read-only { background-color: cornflowerblue; }
+        #list > input:read-write { background-color: tan; } 
+
+        #list > input:read-only {
+            background-color: gold;
+            cursor: not-allowed;
+        }
+
+        /* input[type=checkbox] {
+            /* width: 100px;
+            height: 100px; * /
+            opacity: .3;
+        }
+
+        input[type=checkbox]:checked {
+            opacity: 1;
+            width: 20px;
+            height: 20px;
+        } */
+
+        #cb1:checked + div {
+            /* color: blue; */
+            /* visibility: hidden; */
+            display: none;
+        }
+
+        #notice {
+            border: 1px solid black;
+            width: 200px;
+        }
+        
+        #notice #cb2 {
+            display: none;
+        }
+
+        #notice label {
+            font-size: 1.5rem;
+            font-family: Arial;
+            font-variant: small-caps;
+            display: block;
+            padding: 10px;
+            background-color: gold;
+            cursor: pointer;
+            user-select: none; /* 블럭이 잡히지 않음 */
+        }
+
+        #notice div {
+            border-top: 1px solid black;
+            padding: 15px;
+            display: none;
+        }
+
+        #notice #cb2:checked + label + div {
+            display: block;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <!-- ex38_selector.html -->
+     
+    <div id="notice">
+        <input type="checkbox" id="cb2">
+        <label for="cb2">JavaScript</label>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam pariatur illum asperiores optio perferendis possimus soluta suscipit fugiat fugit placeat!</div>
+    </div>
+
+
+
+    <hr>
+    
+    <input type="checkbox" id="cb1">
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae quisquam ullam nesciunt sapiente maiores dolore, iusto voluptatem deserunt repellendus ipsam.</div>
+
+    <hr>   
+
+    <div>
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+    </div>
+
+    <hr>
+
+    <div id="list">
+        <!-- input[type=text value=$]*10 -->
+        <input type="text" value="1" required>
+        <input type="text" value="2" readonly>
+        <input type="text" value="3" required>
+        <input type="text" value="4" readonly>
+        <input type="text" value="5">
+        <input type="text" value="6" disabled>
+        <input type="text" value="7" disabled>
+        <input type="text" value="8">
+        <input type="text" value="9">
+        <input type="text" value="10" required>
+    </div>
+
+    <!-- Ctil + Shift + P -->
+
+</body>
+</html>

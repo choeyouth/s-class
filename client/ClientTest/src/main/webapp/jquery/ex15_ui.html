@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/pepper-grinder/jquery-ui.css">
+    <style>
+        #box1 {
+            border: 1px solid black;
+            width: 300px; height: 300px;
+            background-color: gold;
+        }
+        
+        .helper {
+            border: 1px dashed #333;
+            background-color: rgba(255, 215, 0, .3);
+        }
+
+        #list1 {
+            padding: 0;
+            display: flex;
+            list-style-type: none;
+        }
+
+        #list1 li {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background-color: gold;
+        }
+
+        #list1 li:nth-child(odd) {
+            background-color: cornflowerblue;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex15_ui.html -->
+
+    <h1>Interactions <small>Resizable</small></h1>
+
+    <div id="box1"></div>
+
+    <h2>반려 동물</h2>
+    <ul id="list1">
+        <li>강아지</li>
+        <li>고양이</li>
+        <li>거북이</li>
+        <li>사자</li>
+        <li>호랑이</li>
+    </ul>
+
+
+    <img src="images/catty01.png" id="cat1" class="cat">
+    
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+
+    <script>
+
+        $('#box1').resizable({
+            maxWidth: 500,
+            maxHeight: 500,
+            minWidth: 100,
+            minHeight: 100,
+            //grid: [ 50, 50 ],
+            animate: true,
+            helper: 'helper'
+        });
+
+        $('#cat1').resizable({
+            //종횡비 유지
+            // aspectRatio: true
+            alsoResizable: '#box1' // 종속됨 
+        });
+
+        $('#list1 li:nth-child(odd)').resizable({
+            alsoResize: '#list1 li:nth-child(odd)'
+        });
+        $('#list1 li:nth-child(even)').resizable({
+            alsoResize: '#list1 li:nth-child(even)'
+        });
+
+    </script>
+
+</body>
+</html>

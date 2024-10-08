@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex38_variable.html -->
+
+    <script>
+
+        /* 
+
+            JavaScript Core
+
+            변수 선언하기
+
+            1. var
+            - BOM / DOM / ES6
+            - function-scoped
+            - 제어문(영역 인식 불가능)
+            - 중복 선언 가능
+            - 상수 선언 불가능(final)
+
+            2. let
+            - ES6(ECMAScript 2015)
+            - 변수 선언문
+            - 중복 선언 불가능
+            - block-scoped
+
+            3. const
+            - ES6(ECMAScript 2015)
+            - 상수 선언문(= final 변수)
+            - 중복 선언 불가능
+            - block-scoped
+
+        */
+
+        var a = 10;
+        var a = 20;
+
+        let b = 30;
+        console.log(b, typeof b); //30, number
+
+        //let b = 40; //error
+
+        function m1() {
+            var c = 50; //m1() 지역 변수
+            let d = 50; //m1() 지역 변수
+        }
+
+        //console.log(c, d) //error
+
+        if (true) {
+            var e  = 70; //전역 변수
+            let f = 80; //지역 변수
+        }
+
+        console.log(e);
+        // console.log(f); //error
+
+        const PI = 3.14;
+        // PI = 6.28; //error - Assignment to constant variable.
+
+        const list = [ 10, 20, 30, 40, 50 ];
+
+
+        //i > funtion-socped(전역 변수)
+        for (var i=0; i<list.length; i++) {
+            console.log(list[i]);
+        }
+        console.log(i); //5
+
+        // j > block-socped(지역 변수)
+        for (let j=0; j<list.length; j++) {
+            console.log(list[j]);
+        }
+        // console.log(j); // j is not defined 
+
+        
+
+    </script>
+    
+</body>
+</html>

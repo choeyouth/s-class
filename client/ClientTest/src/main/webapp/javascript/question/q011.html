@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            padding: 2px;
+            font-family: 'GmarketSansMedium';
+            color: gray;
+        }
+
+        table {
+            margin-left: 20px;
+            width: 575px;
+            border: 1px solid gray;
+            text-align: center;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        h4 {
+            padding: 0;
+            margin: 15px;
+        }
+
+        td {
+            border: 1px solid gray;
+        }
+
+        input {
+            display: block;
+            border: 1px solid gray;
+            border-radius: 3px;
+            width: 125px;
+            height: 35px;
+            font-family: 'GmarketSansMedium';
+            color: gray;
+            margin: 10px auto;
+        }
+
+        table td:nth-child(2) {
+            padding: 5px;
+        }
+
+        select {
+            width: 150px;
+            height: 340px;
+            margin: auto 15px;
+            margin-bottom: 30px;
+            outline: none;
+        }
+
+        option {
+            padding: 5px;
+            font-family: 'GmarketSansMedium';
+            color: gray;
+        }
+
+    </style>
+</head>
+<body>
+    <form name="form1">
+        <table>
+            <tr>
+                <td>
+                    <h4>차단된 친구</h4>
+                    <select size="10" name="left">
+                        <option name="1">권예진</option>
+                        <option name="2">권준혁</option>
+                        <option name="3">김동식</option>
+                        <option name="4">김세진</option>
+                        <option name="5">김여정</option>
+                        <option name="6">노형준</option>
+                        <option name="7">박민선</option>
+                        <option name="8">백강현</option>
+                        <option name="9">변기현</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="button" value="Add ▷" name="add">
+                    <input type="button" value="◁ Remove" name="remove">
+                    <input type="button" value="Add All ▷▷" name="addAll">
+                    <input type="button" value="◁◁ Remove All" name="removeAll"> 
+                </td>
+                <td>
+                    <h4>허용된 친구</h4>
+                    <select size="10" name="right"></select>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+
+        var left = document.form1.left;
+        var right = document.form1.right;
+        var add = document.form1.add;
+        var remove = document.form1.remove;
+        var addAll = document.form1.addAll;
+        var removeAll = document.form1.removeAll;
+        var list;
+        var index;
+
+        add.onclick = adds;
+        remove.onclick = removes;
+        addAll.onclick = addAlls;
+        removeAll.onclick = removeAlls;
+
+        function adds() {
+            right.options.add(left.options[left.selectedIndex]);
+        }
+
+        function removes() {
+            left.options.add(right.options[right.selectedIndex]);
+        }
+
+        function addAlls() {
+            let leftLength = left.options.length;
+
+            //length의 크기는 루프가 돌 때마다 변경됨 > 조건에도 해당 
+            for (var i=0; i<leftLength; i++) {
+                right.options.add(left.options[0]);
+            }
+        }
+
+        function removeAlls() {
+            let rightLength = right.options.length;
+
+            for (var i=0; i<rightLength; i++) {
+                left.options.add(right.options[0]);
+            }
+        }
+
+    </script>
+</body>
+</html>

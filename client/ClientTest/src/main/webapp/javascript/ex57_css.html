@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #menu {
+            display: flex;
+            border: 1px solid black;
+            width: 630px; /* 너비를 자식들 크기만큼 */
+            position: fixed;
+            top: 0;
+            margin: 0 auto; /* position > static일 때만 가능 */
+            /* 주는 방법 >> left, right, top 세 개를 0으로 주면, position이 static이 아닌 것도 가운데 정렬 가능 */
+            left: 0;
+            right: 0;
+            transform: translate(0px, -100px);
+        }
+
+        #menu img {
+            transition: all 0.5s;
+        }
+
+        /* 
+        #menu img:hover {
+            transform: translate(0px, 90px);
+        }
+        */
+
+    </style>
+</head>
+<body>
+    <!-- ex57_css.html -->
+    <nav id="menu">
+        <img src="images/rect_icon01.png" alt="">
+        <img src="images/rect_icon02.png" alt="">
+        <img src="images/rect_icon03.png" alt="">
+        <img src="images/rect_icon04.png" alt="">
+        <img src="images/rect_icon05.png" alt="">
+    </nav>
+
+    <script>
+
+        const items = document.querySelectorAll('#menu img');
+        let oldItem = null; //열려있는 아이템
+
+        items.forEach(item => {
+
+            item.onclick = function() {
+                // alert();
+                if (oldItem != null) {
+                    // oldItem이 한 번이라도 저장 되었다면, 그 상자를 원래 값으로 되돌려놓음
+                    oldItem.style.transform = 'translate(0px, 0px)';
+                }
+
+                // console.log(oldItem == event.target); //false > 이미 열려있는 상자 클릭 > true
+                if ((oldItem != event.target)) {
+                    event.target.style.transform = 'translate(0px, 90px)';
+                    oldItem = event.target;
+                } else {
+                    oldItem = null;
+                }
+            };
+        });
+        
+    </script>
+</body>
+</html>

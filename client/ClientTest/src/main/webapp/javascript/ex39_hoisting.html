@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex39_hoisting.html -->
+
+
+    <script>
+
+        //호이스팅, Hoisting
+        //- 함수 호이스팅(***)
+        //- 변수 호이스팅
+
+        // 선언 > 사용
+
+
+        let a = 10;
+        console.log(a);
+
+        // 사용 > 선언
+        f1(); 
+        function f1() {
+            alert('f1');
+        }
+
+
+        var b = 20;
+        console.log(b);
+
+        console.log(c); //Undefined
+        var c = 30;
+
+
+        console.log(d);
+        let d = 40; //error: cannot access 'd' before initialization
+        
+        
+
+
+
+    </script>
+</body>
+</html>

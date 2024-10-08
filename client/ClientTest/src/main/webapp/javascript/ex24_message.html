@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex24_message.html -->
+    <h1>메시지 박스</h1>
+
+    <form name="form1">
+        <input type="button" value="버튼1" name="btn1">
+        <input type="button" value="버튼2" name="btn2">
+        <input type="button" value="버튼3" name="btn3">
+    </form>
+
+    <script>
+
+
+        var list = document.form1.elements;
+
+        for (var i=0; i<list.length; i++) {
+            list[i].onclick = m1;
+        }
+
+        // function m1() {
+        //     alert(event.target.name);
+        // }
+
+
+        document.form1.btn1.onclick = m1;
+        document.form1.btn2.onclick = m2;
+        document.form1.btn3.onclick = m3;
+
+
+        /* 
+
+            메시지 박스, 대화 상자(Dialog Box)
+            1. void alert(message)
+            2. boolean confirm(message)
+            -----------------------------------
+            3. string prompt(message, value)
+        
+        */
+
+        function m1() {
+            alert('메시지');
+        }
+
+        function m2() {
+            var result = confirm('메시지');
+            alert(result);
+        }
+
+        function m3() {
+            // var result = prompt('메시지', '기본값');
+            // alert(result);
+            
+            var pw = prompt('암호를 입력하세요.', '');
+
+            if (pw == '1234') {
+                location.href = 'https://naver.com';
+            } else {
+                alert('failed')
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>

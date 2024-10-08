@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box { 
+            width: 150px; 
+            height: 150px; 
+            background-color: gold;
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex55_css.html -->
+    <div id="box1" class="box"></div>
+
+    <script>
+
+        const box = document.getElementsByClassName('box');
+        let isDown = false;
+
+
+        window.onmousedown = function() {
+            if (event.target.id == 'box1' && isValid(event)) {
+                isDown = true;
+                box1.style.opacity = 0.5;
+            }
+        };
+
+        function isValid(event) {
+
+            //마우스가 상자의 우측 하단부를 눌렀는지?
+            // alert(window.getComputedStyle(box1).getPropertyValue('width')); //150px
+            let w = parseInt(window.getComputedStyle(box1).getPropertyValue('width'));
+            let h = parseInt(window.getComputedStyle(box1).getPropertyValue('height'));
+
+            console.log(w, h);
+
+            if (event.offsetX >= (w - 10)
+             && event.offsetX <= w
+             && event.offsetY >= (h - 10)
+             && event.offsetY <= h) {
+                console.log(1);
+                // bax1.style.cursor = 'se-resize';
+                return true;
+             }
+        }
+
+
+        window.onmousemove =  function() {
+            if (isDown) {
+                box1.style.width = event.clientX + 'px';
+                box1.style.height = event.clientY + 'px';
+            }
+        };
+        
+        window.onmouseup =  function() {
+            isDown = false;
+            box1.style.cursor = 'default';
+            box1.style.opacity = 1;
+        };
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box { border: 1px solid black; width: 150px; height: 150px; }
+
+        #box1 { 
+            background-color: tomato; 
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            z-index: 2;
+        }
+        
+        #box2 { 
+            background-color: gold; 
+            position: absolute;
+            left: 125px;
+            top: 125px;
+            z-index: 1;
+        }
+
+        #box3 { 
+            background-color: cornflowerblue; 
+            position: absolute;
+            left: 150px;
+            top: 150px;
+        }        
+
+    </style>
+</head>
+<body>
+    <!-- ex31_zindex.html -->
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+</body>
+</html>

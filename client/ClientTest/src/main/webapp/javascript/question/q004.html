@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 하나씩? 이벤트 일괄? > 이벤트 일괄 처리하는 방식으로 하는 것이 좋음 -->
+    <form name="form1">
+        <div id="cats">
+            <img src="../images/cat01.jpg" name="cat01">
+            <img src="../images/cat02.jpg" name="cat02">
+            <img src="../images/cat03.jpg" name="cat03">
+            <img src="../images/cat04.jpg" name="cat04">
+            <img src="../images/cat05.jpg" name="cat05">
+        </div>
+    </form> 
+
+    <script>
+
+        var cat01 = window.document.form1.cat01;
+        var cat02 = window.document.form1.cat02;
+        var cat03 = window.document.form1.cat03;
+        var cat04 = window.document.form1.cat04;
+        var cat05 = window.document.form1.cat05;
+
+        cats.onmouseover = m1;
+        cats.onmouseleave = m2;
+
+        function m1() {
+            cat01.onmouseover = function() {
+                cat01.src = '../images/dog01.jpg'; 
+            }
+            cat02.onmouseover = function() {
+                cat02.src = '../images/dog02.jpg'; 
+            }
+            cat03.onmouseover = function() {
+                cat03.src = '../images/dog03.jpg'; 
+            }
+            cat04.onmouseover = function() {
+                cat04.src = '../images/dog04.jpg'; 
+            }
+            cat05.onmouseover = function() {
+                cat05.src = '../images/dog05.jpg'; 
+            }
+        }
+
+        function m2() {
+            cat01.onmouseleave = function() {
+                cat01.src = '../images/cat01.jpg';
+            }
+            cat02.onmouseleave = function() {
+                cat02.src = '../images/cat02.jpg';
+            }
+            cat03.onmouseleave = function() {
+                cat03.src = '../images/cat03.jpg';
+            }
+            cat04.onmouseleave = function() {
+                cat04.src = '../images/cat04.jpg';
+            }
+            cat05.onmouseleave = function() {
+                cat05.src = '../images/cat05.jpg';
+            }
+        }
+
+    </script>
+</body>
+</html>

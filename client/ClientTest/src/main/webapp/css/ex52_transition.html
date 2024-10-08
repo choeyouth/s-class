@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #list {
+            border: 1px solid black;
+            width: 1000px;
+        }
+
+        #list .box {
+            width: 100px; height: 50px;
+            margin: 15px 0;
+            transition-property: transform;
+            transition-duration: 5s;
+            transition-timing-function: linear;
+            /* transition-delay: 1s; */
+        }
+
+        #list #box1 {
+            background-color: tomato;
+            /* transition-timing-function: linear; */
+            transition-delay: 0s;
+        }
+
+        #list #box2 {
+            background-color: orange;
+            /* transition-timing-function: ease; */
+            transition-delay: 0.5s;            
+        }
+
+        #list #box3 {
+            background-color: gold;
+            /* transition-timing-function: ease-in; */
+            transition-delay: 1s;
+        }
+
+        #list #box4 {
+            background-color: olivedrab;
+            /* transition-timing-function: ease-out; */
+            transition-delay: 1.5s;
+        }
+
+        #list #box5 {
+            background-color: cornflowerblue;
+            /* transition-timing-function: ease-in-out; */
+            transition-delay: 2s;
+        }
+        
+        #list:hover .box {
+            transform: translate(900px, 0px)
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex52_transition.html -->
+    <div id="list">
+        <div id="box1" class="box">linear</div>
+        <div id="box2" class="box">ease(default)</div>
+        <div id="box3" class="box">ease-in</div>
+        <div id="box4" class="box">ease-out</div>
+        <div id="box5" class="box">ease-in-out</div>
+    </div>
+</body>
+</html>

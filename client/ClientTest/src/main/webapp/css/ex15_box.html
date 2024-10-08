@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            박스 모델
+            1. border, 테두리
+
+            2. width, height, 너비, 높이 
+            - 모든 태그는 영역을 가진다. 
+
+
+        */
+
+        .box { border: 1px solid black; }
+
+        #box2 {
+            background-color: gold;
+            /* width: 300px;
+            height: 200px;  */
+            /* width: 50%; */
+            /* height: 200px; */
+            /* width: auto; /* <> 100% */
+            width: 200px;
+            max-height: 200px;  
+        }
+
+        /* 충돌 >> 인라인 vs 선택자 >> 인라인 */
+        #txt1 {
+            /* height: 50px;  */
+            height: 50px !important;  /* 모든 우선순위에서 이김 > 사용 추천x.. */
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- ex15_box.html -->
+    <h1>CSS 박스 모델</h1> 
+    
+    <!-- div#box$.box{상자$}*3 -->
+    <div id="box1" class="box">상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1상자1</div>
+    <div id="box2" class="box">상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2상자2</div>
+    <div id="box3" class="box">상자3</div>
+
+    <hr>
+
+    <input type="text" id="txt1"
+        style="width: 500px; height: 300px; font-size:5em">
+
+</body>
+</html>

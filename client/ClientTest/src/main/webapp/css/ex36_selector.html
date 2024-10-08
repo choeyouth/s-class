@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        
+            가상 클래스
+            1. :first-child
+            2. :last-child
+            3. :nth-child(n)
+            4. :nth-last-child(n)
+
+            n
+            1. 숫자: index
+            2. 수열: 2n, 2n+1, 3n+2 
+            3. 수열: even, odd
+        
+        */
+
+        /* li:first-child {
+            color: blue;
+        }
+
+        li:last-child {
+            color: red;
+        }
+
+        li:nth-child(3) {  /* 서수 1부터 시작 * /
+            color: green;
+        }
+
+        li:nth-last-child(3) {  /* 밑에서 시작 * /
+            color: orange;
+        } */
+
+        /* n(0, 1, 2, 3, 4, 5, 6, 7, 8, 9..) */
+        /* li:nth-child(2n) {
+            color: orange;
+        }
+
+        li:nth-child(2n+1) {
+            color: blue;
+        }
+
+        li:nth-child(3n+1) {
+            color: green;
+        } */
+
+        
+        li:nth-child(even) {
+            color: orange;
+        }
+
+        li:nth-child(odd) {
+            color: blue;
+        }
+
+        #table1 {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        #table1 td {
+            border: 1px solid black;
+            padding: 20px 50px;
+        }
+        
+        /* #table1 tr:first-child {
+            background-color: gold;
+        } */
+
+        /* #table1 td:first-child {
+            background-color: gold;
+        } */
+
+        /* #table1 tr:nth-child(5) {
+            background-color: gold;
+        } */
+
+        #table1 tr:nth-child(even) td:nth-child(odd) {
+            background-color: gold;
+        }
+        
+        #table1 tr:nth-child(odd) td:nth-child(even) {
+            background-color: gold;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex36_selector.html -->
+    <h1>목록</h1>
+
+    <ul id="list1">
+        <li>사과</li>
+        <li>바나나</li>
+        <li>귤</li>
+        <li>포도</li>
+        <li>참외</li>
+        <li>복숭아</li>
+        <li>파인애플</li>
+        <li>수박</li>
+        <li>망고</li>
+        <li>딸기</li>
+    </ul>
+    <ul id="list2">
+        <li>키위</li>
+        <li>블루베리</li>
+        <li>샤인머스켓</li>
+        <li>체리</li>
+        <li>감</li>
+        <li>자두</li>
+        <li>무화과</li>
+        <li>오렌지</li>
+        <li>바나나</li>
+        <li>딸기</li>
+    </ul>
+
+    <h1>테이블</h1>
+    <!-- table#table1>tr*20>td*5 -->
+    <table id="table1">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+</body>
+</html>

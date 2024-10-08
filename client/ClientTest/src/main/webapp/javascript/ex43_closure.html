@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex43_closure.html -->
+    
+    <input type="button" id="btn1" value="버튼1">
+    <input type="button" id="btn2" value="버튼2">
+
+    <script>
+
+        // 클로저, Closure
+        
+        //전역 함수
+        function outer() {
+        
+            //지역 변수(outer)
+            let a = 10;
+            console.log('a', a); //a 10
+
+            //지역 함수(outer)
+            function inner() {
+                
+                //지역 변수(inner)
+                let b = 2;
+                console.log('b', b); //b 2
+
+            }
+            
+            inner();
+            // console.log('b', b); //error
+        }
+
+        outer(); //a 10
+        // inner(); //error
+        // outer.inner(); //error
+
+
+        const btn1 = document.getElementById('btn1');
+        const btn2 = document.getElementById('btn2');
+
+        let num1 = 100; //전역변수
+
+        btn1.onclick = function() {
+
+            console.log('num1', num1); //num1 100
+
+            let num2 = 200; //지역변수(btn1.onclick)
+            console.log('num2', num2); //num2 200
+
+            btn2.onclick = function() {
+            
+                let num3 = 300; //지역변수(btn2.onclick)
+                console.log('num3', num3); //num3 300
+                console.log('num2', num2); //num2 200 //********
+                num2 = 2000; //복사본 수정 > 혼돈(오류) > 자바스크립트를 제외하고 웬만한 다른 언어에서는 readonly로 수정을 막음.
+                console.log('num2', num2); //num2 2000
+                console.log('num1', num1); //num1 100
+
+            };
+
+        }; //문장의 끝(요소로 쓰이는 것) > ; 생략하지 않기
+
+    </script>
+
+
+</body>
+</html>

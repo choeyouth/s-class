@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'GmarketSansMedium';
+            color: gray;
+        }
+
+        table {
+            /* padding: 5px; */
+            width: 600px;
+            text-align: center;
+        }
+
+        th {
+            padding: 7px;
+        }
+    
+        input[type=text] {
+            width: 450px;
+            border: 1px solid #999;
+            height: 22px;
+            font-family: 'GmarketSansMedium';
+            color: gray;
+        }
+
+        input {
+            outline: none;
+        }
+
+        input[type=text]:read-only {
+            background-color: #EEEEEE;
+            cursor: not-allowed;
+        }
+
+    </style>
+</head>
+<body>
+    <form name="form1">
+        <h2>입력하기</h2>
+        <table>
+            <tr>
+                <th>번호</th>
+                <th>입력</th>
+                <th>잠금</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><input type="text" name="txt" data-no="1"></td>
+                <td><input type="checkbox" name="cb" data-no="1"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><input type="text" name="txt" data-no="2"></td>
+                <td><input type="checkbox" name="cb" data-no="2"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><input type="text" name="txt" data-no="3"></td>
+                <td><input type="checkbox" name="cb" data-no="3"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><input type="text" name="txt" data-no="4"></td>
+                <td><input type="checkbox" name="cb" data-no="4"></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><input type="text" name="txt" data-no="5"></td>
+                <td><input type="checkbox" name="cb" data-no="5"></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><input type="text" name="txt" data-no="6"></td>
+                <td><input type="checkbox" name="cb" data-no="6"></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><input type="text" name="txt" data-no="7"></td>
+                <td><input type="checkbox" name="cb" data-no="7"></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td><input type="text" name="txt" data-no="8"></td>
+                <td><input type="checkbox" name="cb" data-no="8"></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td><input type="text" name="txt" data-no="9"></td>
+                <td><input type="checkbox" name="cb" data-no="9"></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td><input type="text" name="txt" data-no="10"></td>
+                <td><input type="checkbox" name="cb" data-no="10"></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+
+        let clickNum = 0;
+        const txt = document.querySelectorAll('input[type=text]');
+        const cb = document.querySelectorAll('input[type=checkbox]');
+
+
+        for (let i=0; i<cb.length; i++) {
+            cb[i].onclick = function() {
+                if (cb[i].checked) {
+                    clickNum = i;
+                    check();
+                } else {
+                    uncheck();
+                }
+            }
+        }
+
+        function check() {
+            txt[clickNum].readOnly = true;
+        };
+
+        function uncheck() {
+            txt[clickNum].readOnly = false;
+        };
+
+
+        for (let i=0; i<txt.length; i++) {
+            txt[i].onkeydown = function() {
+                if (event.keyCode == 13) {
+                    txt[i].readOnly = true;
+                    cb[i].checked = true;
+                }
+            }
+            
+            txt[i].ondblclick = function() {
+                txt[i].readOnly = false;
+            } 
+        }
+
+    </script>
+</body>
+</html>

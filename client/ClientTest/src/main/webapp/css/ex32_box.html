@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 
+
+            box-sizing
+            - 영역의 크기를 지정하는 정책
+
+            1. content-box
+                - 기본값
+                - width/height == content 영역의 크기(padding, border 미포함)
+
+            2. border-box  
+                - width/height == content + padding + border
+                - 진짜로 눈에 보이는 상자의 크기가 width/height이다.
+        
+        */
+
+
+        #box {
+            background-color: gold;
+        
+            box-sizing: border-box;
+
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            border: 10px solid black;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex32_box.html -->
+    <div id="box">상자</div>
+</body>
+</html>

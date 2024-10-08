@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #table1 {
+            border: 1px solid blcak;
+            border-collapse: collapse;
+        }
+
+        #table1 td {
+            border: 1px solid black;
+            width: 100px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex11.html -->
+
+    <h1>이벤트</h1>
+
+    <table id="table1">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+
+        const list = document.querySelectorAll('td');
+
+        // list.forEach(td => {
+        //     td.addEventListener('mouseover', function() {
+        //         event.target.style['background-color'] = 'gold';
+        //     });
+        //     td.addEventListener('mouseout', function() {
+        //         event.target.style['background-color'] = 'transparent';
+        //     });
+        // });
+
+        // $('#table td').mouseover(function() {
+        //     $(event.target).css('background-color', 'gold');
+        // });
+        // $('#table td').mouseout(function() {
+        //     $(event.target).css('background-color', 'transparent');
+        // });
+
+        $('#table1 td').on({
+            mouseover: function() {
+                $(event.target).css('background-color', 'gold');
+            },
+            mouseout: function() {
+                $(event.target).css('background-color', 'transparent');
+            }   
+        });
+
+    </script>
+
+</body>
+</html>

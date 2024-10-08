@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.document.all.txt1.value = new Date();
+    </script>
+</head>
+<body>
+    <!-- ex03.html -->
+    <!-- 
+        자바스크립트 구문의 실행 순서
+        - 위 > 아래
+        - HTML과 JavaScript를 동시에 실행(***)
+    -->
+    <input type="text" name="txt1" size="50">
+
+    <script>
+        // Tue Sep 03 2024 11:42:31 GMT+0900 (GMT+09:00)
+        // alert(new Date())
+
+        // window.document.all.txt1.value = new Date();
+
+        // 디버깅 방법
+        // - 값 확인 > 출력
+        // 1. alert(값); > 편법
+        // 2. document.write(값); > 편법
+        // 3. console.log(값); > 정석
+
+        // document.write(new Date());
+        console.log(new Date());
+
+    </script>
+
+
+
+</body>
+</html>

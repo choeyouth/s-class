@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        
+            visibility, 가시성
+            - 요소를 화면에 출력하는 제어
+
+            visibility
+            - visible, hidden
+            - 요소의 영역은 그대로 남는다. 
+
+            display
+            - none, inline, block
+            - 요소의 영역이 사라진다. 
+
+        */
+
+        #cat2 {
+            /* visibility: hidden; */ 
+            display: none;
+        }
+
+        #cat2:hover {
+            visibility: hidden;
+        }
+
+        /* #cat1:hover + #cat2 {
+            visibility: hidden;
+        } */
+
+        #box:hover > #cat2 {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex23_visibility.html -->
+    <div id="box">
+        <img src="images/catty01.png" id="cat1">
+        <img src="images/catty02.png" id="cat2">
+        <img src="images/catty03.png" id="cat3">
+    </div>
+</body>
+</html>

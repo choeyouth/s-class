@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+            
+            CSS 구문(문법)
+            
+            - 선택자 { 속성명: 값; }
+            - 선택자 { 속성명: 값; 속성명: 값; 속성명: 값; }
+            - 선택자 {
+                속성명: 값;
+              }
+
+            div {
+                color: red;
+            }
+
+
+            선택자, Selector
+            - HTML 소스에서 특정 태그를 검색하는 도구
+            - 왜? 태그를 찾아서 태그 자신 or 내용물에 서식을 적용하려고
+            
+
+
+            <태그 name="" id"" class=""></태그>
+
+            
+            CSS 선택자
+
+            1. 전체 선택자
+                - * {}
+                - 모든 태그를 선택한다.
+
+            2. 태그 선택자
+                - 태그명 {}
+                - 태그명으로 태그를 선택한다.
+
+            3. 아이디 선택자
+                - <태그 id=”title”>
+                - 태그명#아이디 {}
+                - 유일한 식별자 > 재사용성 없음
+
+            4. 클래스 선택자
+                - <태그 class=”list”>
+                - 태그명.클래스명 {}
+                - 그룹 식별자 > 재사용 위해서
+
+
+
+
+        */
+
+
+        *#p1 {
+            color: blue;
+        }
+        
+        #p2 {
+            color: blue;
+        }
+
+        p#p3 {
+            color: blue;
+        }
+        
+        /*  클래스 앞에 태그 생략 > .list > 클래스 태그 생략 or * > 범위 달라짐 */
+        .list {
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+        <!-- ex03_selector.html -->
+        <h1 class="list">h1 태그입니다.</h1>
+        <p id="p2">p 태그입니다.</p>
+        <p id="p1">p 태그입니다.</p>
+        <p id="p3">p 태그입니다.</p>
+
+        <div class="list">div 태그입니다.</div>
+        <div class="list">div 태그입니다.</div>
+        <div class="list">div 태그입니다.</div>
+    
+        <hr>
+
+        <h2>회사 소개</h2>
+
+        <p>000 개발회사는 어쩌구 저쩌구</p>
+        <div>연락처: 010-1234-5678</div>
+        
+</body>
+</html>
+
+
+
+
+

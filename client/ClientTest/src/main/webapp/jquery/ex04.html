@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #box1 {
+            border: 1px solid black;
+            width: 200px; height: 200px;
+            background-color: gold;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex04.html -->
+    
+    <h1>jQuery Effect</h1>
+
+    <input type="button" value="버튼1" id="btn1" class="btn">
+    <input type="button" value="버튼2" id="btn2" class="btn">
+    <input type="button" value="버튼3" id="btn3" class="btn">
+
+    <hr>
+
+    <div id="box1">상자</div>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+
+        //jQuery Effect Function
+        //1. hide(time), show(time), toggle(time)
+        //2. fadeOut(time), fadeIn(time), fadeToggle(time)
+        //3. slideUp(time), slideDown(time), slideToggle(time)
+        //4. animate({속성:값}, time) > 사용자 정의 
+
+        let n = 1;
+
+        $('#btn1').click(() => {
+            // $('#box1').hide();
+            // $('#box1').hide(1000);
+            // $('#box1').hide('slow');
+            // $('#box1').hide('fast');
+            // $('#box1').fadeOut();
+            // $('#box1').slideUp();
+
+            // let obj = {
+            //     winth: '400px',
+            //     height: '400px'
+            // };
+
+            // $('#box1').animate(obj);
+
+            // $('box1').animate({
+            //     width: '400px',
+            //     height: '400px'
+            // });
+
+            // box1.style.width = parseInt(box1.style.width) + 50 + 'px'; //번거로움 > jQuery로 요약
+
+            // $('#box1').animate({
+            //     width: '+=50px',
+            //     height: '+=50px' //jQuery는 css 조작 시에 px을 적지 않아도, px로 판단하여 생략 가능하다. 
+            // });
+
+            // $('#box1').animate({
+            //     width: '+=100'
+            // }, 'slow', function() {
+            //     //애니메이션이 완료되면 호출되는 함수 
+            //     // alert('done!');
+            //     $('h1').text('jQuery Effect ' + n);
+            //     n++;
+            // }); //속성:값, duration time, complete 
+
+            // $('#box1').animate({
+            //     width: '+=100'
+            // }, 1000, function() {
+            //     $('#box1').animate({
+            //         height: '+=100'
+            //     }, 1000, function() {
+            //         $('#box1').animate({
+            //             'font-size': '3rem' //프로퍼티(객체) 이름을 문자열로 
+            //         }, 1000);
+            //     });
+            // });
+
+            // $('#box1').animate({
+            //     width: '+=100'
+            // }, 1000);
+
+            // $('#box1').animate({
+            //     height: '+=100'
+            // }, 1000);
+            
+            // $('#box1').animate({
+            //     'font-size': '3rem'
+            // }, 1000);
+
+            // $('#box1')
+            //     .animate({
+            //         width: '+=100'
+            //     }, 1000)
+            //     .animate({
+            //         height: '+=100'
+            //     }, 1000)
+            //     .animate({
+            //         'font-size': '3rem'
+            //     });
+
+            $('#box1').slideUp()
+                      .slideDown()
+                      .fadeOut()
+                      .fadeIn()
+                      .animate({
+                        borderWidth: '10px'
+                      });
+            //주체가 확실하면서, 반복 코드를 줄임 
+                    
+
+        });//btn1.click
+        
+        $('#btn2').click(() => {
+            // $('#box1').show();
+            // $('#box1').show(1000);
+            // $('#box1').show('slow');
+            // $('#box1').show('fast');
+            // $('#box1').fadeIn();
+            // $('#box1').slideDown();
+            $('#box1').animate();
+        });
+
+        $('#btn3').click(() => {
+            // $('#box1').toggle();
+            // $('#box1').show(1000);
+            // $('#box1').show('slow');
+            // $('#box1').show('fast');
+            // $('#box1').fadeToggle();
+            // $('#box1').slideToggle();
+            $('#box1').animate();
+
+        });
+
+
+    </script>
+
+</body>
+</html>

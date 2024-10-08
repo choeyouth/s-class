@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="m1();">
+    <!-- 페이지가 시작하자마자 실행 -->
+    <!-- ex16_window.html -->
+    <h1>window 객체</h1>
+
+    <form name="form1">
+        <fieldset>
+            <legend>창 제어하기</legend>
+            <input type="button" value="자식창 띄우기" name="btn1">
+            <input type="button" value="자식창 닫기" name="btn2">
+        </fieldset>
+        <fieldset>
+            <legend>자식창 자원 접근하기</legend>
+            <input type="button" value="자식창에 있는 텍스트 박스에 접근하기" name="btn3">
+            <hr>
+            <input type="text" name="txt1">
+        </fieldset>
+
+        <h2>아이디 중복검사 / 우편번호 검색하기/ 결제하기 등</h2>
+        <fieldset>
+            아이디: <input type="text" name="id" size="10" readonly>
+            <input type="button" value="중복검사" name="btnCheck" class="btn-check">
+        </fieldset>
+    </form>
+
+    <script>
+        var btn1 = window.document.form1.btn1;
+        var btn2 = window.document.form1.btn2;
+        var btn3 = window.document.form1.btn3;
+        var btnCheck = window.document.form1.btnCheck;
+
+        btn1.onclick = m1;
+        btn2.onclick = m2;
+        btn3.onclick = m3;
+        btnCheck.onclick = m4;
+
+        var child;
+
+        function m1() {
+            //자식창 띄우기
+
+            //object window.open(URL, name, options)
+            //1. URL: 새창의 URL
+            //2. name: 새창의 이름
+            //3. options: 옵션
+
+            // window.open('ex15_attribute.html', 'child', ''); //빈 문자열 > 아무것도 넣지 않을 때
+            // window.open('https://naver.com', 'child', '');
+            // window.open('ex16_child.html', 'child', '');
+            // 이름이 있으면 창이 열려있는 상태에서 창 띄우기 버튼을 눌러도 여러 개 열리지 않음 > 중복 창 띄우기 방지를 위함
+            // 이름이 없으면 여러 개 띄우기가 가능 
+
+            child = window.open('ex16_child.html', 'child', 'width=300, height=200, left=0, top=0');
+        }
+
+        function m2() {
+            //자식창 닫기
+            //window.close();
+
+            // 자식 창의 window.close();
+            console.log(child);
+            child.close();
+        }
+
+        function m3() {
+
+            //부모창 > 자식창
+            window.document.form1.txt1.value = '홍길동';
+        }
+
+        function m4() {
+            window.open('ex16_idcheck.html', 'idcheck', 'width=300, height=300')
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            Opacity, 불투명도
+            - 0~1
+            - 0(투명)~1(불투명도)
+            - 태그의 투명도 조절    
+        */
+        #box {
+            /* border: 1px solid black; */
+            width: 670px; /* 너비 고정 */
+        }
+
+        /* #cat3 {
+            opacity: 1;
+        } */
+
+/*      body {
+            border: 1px solid black;
+            cursor: progress;
+        } */
+
+        #box > img {
+            opacity: .3;
+            /* cursor: crosshair; */
+        }
+
+        #box > img:hover {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex24_opacity.html -->
+    <div id="box">
+        <img src="images/catty01.png" id="cat1">
+        <img src="images/catty02.png" id="cat2">
+        <img src="images/catty03.png" id="cat3">
+        <img src="images/catty04.png" id="cat4">
+        <img src="images/catty05.png" id="cat5">
+    </div>
+</body>
+</html>

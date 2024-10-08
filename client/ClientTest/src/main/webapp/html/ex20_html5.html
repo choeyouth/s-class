@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>HTML5</h1>
+
+	<form method="POST" action="ex18.jsp">
+	
+		<label>이름: <input type="text"></label>
+		<hr>
+		
+		<input type="text" value="이름을 입력하세요."
+			   onfocus="this.value='';"><br> 
+		<input type="password" value="암호를 입력하세요."
+			   onfocus="this.value='';">
+		<hr>
+		
+		<input type="text" placeholder="이름을 입력하세요."><br>
+		<input type="password" placeholder="암호를 입력하세요.">
+		<hr>
+		
+		<textarea cols="50" rows="5" placeholder="자기소개를 입력하세요."></textarea>
+		<hr>
+
+		<h2>입력값 유효성 검사 - 필수값</h2>
+		
+		<h3>로그인</h3>
+		<div><input type="text" size="10" placeholder="아이디" required value="hong"></div>
+		<div><input type="text" size="10" placeholder="암호" required value="1234"></div>
+		<hr>
+				
+		<!-- 
+			<input type="text">
+			- 어떤 데이터를 입력받던지 가장 많이 사용;;
+			- 어떤 형태의 데이터가 입력 > 예측 불가능 > 입력할 업무 데이터 형식 고정 > 유효성 검사 구현(직접 프로그래밍) 
+			
+		 -->
+		
+		성별: <input type="text">
+		<hr>
+		
+		성별: <input type="radio" value="m"> 남자
+			 <input type="radio" value="f" checked> 여자
+		<hr>
+		
+		성별: <select>
+				<option value="m">남자</option>
+				<option value="f">여자</option>
+			 </select>
+		<hr>
+		
+		URL: <input type="url"> <!-- 의미 강조 태그 -->
+		<hr>
+		
+		Email: <input type="email">
+		<hr>
+		
+		숫자: <input type="text">
+		<hr>
+		
+		숫자(수치): <input type="number" min="0" max="100" step="10">
+		<hr>
+		
+		범위: <input type="range"
+				oninput="document.getElementById('rtxt').value = this.value;"
+				min="50" max="500" step="5"
+						>
+		<input type="text" id="rtxt">		
+		<hr>
+		
+		색상: <input type="color"
+				onchange="document.getElementById('ctxt').value = this.value; 
+				document.body.bgColor = this.value;">
+		<input type="text" id="ctxt">
+		<hr>
+		
+		날짜시간:
+		<input type="date">
+		<hr>
+		<input type="month">
+		<hr>
+		<input type="week">
+		<hr>
+		<input type="time">
+		<hr>
+		<input type="datetime">
+		<hr>
+		<input type="datetime-local">
+		<hr>
+		
+		사원:
+		<input type="text" size="5" list="data1">
+		<datalist id="data1">
+			<option value="홍길동"></option>
+			<option value="홍순신"></option>
+			<option value="아무개"></option>
+			<option value="하하하"></option>			
+		</datalist>
+		<hr>
+		
+		<select>
+			<option>홍길동</option>
+			<option>아무개</option>
+			<option>하하하</option>
+		</select>
+		<hr>
+		
+		<progress></progress><br>
+		<progress value="0"></progress><br>
+		<progress value="0.5"></progress><br>
+		<progress value="1"></progress><br>
+		<progress value="-1"></progress><br> <!-- 진행률 >> 표현 불가능 -->
+		<progress value="50" max="100"></progress><br>
+		
+		<meter></meter><br>
+		<meter value="0"></meter><br>
+		<meter value="0.5"></meter><br>
+		<meter value="1"></meter><br>
+		<meter value="50" min="-100" max="100"></meter><br>
+		<meter value="30" min="0" max="100" low="40" high="80"></meter><br> <!-- 위험 데이터 -->
+		<meter value="60" min="0" max="100" low="40" high="80"></meter><br> <!-- 안전 데이터 -->
+		<meter value="90" min="0" max="100" low="40" high="80"></meter><br> <!-- 위험 데이터 -->
+		<hr>
+		
+		<details>
+			<summary>HTML</summary>
+			<p>HTML 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구</p>
+		</details>
+		<hr>
+		
+		
+		<!-- 폼태그 내에서 영역을 만드는 역할 -->	
+		<fieldset>
+			<legend align="center">로그인</legend>
+			<div>
+				<div>아이디: <input type="text" size="5"></div>
+				<div>암호: <input type="text" size="5"></div>
+			</div>
+		</fieldset>
+		<hr>
+		
+		<marquee scrollamount="3" behavior="scroll" direction="down">🐢🐢속보입니다. 남부 지역에 태풍이 어쩌구 저쩌구..🐢🐢</marquee>
+		
+				
+		
+		<hr>
+		<input type="submit" value="보내기">
+	</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

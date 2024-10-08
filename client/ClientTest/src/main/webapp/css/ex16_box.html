@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            블럭태그와 인라인태그의 너비/높이 정책
+            - width, height > 블럭태그 or 일부 인라인 태그
+
+            블럭태그 정책
+            1. 기본 정책
+                a. 너비: 100% or auto
+                b. 높이: 내용물의 높이가 영역의 높이가 된다. 
+            2. 명시적 기재
+                - 내용물이 영역을 벗어나면(Overflow) 영역을 빠져나간다. 
+                a. 너비: 지정한 수치
+                b. 높이: 지정한 수치
+
+            인라인태그 정책
+            1. 기본 정책
+                a. 너비: 내용물의 너비가 영역의 너비가 된다. 
+                b. 높이: 내용물의 높이가 영역의 높이가 된다. 
+            2. 명시적 기재
+                - 상자가 커지면 다른 영역에 영향을 미치기 때문에 막아둠
+                a. 너비: 불가능
+                b. 높이: 불가능 
+                c. 예외: 폼태그 소속 인라인 태그 or 이미지 태그
+
+        */
+
+        #box1 { background-color: tomato; }
+        #box2 { background-color: gold; }
+        #box3 { background-color: cornflowerblue; }
+
+        #box2 {
+            width: 200px;
+            height: 100px;
+        }
+
+        #box2 > span {
+            background-color: green;
+            width: 200px;
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex16_box.html -->
+    <h1>CSS 박스 모델</h1> 
+    
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자입니다. 상자입니다. 상자입니다. <span>상자</span>입니다. 상자입니다. 상자입니다. 상자입니다. 상자입니다. </div>
+    <div id="box3" class="box">상자3</div>
+</body>
+</html>

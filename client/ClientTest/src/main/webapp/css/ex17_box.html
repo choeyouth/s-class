@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            박스 모델
+            1. 테두리, border
+            2. 크기, width/height
+            3. 여백, padding/margin
+
+            padding
+            - 테두리와 내용물 사이의 간격
+            - 안쪽 여백 
+
+            margin
+            - 테두리와 외부 요소 사이의 간격
+            - 바깥쪽 여백
+        */
+
+        #box1 { background-color: tomato; }
+        #box2 { background-color: gold; }
+        #box3 { background-color: cornflowerblue; }
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 10px solid black;
+        }
+
+        /* #box2 {
+            padding: 20px
+        } */
+
+        /* #box2 {
+            margin: 20px;
+        } */
+
+        /* #box2 {
+            /* margin: 20px */
+            /* margin-bottom: 20px; 요소 간의 배치 조절 위함 */
+            /* margin-top: 50px;
+            margin-right: 30px;
+            margin-bottom: 100px;
+            margin-left: 20px; */
+            /* 
+                top > right > bottom > left
+                12시를 기준으로 시계방향 (12시 - 3시 - 6시 - 9시)
+            */
+            
+            /* margin: 50px 30px 100px 20px; 순서 중요 >> 모두 같은 숫자이기 때문에 */
+            
+            /* top > right/left > bottom */
+            /* margin: 50px 30px 100px; */
+            
+            /* top/bottom > right/left */
+            /* margin: 50px 100px; */
+
+            /* margin: 50px;
+            padding: 30px; * /
+
+        
+        } */
+
+
+        #box1 {
+            margin-bottom: 100px;
+        }
+
+        #box2 {
+            margin-top: 50px;
+        }
+
+        /* .box {
+            /* margin-bottom: 20px; * /
+        } */
+        /* 모든 상자의 아래쪽에 간격 주기 */
+        
+    </style>
+</head>
+<body>
+    <!-- ex17_box.html -->
+    <h1>CSS 박스 모델</h1> 
+    
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+    
+</body>
+</html>

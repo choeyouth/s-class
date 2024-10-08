@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .txts { display: block; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <!-- ex30_dom.html -->
+    <h1>DOM</h1>
+
+    <form name="form1">
+        <h1 id="title">Controls</h1>
+        <div>
+            <input type="text" name="txt1" id="txt1" class="txts">
+            <input type="text" name="txt2" id="txt2" class="txts">
+            <input type="text" name="txt3" id="txt3" class="txts">
+            <input type="button" name="btn1" value="버튼">
+        </div>
+    </form>
+
+    <script>
+
+        /* 
+
+            자바스크립트 > (접근) + BOM > HTML
+            자바스크립트 > (접근) + DOM > HTML
+
+            1. BOM, Browser Object Model
+                - 트리 구조
+                - 일부 태그 조작
+                - 기능 부족
+
+            2. DOM, Document Object Model
+                - 트리 구조
+                - 모든 태그 조작
+                - 기능 풍부 
+
+            DOM
+            - BOM 기능 + 확장
+            - BOM > name 식별자 사용
+            - DOM > name, id, class 등 > 태그 검색 용이
+            - CSS 조작 가능(BOM 불가능)
+            - PCDATA 조작 가능(BOM 불가능)
+            - 동적 태그 생성, 동적 속성 생성(BOM 불가능 - <option> 유일)
+            - DOM Level 1 > DOM Level 2 > DOM Level 3
+
+
+            (트리구조 > 루트가 가장 중요)
+            BOM의 최상위 객체 > window
+            DOM의 최상위 객체 > document
+            
+            
+            DOM에서 제공하는 태그 검색 도구(함수)
+            1. id 검색      > object document.getElementById('id') [id:유일]
+            2. class 검색   > object[] document.getElementsByClassName('class') [class:여러개 가능]
+            3. name 검색    > object[] document.getElementsByName('name')
+            4. 태그명 검색  > object[] document.getElementsByTagName('tagname')
+            5. CSS 선택자 검색 
+                - ES6 추가(2014년) > 이전부터 사용했음(라이브러리) > jQuery
+                - object document.querySelector('CSS 선택자')
+                - object[] documnet.querySelectorAll('CSS 선택자')
+
+        */
+
+        // <input type="text" name="txt1" id="txt1" class="txts">
+
+        // BOM
+        document.form1.txt1.value = 'BOM';
+
+        // DOM 
+        document.getElementById('txt1').value = 'DOM';
+
+
+        // *** BOM과 DOM의 검색 결과(태그)는 동일한 객체다.
+        console.log(document.form1.txt1 == document.getElementById('txt1'));
+        console.log(document.form1.txt1 === document.getElementById('txt1'));
+
+        // DOM > class
+        var txts = document.getElementsByClassName('txts');
+        console.log(txts.length); //3 > 배열
+        console.log(typeof txts); //object
+
+        for (var i=0; i<txts.length; i++) {
+            txts[i].value = i;
+        }
+
+        //DOM > name > 잘 사용 안 함 
+        document.getElementsByName('txt1')[0].value = '홍길동';
+
+        //DOM > tagname
+        var input = document.getElementsByTagName('input');
+        for (var i=0; i<input.length; i++) {
+            input[i].value = i;
+        }
+
+
+        //CSS 검색
+        // document.querySelector('txt1') > 태그 선택자
+        document.querySelector('#txt1').value = '아무개';
+        document.querySelector('.txts:nth-child(2)').value = '하하하';
+
+
+        console.log(document.querySelectorAll('.txts').length); //3
+
+        
+    </script>
+</body>
+</html>

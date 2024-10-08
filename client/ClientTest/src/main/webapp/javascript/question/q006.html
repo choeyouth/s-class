@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        @font-face { 
+            font-family: 'BRRA_R'; 
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/BRRA_R.woff') 
+            format('woff'); 
+            font-weight: normal; 
+            font-style: normal; 
+        }
+
+        body {
+            padding: 17px;
+        }
+
+        #imgs {
+            width: 550px;
+            border: 1px solid #DEDEDE;
+        }
+
+        img {
+            padding-top: 5px;
+            padding-bottom: 6px;
+        }
+
+        #img1 {
+            padding-left: 5px;
+        }
+
+        #img2, #img3 {
+            padding-left: 1px;
+        }
+
+        #txt {
+            width: 550px;
+            border: white;
+            font-family: 'BRRA_R';
+            padding: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- border 감춘 텍스트박스 -->
+    <form name="form1">
+        <div id="imgs" name="imgs">
+            <img src="../images/img01.jpg" name="img1" id="img1" data-no="4">
+            <img src="../images/img02.jpg" name="img2" id="img2" data-no="5">
+            <img src="../images/img03.jpg" name="img3" id="img3" data-no="6">
+        </div>
+        <div>
+            <input type="text" name="txt" id="txt" readonly="readonly">
+        </div>
+    </form>
+
+    <script>
+
+        // var imgs = document.form1.imgs;
+        var img1 = document.form1.img1;
+        var img2 = document.form1.img2;
+        var img3 = document.form1.img3; 
+        var txt = document.form1.txt;
+
+
+        imgs.onmouseover = m1;
+        imgs.onmouseleave = m2;
+
+        function m1() {
+            img1.onmouseover = function() {
+                img1.src = '../images/img04.jpg';
+                txt.value = "'스키'타는 사람이 '당근'으로 변했습니다.";
+            }
+            img2.onmouseover = function() {
+                img2.src = '../images/img05.jpg';
+                txt.value = "'해바라기'가 '피망'으로 변했습니다.";
+            }
+            img3.onmouseover = function() {
+                img3.src = '../images/img06.jpg';
+                txt.value = "'나무'가 '개'가 됐습니다.";
+            }
+        }
+
+        function m2() {
+            img1.onmouseleave = function() {
+                img1.src = '../images/img01.jpg';
+                txt.value = '';
+            }
+            img2.onmouseleave = function() {
+                img2.src = '../images/img02.jpg';
+                txt.value = '';
+            }
+            img3.onmouseleave = function() {
+                img3.src = '../images/img03.jpg';
+                txt.value = '';
+            }
+        }
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<!-- <body background="./images/dog.jpg"> ./ > 생략 가능 
+<body background="images/dog.jpg"> 
+<body background="C:\class\code\client\ClientTest\src\main\webapp\image\dog.jpg"> 로컬 경로 : 사용 불가 -->
+<body background="https://s3.ap-northeast-2.amazonaws.com/elasticbeanstalk-ap-northeast-2-176213403491/media/magazine_img/magazine_262/%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg"> <!-- URL로 접근 가능한 자원은 모두 접근 가능 >> 사용 가능 --> 
+	<!--
+	 
+		중심 : webapp > ex05_body.html
+		대상 : webapp > images > dog.jpg
+		
+		1. 상대 경로
+		- 내가 중심으로 다른 사람의 위치를 표현하는 방식 
+		- 나? > 현재 페이지
+		- 내가 중심 > 현재 페이지가 있는 폴더 
+		- . == webapp 
+		
+		2. 절대 경로 
+		- 절대 기준점읠 중심으로 다른 사람의 위치를 표현 방식
+		- / == webapp(루트 폴더 > Context root) 
+		- /client == webapp (web module path)
+		
+		
+	 -->
+	<!-- 
+			
+		<body> 태그
+		- 모든 출력 데이터를 관리하는 컨테이너
+		
+		<body> 속성
+		
+		1. bgcolor
+			- background color
+			- 문서 배경색
+		
+		2. background
+			- background image
+			- 문서 배경 이미지 
+		
+		
+		HTML의 색상 표현법
+		1. 색상명
+			- Named Color
+			- Well-known color
+			- 미리 약속된 몇가지 색상명을 사용(140개)
+		
+		2. RGB
+			- Red + Green + Blue = 조합
+			- 각 색상의 단계: 256단계 지원(0~255 > 00~FF)
+			- 256 x 256 x 256 = 16,777,216
+			- 00 00 00(검정색) ~ FF FF FF(흰색) 
+			- #FF0000 > 빨간색 
+			- #00FF00 > 녹색
+			- #0000FF > 파란색
+			- #FFFF00 > 노랑색
+			- #FF00FF > 보라색
+			- #00FFFF > 
+			- #23FA5B > 	
+			
+			
+		HTML의 자원의 경로 표기법
+		
+		경로 구분자 
+		1. \ 
+			- 자바
+			- file:\\C:\class\code\client
+		
+		2. /
+			- 웹(URL)
+			- http://localhost:8090/client/ex01.html
+		
+		경로 표현 방식
+		1. 상대 경로
+		- . 으로 시작
+		- . : 웹페이지가 있는 현재 폴더
+		- .. : 부모 폴더
+		
+		2. 절대 경로
+		- / 으로 시작
+		- / : 웹 루트 폴더(webapp)
+		
+		3. 로컬 경로
+		- 자바에서 경로 방식
+		- C:\class\code\images\dog.jpg
+		- 사용 금지(불가)
+		
+		4. 외부 경로
+		- 다른 사이트(서버)의 자원의 URL
+		- 종종 사용
+		
+		웹에서 사용 가능한 이미지 포맷 
+		- JPG(JPEG)
+		- GIF
+		- PNG
+		- 공식적으로 지원 가능한 이미지 포맷(대중적, 안전) > 실제로 다른 포맷도 사용 가능 > 확장한 것
+		
+				
+	 -->
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex01.html -->
+    <h1>jQuery</h1>
+
+    <input type="text" name="txt1" id="txt1">
+
+    <!-- 로컬 설치 -->
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
+
+    <!-- CDN 설치 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <script>
+
+        /* 
+        
+            jQuery
+            - https://jquery.com
+            - jQuery is a fast, small, and feature-rich JavaScript library.
+            - It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.
+        
+        */
+
+        // function f1() {
+
+        // };
+
+        // console.log(jQuery); //ƒ (e,t){return new ce.fn.init(e,t)}
+        // console.log(f1);
+
+        //1. BOM > BOM 트리
+        window.document.all.txt1.value = 'BOM';
+
+        //2. DOM > getXXX() or DOM Tree(Axis) or querySelector()
+        document.getElementById('txt1').value = 'DOM';
+
+        //3. jQuery > 쉽고 편하게
+        jQuery('#txt1').val('jQuery');
+
+    </script>
+
+</body>
+</html>

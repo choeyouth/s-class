@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex42_window.html -->
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+
+    <script>
+
+        /* 
+        
+            window 객체
+            - window.open()
+            - window.close()
+        
+        */
+
+
+        //*** 자바스크립트에서 전역 변수 or 전역 함수는 항상 window 객체의 프로퍼티로 자동 등록된다. 
+        var a = 10; //전역 변수
+        window.b = 20; //window 프로퍼티 (동적으로 프로퍼티 추가)
+
+        var a = 30; //변수(X), 프로퍼티(O)
+
+        console.log(window.b); //20
+        console.log(window.a); //10
+
+        // alert(window); //object window
+        // console.log(window);
+
+
+        //전역 함수
+        function test() {
+
+            //지역함수
+            function aaa() {
+
+            }
+            aaa(); 
+
+        }
+        test();
+        window.test();
+        //전역 함수는 자동으로 window에 포함됨
+        //지역 함수는 window 객체가 멤버로 인식할 수 없음 
+
+        // window.test() = function() {
+
+        // };
+
+
+        //향상된 for문: 배열, 컬렉션에서 요소를 하나씩 가져오는 것
+        //향상된 for문(X) > 객체의 프로퍼티 탐색
+        for (let p in window) {
+            console.log(p);
+        }
+
+        // let과 const는 전역 > window 프로퍼티로 등록되지 않는다.
+        let age = 20;
+        console.log(window.age); //undefined
+        
+
+        //대다수는 window 객체에 포함된다.  
+        // window.alert('test');
+        // window.confirm('test');
+        // window.setTimeout();
+        // window.setInterval();
+
+
+
+
+        // ---------------------------------------------------------------------
+        
+        // 자바스크립트 배열
+        // - 배열 > index
+        const list = [ 100, 200, 300, 400, 500 ];
+        console.log(list.length); //5
+        console.log(list[0]); //100
+        
+        for (let p in list) { //프로퍼티 탐색 구문
+            console.log(p);
+            // 0, 1, 2, 3, 4 > 방번호 출력 > 배열 방번호 > 첨자(X), 프로퍼티(O)
+        }
+
+        //자바스크립트에서 배열은 객체이다.
+        //배열처럼 쓰기 위해 만든 내장 객체이다. (Array 객체)
+        console.log(list[0]); //key값으로 접근하는 것
+        // console.log(list.0);
+        console.log(list[10]); //undefined > 없는 key값 == 프로퍼티 
+        
+
+        const txt = document.getElementsByClassName('txt');
+        
+        console.log(txt.length); //3 - Elements... > return값: 배열
+        console.log('================');
+        console.log(list); //[ 100, 200, 300, 400, 500 ] > 이름X: 배열 > 순수배열
+        console.log(txt); //[ input, input, input ] > 이름O: 컬렉션 > 유사배열
+
+
+    </script>
+
+</body>
+</html>

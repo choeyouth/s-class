@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+
+            display 속성
+            - 요소를 화면에 출력되는 방식을 조작
+
+            1. none
+            2. block
+            3. inline
+            4. inline-block
+                - inline: 한 줄로 출력
+                - block: 너비, 높이 조정 가능
+                - 둘의 성질을 다 갖는 중간 성질의 속성
+
+        */
+
+        .box, .link {
+            border: 1px solid black;
+        }
+
+        .box {
+            display: inline-block; /* 블럭 태그 > 디폴트 값: block */
+            width: 100px;
+            height: 100px;
+        }
+
+        .link {
+            display: block; /* 인라인 태그 > 디폴트 값: inline >> 태그에 따라 기본값이 달라짐 */
+            width: 100px;
+            height: 100px;
+        }
+
+
+        #menu {
+            /* border: 1px solid red; */
+            padding: 0;
+        }
+
+        #menu li {
+            /* border: 1px solid blue; */
+            display: inline-block;
+            width: 100px;
+
+        }
+
+        #cat > img {
+            display: block;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- ex25_display.html -->
+
+    <ul id="menu">
+        <li>메뉴</li>
+        <li>메뉴</li>
+        <li>메뉴</li>
+        <li>메뉴</li>
+        <li>메뉴</li>
+    </ul>
+
+
+    <h1>블럭태그</h1>
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+
+    <h1>인라인태그</h1>
+
+    <!-- 빈링크 -->
+    <a href="#!" id="link1" class="link">링크1</a> <!-- 링크를 눌렀을 때 아무 반응이 없어야 할 때 > '#' 입력 > 스크롤바가 생길 때 > 맨 위로 이동 >> # 뒤에 문자 넣기(대부분 '!' 넣음) >> 진짜.. 아무 반응 xxxx -->
+    <a href="#!" id="link2" class="link">링크2</a>
+    <a href="#!" id="link3" class="link">링크3</a>
+
+    <h1>고양이</h1>
+
+    <div id="cat">
+        <img src="images/catty01.png">
+        <img src="images/catty01.png">
+        <img src="images/catty01.png">
+        <img src="images/catty01.png">
+        <img src="images/catty01.png">
+        <img src="images/catty01.png">
+        <img src="images/catty01.png">
+        <img src="images/catty01.png">
+        <img src="images/catty01.png">
+        <img src="images/catty01.png">
+        <img src="images/catty01.png">
+    </div>
+</body>
+</html>

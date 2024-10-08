@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        @font-face { font-family: 'BRRA_R'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/BRRA_R.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+        body {
+            margin: 50px;
+        }
+
+        #box {
+            width: 570px;
+            height: 170px;
+            border: 1px solid #808080;
+            margin-bottom: 20px;
+            font-size: 110px;
+            text-align: center;
+        }
+
+        #btn {
+            margin-left: 23px;
+        }
+
+        input {
+            border: 1px solid #808080;
+            width: 167px;
+            height: 50px;
+            font-family: 'BRRA_R';
+            font-size: 18px;
+            color: #444444;
+            outline: none;
+        }
+
+        #start {
+            background-color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 타이머.. 세 개의 text 박스 > 60초 되면 n ++.. -->
+    <div>
+        <input type="text" id="box" value="00 : 00 : 00">
+    </div>
+    <div id="btn">
+        <input type="button" value="시작" id="start">
+        <input type="button" value="멈춤" id="stop">
+        <input type="button" value="종료" id="end">
+    </div>
+
+    <script>
+
+        let min = 0;
+        let sec = 0;
+        let ms = 0;
+        let timer = null;
+        const box = document.getElementById('box');
+        const start = document.getElementById('start');
+        const stop = document.getElementById('stop');
+        const end = document.getElementById('end');
+
+        start.addEventListener('click', function() {
+            timer = setInterval(function() {
+                
+                box.value = String(min).padStart(2, "0") + " : " + String(sec).padStart(2, "0") + " : " + String(ms).padStart(2, "0");
+
+                ms++;
+
+                if (ms == 60) {
+                    ms = 0;
+                    sec++;
+                    
+                    if (sec == 60) {
+                        sec = 0;
+                        min++;
+                    } 
+                }   
+
+            }, 10);
+
+            start.disabled = true;
+
+        });
+
+        stop.addEventListener('click', function() {
+            clearInterval(timer);
+
+            start.disabled = false;
+
+        });
+
+        end.addEventListener('click', function() {  
+            clearInterval(timer);
+            min = 0;
+            sec = 0;
+            ms = 0;
+            box.value = "00 : 00 : 00";
+
+            start.disabled = false;
+
+        });
+
+    </script>
+</body>
+</html>

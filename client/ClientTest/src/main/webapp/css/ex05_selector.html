@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            CSS 선택자
+            1.  전체 선택자
+            2.  태그 선택자
+            3.  아이디 선택자
+            4.  클래스 선택자
+            5.  그룹 선택자
+
+            6. 자식 선택자
+                - Child Selector
+                - 부모선택자 > 자식선택자 {}
+                - 조건역할 > 검색대상 {} 
+                - 친부모를 조건으로 자식을 선택
+
+            7. 자손 선택자
+                - Descendant Selector
+                - 부모선택자 자식선택자 {}
+                - 조상을 조건으로 자손을 선택
+
+            > 2~7 순서대로 판단 후 결정 
+
+        */
+
+        /* ol > li {
+            color: blue;
+        } */
+
+        /* ul > li > b {
+            color: red;
+        } */
+
+        /* ul b {
+            color: red;
+        } */
+
+        ol#list1 b {
+            color: orange;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- ex05_selector.html -->
+
+    <h1>목록</h1>
+
+    <ol>
+        <li>자바 <b>주요</b> 문법</li>
+        <li>오라클 <b>주요</b> 문법</li>
+        <li>HTML <b>주요</b> 문법</li>
+    </ol>
+
+    <ol id="list1">
+        <li>자바 <b>주요</b> 문법</li>
+        <li>오라클 <b>주요</b> 문법</li>
+        <li>HTML <b>주요</b> 문법</li>
+    </ol>
+
+    <ul>
+        <li>자바 <b>주요</b> 문법</li>
+        <li>오라클 <b>주요</b> 문법</li>
+        <li>HTML <b>주요</b> 문법</li>
+    </ul>
+
+
+
+</body>
+</html>

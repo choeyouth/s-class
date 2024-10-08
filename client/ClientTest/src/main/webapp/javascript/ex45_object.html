@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        //객체 생성
+        const u1 = {
+            name: '홍길동',
+            age: 20
+        
+        }
+        const u2 = {
+            name: '아무개',
+            age: 22
+        }
+        
+
+        //생성자 함수
+        //- 클래스 역할을 대신
+        //- 자바의 생성자와 유사
+        /* 
+            class User {
+                private String name;
+                private int age;
+
+                public User(String name, int age) {
+                    this.name = name;
+                    this.age = age;
+                }
+            }
+        */        
+
+        //생성자 함수
+        //- 함수명은 파스칼 표기법으로 작성한다.(문법X 관례적) 
+        function User(name, age) {
+            this.name = name; // 클래스의 멤버변수 역할 > private String name
+            this.age = age; // praivate int age
+            console.log(this); //window
+        }
+
+        // *** 생성자 함수 호출은 절대로 그냥 함수처럼 호출하면 안 된다. 
+        // User('강아지', 3);
+
+        //*** 생성자 함수는 반드시 new와 함께 사용한다.
+        //1. new 호출 > 객체를 생성 > new Object() 실행
+        //2. User() 호출 > 1번에 만든 객체를 초기화
+        const o1 = new User('고양이', 2);
+        console.log(o1); //User {name: '고양이', age: 2}
+
+        const o2 = new User('거북이', 100);
+        console.log(o2); //User {name: '거북이', age: 100}
+
+        const o3 = {
+            name: '두루미',
+            age: 50
+        };
+        //클래스에 준하는 규칙을 만들고 싶을 때 > 생성자 함수 활용 
+        
+
+        //1. {} 
+        //2. Array()
+        const list = new Array();
+
+        function Array() {
+            this.length = 0;
+        }
+
+
+        const obj1 = {};
+        const obj2 = new Date();
+        const obj3 = new Array();
+
+        console.log(typeof obj1); //Object
+        console.log(typeof obj2); //Object
+        console.log(typeof obj3); //Object
+        //모두 같은 형태로 만들어진 함수 > Object
+
+        console.log(obj1.constructor.name); //Object
+        console.log(obj2.constructor.name); //Date
+        console.log(obj3.constructor.name); //Array
+
+
+        const user1 = {
+            name: '유재석',
+            age: 20,
+            // info: function() {술
+            //     // console.log(name, age); //this 생략 불가능 
+            //     console.log(this.name, this.age);
+            // }
+            info: f1
+        }
+
+        function f1() {
+            //*** 호출되는 주체에 따라 this가 매번 달라진다. 
+            console.log(this.name, this.age);
+        }
+
+        user1.info(); //f1() 호출 > 유재석, 20  / this = name, age
+
+        window.f1(); //undefined > this = window
+
+        
+</body>
+</html>

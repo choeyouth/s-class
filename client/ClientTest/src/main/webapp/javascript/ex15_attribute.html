@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex15_attribute.html -->
+    <h1>자바스크립트로 태그의 속성을 조작하기</h1>
+
+    <form name="form1">
+        <input type="text" name="txt1">
+        <input type="button" value="끄기" id="btn1">
+    </form>
+
+    <script>
+        var txt1 = window.document.form1.txt1;
+        var btn1 = window.document.form1.btn1;
+        
+        btn1.onclick = m1;
+
+        function m1() {
+            /* 
+                HTML 속성 제어하기
+
+                1. HTML의 대부분의 속성은 자바스크립트에서 동일한 이름의 프로퍼티로 제공한다. 
+                    ex) <input type="text" size="10" name="txt1">
+                         window.document.form1.txt1.size = 10;
+
+                2. HTML 속성명이 복합어 > 자바스크립트에서는 카멜 표기법으로 작성한다. 
+                    ex) <input type="text" maxlength="5" name="txt1">
+                         txt1.maxLength = 5;
+
+                3. HTML 속성값이 플래그 타입 > boolean 조작
+                    ex) <input type="text" readonly name="txt1">
+                         txt1.readOnly = true;
+
+                4. HTML 속성값이 열거형/색상 > 문자열 조작
+                    ex) <p align="center">Hello</p>
+                         txt1.align = 'center';
+            */
+
+            txt1.size++;
+            txt1.maxLength = 5;
+            txt1.readOnly = true;
+            txt1.align = 'center';
+            txt1.type = 'radio'; // 이런 행동은 되도록 금지!!
+            txt1.name = 'txt2'; // PK 바꾸는 행동 > 절대 금지!!
+
+            alert(window.document.body.bgColor);
+
+
+            // 토글 버튼, Toggle Button
+            // - 하나의 버튼으로 On/Off 조작
+            if (window.document.body.bgColor != 'black') {
+                window.document.body.bgColor = 'black';
+                btn1.value = '켜기';
+            } else {
+                window.document.body.bgColor = 'white';
+                btn1.value = '끄기';
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>

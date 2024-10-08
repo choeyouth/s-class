@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box { 
+            width: 150px; 
+            height: 150px; 
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex52_css.html -->
+    
+    <script>
+
+        //화면 클릭 > 상자 생성 > 클릭한 곳으로 이동 
+        //동적 태그 생성 + CSS
+
+        let zIndex = 1;
+
+        window.onmousedown = function() {
+
+            if (event.buttons == 1) {
+                const r = parseInt(Math.random() * 256); //0~255
+                const g = parseInt(Math.random() * 256); //0~255
+                const b = parseInt(Math.random() * 256); //0~255
+
+                // const a = Math.random(); //0~1
+                const a = 1;
+
+                const box = document.createElement('div');
+
+                box.className = 'box';
+                box.style.backgroundColor = `rgb(${r}, ${g}, ${b}, ${a})`;
+                box.style.left = event.clientX - 75 + 'px';
+                box.style.top = event.clientY - 75 + 'px';
+                
+                document.body.appendChild(box);
+            } else if (event.buttons == 2) {
+                // alert(event.target.nodeName);
+                document.body.removeChild(event.target);
+            } else if (event.buttons == 4) {
+                // zindex의 값을 늘려줌 
+                event.target.style.zIndex = zIndex;
+                zIndex++;
+            }
+        };
+
+        window.oncontextmenu = () => false; //오른쪽 클릭 > 메뉴 제거
+
+    </script>
+
+</body>
+</html>

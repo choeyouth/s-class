@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex10_emmet.html -->
+    <!-- 
+
+        Emmet, Zen-coding
+        - 대부분의 편집기들이 제공하는 확장 기능(extention)
+        - CSS 선택자를 사용해서 > HTML or CSS코드를 빠르게 작성하는 기술
+        - https://emmet.io
+
+    -->
+
+    <h1>태그 선택자</h1>
+
+    div {}
+    <div></div>
+
+    a > tab 
+    <a href="url">content</a>
+
+    input > tab
+    <input type="radio">
+
+    img
+    <img src="images/dog.jpg" alt="강아지">
+
+
+
+
+    <h1>아이디 선택자</h1>
+
+    div#box{} > tab
+    <div id="box"></div>
+
+    input#txtName > tab
+    <input type="text" id="txtName">
+
+    h1#title > tab
+    <h1 id="title"></h1>
+
+    유의 사항
+    #box > tab
+    <div id="box"></div>
+    - 태그를 생략하면 emmet은 가장 활용도가 높은 div가 생성된다. 
+
+
+
+
+
+    <h1>클래스 선택자</h1>
+    
+    div.list {}
+    <div class="list"></div>
+
+    img.pet
+    <img src="images/dog.jpg" alt="강아지" class="pet">
+
+
+    div.one.two.three > tab
+    <div class="one two three"></div>
+
+
+
+
+    <h1>속성 선택자</h1>
+
+    div {}
+    <div title="">A</div>
+    <div>B</div>
+
+    div[title] {}
+    - 타이틀을 명시한 속성을 찾음
+
+    div[title] > tab
+    <div title="상자">상자</div>
+
+    div[title]
+    div[title=상자]
+    div[title='상자']
+    div[title="상자"]
+    - 속성 값에 공백이 들어있는 경우 '', "" 생략 불가능
+
+
+
+    img
+    img[width]
+    <img src="hh" alt="hhh" width="hhh">
+
+    img
+    img[width]
+    img[width heihgt]
+    img[width=200 height=100]
+    img[alt=풍선도움말 width=200 height=100]
+    <img src="" alt="풍선도움말" width="200" height="100">
+
+
+
+    
+    <h1>PCDATA</h1> 
+
+    CSS > 불가능
+    <div>상자</div>
+    <div>A</div>
+
+    div{상자} > tab
+    <div>상자</div>
+    - CSS 선택자 X > Emmet에서만 가능
+
+    h1{제목입니다.} > tab
+    <h1>제목입니다.</h1>
+
+
+    div#box1.box[title=상자]{상자입니다.}
+    <div id="box1" class="box" title="상자">상자입니다.</div>
+
+
+
+    <hr>
+
+
+    
+    <h1>반복 기능</h1> <!-- 가장 편한 기능, 생산성 높아짐 -->
+
+    div*5 > tab
+
+    <div>asdd</div>
+    <div>asdad</div>
+    <div>asdadasda</div>
+    <div>sdfa</div>
+    <div>dfsf</div>
+
+
+    div{상자입니다.}*5
+    <div>상자입니다.</div>
+    <div>상자입니다.</div>
+    <div>상자입니다.</div>
+    <div>상자입니다.</div>
+    <div>상자입니다.</div>
+
+    div.item*5  
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+
+
+    div.item{상자입니다.}*5
+    <div class="item">상자입니다.</div>
+    <div class="item">상자입니다.</div>
+    <div class="item">상자입니다.</div>
+    <div class="item">상자입니다.</div>
+    <div class="item">상자입니다.</div>
+
+
+    div[title]*5
+    <div title="title">상자</div>
+    <div title="title">상자</div>
+    <div title="title">상자</div>
+    <div title="title">상자</div>
+    <div title=""></div>
+
+
+    div[title].item{상자입니다.}*5
+    <div title="" class="item">상자입니다.</div>
+    <div title="" class="item">상자입니다.</div>
+    <div title="" class="item">상자입니다.</div>
+    <div title="" class="item">상자입니다.</div>
+    <div title="" class="item">상자입니다.</div>
+
+
+    - emmit 사용 시 주의점 
+    - 공백 사용 불가능 (인식X)
+    - id 넘버링 주의
+
+    div#box1*5
+    <div id="box1"></div>
+    <div id="box1"></div>
+    <div id="box1"></div>
+    <div id="box1"></div>
+    <div id="box1"></div>
+    - 동일한 id XXX
+
+    div#box$*5
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <div id="box4"></div>
+    <div id="box5"></div>
+    - $ >> 넘버링 기능
+
+
+    div{상자$}*5
+    <div>상자1</div>
+    <div>상자2</div>
+    <div>상자3</div>
+    <div>상자4</div>
+    <div>상자5</div>
+
+    div#box$.box{상자$}*5
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+    <div id="box4" class="box">상자4</div>
+    <div id="box5" class="box">상자5</div>
+
+    div{상자$}*20
+    div{상자$$}*20
+    div{상자$$$}*20
+    <div>상자001</div>
+    <div>상자002</div>
+    ...
+    <div>상자019</div>
+    <div>상자020</div>
+    - 넘버링 + 자릿수를 맞춰주는 역할
+
+
+    <h1>형제 선택자</h1>
+
+    a+b: 인접 형제 선택자
+    a~b: 형제 선택자
+
+    h1+p {}
+
+    <h1></h1>
+    <p></p>
+    
+    h1~p {}
+    <h1></h1>
+    <div></div>
+    <p></p>
+    - emmit은 형제 선택자는 지원하지 않음, 확실한 인접 형제 선택자만 지원
+
+
+    h1+p
+    <h1></h1>
+    <p></p>
+
+
+    h1~p
+    h1~<p></p>
+    - 동작X emmit으로 지원하지 못함
+
+    h1+p+div
+    <h1></h1>
+    <p></p>
+    <div></div>
+
+
+    h1+p*5
+    <h1></h1>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    - 곱하기는 바로 앞에 있는 태그에만 영향을 준다.
+
+
+    (h1+p)*5
+    <h1></h1>
+    <p></p>
+    <h1></h1>
+    <p></p>
+    <h1></h1>
+    <p></p>
+    <h1></h1>
+    <p></p>
+    <h1></h1>
+    <p></p>
+    - h1과 p를 반복함
+    
+
+    h1#title{제목입니다.}+p.discription{내용입니다.}*5
+    <h1 id="title">제목입니다.</h1>
+    <p class="discription">내용입니다.</p>
+    <p class="discription">내용입니다.</p>
+    <p class="discription">내용입니다.</p>
+    <p class="discription">내용입니다.</p>
+    <p class="discription">내용입니다.</p>
+    - 제목 1개 + 문단 5개
+
+    (h1#title{제목입니다.}+p.discription{내용입니다.})*5
+    <h1 id="title">제목입니다.</h1>
+    <p class="discription">내용입니다.</p>
+    <h1 id="title">제목입니다.</h1>
+    <p class="discription">내용입니다.</p>
+    <h1 id="title">제목입니다.</h1>
+    <p class="discription">내용입니다.</p>
+    <h1 id="title">제목입니다.</h1>
+    <p class="discription">내용입니다.</p>
+    <h1 id="title">제목입니다.</h1>
+    <p class="discription">내용입니다.</p>
+    - 제목 5개 + 문단 5개
+
+
+
+    <h1>자식 선택자</h1>
+
+    a>b: 자식 - a 밑에 무조건 b가 있을 때(Emmit 지원O)
+    a b: 자손 - a 밑이면 어디든 b가 있을 때(Emmit 지원X)
+
+    div>span
+    <div><span></span></div>
+
+    ul>li
+    <ul>
+        <li></li>
+    </ul>
+
+    ul#list1>li.item{항목$}*5
+    <ul id="list1">
+        <li class="item">항목1</li>
+        <li class="item">항목2</li>
+        <li class="item">항목3</li>
+        <li class="item">항목4</li>
+        <li class="item">항목5</li>
+    </ul>
+
+    
+    table>tr>td
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    - 1행 1열
+
+    table>tr*20>td*5
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        ...
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    
+
+    table#table1>tr*20>td.cell${항목$}*5
+    <table id="table1">
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+        ...
+        <tr>
+            <td class="cell1">항목1</td>
+            <td class="cell2">항목2</td>
+            <td class="cell3">항목3</td>
+            <td class="cell4">항목4</td>
+            <td class="cell5">항목5</td>
+        </tr>
+    </table>
+    
+    
+    <h1>Lorem Ipsum</h1>
+    <p>내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. </p>
+
+    
+    div{문자열}
+    div{lorem}
+    div>lorem
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nostrum amet temporibus, sint sapiente impedit. Eaque ab vel exercitationem perferendis ratione, vitae labore molestias odio velit, tempore ullam, deleniti ipsum.</div>
+
+    div>lorem1
+    div>lorem5
+    <div>Lorem ipsum dolor sit amet.</div>
+
+    h1>lorem5+p>lorem30*3
+    <h1>
+        Lorem ipsum dolor sit amet.
+        <p><span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed suscipit nostrum, neque quaerat sequi cupiditate accusantium, quo at ducimus dolor eos quae veritatis voluptas officiis rem doloremque hic error architecto!</span><span>Quas sequi totam, eius, ab, quaerat vero tempora distinctio doloribus accusamus dolor amet? Quos eum dolores, totam pariatur ipsa saepe, mollitia unde a officiis omnis ipsum beatae! Odio, perspiciatis voluptatem?</span><span>Quia vitae culpa illo mollitia aperiam totam. Assumenda dolor atque laboriosam eius velit? Nam at fugiat, dolor, commodi exercitationem accusamus ex, minus pariatur et ad eaque dicta dolores quas aliquam?</span></p>
+    </h1>
+
+
+    h1>lorem5+(p>lorem30)*3
+    <h1>
+        Lorem ipsum dolor sit amet.
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquam quidem, iure commodi, a excepturi rem porro perferendis voluptatibus laboriosam odit ducimus? Vitae porro reiciendis rem architecto ea sed at.</p>
+        <p>Ipsa cumque saepe delectus officiis quasi sint voluptatem nihil at dolorum maiores officia asperiores eaque quae error cum, harum ullam animi accusamus modi. Cumque quasi, corrupti laudantium soluta reiciendis vel!</p>
+        <p>Consectetur eligendi placeat est commodi error vero velit. At possimus dolor magnam quia aliquam ipsum, consequuntur pariatur voluptatum, ut veritatis corporis! Esse eius nam voluptates ipsam odit ad facilis iste!</p>
+    </h1>
+
+    (h1>lorem5)+(p>lorem30)*5
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit temporibus iusto, laborum, accusamus beatae consectetur voluptates quis saepe magnam ratione placeat blanditiis, dignissimos obcaecati praesentium expedita. Amet nihil voluptate delectus!</p>
+    <p>Minus ad dolor culpa earum sapiente nemo commodi aspernatur, accusantium repudiandae cupiditate optio perferendis nulla exercitationem. Molestias quae dicta culpa quibusdam nam rerum maiores fugiat delectus, eos, hic vero in!</p>
+    <p>Iste quasi fuga saepe minima aperiam illo quis eveniet dignissimos! Odio esse asperiores culpa id laudantium, necessitatibus provident delectus libero adipisci reprehenderit cum! Porro obcaecati deserunt ipsum maiores voluptatum iure!</p>
+    <p>Praesentium voluptatum earum corporis doloremque quia vitae at modi nesciunt, omnis corrupti quam minus assumenda laborum adipisci. Inventore deleniti quisquam obcaecati eaque ducimus, ipsum dicta praesentium harum dolores autem incidunt?</p>
+    <p>Nemo ex nam voluptates nulla numquam quas. Eveniet sed maxime laudantium velit dolorem, voluptas nesciunt eius, eos, nostrum cumque a eum corrupti accusantium tenetur harum maiores! Obcaecati ullam eum molestias.</p>
+
+    
+    
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #main {
+            font-family: 'GmarketSansMedium';
+        }
+
+        h1, div {
+            color: gray;
+        }
+
+        #txt1 {
+            border: 1px solid gray;
+        }
+
+        #txt2 {
+            font-family: 'GmarketSansMedium';
+            border: white;
+            color: red;
+        }
+
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+    
+    </style>
+</head>
+<body>
+     <!-- 유효성 > 텍스트 박스 (2개/1개>border 감춤) -->
+
+    <form name="form1">
+        <div id="main">
+            <h1>회원 가입</h1>
+            <div>아이디: </div>
+            <input type="text" name="txt1" id="txt1">
+            <br>
+            <input type="text" name="txt2" id="txt2">
+        </div>
+    </form>
+
+    <script>
+
+        var txt1 = document.form1.txt1;
+        var txt2 = document.form1.txt2;
+
+        txt1.onkeyup = m1;
+
+        function m1() {
+
+            if (txt1.value.length < 4) {
+                txt2.value = '아이디가 너무 짧습니다.';
+            } else if (txt1.value.length > 12) {
+                txt2.value = '아이디가 너무 깁니다.';
+            } else if (txt1.value.length == 0) { 
+                txt2.value = '';
+            } else {
+                txt2.value = '아이디가 적합합니다.';
+            }
+        }
+
+    </script>
+
+</body>
+</html>

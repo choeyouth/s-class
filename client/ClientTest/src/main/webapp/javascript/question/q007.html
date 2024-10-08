@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        h1 {
+            color: #777777;
+            font-family: 'GmarketSansMedium';
+        }
+
+        #main {
+            width: 550px;
+            margin: 0px auto;
+            text-align: center;
+        }
+
+        img {
+            /* display: inline-block; */
+            border: 10px solid #A9A9A9;
+            margin: 10px;
+        }
+
+        input[type=button] {
+            border: 10px solid #A9A9A9;
+            width: 260px;
+            color: #777777;
+            font-family: 'GmarketSansMedium';
+            font-size: 27px;
+            margin: 10px 5px;
+            padding: 5px 70px;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- 패턴 어디서부터 시작했는지에따라 다름 -->
+    <form name="form1">
+        <h1>Pattern Lock</h1>
+        <div id="main" name="main">
+            <div id="imgs" name="imgs">
+                <img src="../images/rect_icon01.png" data-no="1">
+                <img src="../images/rect_icon02.png" data-no="2">
+                <img src="../images/rect_icon03.png" data-no="3">
+                <img src="../images/rect_icon04.png" data-no="4">
+                <img src="../images/rect_icon05.png" data-no="5">
+                <img src="../images/rect_icon06.png" data-no="6">
+                <img src="../images/rect_icon07.png" data-no="7">
+                <img src="../images/rect_icon08.png" data-no="8">
+                <img src="../images/rect_icon09.png" data-no="9">
+            </div>
+            <div id="buttons" name="buttons">
+                <input type="button" value="RESET" name="reset" id="reset">
+                <input type="button" value="INPUT" name="input" id="input">
+            </div>
+        </div>
+    </form>
+
+    <script>
+
+        var list;
+        var pw = "";
+        var reset = document.form1.reset;
+        var input = document.form1.input;
+
+        window.onload = m1;
+        reset.onclick = resetButton;
+        input.onclick = inputButton;
+
+        function m1() {
+
+            list = document.images;
+
+            for (var i=0; i<list.length; i++) {
+                list[i].onmouseover = function(event) {
+                    event.srcElement.src = "../images/rect_icon10.png";
+                    pw += event.srcElement.dataset['no'];
+                }
+            }
+        }
+
+        function resetButton() {
+            for (var i=0; i<list.length; i++) {
+                list[i].src = "../images/rect_icon0" + (i+1) + ".png";
+            }
+            pw = "";
+        }
+
+        function inputButton() {
+            if (pw == "14789") {
+                location.href = "https://google.com"
+            } else {
+                alert('Error!!')
+                resetButton();
+            }
+        }
+
+    </script>
+
+</body>
+</html>

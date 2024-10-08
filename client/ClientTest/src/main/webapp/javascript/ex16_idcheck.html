@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex16_idcheck.html -->
+    <h1>아이디 중복 검사</h1>
+    
+    <form name="form1">
+        아이디: <input type="text" name="id">
+        <input type="button" value="중복검사">
+        <hr>
+        <div>사용 가능한 아이디입니다.</div>
+        <!-- <div>이미 사용중인 아이디입니다.</div> -->
+        <!-- 중복검사는 아직......... -->
+        <hr>
+        <input type="button" value="아이디 사용하기" name="btn1">
+        <input type="button" value="창닫기" name="btn2">
+    </form>
+
+    <script>
+
+        var btn1 = window.document.form1.btn1;
+        var btn2 = window.document.form1.btn2;
+        var id = window.document.form1.id;
+
+        btn1.onclick = m1;
+        btn2.onclick = m2;
+
+        function m1() {
+
+            // 1. 사용 가능한 아이디 > 부모창에 복사
+            // 2. 창닫기
+
+            opener.document.form1.id.value = 
+                window.document.form1.id.value; 
+            
+            window.close();
+        }
+
+        function m2() {
+            window.close();
+        }
+
+    </script>
+</body>
+</html>

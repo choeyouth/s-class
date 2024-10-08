@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #menu {
+            background-color: orange;
+            width: 800px;
+            height: 100px;
+        }
+
+        #sub-menu {
+            background-color: green;
+            width: 200px;
+            height: 400px;
+            float: left;
+        }
+
+        #content {
+            background-color: gold;
+            width: 600px;
+            height: 400px;
+            float: left;
+        }
+
+        #footer {
+            background-color: cornflowerblue;
+            width: 800px;
+            height: 100px;
+            clear: left;
+        }
+
+        /* 자식의 공간이 모자를 상황을 만들지 않기 위함 */
+        #main {
+            /* border: 1px solid black; */
+            width: 800px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex28_float.html -->
+    <div id="main">
+        <div id="menu">주메뉴(orange)</div>
+        <div id="sub-menu">보조메뉴(green)</div>
+        <div id="content">콘텐츠(yellow)</div>
+        <div id="footer">하단(blue)</div>
+    </div>
+</body>
+</html>

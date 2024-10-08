@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex08_string.html -->
+
+    <script>
+        
+        //문자열 함수
+        var txt = 'Hello~ Hong~';
+
+        //1. 문자열 길이
+        console.log(txt.length); //필드(field) > 프로퍼티(property)
+
+        //2. 검색
+        //- indexOf()
+        //- lastIndexOf()
+        console.log(txt.indexOf('~')) //5
+        console.log(txt.indexOf('~', 6)) //11
+        console.log(txt.lastIndexOf('~')) //11
+        console.log(txt.lastIndexOf('~', 10)) //5
+
+        //3. 대소문자 변환
+        console.log(txt.toUpperCase());
+        console.log(txt.toLowerCase());
+
+        //4. 추출
+        console.log(txt.substring(2, 4)); //시작위치, 끝위치 > ll
+        console.log(txt.substr(2, 4)) //시작위치, 길이 > llo~
+        console.log(txt.charAt(2)); //문자 추출 > l
+        console.log(txt.charCodeAt(2)); //문자 코드값 추출 > 108
+        
+        //5. 치환
+        // - 처음 만나는 요소만 치환(반복X)
+        // - 정규표현식 지원 > 반복O
+        txt = 'Hello~ Hong~ Bye~ Hong~ hong';
+
+        console.log(txt.replace('Hello', '안녕하세요'));
+        console.log(txt.replace('Hong', '홍길동'));
+    
+        console.log(txt.replace(/Hong/, '홍길동')); //Hello~ 홍길동~ Bye~ Hong~ hong
+        console.log(txt.replace(/Hong/g, '홍길동')); //Hello~ 홍길동~ Bye~ 홍길동~ hong
+        console.log(txt.replace(/Hong/gi, '홍길동')); //Hello~ 홍길동~ Bye~ 홍길동~ 홍길동
+
+        
+        // 6. 공백 제거
+        txt = '     하나    둘      셋      ';
+        console.log(txt.trim());
+        console.log(txt.trimLeft()); //ltrim > ES6
+        console.log(txt.trimRight()); //rtrim > ES6
+        console.log(txt.trimStart()); //ltrim > ES10 > ECMA2019
+        console.log(txt.trimEnd()); //rtrim > ES10 
+
+
+        // 7. 분할
+        txt = '홍길동,아무개,하하하,호호호,후후후';
+        console.log(txt.split(','));
+        console.log(txt.split(/[,.]/));
+        //[,.] >> ,/. 중에 해당되는 것을 기준으로 글자를 찾음
+
+
+
+        //8. 패턴 검색
+        txt = '홍길동';
+        console.log(txt.startsWith('홍')); //true
+        console.log(txt.endsWith('동')); //true
+        
+        //9. padding
+        txt = '1';
+        console.log(txt.padStart(3, '0')); //001
+        console.log(txt.padEnd(3, '0')); //100
+        console.log(txt.padStart(3, ' ')); // ' 1'
+        console.log(txt.padStart(3)); // ' 1'
+
+        //10. 반복
+        console.log(txt.repeat(3)); //111
+        console.log('홍길동'.repeat(3)); //홍길동홍길동홍길동
+
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

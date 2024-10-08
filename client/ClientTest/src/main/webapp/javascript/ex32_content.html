@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset {
+            border: 1px solid gray;
+            width: 200px;
+        }
+
+        fieldset label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        #table1 {
+            border: 1px solid gray;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        #table1 td {
+            border: 1px solid gray;
+            width: 50px;
+            height: 35px;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- ex32_content.html -->
+    <h1>테이블 생성하기</h1>
+
+    <fieldset>
+        <legend>행x열</legend>  
+        <label>행: <input type="number" id="row" min="1" value="1"></label>
+        <label>열: <input type="number" id="column" min="1" value="1"></label>
+        <input type="button" value="생성하기" id="btn1">
+    </fieldset>
+
+    <table id="table1"></table>
+
+    <script>
+
+        var row = document.getElementById('row');
+        var column = document.getElementById('column');
+        var btn1 = document.getElementById('btn1');
+        var table1 = document.getElementById('table1');
+
+        btn1.onclick = m1;
+        function m1() {
+
+            //동적으로 <tr>, <td> 생성하기
+            var temp = ''; //누적 변수
+
+            for (var i=0; i<row.value; i++) {
+                temp += '<tr>';
+                    
+                for (var j=0; j<column.value; j++) {
+                    temp += '<td>';
+                    temp += (i + ',' + j);
+                    temp += '</td>';
+                }
+
+                temp += '</tr>';
+        
+            }
+
+            table1.innerHTML = temp;
+        
+        }
+
+        
+
+
+    </script>
+</body>
+</html>

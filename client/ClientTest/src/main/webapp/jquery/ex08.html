@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid black;
+            padding: 5px 10px;
+            margin: 10px 10px;
+        }
+
+        #me {
+            border: 10px solid cornflowerblue;
+        }
+
+        .find {
+            outline: 10px solid orange;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex08.html -->
+    <h1>Axis 탐색</h1>
+
+    <input type="button" value="버튼" id="btn1">
+
+    <hr>
+
+    <div>
+        할아버지
+        <div>
+            큰아버지
+            <div>사촌</div>
+        </div>
+        <div>
+            아버지
+            <div>큰형</div>
+            <div>작은형</div>
+            <div id="me">
+                나
+                <div>자식</div>
+                <div>
+                    둘째 자식
+                    <div>손자</div>
+                    <div class="test">손자</div>
+                    <div>손자</div>
+                </div>
+                <div>자식</div>
+            </div>
+            <div>동생</div>
+            <div>막내동생</div>
+        </div>
+        <div>
+            작은아버지
+            <div>사촌</div>
+        </div>
+    </div>
+    
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+        
+        $('#btn1').click(() => {
+
+            //자식
+            //- childNodes, children
+            //$('#me').children().addClass('find');
+            //$('#me').children().first().addClass('find');
+            //$('#me').children().last().addClass('find');
+            //$('#me').children().eq(1).addClass('find');
+
+            //$('#me').children().eq(1).children().first().addClass('find');
+            //$('#me').children().children().addClass('find');
+
+            //$('#me').children().eq(1).children().eq(1).addClass('find');
+
+            // $('#me').find('.test').addClass('find');
+
+            //조상 탐색
+            //- parentNode, parentElement
+
+            // $('#me').parent().addClass('find');
+            // $('#me').parent().parent().addClass('find');
+            // $('#me').parents().addClass('find');
+            // $('#me').parents('div').addClass('find');
+            
+
+            //형제 탐색
+            //- previousSibling, nextSibling
+            // $('#me').prev().next().addClass('find');
+            // $('#me').next().next().addClass('find');
+            // $('#me').prevAll.addClass('find'); 
+            // $('#me').nextAll.addClass('find'); //동생들
+            $('#me').siblings().addClass('find'); //모든 형제들
+            
+
+
+
+        });
+
+    </script>
+</body>
+</html>

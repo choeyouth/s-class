@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #block1 {
+            padding-top: 20px;
+        }
+        
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            margin-bottom: 5px;
+        }
+
+        div > div {
+            border: 10px solid black;
+            /* padding-bottom: 10px; */
+            margin-left: -10px;
+            transition: all, 0s;
+            overflow: hidden;
+        }
+
+        #block1 div img {
+            transform: translate(-126px, 0);
+            transition: all, .5s;
+        }
+
+        #block1 div:hover img {
+            transform: translate(0, 0);
+        }
+
+        #block2 div img {
+            opacity: 0;
+        }
+
+        #block2 div:hover img {
+            opacity: 100%;
+            transition: all, .5s;
+        }
+
+        #block3 div img {
+            transform: scale(0, 0);
+            transition: all, .5s;
+        }
+
+        #block3 div:hover img {
+            transform: scale(100%, 100%);
+        }
+
+        #block4 div img {
+            transform: translate(0, -126px) rotate(0deg);
+            transition: all, .5s;
+        }
+
+        #block4 div:hover img {
+            /* 위치도 0으로... */
+            transform: translate(0, 0) rotate(360deg);
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- (div.block$>(div#box$>img[src="../images/rect_icon$$.png"])*5)*4 -->
+    <!-- (div#block$>(div>img[src="../images/rect_icon$$.png"])*5)*4 -->
+    
+    <div id="block1">
+        <div><img src="../images/rect_icon01.png" alt=""></div>
+        <div><img src="../images/rect_icon02.png" alt=""></div>
+        <div><img src="../images/rect_icon03.png" alt=""></div>
+        <div><img src="../images/rect_icon04.png" alt=""></div>
+        <div><img src="../images/rect_icon05.png" alt=""></div>
+    </div>
+    <div id="block2">
+        <div><img src="../images/rect_icon01.png" alt=""></div>
+        <div><img src="../images/rect_icon02.png" alt=""></div>
+        <div><img src="../images/rect_icon03.png" alt=""></div>
+        <div><img src="../images/rect_icon04.png" alt=""></div>
+        <div><img src="../images/rect_icon05.png" alt=""></div>
+    </div>
+    <div id="block3">
+        <div><img src="../images/rect_icon01.png" alt=""></div>
+        <div><img src="../images/rect_icon02.png" alt=""></div>
+        <div><img src="../images/rect_icon03.png" alt=""></div>
+        <div><img src="../images/rect_icon04.png" alt=""></div>
+        <div><img src="../images/rect_icon05.png" alt=""></div>
+    </div>
+    <div id="block4">
+        <div><img src="../images/rect_icon01.png" alt=""></div>
+        <div><img src="../images/rect_icon02.png" alt=""></div>
+        <div><img src="../images/rect_icon03.png" alt=""></div>
+        <div><img src="../images/rect_icon04.png" alt=""></div>
+        <div><img src="../images/rect_icon05.png" alt=""></div>
+    </div>
+    
+</body>
+</html>

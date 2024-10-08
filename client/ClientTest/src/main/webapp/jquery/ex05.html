@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .one { font-family: '궁서체'; }
+        .two { text-decoration: underline; }
+
+    </style>
+</head>
+<body>
+    <!-- ex05.html -->
+    <input type="button" value="버튼1" id="btn1" class="btn">
+    <input type="button" value="버튼2" id="btn2" class="btn">
+    <input type="button" value="버튼3" id="btn3" class="btn">
+
+    <hr>
+
+    <div id="box1">상자</div>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+
+        $('#btn1').click(() => {
+
+            //CSS 조작
+            //- obj.css(속성)     : 읽기
+            //- obj.css(속성, 값) : 쓰기
+
+            //box.style.color
+            // alert(document.getElementById('box1').style.color); //null
+
+            // alert(window.getComputedStyle(document.getElementById('box1')).getPropertyValue('color'));
+            // alert($('#box1').css('color'));
+
+            // $('#box1').css('color', 'blue');
+            // $('#box1').css('background-color', 'yellow');
+            // $('#box1').css('font-size', '3-rem');
+
+            // $('#box1').css('color', 'blue')
+            //           .css('background-color', 'yellow')
+            //           .css('font-size', '3rem');
+
+            $('#box1').css({
+                color: 'blue',
+                'background-color': 'yellow',
+                'font-size': '3rem'
+            });
+
+        });
+
+        // $('#box1').on('mouseover', function() {
+        //     $(event.target).css('color', 'blue');
+        // });
+
+        // $('#box1').on('mouseout', function() {
+        //     $(event.target).css('color', 'black');
+        // });
+
+        // $('#box1').on('click', function() {
+        //     alert('click');
+        // });
+        //하나의 객체에 여러 개의 이벤트 추가
+        
+        // $('#box1').on('mouseover', function() {
+        //     $(this).css('color', 'blue');
+        // }).on ('mouseout', function() {
+        //     $(this).css('color', 'black');
+        // }).on('click', function() {
+        //     alert('click');
+        // });
+
+        $('#box1').on({
+            mouseover: function() {
+                $(event.target).css('color', 'blue');
+            },
+
+            mouseout: function() {
+                $(event.target).css('color', 'black');
+            },
+
+            click: function() {
+                alert('click');
+            }
+        });
+
+        $('#btn2').click(() => {
+
+            //BOM
+            //box1.className = 'one';
+
+            //DOM
+            //box1.classList.add('one');
+            //box1.classList.remove('one');
+            //box1.classList.contains('one');
+            //box1.classList.toggle('one');
+
+            //jQuery
+            // $('#box1').addClass('one');
+            // $('#box1').addClass('two');
+            // $('#box1').removeClass('two');
+            $('#box1').toggleClass('two');
+
+        });
+
+    </script>
+</body>
+</html>

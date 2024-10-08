@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/7121714adf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../asset/question.css">
+    <style>
+        h1, div, input[type=button] {
+            font-family: 'GmarketSansMedium';
+            color: #777777;
+        }
+
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+    </style>
+</head>
+<body>
+    <form name="form1">
+        <h1>데이터 입력</h1> 
+        <div id="txts">
+            <div>이름: <input type="text" name="txt1"></div>
+            <div>나이: <input type="text" name="txt2"></div>
+            <div>별명: <input type="text" name="txt3"></div>
+        </div>
+        <br>
+        <div id="btn">
+            <input type="button" value="Long" name="btnLong">
+            <input type="button" value="Short" name="btnShort">
+        </div>
+    </form>
+
+    <script>
+        
+        var txt1 = document.form1.txt1;
+        var txt2 = document.form1.txt2;
+        var txt3 = document.form1.txt3;
+
+        document.form1.btnLong.onclick = m1;
+        document.form1.btnShort.onclick = m2;
+
+        function m1() {
+            txt1.size = 50;
+            txt2.size = 50;
+            txt3.size = 50;
+        }
+
+        function m2() {
+            txt1.size = 20;
+            txt2.size = 20;
+            txt3.size = 20;
+        }
+
+
+    </script>
+</body>
+</html>

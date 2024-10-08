@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #main {
+            width: 500px;
+            margin: 0px auto;
+        }
+
+        h1 {
+            font-variant: small-caps;
+        }
+
+        label {
+            position: relative;
+            font-variant: small-caps;
+            font-size: 48px;
+            font-weight: bold;
+            top: -21px;
+            cursor: pointer;
+            background-color: #EEE;
+            display: block;
+            width: 150px;
+            height: 110px;
+            text-align: center;
+            padding: 20px 0;
+            overflow: hidden;
+            margin: 0;
+            z-index: 2;
+
+        }
+
+        .item > .disc {
+            position: relative;
+            top: -171px;
+            left: 150px;
+            height: 150px;
+            width: 200px;
+            overflow: hidden;
+
+            margin-bottom: 5px; 
+            background-size: 150px 150px;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+
+        .item {
+            height: 150px;
+            width: 350px;
+            margin-bottom: 7px;
+            border: 1px solid #999999;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        #disc1 {
+            background-image: url(../images/lp01.png);
+        }
+
+        #disc2 {
+            background-image: url(../images/lp02.png);
+        }
+
+        #disc3 {
+            background-image: url(../images/lp03.png);
+        }
+
+        #disc4 {
+            background-image: url(../images/lp04.png);
+        }
+
+        input[type=radio] {
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        input[type=radio]:checked + label {
+            color: #ffffff;
+            background-color: #FF6347;
+        }
+
+        /* 형제.. */
+        input[type=radio]:checked + label + div {
+            /* background-color: red; */
+            animation-name: disc;
+            animation-duration: .9s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes disc {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }     
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>Music</h1>
+        <div class="item">
+            <input type="radio" name="rb" id="rb1">
+            <label for="rb1">Play</label>
+            <div class="disc" id="disc1"></div>
+        </div>
+        <div class="item">
+            <input type="radio" name="rb" id="rb2">
+            <label for="rb2">Play</label>
+            <div class="disc" id="disc2"></div>
+        </div>
+        <div class="item">
+            <input type="radio" name="rb" id="rb3">
+            <label for="rb3">Play</label>
+            <div class="disc" id="disc3"></div>
+        </div>
+        <div class="item">
+            <input type="radio" name="rb" id="rb4">
+            <label for="rb4">Play</label>
+            <div class="disc" id="disc4"></div>
+        </div>
+    </div>	
+</body>
+</html>

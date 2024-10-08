@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex07.html -->
+    <h1>jQuery 태그 조작</h1>
+
+    <input type="button" value="버튼1" id="btn1">
+    <hr>
+    <div id="div1">홍길동</div>
+    <input type="text" id="txt1">
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+
+        $('#btn1').click(() => {
+
+            //태그 조작
+            //1. 내용물 조작
+            // a. PCDATA
+            // b. Element > 동적 태그 추가/삭제
+
+            //2. 속성 조작
+
+            //내용물 조작
+            //- innerText(textContent) > text()
+            //- innerHTML > html()
+            //- value > val()
+
+            // alert($('#div1').text()); // 태그가 가진 문자열 읽기
+            // $('#div1').text('강아지'); //쓰기
+
+            // $('#txt1').html('<input type="text">');
+
+            // alert($('#txt1').val('거북이'));
+
+
+
+            //속성
+            //BOM
+            //- obj.prop         > 읽기
+            //- obj.prop = value > 쓰기
+
+            //DOM
+            //- obj.getAttribute('prop')
+            //- obj.setAttribute('prop', value)
+
+            //jQuery
+            //- attr() > HTML의 속성을 제어
+            //- prop() > JavaScript의 프로퍼티를 제어
+            //- obj.attr('prop')
+            //- obj.attr('prop', value) 
+            //- obj.prop('prop')
+            //- obj.porp('prop', value) 
+                        
+                        //           .prop('title', '아이디')
+            //           .prop('maxlength', 5);
+
+            // $('#txt1').prop({
+            //     size: 10,
+            //     title: '비번',
+            //     maxlength: 3
+            // });
+            
+
+            //태그 추가
+            //div1.innerHTML = '<img>';
+            //$('#div1').html('<img src="images/catty01.png">');
+
+            //div1.innerHTML += '<img>';
+            //$('#div1').html($('#div1').html() + '<img src="images/catty01.png">');
+
+            //$('#div1').append(`<img src="images/catty0${n}.png">`);
+            //n++;
+
+            //$('#div1').prepend(`<img src="images/catty0${n}.png">`);
+            //n++;
+
+
+            // $('#div1')
+            //     .append(`<img src="images/catty0${n}.png">`)
+            //     .css('border', '1px solid black');
+            // n++;
+
+            // $('#div1')
+            //     .append(`<img src="images/catty0${n}.png" style="border: 1px solid black;">`);
+            // n++;
+
+            // $('#div1').append(`<img src="images/catty0${n}.png">`);
+            // $('#div1 > img:last-child')
+            //     .css('border', '1px solid black');
+            // n++;
+
+
+            //DOM > document.createElement()
+            // $(`<img src="images/catty0${n}.png">`)
+            //     .css('border', '1px solid black')
+            //     .click(() => {
+            //         $(event.target).css('opacity', .5);
+            //     })
+            //     .appendTo('#div1');
+            // n++;
+
+            //태그 삭제하기
+            //- 부모.removeChild(자식);
+            //$('#txt1').remove();
+            //$('input').remove();
+            $('*').remove();
+
+            
+        })
+
+    </script>
+</body>
+</html>

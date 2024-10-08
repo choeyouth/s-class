@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex07_casting.html -->
+
+    <script>
+        /* 
+            
+            자바스크립트는 형변환 연산자는 없다.
+            - ()
+
+            형변환 함수
+            - 내장 함수, Built-in Function
+
+            1. number parseInt(value)
+                
+            2. number parseFloat(value)        
+        */
+
+
+        var n1 = 3.14;
+        console.log(parseInt(n1)); //3
+
+        var n2 = '300';
+        console.log(n2, typeof n2); //300 string
+        console.log(n2, typeof parseInt(n2)); //300 number
+        console.log(parseInt(n2)); //300
+
+        var n3 = '홍길동';
+        console.log(parseInt(n3)); //NaN(Not a number)
+
+        var n4 = '100점';
+        console.log(parseInt(n4)); //100
+
+        var n4 = '100점이 아니라 90점입니다.';
+        console.log(parseInt(n4)); //100
+
+        var n4 = '그럼 최종 90점 입니까?';
+        console.log(parseInt(n4)); //NaN
+
+        
+        // CSS 조작
+        var width = '200px';
+        console.log(width + 100); //200px100
+        console.log(parseInt(width) + 100); //300
+        
+        var size = '1.5rem';
+        console.log(parseInt(size)); //1 
+        console.log(parseFloat(size)); //1.5
+
+        
+
+        //boolean isNaN(value)
+        // - value가 숫자가 아닙니까?
+
+        var age = '20'; //키보드 입력
+        
+        //숫자가 아닙니까 ??? >>> '스무살' >>> 숫자 아님 >>> true
+
+        console.log(isNaN(age)); //false
+
+        if (isNaN(age)) {
+            console.log('나이가 올바르지 않습니다.');
+        } else {
+            console.log('올바른 나이')
+        }
+
+    </script>
+
+</body>
+</html>

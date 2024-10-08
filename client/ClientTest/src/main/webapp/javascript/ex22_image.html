@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin-bottom: 300px;}
+    </style>
+</head>
+<body>
+    <!-- ex22_image.html -->
+    <h1>이미지</h1>
+
+    <input type="button" value="버튼" name="btn1">
+    <hr>
+
+    <img src="images/cat01.jpg" name="cat1">
+    <hr>
+
+    <!-- 토글 버튼 -->
+    <img src="images/switch_on.png" name="sw">
+    <hr>
+
+    <img src="images/rect_icon01.png" name="icon">
+    <hr>
+
+    <img src="images/dog01.jpg" name="dog">
+    <hr>
+    
+    <img src="images/0.png" name="num">
+    <hr>
+
+    <script>
+
+        window.document.all['btn1'].onclick = m1;
+
+        function m1() {
+            // window.document.all[인덱스]
+            // window.document.all['cat1']
+            // > 비표준 >> 비권장
+
+            // window.document.images[0] //인덱스
+            // window.document.images['cat1'].width = 500; //요소 이름
+            // window.document.images['cat1'].src = 'images/cat02.jpg';
+
+        }
+
+        window.document.all['cat1'].onclick = m2;
+
+        window.document.all['cat1'].onmouseover = m3;
+        window.document.all['cat1'].onmouseout = m4;
+
+        function m2() {
+            window.document.images['cat1'].src = 'images/cat02.jpg';
+        }
+
+
+        //롤오버이미지 
+        function m3() {
+            window.document.images['cat1'].src = 'images/cat02.jpg';
+        }
+
+        function m4() {
+            window.document.images['cat1'].src = 'images/cat01.jpg';
+        }
+
+
+        var sw = window.document.images['sw'];
+        
+        sw.onclick = m5;
+
+        var state = true;
+
+        function m5() {
+
+            // console.log(sw.src);
+            // http://127.0.0.1:5500/javascript/images/switch_on.png
+
+            //if(sw.src.endsWith('switch_on.png')) {
+            if (state) {
+                sw.src = 'images/switch_off.png';
+                //state = false;
+                window.document.body.bgColor = '#000';
+                window.document.body.text = '#FFF';
+            } else {
+                sw.src = 'images/switch_on.png';
+                //state = true;
+                window.document.body.bgColor = '#FFF';
+                window.document.body.text = '#000';
+            }
+            state = !state;
+        }
+
+
+        // window 생략 가능 > 모든 게 window로 시작하기 때문에 > 나머지는 생략 불가능
+        //var icon = window.document.images['icon'];
+        var icon = document.images['icon'];
+
+        icon.onclick = m6;
+        var n = 1;
+
+        function m6() {
+            n++;
+            if (n > 18) {
+                //return;
+                n = 1;
+            }
+            icon.src = 'images/rect_icon' + (n + '').padStart(2, '0') + '.png'; //이미지 18개
+        }
+
+        //태그를 찾는 일이 우선 
+        var dog = document.images['dog'];
+
+        window.onkeydown = m7; //전역이벤트 
+        var no = 1;
+
+        function m7() {
+            if (event.keyCode == 39) { //오른쪽
+                no++;
+                if (no > 5) {
+                    // alert('마지막 이미지입니다.');
+                    // return;
+                    no = 1;
+                }
+            } else if (event.keyCode == 37) { //왼쪽
+                no--;
+                if (no < 1) {
+                    // alert('처음 이미지입니다.');
+                    // return;
+                    no = 5;
+                }
+            }
+            dog.src = 'images/dog0' + no + '.jpg';
+        }
+
+        var num = document.images['num'];
+
+        window.onkeydown = m8;
+
+        function m8() {
+            //상단 키보드 숫자 > 48(0)~57(90)
+            //오른쪽 키보드 숫자 > 96(0)~105(9)
+            // alert(event.keyCode);
+
+            if (event.keyCode >= 48 && event.keyCode <= 57) {
+                num.src = 'images/' + (event.keyCode - 48) + '.png';
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>

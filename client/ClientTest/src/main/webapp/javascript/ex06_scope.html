@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var num2 = 200;
+    </script>
+</head>
+<body>
+    <!-- ex06_scope.html -->
+    <script>
+
+        /* 
+            변수 스코프
+
+            자바 
+
+            - 전역 변수(X)
+            1. 멤버 변수 > 클래스 전역
+            2. 지역 변수 > 메소드 or 제어문 전역
+
+            자바스크립트
+
+            1. 전역 변수(Global Variable) > HTML 페이지 
+            2. 지역 변수(Local Variable)
+        */
+
+        // 전역 변수
+        // - <script> 태그 내에서 직접 선언
+        var num1 = 100;
+        console.log(num1);
+        console.log(num2);
+
+        function m1() {
+            var num3 = 300;
+            console.log(num3); // 지역변수. m1을 영역
+        }
+
+        m1();
+        
+        //num3 is not defined
+        //console.log(num3);
+
+        if (num1 > 0) {
+            var num4 = 400;
+            //지역 변수(X). if문을 영역(X)
+            //전역 변수(O)
+            console.log(num4); 
+        }
+
+        console.log(num4);
+        //자바 지역 변수 > 블럭 스코프 변수(Block-scoped)
+        //  - 메소드, 제어문 > 블럭을 인식
+
+        //자바스크립트 변수 > 함수 스포크 변수(Function-scoped)
+        //  - 함수 > 블럭을 인식
+        //  - 제어문 > 인식 불가능 
+
+        // 같은 변수를 두 번 이상 사용 가능 
+        var a = 10;
+        console.log(a);
+        var a = 20;
+        console.log(a);
+
+
+        if (true) {
+            var flag = false;
+        }
+
+        if (true) {
+            var flag = true;
+        }
+
+        // 변수 선언시 var를 생략할 수 있다. 
+        //  > 생략하지 말것!! > 가독성 저하 
+        var a = 10; //전역 변수
+        b = 20;     //전역 변수
+
+        function m2() {
+            var num5 = 500; //지역 변수
+            num6 = 600;     //지역 변수(X) > 전역 변수(O)
+        }
+
+        m2();
+        console.log(num6); // var 없이 변수를 선언하면 무조건 전역 변수
+        // console.log(num5);
+
+    </script>
+</body>
+</html>

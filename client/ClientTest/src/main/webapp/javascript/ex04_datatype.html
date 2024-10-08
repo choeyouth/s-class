@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex04_datatype.html -->
+
+    <script>
+        /* Shift + Alt + A */
+        /* 
+        
+            JavaScript 자료형
+
+            1. number
+                - 숫자형(정수, 실수)
+
+            2. string
+                - 문자, 문자열
+
+            3. boolean
+                - 논리형
+        
+            4. object
+                - 객체형
+                - JavaScript에는 클래스가 없다. 
+                - 객체 지향 언어(OOP) <> 자바스크립트
+                - 객체 기반 언어 == 자바스크립트(클래스X, 객체O)
+            
+            5. 기타(상수)
+                a. null(X > Object(버그) >  > null(고유 자료형))
+                b. undefined
+                c. NaN (Not a number)(C계열 > 대소문자 구분)
+
+
+
+            변수, 상수(리터럴)
+            - var 변수명; > 자료형?
+            - JavaScript는 변수의 타입이 없다. (스크립트 언어 특징)
+            - 변수는 모든 자료형의 데이터를 저장할 수 있다. 
+
+        */
+
+        // 선언과 초기화 따로 
+        var num;
+        num = 10;
+
+        // 선언과 초기화 동시에
+        var num2 = 20;
+
+        // 선언 여러개
+        var num3, num4;
+
+        // 선언과 초기화 여러개 동시에
+        var num5 = 10, num = 20;
+
+        var data = 10;
+        data = '홍길동'; // 절대 이런 행동을 하면 안 된다 > 하나의 변수에는 하나의 데이터 타입만
+
+        data = 10;
+        data = 3.14;
+        data = '홍길동'; // 문자열 상수
+        data = "홍길동"; // 문자열 상수
+        data = true;
+        data = false;
+        
+        var a = 10;
+        var b = '홍길동';
+        var c = true;
+        var d = '10';
+        var e = new Date();
+
+        console.log(a, typeof a);
+        console.log(b, typeof b);
+        console.log(c, typeof c);
+        console.log(d, typeof d);
+        console.log(e, typeof e);
+
+        // 자바스크립트에서는 명시적으로 자료형 표현이 불가능하다. 
+        
+        // 연산자
+        // - 자바와 동일
+
+        // 제어문
+        // - 자바와 동일
+
+        // Java > Strong Type Language > 문법 엄격
+        // SQL > Weak Type Language > 문법 유연함
+        // JavaScript < Weak Type Language
+        console.log('10' + 2); // 102
+        console.log('10' * 2); // 20
+        console.log(2 + '10'); // 210
+
+        // 문자 이스케이프
+        // - 자바와 동일
+        console.log('C:\code\java');
+        console.log('C:\\code\\java');
+
+
+    </script>
+
+</body>
+</html>

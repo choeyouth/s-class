@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/7121714adf.js" crossorigin="anonymous"></script>
+    <style>
+
+        #box {
+            border: 10px solid black;
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            margin: 200px
+        }
+
+        /* 
+
+            CSS 애니메이션
+            1. transition   > 단순한 움직임
+            2. animation    > 복잡한 움직임
+        
+        */
+
+        html {
+            /* border: 10px solid orange; */
+            height: 100%;
+        }
+
+        body {
+            /* border: 10px solid blue; */
+            height: 100%; /* % >> 부모 기준 (HTML >> auto) */
+            padding-bottom: 300px;
+        }
+
+        /* #box {
+            transition: all 1s;
+        } */
+
+        body:hover #box {
+            /* width: 400px; */
+      
+            animation-name: key3;
+            animation-duration: 1s; /* 0s > 200 / 1s > 400 >>> 기본값으로 돌아옴 */
+            animation-fill-mode: backwards; /* 재생이 끝나면 기본값으로 돌아옴 */
+            animation-fill-mode: forwards; /* 재생이 끝나면 마지막 값에서 멈춤 */
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: 3; /* 3회 반복 | infinite > 무한 */
+            animation-direction: alternate-reverse;
+        }
+
+        /* 키프레임 정보 셋 */
+        @keyframes key1 {
+            from {
+                width: 200px;
+            }
+
+            to {
+                width: 400px;
+            }
+        }
+        
+        /* 키프레임 정보 셋 >> 독립 자원 */
+        @keyframes key2 {
+            0% { width: 200px; }
+            50% { width: 400px; }
+            100% { width: 200px; }
+        }
+
+        @keyframes key3 {
+            0%   { transform: translate(0px, 0px) }
+            25%  { transform: translate(300px, 0px) }
+            50%  { transform: translate(300px, 300px) }
+            75%  { transform: translate(0px, 300px) }
+            100% { transform: translate(0px, 0px) }
+        }
+
+        .effect:hover {
+            animation-name: key-effect;
+            animation-duration: .1s;
+            animation-iteration-count: 5;
+        }
+        
+        @keyframes key-effect {
+            0%   { transform: translate(0px, 0px); }
+            25%  { transform: translate(-2px, 0px); }
+            50%  { transform: translate(0px, 0px); }
+            75%  { transform: translate(2px, 0px); }
+            100% { transform: translate(0px, 0px); }
+        }
+
+        @keyframes key-effect2 {
+            0%   { transform: scale(1, 1); }
+            25%  { transform: scale(1.1, 1.1); }
+            50%  { transform: scale(1, 1); }
+            75%  { transform: scale(.9, .9); }
+            100% { transform: scale(1, 1); }
+        }
+
+        .effect2 > i {
+            color: coral;
+
+        }
+
+        .effect2:hover > i {
+            animation-name: key-effect2;
+            animation-duration: .1s;
+            animation-iteration-count: infinite;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- ex53_animation.html -->
+    <div id="box">상자</div>
+
+    <h1>버튼</h1>
+
+    <button class="effect">글쓰기</button>
+    <button class="effect">로그인</button>
+    <button class="effect">뒤로가기</button>
+
+    <hr>
+
+    <button class="effect2">
+        <i class="fa-solid fa-keyboard"></i> 입력하기
+    </button>
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>		
+	<!-- ex19_form.html -->
+	<!--
+	 
+		<form>의 자식 태그들
+		
+		<input> 태그
+		- 단독 태그
+		- 인라인 태그
+		- input.type: 입력 컨트롤의 종류
+		- input.name
+		- input.id
+		- input.class: 식별자. CSS, JavaScript에서 주로 사용
+		- input.size: 컨트롤의 너비
+		- input.maxlength: 최대 입력 문자 수 + 유효성 검사 
+		- input.value: 컨트롤의 입력값
+		- input.readonly: 읽기 전용. 플래그형. 입력(X) + 전송(O)
+		- input.disabled: 비활성화. 플래그형. 입력(X) + 전송(X)
+		- input.accesskey: 바로가기(니모닉, Nemonic)
+		- input.autofocus: 자동 포커스 
+		
+	 -->
+
+	<h1>입력 컨트롤</h1>
+	
+	<form action="ex18.jsp">
+		
+		<!-- 
+			focus <-> blur		
+			
+			alt + s
+		 -->
+		
+		텍스트박스(단일라인):
+		<input type="text" name="txt1" id="txt1" class="txt" size="10" maxlength="5" value="홍길동" accesskey="s"> 
+		
+		<hr>
+		
+		<!-- 
+			암호 상자, Password Box, Masked TextBox
+			- 모든 속성이 텍스트 박스와 동일
+			- value 속성 사용 금지!!!
+		 -->
+		
+		택스트박스(암호상자):
+		<input type="password">
+
+		<hr>
+		
+		<!-- 
+			텍스트박스(다중라인)
+			- <textarea></textarea>
+			- 쌍태그
+			- 인라인태그
+			- 대부분의 속성은 텍스트박스와 동일
+			- value 속성이 없다.
+			- maxlength가 없다. 
+		 -->
+		
+		택스트박스(암호상자):
+		<textarea cols="50" rows="5">하나
+둘
+셋
+</textarea>
+		
+		<hr>
+
+		<!-- 
+			체크박스
+			- 논리값 입력
+			- 단일 선택 or 다중 선택
+		 -->
+		
+		체크박스:
+		<input type="checkbox">
+		<hr>
+
+		<h2>약관</h2>
+		<input type="checkbox"> 동의합니다.
+		<hr>
+		
+		<input type="checkbox" id="cb1"> 
+		<label for="cb1">동의합니다.</label>
+		<hr>
+
+		<label><input type="checkbox"> 동의합니다.</label>
+		<hr>
+		
+		<h2>취미(다중 선택)</h2>
+		<input type="checkbox"> 수영
+		<input type="checkbox"> 달리기
+		<input type="checkbox" checked> 독서
+		<input type="checkbox"> 코딩
+		<input type="checkbox"> 낮잠
+		<hr>
+			
+		
+		
+		<!-- 
+		
+			라디오 버튼
+			- 단일 선택(O)
+			- 다중 선택(X)
+			
+		-->
+		
+		<h2>성별?</h2>
+		<input type="radio" name="rb-gender"> 남자
+		<input type="radio" name="rb-gender"> 여자
+		<input type="radio" name="rb-gender" checked> 모름
+		
+		<!-- 케밥 표기법 > HTML, CSS -->
+
+		<hr>
+		
+		<h2>동의?</h2>
+		<input type="radio" name="rb-agree"> 동의함
+		<input type="radio" name="rb-agree" checked> 동의안함
+		<hr>
+		
+	
+		<!-- 
+			셀렉트 박스
+			- 콤보박스, 드랍다운리스트 등..
+			- 단일 선택 or 다중 선택
+			
+		 -->
+	
+		셀렉트 박스: 
+		<select>
+			<option>강아지</option>
+			<option selected>고양이</option>
+			<option>병아리</option>		
+		</select>	
+		
+		<hr>
+		
+		셀렉트 박스: 
+		<select size="5">
+			<option>강아지</option>
+			<option selected>고양이</option>
+			<option>병아리</option>		
+		</select>	
+		
+		<hr>
+		셀렉트 박스: 
+		<select multiple>
+			<option>강아지</option>
+			<option selected>고양이</option>
+			<option>병아리</option>		
+		</select>	
+				
+		<hr>
+		
+		<select>
+			<option>☆☆☆포유류☆☆☆</option>	
+			<option>강아지</option>	
+			<option>고양이</option>
+			<option>돼지</option>
+			
+			<option>☆☆☆파충류☆☆☆</option>
+			<option>뱀</option>
+			<option>거북이</option>
+			<option>이구아나</option>
+			
+			<option>☆☆☆곤충☆☆☆</option>
+			<option>매미</option>
+			<option>메뚜기</option>
+			<option>귀뚜라미</option>
+		</select>
+
+		<select>
+			<optgroup label="포유류"></optgroup>
+			<option>강아지</option>	
+			<option>고양이</option>
+			<option>돼지</option>
+			
+			<optgroup label="파충류"></optgroup>
+			<option>거북이</option>
+			<option>이구아나</option>
+			<option>뱀</option>
+			
+			<optgroup label="곤충"></optgroup>
+			<option>매미</option>
+			<option>메뚜기</option>
+			<option>귀뚜라미</option>
+		</select>
+		
+		<hr>
+		
+		<!-- 
+			파일 업로드 
+			- 첨부 파일
+			- Open File Dialog(열기 대화상자) 
+		-->
+		
+		파일 선택:
+		<input type="file">
+		<hr>
+
+		<!-- 
+			히든 태그
+			- 안 보이는 컨트롤
+			- 개발자용 
+		 -->
+		
+		히든 태그:
+		<input type="hidden" name="num" value="123">
+	
+		<hr>
+		
+		<!-- 
+			버튼류
+		 -->
+		
+		전송 버튼: <input type="submit" value="보내기">
+		
+		<hr>
+		
+		취소 버튼: <input type="reset" value="취소하기">
+		
+		<hr>
+		
+		이미지 버튼: <input type="image" src="images/catty01.png">
+				
+		<hr>
+		
+		그냥 버튼: <input type="button" value="버튼" onclick="alert('클릭~');">
+		
+		<hr>
+		
+		그냥 버튼: <input type="button" value="버튼" onclick="this.form.submit();">
+		
+		<hr>
+		
+		버튼: <button type="button">
+			<img src="images/bullet19.png">
+			버튼
+			</button>
+		
+		<hr>
+		<input type="submit">
+	
+	</form>
+
+	<!-- 
+		
+		~ 수업: HTML 4.01 + XHTML 1.0
+		이후 ~: HTML 5
+	
+	-->
+	
+
+</body>
+</html>

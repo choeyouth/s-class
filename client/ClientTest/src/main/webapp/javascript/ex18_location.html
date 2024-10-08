@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex18_location.html -->
+    <h1>location 객체</h1>
+
+    <form name="form1">
+        <input type="button" value="버튼" name="btn1">
+        <hr>
+        <input type="text" name="txt1">
+    </form>
+
+    <script>
+
+        window.document.form1.btn1.onclick = m1;
+
+        function m1() {
+            //location 객체
+            //- 브라우저의 페이지 URL 관련
+
+            //href == HyperLink Reference
+
+            // console.log(window.location.href);
+            // window.location.href = 'ex17_screen.html';
+            // window.location.href = 'https://naver.com';
+
+            // window.location.assign('https://naver.com'); //메서드 방식
+            //window.location.reload(); //새로고침(F5)
+
+            console.log(window.location.host); //127.0.0.1:5500
+            console.log(window.location.port);  //5500
+            console.log(window.location.protocol); //http: 
+            console.log(window.location.pathname); //'/javascript/ex18_location.html'
+
+        }
+
+        //전역 이벤트 > 특정 구역 X 
+        /// - 어느 태그에 포커스가 있던지 항상 발생하는 이벤트 
+        window.onkeydown = m2;
+
+        function m2() {
+            //n(78), g(71), d(68)
+            console.log(event.keyCode);
+            if (event.keyCode == 78) {
+                location.href = 'https://naver.com';
+            } else if (event.keyCode == 71) {
+                location.href = 'https://google.com';
+            } else if (event.keyCode == 68) {
+                location.href = 'https://daum.net';
+            }
+        }
+
+    </script>
+
+</body>
+</html>

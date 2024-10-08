@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex21_link.html -->
+    <h1>링크</h1>
+    
+    <a href="https://naver.com" name="link1">네이버</a>
+    <hr>
+    <input type="button" value="버튼" name="btn1">
+
+    <script>
+
+        console.log(window.document.all);
+
+        // index 접근 
+        //window.document.all[9].onclick = m1;
+
+        // 요소의 이름으로 접근 > hash map 
+        window.document.all['btn1'].onclick = m1;
+
+        function m1() {
+
+            // window.document.all['link1'] > 비표준, 비추천
+            // window.document.links[0]
+            window.document.links['link1'].href = 'https://google.com';
+            window.document.links['link1'].target = '_blank'; //탭 링크
+            window.document.links['link1'].title = '구글로 이동합니다.'; 
+
+            //BOM > PCDATA 조작 불가능
+            //DOM > PCDATA 조작 가능
+
+            window.document.links['link1'].innerText = '구글';
+
+        }
+        
+
+    </script>
+</body>
+</html>

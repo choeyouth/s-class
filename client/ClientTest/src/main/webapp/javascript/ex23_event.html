@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item {
+            border: 1px solid #CCC;
+            background-color: #EEE;
+            padding: 10px;
+            margin: 15px;
+            width: 400px;
+            text-align: center;
+        }
+
+        .item > input[type=button] {
+            border: 1px solid #CCC;
+            background-color: #FFF;
+            width: 100px;
+            height: 60px;
+            margin: 10px;
+            outline: none;
+        }
+
+        .item > input[type=button]:hover {
+            box-shadow: 0px 0px 3px gray;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex23_event.html -->
+    <h1>다량의 요소들의 이벤트 처리(일괄 처리)</h1>
+
+    <form name="form1">
+        <!-- 
+        <div class="item">
+            <input type="button" name="btnRed" value="빨강">
+            <input type="button" name="btnYellow" value="노랑">
+            <input type="button" name="btnBlue" value="파랑">
+        </div>   
+        -->
+
+        <!-- 1. 정적 이벤트 -->
+        <div class="item">
+            <input type="button" name="btnRed" value="빨강" onclick="m1();">
+            <input type="button" name="btnYellow" value="노랑" onclick="m2();">
+            <input type="button" name="btnBlue" value="파랑" onclick="m3();">
+        </div>  
+
+        <!-- 2. 동적 이벤트 -->
+        <div class="item">
+            <input type="button" name="btnRed2" value="빨강">
+            <input type="button" name="btnYellow2" value="노랑">
+            <input type="button" name="btnBlue2" value="파랑">
+        </div>  
+
+        <div class="item">
+            <input type="button" name="btnRed3" value="빨강" onclick="m7('tomato');">
+            <input type="button" name="btnYellow3" value="노랑" onclick="m7('gold');">
+            <input type="button" name="btnBlue3" value="파랑" onclick="m7('cornflowerblue');">
+        </div>   
+
+        <div class="item">
+            <input type="button" name="btnRed4" value="빨강" onclick="m8(this);">
+            <input type="button" name="btnYellow4" value="노랑" onclick="m8(this);">
+            <input type="button" name="btnBlue4" value="파랑" onclick="m8(this);">
+        </div>   
+
+
+        <!-- 중요!! -->
+        <div class="item">
+            <input type="button" name="btnRed5" value="빨강" onclick="m9(this);" data-color="tomato">
+            <input type="button" name="btnYellow5" value="노랑" onclick="m9(this);" data-color="gold">
+            <input type="button" name="btnBlue5" value="파랑" onclick="m9(this);" data-color="cornflowerblue">
+        </div>  
+
+
+        <!-- 중요!!!! -->
+        <div class="item">
+            <input type="button" name="btnRed6" value="빨강" onclick="m10();" data-color="tomato">
+            <input type="button" name="btnYellow6" value="노랑" onclick="m10();" data-color="gold">
+            <input type="button" name="btnBlue6" value="파랑" onclick="m10();" data-color="cornflowerblue">
+        </div>  
+
+        <div class="item">
+            <input type="button" name="btnRed7" value="빨강" data-color="tomato">
+            <input type="button" name="btnYellow7" value="노랑" data-color="gold">
+            <input type="button" name="btnBlue7" value="파랑" data-color="cornflowerblue">
+        </div>  
+
+        <div class="item">
+            <input type="button" name="btn8" value="빨강" data-color="tomato">
+            <input type="button" name="btn8" value="노랑" data-color="gold">
+            <input type="button" name="btn8" value="파랑" data-color="cornflowerblue">
+        </div>  
+    </form>
+
+    <script>
+
+        function m1() {
+            document.body.bgColor = 'tomato';
+        }
+
+        function m2() {
+            document.body.bgColor = 'gold';
+        }
+
+        function m3() {
+            document.body.bgColor = 'cornflowerblue';
+        }
+
+        document.form1.btnRed2.onclick = m4;
+        document.form1.btnYellow2.onclick = m5;
+        document.form1.btnBlue2.onclick = m6;
+
+        function m4() {
+            document.body.bgColor = 'tomato';
+        }
+
+        function m5() {
+            document.body.bgColor = 'gold';
+        }
+
+        function m6() {
+            document.body.bgColor = 'cornflowerblue';
+        }
+
+
+        //매개변수 처리 (3개의 버튼에서 하나의 이벤트를 호출하는 방식)
+        function m7(color) {
+            document.body.bgColor = color;
+        }
+
+        function m8(param) {
+            // alert(param);
+            // alert(param.name);
+            //alert(param.value);
+
+            // if (param.name == 'btnRed4') {
+            //     document.body.bgColor = 'tomato';
+            // } else if (param.name == 'btnYellow4') {
+            //     document.body.bgColor = 'gold';
+            // } else if (param.name == 'btnBlue4') {
+            //     document.body.bgColor = 'cornflowerblue';
+            // }
+
+            //btnRed4
+            document.body.bgColor = param.name.substring(3, param.name.length - 1);
+
+        } 
+
+        function m9(btn) {
+            //alert(btn.value); //빨강
+            document.body.bgColor = btn.dataset['color']; //data-color > dataset['color'] 
+        }
+
+        function m10() {
+            //누가 나를 호출했는지???
+
+            //onclick = m10 > 이벤트 함수 > event 객체 
+
+            // alert(event.srcElement);
+            // alert(this);
+ 
+            // alert(event.srcElement.name); //비표준(MS)
+            //alert(event.target); //표준 
+
+            document.body.bgColor = event.target.dataset['color'];
+
+        }
+
+        //버튼은 따로 두고, 정적 방식처럼 버튼 세 개에 하나의 함수를 호출 > 버튼 세 개를 하나의 함수로 병합
+        document.form1.btnRed7.onclick = m11;
+        document.form1.btnYellow7.onclick = m11;
+        document.form1.btnBlue7.onclick = m11;
+
+        function m11() {
+            document.body.bgColor = event.target.dataset['color'];
+        }
+
+        // console.log(document.form1.btn8);
+        // console.log(document.form1.btn8[1]);
+        
+
+        for (var i=0; i<document.form1.btn8.length; i++) {
+            document.form1.btn8[i].onclick = m12;
+        }
+
+        function m12() {
+            document.body.bgColor = event.target.dataset['color'];
+        }
+
+        
+
+
+
+    </script>
+
+</body>
+</html>

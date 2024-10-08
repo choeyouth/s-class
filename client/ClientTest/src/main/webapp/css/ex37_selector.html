@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .list > a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* 
+        
+            속성 선택자
+            1. 선택자[속성명]: 해당 속성을 명시하고 있는 태그
+            2. 선택자[속성명=값]: 해당 속성과 값을 명시하고 있는 태그
+            3. 선택자[속성명^=값]: 시작 패턴(like '값%', startsWith())
+            4. 선택자[속성명$=값]: 끝 패턴(like '%값', endsWith())
+            5. 선택자[속성명*=값]: 포함 패턴(like '%값%', contains())
+
+        
+        */
+ 
+        /* .list > a[target][title] { background-color: gold; } */
+        /* .list > a[target=_blank] { background-color: gold; } */
+        /* .list > a[href^='https://'] { background-color: gold; } */
+        /* .list > a[href$='.com'] { background-color: gold; } */
+        .list > a[href*='go'] { background-color: gold; }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex37_selector.html -->
+    <h1>속성 선택자</h1>
+
+    <div class="list">
+        <a href="http://naver.com" target="_self">네이버</a>
+        <a href="http://yes24.com" target="_blank" title="서점">예스24</a>
+        <a href="https://daum.net">다음</a>
+        <a href="https://11st.co.kr">11st</a>
+        <a href="https://kma.go.kr" target="_blank">기상청</a>
+    </div>
+
+</body>
+</html>

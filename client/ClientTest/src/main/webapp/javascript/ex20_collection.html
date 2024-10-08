@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex20_collection.html -->
+
+    <h1>이미지</h1>
+    <img src="images/catty01.png" alt="">
+    <img src="images/catty02.png" alt="">
+    <img src="images/catty03.png" alt="">
+    <img src="images/catty04.png" alt="">
+    <img src="images/catty05.png" alt="">
+
+    <h1>링크</h1>
+    <a href="https://naver.com"></a>
+    <a href="https://google.com"></a>
+    <a href="https://daun.net"></a>
+
+    <h1>앵커</h1>
+    <a href="a1">앵커1</a>
+    <a href="a2">앵커2</a>
+
+    <h1>폼</h1> 
+    <form>
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <a href="">링크</a>
+        <img src="images/catty01.png">
+    </form>
+
+    <form>
+        <input type="text">
+        <input type="checkbox">
+        <input type="radio">
+        <input type="button">
+    </form>
+
+    <script>
+        
+        /* 
+
+        내장 배열(=컬렉션)
+        - 문서 내용(작성된 HTML)을 기반으로 자동 생성되는 배열
+        - 내장 배열을 토앻서 태그를 접근할 수 있다.
+        
+        1. window.document.images
+        2. window.document.links
+        3. window.document.anchors
+        4. window.document.forms
+        5. window.document.forms.elements
+        6. window.document.all > MS(비표준)
+        
+        */
+
+        console.log(window.document.images); //6
+        console.log(window.document.images.length); //6
+        console.log(window.document.images[0].src); //http://127.0.0.1:5500/javascript/images/catty01.png
+        console.log(window.document.anchors); //..?
+        console.log(window.document.forms); //2
+        console.log(window.document.forms[0].elements); //3
+        console.log(window.document.forms[1].elements); //4
+        // 이미지는 어디에 있던지 독립적으로 배열에 계산댐
+        console.log(window.document.all); //32
+
+    </script>
+    
+</body>
+</html>

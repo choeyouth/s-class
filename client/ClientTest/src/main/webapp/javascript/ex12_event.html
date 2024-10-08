@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex12_event.html -->
+    <h1>Event</h1>
+
+    <form name="form1">
+        <input type="text" name="txt1">
+        <input type="button" value="버튼1" name="btn1" onclick="window.document.form1.txt1.value = new Date()">
+        <input type="button" value="버튼2" name="btn2" onclick="m1();">
+        <input type="button" value="버튼3" name="btn3">
+    </form>
+
+    <script>
+
+        /* 
+
+            이벤트 조작(처리)(목적), 이벤트 매핑(과정)
+
+            Event Handling, Event Mapping
+
+            자바스크립트 이벤트
+
+            1. 정적 이벤트
+            2. 동적 이벤트
+        
+        */
+
+        function m1() {
+            window.document.form1.txt1.value = new Date();
+        }
+
+        window.document.form1.btn3.onclick = m3;
+        // 함수 호출(X) > 함수 포인트 > 함수 자체를 가리킴 (예약, 등록해둠 > 사용자가 클릭이라는 이벤트가 발생하면 그때 m3를 찾아감)
+        // - 런타임 시 실행되는 동적 이벤트 
+        // - 통제 가능
+
+        if ((new Date()).getHours() < 12) {
+            window.document.form1.txt1.value = new Date();
+        }
+
+        function m3() {
+            window.document.form1.txt1.value = new Date();
+        }
+
+    </script>
+</body>
+</html>

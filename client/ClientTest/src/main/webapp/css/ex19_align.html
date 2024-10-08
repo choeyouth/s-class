@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            정렬, Alignment
+            - 인라인 태그와 블럭 태그의 수평 정렬
+
+            1. 인라인 태그
+                - 내용물의 수평 정렬이 불가능하다. 
+                - 내용물 크기 == 영역 크기 > 움직일 공간이 없다.
+                - text-align 속성 사용 불가
+                - 스스로 정렬 불가능 > 부모인 블럭 태그의 text-align 속성을 통해서 정렬이 가능하다. 
+            
+            2. 블럭 태그
+                - 내용물의 수평 정렬이 가능하다.
+                - 블럭 태그의 너비는 항상 100%이다. > 움직일 공간이 있다. 
+                - text-align 속성은 블럭 태그에게만 제공되는 속성
+                - 스스로 정렬 불가능
+                - 부모에 의한 정렬 불가능(text-align)
+
+            결론
+            1. 인라인 태그
+                - 내용물 정렬X
+                - 본인 정렬O > 부모
+            
+            2. 블럭 태그
+                - 내용물 정렬X
+                - 본인 정렬X > 편법 가능
+
+
+         */
+        #span1 {
+            text-align: center;
+            background-color: yellow;
+        }
+
+        #div1 {
+            text-align: center;
+            background-color: yellow;
+            width: 100px;
+            /* margin-left: 120px;  절댓값 */
+            margin-left: auto; /* 남은 공간을 1/n */
+            margin-right: auto;
+        }
+
+        #box1 {
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        #box2 {
+            text-align: center;
+            border: 1px solid black;
+        }
+        /* 부모에 의해서 정렬 불가능 (움직일 공간X) */
+    </style>
+</head>
+<body>
+    <!-- ex19_align.html -->
+    <h1>인라인 태그</h1>
+    <div id="box1">
+        <span id="span1">강아지</span>
+    </div>
+
+    <h1>블럭 태그</h1>
+    <div id="box2">
+        <div id="div1">고양이</div>
+        aaa
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box { width: 200px; height: 200px; margin-left: 50px; }
+        #box1 { background-color: tomato; }
+        #box2 { background-color: gold; }
+        #box3 { background-color: cornflowerblue; }
+
+        /* 
+            테두리
+            1. border
+            2. outline
+        */
+
+        #box2:hover {
+            /* border: 10px solid black; */
+            /* outline: 10px solid rgba(255, 0, 0, .5); */
+            outline: 30px solid black;
+        }
+
+        input.txt {
+            display: block;
+            margin-bottom: 0;
+            outline: none;
+            border: 1px solid #555;
+            border-radius: 3px;
+        }
+
+        input.txt:focus {
+            /* background-color: gold; */
+            border-color: red;
+            outline: 3px solid blue;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex44_outline.html -->
+    <!-- div#box$.box{상자$}*3 -->
+     
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+
+    <hr>
+
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box { padding: 50px; }
+        #p1 { background-color: tomato; }
+        #p2 { background-color: gold; }
+        #p3 { background-color: cornflowerblue; }
+
+    </style>
+</head>
+<body>
+    <!-- ex47_event.html -->
+
+    <div id="p1" class="box">
+        <div id="p2" class="box">
+            <div id="p3" class="box"></div>
+        </div>
+    </div>
+
+    <hr>
+
+    <input type="text" id="txt1">
+
+
+    <script>
+
+        //이벤트 버블링(Event Bubbling)
+        // vs 이벤트 터널링(Event Tunneling)
+        //    이벤트 캡쳐링(Event Capturing)
+
+        // BOM > 이벤트 버블링(O), 터널링(X)
+        // DOM > 이벤트 버블링(O), 터널링(O)
+
+
+        const p1 = document.getElementById('p1');
+        const p2 = document.getElementById('p2');
+        const p3 = document.getElementById('p3');   
+
+        
+        // document.body.onclick = function() {
+        //     alert('body');
+        // };
+
+        // p1.onclick = function() {
+        //     alert('빨강');
+        // };
+        
+        // p2.onclick = function() {
+        //     alert('노랑');
+        // };
+        
+        // p3.onclick = function() {
+        //     alert('파랑');
+        //     // event.cancelBubble = true; // MS(비표준)
+        //     event.stopPropagation();
+        // };  
+
+        // window.onkeydown = function() {
+        //     if (event.keyCode == 51) {
+        //         //전역 단축키 
+        //         location.href = 'https://naver.com';
+        //     }
+        // }
+
+        document.getElementById('txt1').onkeydown = function() {
+            event.stopPropagation();
+            //이 안에서 키 이벤트가 발생해도 부모에게 전파가 이동하지 않음
+        };
+
+
+
+        // p1.addEventListener('click', function() {
+        //     alert('red');
+        // }, true);
+
+        // p2.addEventListener('click', function() {
+        //     alert('yellow');
+        // }, true);
+
+        // p3.addEventListener('click', function() {
+        //     alert('blue');
+        // }, true);
+
+        p1.addEventListener('click', function() {
+            alert('red');
+            // event.stopPropagation();
+        });
+
+        p2.addEventListener('click', function() {
+            alert('yellow');
+        });
+
+        p3.addEventListener('click', function() {
+            alert('blue');
+        });
+
+
+
+    </script>
+
+</body>
+</html>

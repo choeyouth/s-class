@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            CSS 선택자
+            1. 전체 선택자
+            2. 태그 선택자
+            3. 아이디 선택자
+            4. 클래스 선택자
+            5. 그룹 선택자
+                - (1~4번) 모든 선택자들을 그룹을 묶어서 일괄 선택
+
+        */
+        
+        /* h1 { color: blue; }
+        p { color: blue; }
+        div { color: blue; } */
+
+        /* h1, p, div {
+            color: orange;
+        } */
+
+        h1, #p1, div.list {
+            color: pink;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ex04_selector.html -->
+
+    <h1 class="list">h1 태그입니다.</h1>
+    <p id="p2">p 태그입니다.</p>
+    <p id="p1">p 태그입니다.</p>
+    <p id="p3">p 태그입니다.</p>
+
+    <div class="list">div 태그입니다.</div>
+    <div class="list">div 태그입니다.</div>
+    <div class="list">div 태그입니다.</div>
+
+</body>
+</html>

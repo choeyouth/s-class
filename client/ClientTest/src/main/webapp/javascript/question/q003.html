@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        h1 {
+            font-family: 'GmarketSansMedium';
+            color: gray;
+        }
+
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <!-- 마우스 이벤트, 키 이벤트, + esc > 처음이미지 -->
+    <form name="form1">
+        <h1>고양이</h1>
+        <div name="cats">
+            <img src="../images/catty01.png" name="img1">
+            <img src="../images/catty02.png" name="img2">
+            <img src="../images/catty03.png" name="img3">
+            <img src="../images/catty04.png" name="img4">
+            <img src="../images/catty05.png" name="img5">
+        </div>
+    </form>
+
+    <script>
+
+        var img1 = document.form1.img1;
+        var img2 = document.form1.img2;
+        var img3 = document.form1.img3;
+        var img4 = document.form1.img4;
+        var img5 = document.form1.img5;
+        var cats = document.form1;
+
+        cats.onmouseover = m1;
+        cats.onclick = m2;
+        document.onkeydown = m3;
+
+        function m1() {
+            img1.onmouseover = function() {
+                img1.width += 5;
+            }
+            img2.onmouseover = function() {
+                img2.width += 5;
+            }
+            img3.onmouseover = function() {
+                img3.width += 5;
+            }
+            img4.onmouseover = function() {
+                img4.width += 5;
+            }
+            img5.onmouseover = function() {
+                img5.width += 5;
+            }
+        }
+
+        function m2() {
+            img1.onclick = function() {
+                img1.width = 128;
+            }      
+            img2.onclick = function() {
+                img2.width = 128;
+            }     
+            img3.onclick = function() {
+                img3.width = 128;
+            }     
+            img4.onclick = function() {
+                img4.width = 128;
+            }     
+            img5.onclick = function() {
+                img5.width = 128;
+            }     
+        }
+        
+        function m3() {
+            if (event.keyCode == 27) {
+                img1.width = 128;
+                img2.width = 128;
+                img3.width = 128;
+                img4.width = 128;
+                img5.width = 128;
+            }
+        }
+
+    </script>
+</body>
+</html>

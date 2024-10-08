@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        
+            CSS 선택자
+            1.  전체 선택자
+            2.  태그 선택자
+            3.  아이디 선택자
+            4.  클래스 선택자(**********)
+            5.  그룹 선택자
+            6. 자식 선택자
+            7. 자손 선택자
+
+            8. 인접 형제 선택자
+                - Adjacent Sibling Selector
+                - 형제선택자 + 선택자 {}
+
+            9. 형제 선택자
+                - Sibling Selector
+                - 형제선택자 ~ 선택자 {}
+
+        */
+
+        /* 형을 조건(기준)으로 동생을 찾음 */
+        /* div + p { color: blue; }
+        p + p { color: blue; }
+        span + div { color: blue; } */
+
+        /* 앞쪽 태그 밑에 모든 태그를 찾음 */
+        div ~ p { color: blue; }
+
+    </style>
+</head>
+<body>
+    <!-- ex07_selector.html -->
+
+    <p>p 태그입니다.</p>
+    <div>div 태그입니다.</div>
+    <p>p 태그입니다.</p>
+    <p>p 태그입니다.</p>
+    <span>span 태그입니다.</span>
+    <div>div 태그입니다.</div>
+    <p>p 태그입니다.</p>
+
+</body>
+</html>

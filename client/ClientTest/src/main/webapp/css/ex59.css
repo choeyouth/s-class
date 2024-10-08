@@ -1,0 +1,201 @@
+/* ex59.css */
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* html {
+    border: 10px solid blue;
+    height: 100%; 
+}
+
+body {
+    border: 10px solid tomato;
+    height: 100%; 
+} */
+
+
+main {
+    /* border: 10px solid gold; */
+    /* width: 100%; */
+    /* height: 100%;부모의 영역 만큼 100% > %: 부모를 기준으로 함 */
+    height: 100vh; /* viewport(눈에 보이는 화면) height / vw(viewport width) */
+    
+    display: grid;
+    grid-template-rows: 50px 200px auto; /* 서치, 배너, 콘텐츠 */
+    grid-template-columns: 200px auto; /* 주황, 나머지 */    
+}
+
+/* 외부 CSS 작업 시 id 및 class, 서식 확인 > 확장 */
+
+#menu {
+    background-color: orange;
+    grid-row: 1/4;
+    text-align: center;
+}
+
+#menu h1 {
+    color: white;
+}
+
+#menu hr {
+    border: 0;
+    border-top: 1px dashed white
+}
+
+#menu > ul {
+    padding: 0;
+    color: white;
+}
+
+#menu > div {
+    color: white;
+    font-size: 14px;
+}
+
+
+
+#search {
+    background-color: gold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search input[type=text], #search button {
+    border: 1px solid #555;
+    padding: 5px;
+    margin: 0;
+    font-size: 16px;
+    background-color: white;
+    outline: none;
+}
+
+#search input[type=text] {
+    border-top-left-radius: 20px; /* 11시 방향 */
+    border-bottom-left-radius: 20px; /* 7시 방향 */
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#search button {
+    border-top-right-radius: 20px; /* 2시 방향 */
+    border-bottom-right-radius: 20px; /* 5시 방향 */
+    margin-left: -1px;
+}
+
+
+
+#banner {
+    background-color: pink;
+}
+
+#banner img {
+    object-fit: cover; /* 종횡비를 유지하면서 화면을 채움 */
+    width: 100%;
+    height: 100%;
+}
+
+
+#content {
+    background-color: cornflowerblue;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+}
+
+#content > div {
+    background: yellowgreen;
+    /* width: 200px;
+    margin-bottom: 20px; */
+}
+
+#content > div > img {
+    display: block;
+    margin: 10px auto;
+    border: 3px solid #FFF;
+    padding: 3px;
+}
+
+#content > div > div {
+    margin: 30px;
+    font-size: 14px;
+    color: #555;
+}
+
+
+
+/* 스마트폰 + 태블릿(세로) */
+@media screen and (max-width: 1000px) {
+
+    main { /* 복붙 > 재정의가 필요한 부분만 수정 */
+        grid-template-rows: 200px 50px 200px auto; 
+        grid-template-columns: 1fr;     
+    }
+
+    #menu {
+        grid-row: auto;
+        
+    }
+    
+    #menu hr {
+        display: none;
+    }
+    
+    #menu > ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    #menu > ul > li {
+        list-style-type: none;
+        margin: 0 5px;
+    }
+    
+    #menu > div {
+        font-size: 14px;
+    }
+
+    #content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #banner {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

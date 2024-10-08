@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+
+            인접한 인라인 태그 사이의 공백
+            - 원인: 소스상의 엔터 + 탭
+
+            공백 제거 방법
+            1. 직접 공백을 제거한다. > 사용 비권장
+            2. font-size: 0; > 추가 코드 발생(text)
+            3. float > 추가 코드 발생(clear)
+            4. flext > 추가 코드 발생(X) > 가장 이상적 방법
+
+        */
+
+        #menu {
+            /* font-size: 0; */
+            width: 630px; /* 화면 크기가 변해도 블럭 변화x */
+            margin: 0 auto;
+            transform: translate(0px, -100px);
+        }
+
+        #menu::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #menu > img {
+            float: left;
+        }
+
+        #menu > img:hover {
+            transform: translate(0px, 90px); /* 변화(X) */
+        }
+
+        #sub-menu {
+            /* border: 5px solid blue; */
+            width: 126px;
+            font-size: 0;
+            transform: translate(-110px, 0px);
+        }
+
+        #sub-menu > img:hover {
+            transform: translate(100px, 0px);
+        }
+
+        #menu img, #sub-menu img {
+            transition: transform .6s;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex48_tran용sform.html -->
+    <!-- 
+        HTML5 Semantic Tag
+        1. main > 메인 콘텐츠
+        2. header > 상단부
+        3. footer > 하단부
+        4. section > 콘텐츠
+        5. article > 반복되는 콘텐츠 요소
+        6. nav > 메뉴
+        7. aside > 보조 콘텐츠 
+    -->
+    <nav id="menu">
+        <img src="images/rect_icon01.png" alt="">
+        <img src="images/rect_icon02.png" alt="">
+        <img src="images/rect_icon03.png" alt="">
+        <img src="images/rect_icon04.png" alt="">
+        <img src="images/rect_icon05.png" alt="">
+    </nav>
+
+    <!-- <div style="clear: both;">또 다른 내용</div> -->
+
+    <!-- 또 다른 내용 -->
+
+    <nav id="sub-menu">
+        <img src="images/rect_icon01.png" alt="">
+        <img src="images/rect_icon02.png" alt="">
+        <img src="images/rect_icon03.png" alt="">
+        <img src="images/rect_icon04.png" alt="">
+        <img src="images/rect_icon05.png" alt="">
+    </nav>
+
+</body>
+</html>

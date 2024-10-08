@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- ex16_table.html -->
+	
+	<h1>주소록</h1>
+	
+	<table border="1" width="600">
+	<!-- 높이를 주면 행 삭제 및 추가 시 영향을 받음 
+		 높이 선언X > 내용물의 크기만큼 자동으로 계산
+		 변화가 없는 테이블을 만들 때만 높이 값을 준다. -->
+<!--    <tr>
+			<td bgcolor="#DDDDDD" align="center">번호</td>
+			<th>이름</th>
+			<td>나이</td>
+			<td>성별</td>
+			<td>주소</td>
+		</tr> -->
+		<tr bgcolor="#DDDDDD">
+			<th width="50">번호</th>
+			<th width="80">이름</th>
+			<th width="60">나이</th>
+			<th width="70">성별</th>
+			<th width="340">주소</th>
+			<!-- 숫자의 합이 600이 돼야 함 -->
+		</tr>
+		<!-- 
+			
+			콘텐츠 너비 고정 or 변화x > 좌측 or 중앙
+			콘텐츠 너비 가변 > 좌측
+			
+		 -->
+		<tr>
+			<td align="center">1</td>
+			<td align="center">홍길동</td>
+			<td align="center">20</td>
+			<td align="center">남자</td>
+			<td>서울시 강남구 역삼동 한독빌딩 8층 1강의실 앞에서 두번째 줄 세번째 열</td>
+		</tr>
+		<tr>
+			<td align="center">2</td>
+			<td align="center">아무개</td>
+			<td align="center">22</td>
+			<td align="center">남자</td>
+			<td>서울시 강남구 대치동</td>
+		</tr>
+		<tr>
+			<td align="center">1</td>
+			<td align="center">홍길동</td>
+			<td align="center">20</td>
+			<td align="center">남자</td>
+			<td>서울시 강남구 역삼동</td>
+		</tr>
+		<tr>
+			<td align="center">2</td>
+			<td align="center">아무개</td>
+			<td align="center">22</td>
+			<td align="center">남자</td>
+			<td>서울시 강남구 대치동</td>
+		</tr>
+		<tr>
+			<td align="center">1</td>
+			<td align="center">홍길동</td>
+			<td align="center">20</td>
+			<td align="center">남자</td>
+			<td>서울시 강남구 역삼동</td>
+		</tr>
+		<tr>
+			<td align="center">2</td>
+			<td align="center">아무개</td>
+			<td align="center">22</td>
+			<td align="center">남자</td>
+			<td>서울시 강남구 대치동</td>
+		</tr>
+		<tr>
+			<td align="center">1</td>
+			<td align="center">홍길동</td>
+			<td align="center">20</td>
+			<td align="center">남자</td>
+			<td>서울시 강남구 역삼동</td>
+		</tr>
+		<tr>
+			<td align="center">2</td>
+			<td align="center">아무개</td>
+			<td align="center">22</td>
+			<td align="center">남자</td>
+			<td>서울시 강남구 대치동</td>
+		</tr>
+		<tr>
+			<td align="center">1</td>
+			<td align="center">홍길동</td>
+			<td align="center">20</td>
+			<td align="center">남자</td>
+			<td>서울시 강남구 역삼동</td>
+		</tr>
+		<tr>
+			<td align="center">2</td>
+			<td align="center">아무개</td>
+			<td align="center">22</td>
+			<td align="center">남자</td>
+			<td>서울시 강남구 대치동</td>
+		</tr>
+		
+	</table>
+	
+	
+	
+	<hr>	
+	
+	
+	<table border="1" width="600">
+		<tr bgcolor="#DDDDDD">
+			<th colspan="5">개발자 정보</th>
+		</tr>
+
+		<tr>
+			<td align="center" rowspan="2">1</td>
+			<td align="center" rowspan="2">홍길동</td>
+			<td align="center">20</td>
+			<td align="center">남자</td>
+			<td>서울시 강남구 역삼동 한독빌딩 8층 1강의실 앞에서 두번째 줄 세번째 열</td>
+		</tr>
+		<tr>
+			<td align="center" colspan="2">개발자(5년차)</td>
+			<td>공공기관 프로젝트 참여</td>
+		</tr>
+		<tr>
+			<td align="center">2</td>
+			<td align="center">아무개</td>
+			<td align="center">22</td>
+			<td align="center">남자</td>
+			<td>서울시 강남구 대치동</td>
+		</tr>
+
+	</table>	
+	
+	
+</body>
+</html>

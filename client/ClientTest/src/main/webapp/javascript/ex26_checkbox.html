@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex26_checkbox.html -->
+    <h1>체크 박스</h1>  
+
+    <form name="form1">
+        <input type="checkbox" name="cb1">
+        <input type="button" value="버튼" name="btn1">
+    </form>
+
+    <hr>
+
+    <h1>회원 가입</h1>
+
+    <p>약관..</p>
+
+    <label><input type="checkbox" name="cbAgree">약관에 동의합니다.</label>
+
+    <input type="button" value="다음 단계로" disabled name="btnNext">
+
+    <hr>
+
+    <h2>장바구니</h2>
+
+    <table border="1" width="500">
+        <tr>
+            <th align="center"><input type="checkbox" name="cbAll"></th>
+            <th>상품명</th>
+            <th>수량</th>
+            <th>가격</th>
+        </tr>
+        <tr>
+            <td align="center"><input type="checkbox" name="cbItem"></td>
+            <td>마우스</td>
+            <td>1</td>
+            <td>35,000</td>
+        </tr>
+        <tr>
+            <td align="center"><input type="checkbox" name="cbItem"></td>
+            <td>마우스</td>
+            <td>1</td>
+            <td>35,000</td>
+        </tr>
+        <tr>
+            <td align="center"><input type="checkbox" name="cbItem"></td>
+            <td>마우스</td>
+            <td>1</td>
+            <td>35,000</td>
+        </tr>
+        <tr>
+            <td align="center"><input type="checkbox" name="cbItem"></td>
+            <td>마우스</td>
+            <td>1</td>
+            <td>35,000</td>
+        </tr>
+        <tr>
+            <td align="center"><input type="checkbox" name="cbItem"></td>
+            <td>마우스</td>
+            <td>1</td>
+            <td>35,000</td>
+        </tr>
+        <tr>
+            <td align="center"><input type="checkbox" name="cbItem"></td>
+            <td>마우스</td>
+            <td>1</td>
+            <td>35,000</td>
+        </tr>
+        <tr>
+            <td align="center"><input type="checkbox" name="cbItem"></td>
+            <td>마우스</td>
+            <td>1</td>
+            <td>35,000</td>
+        </tr>
+        <tr>
+            <td align="center"><input type="checkbox" name="cbItem"></td>
+            <td>마우스</td>
+            <td>1</td>
+            <td>35,000</td>
+        </tr>
+        <tr>
+            <td align="center"><input type="checkbox" name="cbItem"></td>
+            <td>마우스</td>
+            <td>1</td>
+            <td>35,000</td>
+        </tr>        <tr>
+            <td align="center"><input type="checkbox" name="cbItem"></td>
+            <td>마우스</td>
+            <td>1</td>
+            <td>35,000</td>
+        </tr>        <tr>
+            <td align="center"><input type="checkbox" name="cbItem"></td>
+            <td>마우스</td>
+            <td>1</td>
+            <td>35,000</td>
+        </tr>
+    </table>
+
+
+    <script>
+
+        var cd1 = document.form1.cb1;
+        var btn1 = document.form1.btn1;
+
+        btn1.onclick = m1;
+
+        function m1() {
+            // cb1.checked = true;
+            cb1.checked = !cb1.checked;
+        }
+
+        var cbAgree = document.all.cbAgree;
+        var btnNext = document.all.btnNext;
+
+        cbAgree.onchange = m2;
+
+        function m2() {
+            // alert(cbAgree.checked);
+
+            if (cbAgree.checked) {
+                btnNext.disabled = false;
+            } else {
+                btnNext.disabled = true;
+            }
+        }
+
+        var cbAll = document.all.cbAll;
+        var cbItem = document.all.cbItem;
+
+        // alert(cbItem.length); //11
+
+        cbAll.onchange = m3;
+
+        function m3() {
+
+            //전체 선택 및 해제 
+            // if (cbAll.checked) {
+            //     for (var i=0; i<cbItem.length; i++) {
+            //         cbItem[i].checked = true;
+            //     }
+            // } else {
+            //     for (var i=0; i<cbItem.length; i++) {
+            //         cbItem[i].checked = false;
+            //     }
+            // }
+
+            for (var i=0; i<cbItem.length; i++) {
+                    cbItem[i].checked = cbAll.checked;
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>

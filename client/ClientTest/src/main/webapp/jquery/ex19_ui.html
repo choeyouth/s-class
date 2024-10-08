@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/pepper-grinder/jquery-ui.css">
+    <style>
+        
+        #search {
+            border: 1px solid #999;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px;
+        }
+
+        #search #price {
+            margin: 20px;
+        }
+        
+        .item {
+            border: 1px solid #999;
+            width: 150px;
+            height: 220px;
+            text-align: center;
+            padding: 20px 10px;
+            margin: 14px;
+        }  
+
+        #list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .item > div:last-child {
+            font-size: 2rem;
+            font-weight: bold;
+            color: tomato;
+        }
+
+        .item > div:last-child::after {
+            content: "원";
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex19_ui.html -->
+
+    <h1>상품 목록</h1>
+    
+    <div id="search">
+        가격: <span><span>30,000</span>원 ~ <span>70,000</span>원</span>
+        <div id="price"></div>
+    </div>
+
+    <div id="list">
+        <div class="item">
+            <img src="images/rect_icon01.png" alt="">
+            <div>Lorem, ipsum.</div>
+            <div>50000</div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon02.png" alt="">
+            <div>Corporis, provident.</div>
+            <div>99000</div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon03.png" alt="">
+            <div>Consequuntur, eos?</div>
+            <div>21000</div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon04.png" alt="">
+            <div>Voluptas, recusandae!</div>
+            <div>35000</div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon05.png" alt="">
+            <div>Ab, quidem.</div>
+            <div>86000</div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon06.png" alt="">
+            <div>Odit, iusto.</div>
+            <div>11000</div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon07.png" alt="">
+            <div>Reprehenderit, labore?</div>
+            <div>82000</div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon08.png" alt="">
+            <div>Quod, sed.</div>
+            <div>45000</div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon09.png" alt="">
+            <div>Dolor, expedita?</div>
+            <div>39000</div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon10.png" alt="">
+            <div>Asperiores, quos.</div>
+            <div>67000</div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon11.png" alt="">
+            <div>Animi, eum.</div>
+            <div>98000</div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon12.png" alt="">
+            <div>Veritatis, odit.</div>
+            <div>35000</div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon13.png" alt="">
+            <div>Recusandae, voluptas.</div>
+            <div>63000</div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon14.png" alt="">
+            <div>Commodi, autem.</div>
+            <div>22000</div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon15.png" alt="">
+            <div>Cupiditate, voluptatem!</div>
+            <div>99000</div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon16.png" alt="">
+            <div>Eveniet, corrupti.</div>
+            <div>11000</div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon17.png" alt="">
+            <div>Autem, id.</div>
+            <div>20000</div>
+        </div>
+        <div class="item">
+            <img src="images/rect_icon18.png" alt="">
+            <div>Nam, voluptatem.</div>
+            <div>36000</div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+    <script>
+        
+        $('#price').slider({
+            range: true,
+            min: 10000,
+            max: 100000,
+            values: [ 30000, 70000 ],
+            step: 1000,
+            slide: function(event, ui) {
+                // document.title = ui.values[0] + ',' + ui.values[1];
+                $('#search span span:nth-child(1)').text(ui.values[0].toLocaleString());
+                $('#search span span:nth-child(2)').text(ui.values[1].toLocaleString());
+           
+                showItem(ui.values[0], ui.values[1]);
+
+            }
+        });
+
+        function showItem(minPrice, maxPrice) {
+
+            $('#list .item').each((index, item) => {
+
+                // console.log(parseInt($(item).children().last().text().replace(/,/g, '')));
+                
+                let price = (parseInt($(item).children().last().text().replace(/,/g, '')));
+
+                if (price >= minPrice 
+                    && price <= maxPrice) {
+                    $(item).show();
+                } else {
+                    $(item).hide();
+                }
+
+            }); 
+        }
+
+        $('.item > div:last-child').each((index, item) => {
+            $(item).text(parseInt($(item).text()).toLocaleString());
+        });
+
+        showItem(30000, 70000);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        @font-face { font-family: 'BRRA_R'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/BRRA_R.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+        body {
+            margin: 50px;
+        }
+
+        #box {
+            width: 690px;
+            height: 200px;
+            border: 1px solid #808080;
+            margin-bottom: 20px;
+            font-size: 110px;
+            letter-spacing: 0;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #btn {
+            margin-left: 30px;
+        }
+
+        input[type=button] {
+            border: 1px solid #AAAAAA;
+            width: 200px;
+            height: 50px;
+            font-family: 'BRRA_R';
+            font-size: 18px;
+            color: #444444;
+            outline: none;
+        }
+
+        #start {
+            background-color: white;
+        }
+
+        span {
+            font-family: 'BRRA_R';
+            color: #444444;
+            font-size: 115px;
+        }
+
+        img {
+            padding: 0;
+            margin: 0;
+            display: block;
+            width: 95px;
+            height: 139px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img src="../images/0.png" id="minImg2">
+        <img src="../images/0.png" id="minImg1">
+        <span>:</span>
+        <img src="../images/0.png" id="secImg2">
+        <img src="../images/0.png" id="secImg1">
+        <span>:</span>
+        <img src="../images/0.png" id="msImg2">
+        <img src="../images/0.png" id="msImg1">
+    </div>
+    <div id="btn">
+        <input type="button" value="시작" id="start">
+        <input type="button" value="멈춤" id="stop">
+        <input type="button" value="종료" id="end">
+    </div>
+
+    <script>
+
+        let min1 = 0;
+        let min2 = 0;
+        let sec1 = 0;
+        let sec2 = 0;
+        let ms1 = 0;
+        let ms2 = 0;
+        let timer = null;
+        const box = document.getElementById('box');
+        const start = document.getElementById('start');
+        const stop = document.getElementById('stop');
+        const end = document.getElementById('end');
+        const minImg2 = document.getElementById('min2');
+        const minImg1 = document.getElementById('min1');
+        const secImg2 = document.getElementById('sec2');
+        const secImg1 = document.getElementById('sec1');
+        const msImg2 = document.getElementById('ms2');
+        const msImg1 = document.getElementById('ms1');
+
+
+        start.addEventListener('click', function() {
+
+            timer = setInterval(function() {
+
+                msImg1.
+                msImg1.src = `../images/${ms1}.png`;
+                msImg2.src = `../images/${ms2}.png`;
+                secImg1.src = `../images/${sec1}.png`;
+                secImg2.src = `../images/${sec2}.png`;
+                minImg1.src = `../images/${min1}.png`;
+                minImg2.src = `../images/${min2}.png`; 
+
+                ms1++;
+
+                if (ms1 == 9) {
+                    ms1 = 0;
+                    ms2++;
+
+                    if (ms2 == 6) {
+                        ms2 = 0;
+                        sec1++;
+
+                        if (sec1 == 9) {
+                            sec1 = 0;
+                            sec2++;
+
+                            if (sec2 == 6) {
+                                sec2 = 0;
+                                min1++;
+
+                                if (min1 == 9) {
+                                    min1 = 0;
+                                    min2++;
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                } 
+ 
+            });
+        });
+
+    </script>
+
+</body>
+</html>

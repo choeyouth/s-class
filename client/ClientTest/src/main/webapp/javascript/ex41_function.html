@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex41_function.html -->
+
+    <input type="button" value="버튼1" id="btn1">
+    <input type="button" value="버튼2" id="btn2">
+
+    <script>
+
+        /* 
+        
+            약어는 모두 대문자로 적성한다. 
+            HTML(O)
+            html
+            Html
+
+            JavaScript Function
+            - "함수는 1급 객체이다." First-Citizen, First Class Object
+            - 함수를 객체처럼 취급한다. > 함수를 값으로 사용할 수 있다.
+            
+            1. 함수를 변수나 데이터 구조에 담을 수 있다. 
+            2. 함수를 매개변수에 전달할 수 있다.
+            3. 함수를 반환값으로 사용할 수 있다.
+
+            *** 값(변수, 상수)이 들어가는 모든 위치에 함수가 들어갈 수 있다. 
+
+
+            자바스크립트에서 함수를 선언하는 방법
+            1. 함수 선언문 > 여태까지의 수업
+                - 실명 함수
+
+            2. 함수 표현식(리터럴) 
+                - 익명 함수(호출, 재사용X)
+
+
+        */
+
+        //1. 함수 선언문
+        // function m1() {
+        //     alert('m1');
+        // }
+
+        // m1();
+
+
+
+        //2. 함수 표현식(리터럴)
+        (function () {
+            //alert('익명 함수');
+        })(); //즉시 호출 > 선언과 동시에 호출 > 스코프를 만들 때 사용
+
+        function aaa() {
+            let name = '홍길동';
+        }
+        aaa();
+
+        function bbb() {
+            let name = '아이폰';
+        }
+        bbb();
+        // 변수 충돌을 막기 위해 함수 사용
+        // 재사용(호출)하려고 만든 함수X > 의도 전달X
+
+        // 익명 함수로 사용
+        (function () {
+            let name = '강아지';
+        })();
+
+
+        (function () {
+            let name = '갤럭시';
+        })();
+
+
+        //1. 함수를 변수나 데이터 구조에 담을 수 있다. 
+        let f1 = function () {
+            alert('익명함수'); 
+        }
+        //익명함수를 변수에 저장 
+
+
+        // f1();
+        console.log(typeof f1); //function
+
+        function m2() {
+            alert('m2');
+        }
+
+
+        //실명함수를 변수에 저장 
+        let f2 = m2; //함수명을 f2에 저장
+
+        // f2();
+
+        document.getElementById('btn1').onmousedown = m3;
+
+        function m3() {
+            //Cannot read properties of undefined (reading 'buttons')
+            alert(event.buttons);
+        }
+        // m3(); //직접 호출하면 이벤트가 정상적으로 실행되지 않음
+
+
+        document.getElementById('btn2').onclick = function() {
+            alert('버튼2');
+        }
+
+
+        //2. 함수를 매개변수에 전달할 수 있다.
+        function f4() {
+            alert('f4');
+        }
+
+        function f5() {
+            alert('f5');
+        }
+
+        function f6(fn) {
+            fn(); //f4가 실행 > 매개변수로 함수 전달 
+        }
+
+        // f6(f4); //함수의 이름 자체를 넘김 (매개변수)
+        // f6(function () {
+        //     alert('익명함수');
+        // })
+
+
+        //setTimeout(f4, 1000); //1초 후에 f4 실행
+        // setTimeout(function() {
+        //     alert('익명');
+        // }, 3000);
+        // 3초 후에 익명함수 실행
+
+        //3. 함수를 반환값으로 사용할 수 있다.
+        function f7() {
+            alert('f7');
+        }
+
+        function f8() {
+            return f7; //함수 자체를 반환 
+        }
+        
+        // const fn1 = f8();
+        // fn1(); //f7
+
+        f8()(); //f7
+
+    </script>
+
+</body>
+</html>

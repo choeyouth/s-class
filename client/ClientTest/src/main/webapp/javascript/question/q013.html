@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 
+            body {
+                background-color: tomato;
+            } 
+        */
+
+        #countTxt { 
+            width: 254px; 
+            height: 227px; 
+            border: none;
+            /* background-color: tomato; */
+            outline: none;
+            font-size: 10em;
+            color: #444444;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="count">
+        <input type="text" id="countTxt">
+    </div>
+
+    <script>
+
+        let count = 10;
+        const countTxt = document.querySelector('#countTxt');
+        const bodyColor = document.querySelector('body');
+        var timer;
+        countTxt.value = count;
+        
+
+        timer = setInterval(function() {
+            
+            if (count > 0) {
+                count--;
+                countTxt.value = count;
+
+            } else {
+                clearInterval(timer);
+                location.href = 'https://google.com';
+            }
+        }, 1000);
+
+        window.onkeydown = function() {
+            if (event.keyCode == 27) {
+                clearInterval(timer);
+                document.body.bgColor = 'tomato';
+            }
+        };
+
+
+    </script>
+</body>
+</html>

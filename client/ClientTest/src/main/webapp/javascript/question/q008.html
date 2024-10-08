@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'GmarketSansMedium';
+        }
+
+        h1 {
+            color: gray;
+        }
+
+        table {
+            /* border: 1px solid gray; */
+            width: 600px;
+            padding: 0;
+            margin: 0;
+            border-collapse: collapse;
+        }
+
+        table td {
+            border: 1px solid gray;
+            padding: 10px;
+            margin: 0;
+        }
+
+        table td:first-child {
+            color: gray;
+            width: 100px;
+            background-color: #DEDEDE;
+            text-align: center;
+        }
+
+        input {
+            border: 1px solid gray;
+            outline: none;
+        }
+
+        #txt1 {
+            width: 60px;
+            height: 17px;
+        }
+
+        #txt2, #txt3 {
+            height: 17px;
+            width: 450px;
+        }
+
+        input[type=button] {
+            font-family: 'GmarketSansMedium';
+            color: gray;
+            height: 21px;
+        }
+
+    </style>
+</head>
+<body>
+    <form name="form1">
+        <h1>우편 번호 검색</h1>
+        <table name="tbl">
+            <tr>
+                <td>우편번호</td>
+                <td><input type="text" name="txt1" id="txt1" readonly> <input type="button" value="우편번호검사하기" name="btn"></td>
+            </tr>
+            <tr>
+                <td>주소</td>
+                <td><input type="text" name="txt2" id="txt2" readonly></td>
+            </tr>
+            <tr>
+                <td>상세주소</td>
+                <td><input type="text" name="txt3" id="txt3"></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+
+        var btn = document.form1.btn;
+
+        btn.onclick = m1;
+
+        function m1() {
+            child = window.open("q008_link.html", "search", "width=300, height=200");
+        }
+
+    </script>
+</body>
+</html>

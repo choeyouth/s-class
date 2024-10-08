@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'GmarketSansMedium';
+            color: gray;
+        }
+
+        fieldset {
+            border: 1px solid gray;
+            margin-top: 20px;
+        }
+
+        #ck {
+            margin: 15px;
+        }
+
+        input[type=text] {
+            margin: 5px;
+            padding: 2px;
+            width: 180px;
+            height: 15px;
+            outline: none;
+            font-family: 'GmarketSansMedium';
+            color: gray;
+        }
+
+        legend {
+            padding: 3px;
+        }
+
+    </style>
+</head>
+<body>
+    <form name="form1">
+        <h3>주문하기</h3>
+        <fieldset>
+            <legend>주문하시는 분</legend>
+            이름: <input type="text" name="txt1" id="txt1"><br>
+            주소: <input type="text" name="txt2">
+        </fieldset>
+        <div id="ck">
+            <input type="checkbox" name="ck"> 주문하신분과 정보가 동일합니다.
+        </div>
+        <fieldset>
+            <legend>받으시는 분</legend>
+            이름: <input type="text" name="txt3"><br>
+            주소: <input type="text" name="txt4">
+        </fieldset>
+    </form>
+
+    <script>
+
+        var txt1 = document.form1.txt1;
+        var txt2 = document.form1.txt2;
+        var txt3 = document.form1.txt3;
+        var txt4 = document.form1.txt4;
+
+        var ck = document.form1.ck;
+        ck.onclick = m1;
+
+        function m1() {
+            if (ck.checked) {
+                txt3.value = txt1.value;
+                txt4.value = txt2.value;
+            } else {
+                txt3.value = "";
+                txt4.value = "";
+            }
+        }
+
+    </script>
+</body>
+</html>

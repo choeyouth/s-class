@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/7121714adf.js" crossorigin="anonymous"></script>
+    <style>
+        #box {
+            border: 1px solid black;
+            width: 300px;
+            height: 200px;
+            margin: 50px;
+        
+            /* 
+                모서리 둥글기(px, %)
+            */
+            
+            border-radius: 100px;
+            /* 사각형의 짧은 축보다 원이 커지면 변화X > 100px */
+            
+            border-radius: 50%;
+            /* 정사각형일 때는 차이X */
+
+        }
+
+        input[type=text] {
+            background-color: gold;
+            border: 1px solid #555;
+            border-radius: 20px;
+            outline: none;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        button {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            border: 3px solid #555;
+        }
+        
+        button > i {
+            font-size: 1.5rem;
+            color: black
+        }
+
+        button:hover > i {
+            /* box-shadow: 0px 0px 3px #333; */
+            color: tomato;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex43_border.html -->
+    <div id="box"></div>
+
+    <hr>
+
+    <input type="text">
+
+    <hr>
+    
+    <button type="button"><i class="fa-solid fa-pen"></i></button>
+    <button type="button"><i class="fa-solid fa-ban"></i></button>
+</body>
+</html>

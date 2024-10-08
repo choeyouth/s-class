@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            height: 900px;
+            width: 750px;
+        }
+
+        #box {
+            padding: 0;
+            margin-left: 30px;
+            margin-top: 30px;
+            height: 800px;
+            width: 650px;
+            border: 10px solid black;
+        }
+
+        .ball {
+            border: 10px solid black;
+            border-radius: 50px;
+            height: 50px;
+            width: 50px;
+            position: absolute;
+        }
+
+        #ball1 {
+            background-color: red;
+            left: 68px;
+            animation-name: ball1;
+            animation-duration: 1s;
+            animation-timing-function: ease-in;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+
+        }
+
+        @keyframes ball1 {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(0, 731px);
+            }
+        }
+
+        #ball2 {
+            background-color: orange;
+            left: 158px;
+            animation-name: ball2;
+            animation-duration: .5s;
+            animation-timing-function: ease-in;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes ball2 {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(0, 735px);
+            }
+        }
+
+        #ball3 {
+            background-color: yellow;
+            left: 248px;
+            animation-name: ball3;
+            animation-duration: .7s;
+            animation-timing-function: ease-in;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes ball3 {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(0, 735px);
+            }
+        }
+
+        #ball4 {
+            background-color: green;
+            left: 338px;
+            animation-name: ball3;
+            animation-duration: 0.9s;
+            animation-timing-function: ease-in;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes ball4 {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(0, 735px);
+            }
+        }
+
+        #ball5 {
+            background-color: blue;
+            left: 428px;
+            animation-name: ball5;
+            animation-duration: .8s;
+            animation-timing-function: ease-in;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes ball5 {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(0, 735px);
+            }
+        }
+
+        #ball6 {
+            background-color: purple;
+            left: 518px;
+            animation-name: ball6;
+            animation-duration: 1.1s;
+            animation-timing-function: ease-in;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        
+        @keyframes ball6 {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(0, 735px);
+            }
+        }
+
+        #ball7 {
+            background-color: hotpink;
+            left: 608px;
+            animation-name: ball7;
+            animation-duration: 0.9s;
+            animation-timing-function: ease-in;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes ball7 {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(0, 735px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="ball" id="ball1"></div>
+        <div class="ball" id="ball2"></div>
+        <div class="ball" id="ball3"></div>
+        <div class="ball" id="ball4"></div>
+        <div class="ball" id="ball5"></div>
+        <div class="ball" id="ball6"></div>
+        <div class="ball" id="ball7"></div>
+    </div>
+</body>
+</html>
