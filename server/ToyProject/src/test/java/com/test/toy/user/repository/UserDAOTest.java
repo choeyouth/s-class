@@ -3,13 +3,22 @@ package com.test.toy.user.repository;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import com.test.toy.user.model.UserDTO;
 
 class UserDAOTest {
-
+	
+	private static UserDAO dao;
+	
+	//나머지 테스트를 실행하기 전에 제일 먼저 실행할 클래스 
+	@BeforeAll
+	static void init() {
+		dao = UserDAO.getInstance();
+	}
+	
 	
 	@Disabled
 	@Test
@@ -33,6 +42,7 @@ class UserDAOTest {
 
 	}
 	
+	@Disabled
 	@Test 
 	void testLogin() {
 		
@@ -70,6 +80,7 @@ class UserDAOTest {
 		
 	}
 	
+	@Disabled
 	@Test 
 	void testLogin3() {
 		
@@ -88,4 +99,15 @@ class UserDAOTest {
 		
 	}
 	
+	@Test
+	void testGetUser() {
+		
+		String id = "hong";
+		
+		UserDTO dto = dao.getUser(id);
+		
+		assertNotNull(dto);
+		assertEquals("홍길동", dto.getName());
+		
+	}
 }

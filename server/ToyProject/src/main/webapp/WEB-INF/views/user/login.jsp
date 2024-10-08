@@ -29,7 +29,23 @@
 				<td><input type="password" name="pw" id="pw" required class="short"></td>
 			</tr>	 
 		</table>
+		<div>
+			<button type="button" class="back" onclick="location.href='/toy/index.do'">돌아가기</button>
+			<button type="submit" class="in primary">로그인</button>
+		</div>
 		</form>
+		
+		<!-- 테스트 후 삭제 예정 -->
+		<hr>
+		<div style="display: flex">
+		<c:forEach items="${list}" var="dto">
+		<form method="POST" action="/toy/user/login.do">
+			<input type="hidden" name="id" value="${dto.id}">
+			<input type="hidden" name="pw" value="${dto.pw}">
+			<input type="submit" value="${dto.name}">
+		</form>
+		</c:forEach>
+		</div>
 		
 	</div>
 

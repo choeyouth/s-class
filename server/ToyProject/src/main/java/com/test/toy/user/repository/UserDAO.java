@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import com.test.toy.user.model.UserDTO;
 import com.test.util.DBUtil;
@@ -117,6 +118,76 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 		
+		return null;
+	}
+
+	public ArrayList<UserDTO> listUser() {
+
+		//queryNoParamListReturn
+		try {
+					
+			String sql = "select * from tblUser where ing = 1";
+			
+			stat = conn.createStatement();
+			rs = stat.executeQuery(sql);
+			
+			ArrayList<UserDTO> list = new ArrayList<UserDTO>();
+			
+			while (rs.next()) {
+				
+				UserDTO dto = new UserDTO();
+				
+				dto.setId(rs.getString("id"));
+				dto.setPw(rs.getString("pw"));
+				dto.setName(rs.getString("name"));
+				
+				list.add(dto);				
+			}	
+			
+			return list;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+		
+	}
+	
+	//아이디 > 회원 정보 가져오기
+	public UserDTO getUser(String id) {
+		
+		//queryParamDTOReturn
+		try {
+					
+			String sql = "select * from tblUser where id = ?";
+			
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, id);
+			
+			rs = pstat.executeQuery();
+			
+			if (rs.next()) {
+				
+				UserDTO dto = new UserDTO();
+				
+				dto.setId(rs.getString("id"));
+				dto.setPw(rs.getString("pw"));
+				dto.setName(rs.getString("name"));
+				dto.setEmail(rs.getString("email"));
+				dto.setLv(rs.getString("lv"));
+				dto.setPic(rs.getString("pic"));
+				dto.setIntro(rs.getString("intro"));
+				dto.setRegdate(rs.getString("regdate"));
+				dto.setIng(rs.getString("ing"));
+					
+				return dto;				
+			}	
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 		return null;
 	}
 }

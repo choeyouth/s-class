@@ -10,18 +10,29 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/user/logout.do")
-public class Logout extends HttpServlet {
+import com.test.toy.user.model.UserDTO;
+import com.test.toy.user.repository.UserDAO;
+
+@WebServlet("/user/info.do")
+public class Info extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		//세션 초기화 == 로그아웃
+
 		HttpSession session = req.getSession();
 		
-		session.invalidate(); //세션 교체
+		UserDAO dao = UserDAO.getInstance();
+
+		UserDTO dto = dao.getUser(session.getAttribute("auth") + "");
 		
-		resp.sendRedirect("/toy/index.do");
+		//자기소개 > 개행 문자 처리
+		dto.getIntro().replace("\r\n", "<br><br>");
+		
+		req.setAttribute("dto", dto);
+		
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/user/info.jsp");
+		dispatcher.forward(req, resp);
 
 	}
 }
