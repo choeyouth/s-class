@@ -1,0 +1,45 @@
+SELECT * FROM tblGenreList;
+SELECT * FROM tblSubGenre;
+SELECT count(*) FROM tblBook;
+SELECT * FROM tblManager;
+SELECT * FROM tblMember;
+SELECT * FROM tblMemberInfo;
+SELECT * FROM tblDiscussionBoard;
+SELECT * FROM tblDiscussionReply;
+SELECT * FROM tblBookReview;
+SELECT * FROM tblNote;
+SELECT * FROM tblRank;
+SELECT * FROM tblWordList;
+SELECT * FROM tblQuoteList;
+SELECT * FROM tblFamousLine;
+
+--DELETE FROM tblGenreList;
+--DELETE FROM tblSubGenre;
+
+DELETE FROM tblManager;
+--DELETE FROM tblMember;
+DELETE FROM tblMemberInfo;
+DELETE FROM tblDiscussionBoard;
+DELETE FROM tblDiscussionReply;
+
+drop sequence manager_seq;
+drop sequence memberInfo_seq;
+drop sequence discussionBoard_seq;
+drop sequence discussionReply_seq;
+
+drop view vwDiscussion;
+
+CREATE SEQUENCE manager_seq;
+CREATE SEQUENCE memberInfo_seq;
+CREATE SEQUENCE discussionBoard_seq;
+CREATE SEQUENCE discussionReply_seq;
+
+
+DELETE FROM tblBookReview;
+DELETE FROM tblNote;
+DELETE FROM tblRank;
+DELETE FROM tblWordList;
+DELETE FROM tblQuoteList;
+DELETE FROM tblFamousLine;
+
+

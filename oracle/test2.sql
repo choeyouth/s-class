@@ -1,0 +1,1 @@
+insert into	테이블명	(	컬럼	,	컬럼	)	values	(	값	,	값	)	;
