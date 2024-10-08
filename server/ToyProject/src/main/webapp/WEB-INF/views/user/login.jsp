@@ -5,17 +5,34 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title></title>
-	<link rel="stylesheet" href="http://bit.ly/3WJ5ilK">
+	<%@include file="/WEB-INF/views/inc/asset.jsp" %>
+	
 	<style>
 
 	</style>
 </head>
 <body>
-	<!--  -->
-	
-	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-	<script src="https://bit.ly/4cMuheh"></script>
+	<!-- login.jsp -->
+	<%@include file="/WEB-INF/views/inc/header.jsp" %>
+
+	<div id="main">
+		<h1>회원 <small>로그인</small></h1>
+		
+		<form method="POST" action="/toy/user/login.do">
+		<table class="vertical">
+			<tr>
+				<th>아이디</th>
+				<td><input type="text" name="id" id="id" required class="short"></td>
+			</tr>		
+			<tr>
+				<th>암호</th>
+				<td><input type="password" name="pw" id="pw" required class="short"></td>
+			</tr>	 
+		</table>
+		</form>
+		
+	</div>
+
 	<script>
 	
 	</script>
