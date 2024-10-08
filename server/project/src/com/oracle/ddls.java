@@ -225,13 +225,15 @@ public class ddls {
 		
 		
 	    // 평점 테이블 생성 SQL 쿼리
-	    createTableQuery = "CREATE TABLE tblRank ("
-	                            + "seq NUMBER PRIMARY KEY, "
-	                            + "bookReview_seq NUMBER NOT NULL, "
-	                            + "score NUMBER NOT NULL, "
-	                            + "rankdate DATE NOT NULL, "
-	                            + "FOREIGN KEY (bookReview_seq) REFERENCES tblBookReview(seq)"
-	                            + ")";
+	    createTableQuery = "CREATE TABLE tblBookReview ("
+			    		+ " seq NUMBER(10) PRIMARY KEY,"
+			    		+ " book_seq NUMBER(14) NOT NULL,"
+			    		+ " commend VARCHAR2(1000) NOT NULL,"
+			    		+ " member_seq NUMBER NOT NULL,"
+			    		+ " review_date DATE DEFAULT sysdate NOT NULL,"
+			    		+ " FOREIGN KEY (book_seq) REFERENCES tblBook(seq),"
+			    		+ " FOREIGN KEY (member_seq) REFERENCES tblMember(seq)"
+			    		+ ");";
 	
 	    // 테이블 생성 메서드 호출
 	    dbHelper.createTable(createTableQuery);
