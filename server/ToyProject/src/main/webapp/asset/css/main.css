@@ -22,3 +22,50 @@
 #info tr:nth-child(2) td {
 	width: 225px;
 }
+
+
+/* 게시판 > 목록보기 */
+#list th:nth-child(1) { width: 50px; }
+#list th:nth-child(2) { width: auto; }
+#list th:nth-child(3) { width: 70px; }
+#list th:nth-child(4) { width: 120px; }
+#list th:nth-child(5) { width: 50px; }
+
+#list td { text-align: center; }
+#list td:nth-child(2) { text-align: left; }
+
+#list .isnew { font-size: 14px; color: tomato; }
+
+/* 게시판 > 상세보기 */
+#view tr:nth-child(4) { height: 200px; }
+
+/* 게시판 > 검색 */
+#searchForm {
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+#searchForm > select, 
+#searchForm > input {
+	box-sizing: border-box;
+	height: 35px;
+}
+
+
+/* */
+
+#labelSearchResult {
+	margin: .5rem;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+

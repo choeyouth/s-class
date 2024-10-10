@@ -1,0 +1,534 @@
+
+-- 1. 장르 
+INSERT INTO tblGenreLIst VALUES(1,'가정/요리/뷰티');
+INSERT INTO tblGenreLIst VALUES(2,'가정/원예/인테리어');
+INSERT INTO tblGenreLIst VALUES(3,'가족/관계');
+INSERT INTO tblGenreLIst VALUES(4,'건강/스포츠');
+INSERT INTO tblGenreLIst VALUES(5,'건강/취미/레저');
+INSERT INTO tblGenreLIst VALUES(6,'건축/디자인');
+INSERT INTO tblGenreLIst VALUES(7,'게임/토이');
+INSERT INTO tblGenreLIst VALUES(8,'경제경영');
+INSERT INTO tblGenreLIst VALUES(9,'고등학교참고서');
+INSERT INTO tblGenreLIst VALUES(10,'고전');
+INSERT INTO tblGenreLIst VALUES(11,'공예/취미/수집');
+INSERT INTO tblGenreLIst VALUES(12,'과학');
+INSERT INTO tblGenreLIst VALUES(13,'교육/자료');
+INSERT INTO tblGenreLIst VALUES(14,'금강산 여행 가는 이에게');
+INSERT INTO tblGenreLIst VALUES(15,'기술공학');
+INSERT INTO tblGenreLIst VALUES(16,'기타 언어권 도서');
+INSERT INTO tblGenreLIst VALUES(17,'달력/기타');
+INSERT INTO tblGenreLIst VALUES(18,'달력/다이어리/연감');
+INSERT INTO tblGenreLIst VALUES(19,'대만도서');
+INSERT INTO tblGenreLIst VALUES(20,'대학교재');
+INSERT INTO tblGenreLIst VALUES(21,'독일 도서');
+INSERT INTO tblGenreLIst VALUES(22,'만화');
+INSERT INTO tblGenreLIst VALUES(23,'문구/비도서');
+INSERT INTO tblGenreLIst VALUES(24,'법률');
+INSERT INTO tblGenreLIst VALUES(25,'사회과학');
+INSERT INTO tblGenreLIst VALUES(26,'소설/시/희곡');
+INSERT INTO tblGenreLIst VALUES(27,'수험서');
+INSERT INTO tblGenreLIst VALUES(28,'수험서/자격증');
+INSERT INTO tblGenreLIst VALUES(29,'스페인 도서');
+INSERT INTO tblGenreLIst VALUES(30,'어린이');
+INSERT INTO tblGenreLIst VALUES(31,'언어학');
+INSERT INTO tblGenreLIst VALUES(32,'에세이');
+INSERT INTO tblGenreLIst VALUES(33,'여행');
+INSERT INTO tblGenreLIst VALUES(34,'역사');
+INSERT INTO tblGenreLIst VALUES(35,'예술/대중문화');
+INSERT INTO tblGenreLIst VALUES(36,'외국어');
+INSERT INTO tblGenreLIst VALUES(37,'요리');
+INSERT INTO tblGenreLIst VALUES(38,'유아');
+INSERT INTO tblGenreLIst VALUES(39,'유머');
+INSERT INTO tblGenreLIst VALUES(40,'의학');
+INSERT INTO tblGenreLIst VALUES(41,'인문/사회');
+INSERT INTO tblGenreLIst VALUES(42,'인문학');
+INSERT INTO tblGenreLIst VALUES(43,'일본 도서');
+INSERT INTO tblGenreLIst VALUES(44,'자연과학');
+INSERT INTO tblGenreLIst VALUES(45,'자연과학');
+INSERT INTO tblGenreLIst VALUES(46,'잡지');
+INSERT INTO tblGenreLIst VALUES(47,'장르소설');
+INSERT INTO tblGenreLIst VALUES(48,'전기/자서전');
+INSERT INTO tblGenreLIst VALUES(49,'전집/중고전집');
+INSERT INTO tblGenreLIst VALUES(50,'종교/명상/점술');
+INSERT INTO tblGenreLIst VALUES(51,'종교/역학');
+INSERT INTO tblGenreLIst VALUES(52,'좋은부모');
+INSERT INTO tblGenreLIst VALUES(53,'중국 도서');
+INSERT INTO tblGenreLIst VALUES(54,'중학교참고서');
+INSERT INTO tblGenreLIst VALUES(55,'청소년');
+INSERT INTO tblGenreLIst VALUES(56,'청소년_추천도서');
+INSERT INTO tblGenreLIst VALUES(57,'초등학교참고서');
+INSERT INTO tblGenreLIst VALUES(58,'컴퓨터');
+INSERT INTO tblGenreLIst VALUES(59,'컴퓨터/모바일');
+INSERT INTO tblGenreLIst VALUES(60,'한국관련도서');
+INSERT INTO tblGenreLIst VALUES(61,'해외잡지');
+INSERT INTO tblGenreLIst VALUES(62,'ELT/어학/사전');
+INSERT INTO tblGenreLIst VALUES(63,'Gift');
+INSERT INTO tblGenreLIst VALUES(64,'기타');
+
+
+-- 2. 서브 장르
+
+
+-- 3. 책 > basicBooksSave
+
+
+-- 4. 관리자
+INSERT INTO tblManager (seq, id, password, name, regDate) VALUES (manager_seq.NEXTVAL, 'yujeong', 'chldbwjd1234~', '최유정', DEFAULT);
+INSERT INTO tblManager (seq, id, password, name, regDate) VALUES (manager_seq.NEXTVAL, 'doil', 'ghkdehdlf1234~', '황도일', DEFAULT);  
+INSERT INTO tblManager (seq, id, password, name, regDate) VALUES (manager_seq.NEXTVAL, 'jaekwon', 'chlwornjs1234~', '최재권', DEFAULT);
+INSERT INTO tblManager (seq, id, password, name, regDate) VALUES (manager_seq.NEXTVAL, 'hong', '1111', '홍길동', DEFAULT);  
+INSERT INTO tblManager (seq, id, password, name, regDate) VALUES (manager_seq.NEXTVAL, 'amu', '111', '아무개', DEFAULT);
+
+
+
+-- 5. 회원
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'tiger', '1111');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'lion', '1111');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'user123', '8k^Zx!7r@Q');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'alice42', 'p@4!Rz^8Lk');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'bob56', 'Q7$h*2%Wm@');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'carol78', '!L3#v^6A@Q');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'dave90', 'T5@!k#Z2^R');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'eve34', 'X@9#y$L8^A');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'frank21', 'R3*e@8!K^p');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'grace67', '!T4$#n^9Qk');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'hank89', 'A2^!L#5@Wz');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'ida43', '#9$R^6!qT'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'jack56', 'Z@8^!r#3Lk');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'karen98', 'T3^@7!l#Q2');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'leo67', 'P8!$Q@5^kL');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'mia34', 'R6#@!9^T2'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'nick21', 'L@8^2!Q#R');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'olivia87', '!T^5@Q3#L');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'paul92', 'R#8@6^!L2');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'quinn75', '@2!T^#9Lk');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'rachel84', 'Q6^@8!L#3');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'sam64', 'L@5!^T2#Q');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'tina91', '!8^R#2@Lk');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'ursula33', 'Q7!$T^2@L');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'victor82', '@5!L^2#Q6');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'wade56', 'T^8!Q#2@L');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'xena34', '!L@2^Q#5'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'yara45', 'R3!^8#L@Q');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'zane67', 'L@2!Q^5#T');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'amy89', 'Q6^@!2#T'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'brian34', '@T5!^L#2');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'claire56', 'L@2^!T#Q');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'derek78', 'T^@6!Q#2L');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'ella90', 'Q@8^!L#2');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'finn43', '!2^L#Q@6'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'gina67', 'R8!^@2#L'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'hugo89', 'L@2^5!Q#'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'irene34', 'T^6!@Q#2');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'jackson56', '@L2^!5#Q');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'kylie78', 'Q6@2^!L#');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'liam90', 'L@5!^2#Q'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'monica43', 'T^8!@2#Q');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'nate56', 'Q@2^5!L#');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'olga78', 'L@6^2!Q#'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'paul89', 'T^5!Q@2#L');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'quincy90', 'L@2^!Q#5');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'rosa43', 'Q6!^@2#L');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'simon56', 'L@8^!2#Q');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'tessa78', 'T^2!@Q#5');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'ursula89', '@L5^2!Q#');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'vince90', 'Q@2!^5#L');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'wendy43', 'L8!^@2#Q');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'xander56', 'T^5!L@2#');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'yvonne78', 'Q@2^!5#L');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'zach89', 'L@6^2!Q#');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'anna90', 'T^2!@5#L');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'billy43', 'Q@8^!2#L');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'cathy56', 'L@2^!5#Q');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'daniel78', 'T^6!@Q#2');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'emily89', 'Q@2^5!L#');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'fred90', 'L@8^2!Q#'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'gwen43', 'T^2!@5#L'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'hannah56', 'Q@5!^2#L');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'ian78', 'L@6^!2#Q');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'julia89', 'T^8!@2#L');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'kevin90', 'Q@2^5!L#');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'lisa43', 'L@5^2!Q#'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'mark56', 'T^2!@8#L'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'nora78', 'Q@2^!5#L'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'oliver89', 'L@6^2!Q#');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'pam90', 'T^5!@2#L');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'quinn43', 'Q@2^8!L#');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'rory56', 'L@5^2!Q#'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'sara78', 'T^2!@8#L'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'tyler89', 'Q@2^5!L#');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'uma90', 'L@6^2!Q#');  
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'vera43', 'T^5!@2#L'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'will56', 'Q@2^8!L#'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'xena78', 'L@5^2!Q#'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'yale89', 'T^2!@6#L'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'zane90', 'Q@2^5!L#'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'hwang00', 'J^9!s@3#R');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'kim01', 'P!5@L^8#K');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'lee02', 'N2^@R!7#L'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'park03', 'A!6^T@2#Q');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'choi04', 'R@5!L^3#T');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'jung05', 'L^2@Q!7#T');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'seo06', 'Q@8^R!5#L'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'yoo07', 'T^3!@L#6R'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'lim08', 'L@7^T!2#Q'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'kwon09', 'R!4^@2#L'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'jeong10', 'Q^5!@L#3T');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'son11', 'T@2^L!7#R');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'oh12', 'L^9!Q@5#T');  
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'kim13', 'R@6^T!3#L'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'lee14', 'T^7!@L#2Q'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'park15', 'L@4^Q!5#T');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'choi16', 'Q!8^@2#L'); 
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'jung17', 'R^3!@L#6T');
+INSERT INTO tblMember (seq, ing, id, password) VALUES (member_seq.NEXTVAL, DEFAULT, 'seo18', 'L@2^T!5#Q'); 
+
+
+
+
+-- 6. 회원 개인 정보
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 1, '김철수', '서울시 중구 남대문로 1길 12-3', '010-1111-0000', 'chulsoo1@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 2, '이영희', '서울시 강남구 역삼동 테헤란로 25길 14-1', '010-2222-1111', 'younghee2@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 3, '박진수', '부산시 해운대구 해운대로 570', '010-3333-2222', 'jinsu3@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 4, '최지훈', '대구시 달서구 이곡동 1298-7', '010-4444-3333', 'jihoon4@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 5, '정유진', '인천시 남동구 구월동 123-45', '010-5555-4444', 'yujin5@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 6, '김서연', '서울시 송파구 문정동 1020-1', '010-6666-5555', 'seoyeon6@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 7, '이민호', '경기도 성남시 분당구 정자동 67-9', '010-7777-6666', 'minho7@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 8, '홍민지', '광주시 동구 지산동 347', '010-8888-7777', 'minji8@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 9, '박성호', '대전시 유성구 봉명동 609-1', '010-9999-8888', 'seongho9@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 10, '정수진', '울산시 남구 신정동 678-23', '010-0000-9999', 'sujin10@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 11, '이승기', '서울시 종로구 인사동 35', '010-1111-2233', 'seunggi11@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 12, '김지혜', '서울시 마포구 합정동 94-15', '010-2222-3344', 'jihye12@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 13, '이상훈', '서울시 강북구 수유동 77-21', '010-3333-4455', 'sanghoon13@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 14, '박가영', '경기도 고양시 일산동구 정발산로 22', '010-4444-5566', 'gayoung14@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 15, '최서영', '경기도 용인시 수지구 풍덕천동 789-12', '010-5555-6677', 'seoyoung15@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 16, '김재원', '서울시 성북구 장위동 145-3', '010-6666-7788', 'jaewon16@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 17, '이현주', '부산시 동래구 사직동 42-5', '010-7777-8899', 'hyeonju17@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 18, '홍진호', '대구시 수성구 범어동 100-1', '010-8888-9900', 'jinho18@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 19, '박은정', '서울시 동작구 사당동 19-3', '010-9999-0011', 'eunjeong19@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 20, '정민수', '서울시 구로구 구로동 188-25', '010-0000-1122', 'minsoo20@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 21, '신혜원', '경기도 파주시 금촌동 74-14', '010-1111-1133', 'hyewon21@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 22, '한유진', '부산시 북구 만덕동 15-2', '010-2222-2244', 'yujin22@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 23, '최정민', '서울시 양천구 목동서로 159', '010-3333-3355', 'jeongmin23@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 24, '이진수', '경기도 부천시 소사동 232-4', '010-4444-4466', 'jinsu24@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 25, '송하늘', '광주시 서구 농성동 768-9', '010-5555-5577', 'haneul25@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 26, '정다혜', '서울시 은평구 응암동 123-34', '010-6666-6688', 'dahye26@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 27, '이태희', '경기도 안양시 동안구 비산동 46-7', '010-7777-7799', 'taehee27@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 28, '김지성', '경기도 시흥시 신천동 88-2', '010-8888-8800', 'jisung28@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 29, '박소연', '대전시 중구 은행동 187', '010-9999-9911', 'soyeon29@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 30, '이주영', '서울시 영등포구 여의도동 234', '010-0000-0022', 'juyoung30@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 31, '최영수', '서울시 강서구 가양동 456-78', '010-1111-2233', 'youngsoo31@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 32, '김나리', '경기도 광명시 철산동 123-45', '010-2222-3344', 'nari32@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 33, '이승환', '서울시 동대문구 장안동 567-89', '010-3333-4455', 'seunghwan33@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 34, '박하늘', '부산시 연제구 거제동 101-23', '010-4444-5566', 'haneul34@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 35, '정준호', '대구시 달성군 화원읍 88-5', '010-5555-6677', 'junho35@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 36, '홍성민', '경기도 수원시 권선구 세류동 25-14', '010-6666-7788', 'seongmin36@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 37, '김도현', '서울시 서대문구 충정로 55', '010-7777-8899', 'dohyun37@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 38, '이하연', '인천시 서구 청라동 103-19', '010-8888-9900', 'hayeon38@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 39, '박서준', '서울시 노원구 중계동 67-89', '010-9999-0011', 'seojun39@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 40, '정재훈', '대전시 서구 둔산동 112-33', '010-0000-1122', 'jaehoon40@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 41, '한지민', '서울시 강북구 미아동 45-9', '010-1111-2233', 'jimin41@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 42, '송민호', '경기도 용인시 기흥구 상하동 12-1', '010-2222-3344', 'minho42@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 43, '김다영', '부산시 해운대구 좌동 89-14', '010-3333-4455', 'dayoung43@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 44, '박지훈', '경기도 평택시 비전동 67-12', '010-4444-5566', 'jihoon44@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 45, '이예린', '서울시 성동구 성수동 21-3', '010-5555-6677', 'yerin45@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 46, '정우성', '경기도 안산시 상록구 이동 22-9', '010-6666-7788', 'woosung46@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 47, '황정민', '광주시 북구 일곡동 90-3', '010-7777-8899', 'jungmin47@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 48, '신소율', '부산시 금정구 장전동 128-3', '010-8888-9900', 'soyeol48@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 49, '김영진', '서울시 송파구 석촌동 18-4', '010-9999-0011', 'youngjin49@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 50, '이하늘', '서울시 종로구 종로 256-8', '010-0000-1122', 'haneul50@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 51, '최유정', '경기도 하남시 망월동 45-6', '010-1111-2233', 'yoojung51@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 52, '홍찬희', '인천시 계양구 계산동 101-22', '010-2222-3344', 'chanhee52@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 53, '장미희', '서울시 강남구 삼성동 34-12', '010-3333-4455', 'mihee53@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 54, '이상민', '경기도 성남시 중원구 상대원동 88-10', '010-4444-5566', 'sangmin54@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 55, '백예린', '부산시 수영구 광안동 34-11', '010-5555-6677', 'yerin55@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 56, '송가인', '대구시 중구 남산동 45-7', '010-6666-7788', 'gain56@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 57, '김민재', '경기도 광주시 오포읍 123-56', '010-7777-8899', 'minjae57@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 58, '이도현', '서울시 양천구 신월동 76-2', '010-8888-9900', 'dohyun58@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 59, '전지현', '인천시 남동구 논현동 34-11', '010-9999-0011', 'jihyun59@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 60, '강호동', '서울시 관악구 봉천동 12-8', '010-0000-1122', 'hodong60@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 61, '이현수', '서울시 성동구 성수동 123-12', '010-1111-2233', 'hyeonsu61@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 62, '장유진', '경기도 성남시 수정구 신흥동 56-8', '010-2222-3344', 'yujin62@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 63, '박세진', '부산시 사상구 모라동 78-3', '010-3333-4455', 'sejin63@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 64, '김상철', '대구시 중구 삼덕동 12-2', '010-4444-5566', 'sangcheol64@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 65, '이은지', '서울시 강북구 번동 45-7', '010-5555-6677', 'eunji65@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 66, '최준호', '경기도 고양시 덕양구 화정동 10-11', '010-6666-7788', 'junho66@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 67, '김하나', '인천시 남동구 간석동 123-45', '010-7777-8899', 'hana67@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 68, '홍지민', '부산시 남구 문현동 33-9', '010-8888-9900', 'jimin68@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 69, '박정현', '서울시 동대문구 청량리동 74-3', '010-9999-0011', 'jeonghyun69@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 70, '정유진', '서울시 서초구 방배동 12-6', '010-0000-1122', 'yujin70@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 71, '이시형', '경기도 오산시 오산동 45-8', '010-1111-2233', 'sihyung71@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 72, '김진아', '부산시 북구 화명동 27-4', '010-2222-3344', 'jina72@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 73, '이진우', '서울시 노원구 공릉동 84-5', '010-3333-4455', 'jinwoo73@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 74, '박수연', '대구시 중구 동인동 56-9', '010-4444-5566', 'sooyeon74@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 75, '정상훈', '경기도 파주시 문산읍 90-8', '010-5555-6677', 'sanghoon75@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 76, '김민지', '서울시 양천구 신정동 99-5', '010-6666-7788', 'minji76@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 77, '이서연', '경기도 수원시 장안구 영화동 101-10', '010-7777-8899', 'seoyeon77@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 78, '홍성호', '부산시 사하구 장림동 63-2', '010-8888-9900', 'seongho78@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 79, '박미래', '서울시 금천구 시흥동 34-9', '010-9999-0011', 'mirae79@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 80, '정동훈', '대전시 대덕구 송촌동 78-11', '010-0000-1122', 'donghoon80@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 81, '이경호', '서울시 강서구 화곡동 12-15', '010-1111-2233', 'kyungho81@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 82, '김소연', '경기도 부천시 원미동 23-9', '010-2222-3344', 'soyeon82@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 83, '이재호', '부산시 부산진구 부전동 45-7', '010-3333-4455', 'jaeho83@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 84, '박하영', '서울시 종로구 세종로 23-12', '010-4444-5566', 'hayoung84@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 85, '정은우', '경기도 성남시 수정구 태평동 12-7', '010-5555-6677', 'eunwoo85@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 86, '김서윤', '서울시 서대문구 북아현동 89-4', '010-6666-7788', 'seoyun86@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 87, '이영진', '부산시 금정구 장전동 23-5', '010-7777-8899', 'youngjin87@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 88, '홍태경', '서울시 마포구 공덕동 98-7', '010-8888-9900', 'taekyung88@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 89, '박정은', '대구시 서구 평리동 45-3', '010-9999-0011', 'jeongeun89@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 90, '정명훈', '경기도 화성시 동탄면 78-12', '010-0000-1122', 'myunghoon90@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 91, '이진석', '서울시 송파구 방이동 89-3', '010-1111-2233', 'jinsuk91@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 92, '김지혜', '경기도 남양주시 다산동 56-9', '010-2222-3344', 'jiye92@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 93, '이준호', '부산시 동래구 사직동 78-2', '010-3333-4455', 'junho93@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 94, '박예린', '서울시 강남구 역삼동 34-5', '010-4444-5566', 'yerin94@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 95, '정지훈', '경기도 고양시 일산동구 백석동 56-8', '010-5555-6677', 'jihun95@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 96, '김다희', '서울시 관악구 봉천동 45-8', '010-6666-7788', 'dahee96@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 97, '이주영', '부산시 기장군 기장읍 90-11', '010-7777-8899', 'juyoung97@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 98, '홍수빈', '서울시 중랑구 상봉동 12-3', '010-8888-9900', 'subin98@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 99, '박동현', '대전시 유성구 온천동 45-6', '010-9999-0011', 'donghyun99@example.com');
+INSERT INTO tblMemberInfo (seq, pic, regDate, member_seq, name, address, tel, email) VALUES (memberInfo_seq.NEXTVAL, DEFAULT, DEFAULT, 100, '정혜진', '경기도 안양시 만안구 안양동 34-7', '010-0000-1122', 'hyejin100@example.com');
+
+
+
+
+-- 7. 토론 게시판
+INSERT INTO tblDiscussionBoard (seq, book_seq, readcount, member_seq, title, content, postDate) VALUES (discussionBoard_seq.NEXTVAL, 9788937460883, DEFAULT, 1, '사회적 계층과 결혼의 딜레마', '제인 오스틴의 『오만과 편견』은 사회적 계층과 결혼, 자아 발견에 대한 깊이 있는 탐구를 제공합니다. 이 소설이 현대 사회에서도 여전히 관련성이 있는 이유는 무엇일까요? 시대를 초월한 오스틴의 통찰력은 오늘날의 사회적 이슈와 어떻게 연결될 수 있을까요?', SYSDATE);
+INSERT INTO tblDiscussionBoard (seq, book_seq, readcount, member_seq, title, content, postDate) VALUES (discussionBoard_seq.NEXTVAL, 9788937460777, DEFAULT, 2, '전체주의와 감시 사회의 경고', '조지 오웰의 『1984』는 전체주의와 감시 사회에 대한 강력한 비판을 담고 있습니다. 현대 사회에서 오웰의 경고가 여전히 유효한 이유는 무엇일까요? 기술 발전이 사회의 감시 구조에 미치는 영향에 대해 어떻게 논의할 수 있을까요?', SYSDATE);
+INSERT INTO tblDiscussionBoard (seq, book_seq, readcount, member_seq, title, content, postDate) VALUES (discussionBoard_seq.NEXTVAL, 9788937462849, DEFAULT, 3, '도덕적 갈등과 구속의 탐구', '도스토예프스키의 『죄와 벌』은 인간의 도덕적 갈등과 구속의 과정을 심도 깊게 탐구합니다. 이 작품이 현대의 윤리적 문제와 어떻게 연관될 수 있을까요? 도덕적 죄책감과 사회적 처벌에 대한 이해를 어떻게 새롭게 할 수 있을까요?', SYSDATE);
+INSERT INTO tblDiscussionBoard (seq, book_seq, readcount, member_seq, title, content, postDate) VALUES (discussionBoard_seq.NEXTVAL, 9788937460753, DEFAULT, 4, '물질주의와 꿈의 허상', 'F. 스콧 피츠제럴드의 『위대한 개츠비』는 1920년대 미국 사회의 물질주의와 꿈의 허상을 탐구합니다. 이 소설이 현대 사회에서 물질주의와 꿈의 실현에 대한 시각을 어떻게 반영하고 있을까요?', SYSDATE);
+INSERT INTO tblDiscussionBoard (seq, book_seq, readcount, member_seq, title, content, postDate) VALUES (discussionBoard_seq.NEXTVAL, 9788937461033, DEFAULT, 5, '자아 실현과 존재의 의미', '오에 겐자부로의 『인간 실격』은 인간 존재의 의미와 자아 실현에 대한 고민을 담고 있습니다. 현대 사회에서 자아 실현의 중요성과 관련하여 이 책이 제시하는 통찰은 무엇일까요?', SYSDATE);
+INSERT INTO tblDiscussionBoard (seq, book_seq, readcount, member_seq, title, content, postDate) VALUES (discussionBoard_seq.NEXTVAL, 9788937460388, DEFAULT, 6, '예술과 개인적 희생의 갈등', '서머싯 몸의 『달과 6펜스』는 예술가의 삶과 개인적 희생을 탐구합니다. 예술과 개인적 성취 간의 갈등을 현대 사회에서 어떻게 다룰 수 있을까요?', SYSDATE);
+INSERT INTO tblDiscussionBoard (seq, book_seq, readcount, member_seq, title, content, postDate) VALUES (discussionBoard_seq.NEXTVAL, 9788949141060, DEFAULT, 7, '인간의 이중성과 도덕적 갈등', '로버트 루이스 스티븐슨의 『지킬 박사와 하이드 씨』는 인간의 이중성과 도덕적 갈등을 탐구합니다. 현대 사회에서 인간의 이중성을 어떻게 이해하고 적용할 수 있을까요?', SYSDATE);
+INSERT INTO tblDiscussionBoard (seq, book_seq, readcount, member_seq, title, content, postDate) VALUES (discussionBoard_seq.NEXTVAL, 9788970126937, DEFAULT, 8, '역사와 문화를 넘어서는 환상', '가브리엘 가르시아 마르케스의 『백년 동안의 고독』은 라틴 아메리카의 역사와 문화를 환상적으로 그려냅니다. 이 작품이 현대 사회의 역사적 이해와 상상력을 어떻게 자극할 수 있을까요?', SYSDATE);
+INSERT INTO tblDiscussionBoard (seq, book_seq, readcount, member_seq, title, content, postDate) VALUES (discussionBoard_seq.NEXTVAL, 9788937486074, DEFAULT, 9, '사랑과 사회적 규범의 갈등', '레프 톨스토이의 『안나 카레니나』는 사랑과 사회적 규범 사이의 갈등을 탐구합니다. 현대 사회에서 사랑과 사회적 규범의 관계를 어떻게 조명할 수 있을까요?', SYSDATE);
+INSERT INTO tblDiscussionBoard (seq, book_seq, readcount, member_seq, title, content, postDate) VALUES (discussionBoard_seq.NEXTVAL, 9788987203959, DEFAULT, 10, '현재에 집중하는 삶의 중요성', '에크하르트 톨레의 『지금 이 순간을 살아라』는 현재의 순간에 집중하는 중요성을 다룹니다. 현대인의 삶에서 현재에 집중하는 것이 왜 중요한지 논의해 볼 필요가 있습니다.', SYSDATE);
+INSERT INTO tblDiscussionBoard (seq, book_seq, readcount, member_seq, title, content, postDate) VALUES (discussionBoard_seq.NEXTVAL, 9788937460470, DEFAULT, 11, '청소년기의 고뇌와 사회적 소외', 'J.D. 샐린저의 『호밀밭의 파수꾼』은 청소년기의 고뇌와 사회적 소외를 탐구합니다. 현대 사회에서 청소년의 심리적 문제와 사회적 문제를 어떻게 이해하고 지원할 수 있을까요?', SYSDATE);
+INSERT INTO tblDiscussionBoard (seq, book_seq, readcount, member_seq, title, content, postDate) VALUES (discussionBoard_seq.NEXTVAL, 9788937462788, DEFAULT, 12, '인간의 의지와 극복', '어니스트 헤밍웨이의 『노인과 바다』는 인간의 의지와 극복의 이야기를 담고 있습니다. 현대 사회에서 인간의 의지와 극복을 어떻게 이해하고 적용할 수 있을까요? 이 소설의 메시지가 오늘날 우리에게 주는 교훈은 무엇일까요?', SYSDATE);
+INSERT INTO tblDiscussionBoard (seq, book_seq, readcount, member_seq, title, content, postDate) VALUES (discussionBoard_seq.NEXTVAL, 9791190669221, DEFAULT, 13, '권력과 부패의 교훈', '조지 오웰의 『동물 농장』은 권력과 부패에 대한 강력한 교훈을 담고 있습니다. 현대 사회에서 권력의 부패를 방지하기 위해 어떤 노력이 필요할까요? 이 책이 제시하는 정치적 메시지는 오늘날 어떻게 적용될 수 있을까요?', SYSDATE);
+INSERT INTO tblDiscussionBoard (seq, book_seq, readcount, member_seq, title, content, postDate) VALUES (discussionBoard_seq.NEXTVAL, 9788982814471, DEFAULT, 14, '꿈과 개인적 전환의 이야기', '파울로 코엘료의 『연금술사』는 꿈과 개인적 전환에 관한 이야기를 담고 있습니다. 현대 사회에서 개인의 꿈을 이루기 위해 어떤 전략과 태도가 필요할까요? 이 책이 제시하는 전환의 과정은 어떤 의미를 가지나요?', SYSDATE);
+INSERT INTO tblDiscussionBoard (seq, book_seq, readcount, member_seq, title, content, postDate) VALUES (discussionBoard_seq.NEXTVAL, 9788937462795, DEFAULT, 15, '전쟁과 인간의 본성', '어니스트 헤밍웨이의 『무기여 잘 있거라』는 전쟁과 인간의 본성을 탐구합니다. 현대 사회에서 전쟁의 영향과 인간 본성에 대한 이해를 어떻게 확장할 수 있을까요? 이 책의 시각이 오늘날의 갈등을 이해하는 데 어떻게 도움이 될까요?', SYSDATE);
+INSERT INTO tblDiscussionBoard (seq, book_seq, readcount, member_seq, title, content, postDate) VALUES (discussionBoard_seq.NEXTVAL, 9791160263404, DEFAULT, 16, '인간의 집착과 운명', '허먼 멜빌의 『모비 딕』은 인간의 집착과 운명에 관한 이야기를 담고 있습니다. 현대 사회에서 인간의 집착과 운명에 대한 이해를 어떻게 심화시킬 수 있을까요? 이 소설의 메시지가 오늘날의 삶에 어떤 의미를 가지나요?', SYSDATE);
+INSERT INTO tblDiscussionBoard (seq, book_seq, readcount, member_seq, title, content, postDate) VALUES (discussionBoard_seq.NEXTVAL, 9788983920775, DEFAULT, 17, '사회와 인간 본성의 풍자', '조나단 스위프트의 『걸리버 여행기』는 사회와 인간 본성에 대한 풍자를 담고 있습니다. 현대 사회에서 풍자적 시각을 통해 사회 문제를 어떻게 분석할 수 있을까요? 이 책이 제시하는 풍자의 교훈은 무엇일까요?', SYSDATE);
+INSERT INTO tblDiscussionBoard (seq, book_seq, readcount, member_seq, title, content, postDate) VALUES (discussionBoard_seq.NEXTVAL, 9791161571768, DEFAULT, 18, '현실과 이상 사이의 갈등', '미겔 데 세르반테스의 『돈키호테』는 현실과 이상 사이의 갈등을 다룹니다. 현대 사회에서 이상을 추구하면서도 현실적인 접근을 유지하기 위해 어떤 노력이 필요할까요? 이 책이 제시하는 갈등의 해결 방법은 무엇일까요?', SYSDATE);
+INSERT INTO tblDiscussionBoard (seq, book_seq, readcount, member_seq, title, content, postDate) VALUES (discussionBoard_seq.NEXTVAL, 9791193939130, DEFAULT, 19, '고전의 지혜가 현대에 주는 교훈', '고명환 저자의 『고전이 답했다 마땅히 살아야 할 삶에 대하여』는 인류의 지혜와 삶의 방향성을 고전에서 찾으려는 시도를 담고 있습니다. 이 책은 다양한 고전 문헌을 통해 ‘마땅히 살아야 할 삶’에 대해 탐구하며, 고전들이 현대 사회에서 여전히 유효한 이유를 설명합니다. 고전들은 시대를 초월한 인간의 본성과 도덕, 윤리에 관한 깊은 통찰을 제공하며, 이러한 지혜가 현대인의 삶에 어떤 영향을 미칠 수 있을까요? 고전의 교훈이 우리가 현재의 삶에서 겪는 도전과 갈등에 어떻게 적용될 수 있을지 고민해 볼 필요가 있습니다. 고전이 제시하는 ''마땅히 살아야 할 삶''의 가치와 현대 사회의 윤리적, 도덕적 기준 사이에는 어떤 연결고리가 있을까요?', SYSDATE);
+INSERT INTO tblDiscussionBoard (seq, book_seq, readcount, member_seq, title, content, postDate) VALUES (discussionBoard_seq.NEXTVAL, 9791167374561, DEFAULT, 20, '현대 사회의 환상과 진실', '정유정 저자의 『영원한 천국』은 현대 사회의 환상과 현실을 탐구하며, 인간이 추구하는 이상과 그것이 실제 삶에서 어떻게 실현될 수 있는지를 다루고 있습니다. 이 책은 천국이나 이상향이라는 개념이 어떻게 인간의 삶과 가치관에 영향을 미치는지를 탐구하며, 현대 사회에서 이러한 이상이 어떻게 왜곡되거나 실현되는지를 분석합니다. 현대인의 삶 속에서 천국이나 이상향에 대한 갈망이 어떻게 표현되고 있으며, 이것이 현실과 어떤 충돌을 일으키는지에 대해 논의할 필요가 있습니다. 환상적인 세계와 현실 세계의 경계는 어떻게 설정되고 있으며, 우리는 이 두 세계 사이에서 어떻게 균형을 잡아야 할까요?', SYSDATE);
+
+
+
+-- 8. 토론 댓글
+INSERT INTO tblDiscussionReply (seq, discussionBoard_seq, member_seq, reply, commitDate) VALUES (discussionReply_seq.NEXTVAL, 1, 20, '이 소설은 현대 사회의 계층 구조와 결혼의 중요성을 조명하는 데 유용합니다. 오스틴의 통찰력은 여전히 많은 사람들에게 공감을 얻고 있으며, 이를 통해 사회적 편견과 개인적 자아 발견의 과정을 이해할 수 있습니다.', SYSDATE);  
+INSERT INTO tblDiscussionReply (seq, discussionBoard_seq, member_seq, reply, commitDate) VALUES (discussionReply_seq.NEXTVAL, 2, 19, '『1984』는 오늘날의 디지털 감시 사회와 매우 유사한 경고를 제공합니다. 기술의 발전이 사회적 감시를 강화하고 있는 현재, 오웰의 메시지는 더욱 중요하게 다가옵니다.', SYSDATE);  
+INSERT INTO tblDiscussionReply (seq, discussionBoard_seq, member_seq, reply, commitDate) VALUES (discussionReply_seq.NEXTVAL, 3, 18, '도스토예프스키의 작품은 현대의 도덕적 문제와 심리적 갈등을 이해하는 데 큰 도움이 됩니다. 인간의 내면적 갈등과 사회적 처벌에 대한 통찰은 여전히 유효하며, 많은 독자들에게 깊은 교훈을 제공합니다.', SYSDATE);  
+INSERT INTO tblDiscussionReply (seq, discussionBoard_seq, member_seq, reply, commitDate) VALUES (discussionReply_seq.NEXTVAL, 4, 17, '『위대한 개츠비』는 현대 사회의 물질주의와 꿈에 대한 이상을 이해하는 데 유용합니다. 피츠제럴드의 작품은 현재의 사회적 가치와 인간의 꿈이 어떻게 충돌할 수 있는지를 잘 보여줍니다.', SYSDATE);  
+INSERT INTO tblDiscussionReply (seq, discussionBoard_seq, member_seq, reply, commitDate) VALUES (discussionReply_seq.NEXTVAL, 5, 16, '『인간 실격』은 자아 실현과 인간 존재의 의미를 탐구하는 데 매우 유용합니다. 현대 사회에서 개인의 정체성과 자아 실현을 이해하는 데 깊은 통찰을 제공합니다.', SYSDATE);  
+INSERT INTO tblDiscussionReply (seq, discussionBoard_seq, member_seq, reply, commitDate) VALUES (discussionReply_seq.NEXTVAL, 6, 15, '이 작품은 예술과 개인적 희생의 관계를 탐구하는 데 큰 도움이 됩니다. 현대 사회에서도 예술과 개인의 성취에 대한 이해를 깊게 할 수 있는 기회를 제공합니다.', SYSDATE);  
+INSERT INTO tblDiscussionReply (seq, discussionBoard_seq, member_seq, reply, commitDate) VALUES (discussionReply_seq.NEXTVAL, 7, 14, '이 소설은 인간의 이중성과 도덕적 갈등을 이해하는 데 유용합니다. 현대 사회에서도 이러한 이중성에 대한 통찰은 중요한 의미를 가집니다.', SYSDATE);  
+INSERT INTO tblDiscussionReply (seq, discussionBoard_seq, member_seq, reply, commitDate) VALUES (discussionReply_seq.NEXTVAL, 8, 13, '『백년 동안의 고독』은 역사와 문화의 이해를 넓히는 데 큰 도움이 됩니다. 마르케스의 환상적 서사는 현대 사회의 상상력과 역사적 이해에 중요한 자극을 줍니다.', SYSDATE);  
+INSERT INTO tblDiscussionReply (seq, discussionBoard_seq, member_seq, reply, commitDate) VALUES (discussionReply_seq.NEXTVAL, 9, 12, '이 작품은 사랑과 사회적 규범 간의 갈등을 이해하는 데 유용합니다. 현대 사회에서도 이러한 갈등을 깊이 이해할 수 있는 통찰을 제공합니다.', SYSDATE);  
+INSERT INTO tblDiscussionReply (seq, discussionBoard_seq, member_seq, reply, commitDate) VALUES (discussionReply_seq.NEXTVAL, 10, 11, '이 책은 현재에 집중하는 것의 중요성을 강조하며, 현대인의 삶에 큰 영향을 미칠 수 있습니다. 현재 순간을 살아가는 것은 스트레스와 불안을 줄이는 데 도움이 됩니다.', SYSDATE);
+INSERT INTO tblDiscussionReply (seq, discussionBoard_seq, member_seq, reply, commitDate) VALUES (discussionReply_seq.NEXTVAL, 11, 10, '청소년기의 고뇌와 사회적 소외는 현대 사회에서도 여전히 중요한 주제입니다. 청소년들이 겪는 심리적 문제를 이해하고, 그들이 사회적 소외감을 느끼지 않도록 지원 체계를 강화하는 것이 필요합니다. 이 책은 우리에게 청소년들이 직면한 내면의 혼란과 사회적 압력을 깊이 있게 조망할 기회를 제공합니다.', SYSDATE);
+INSERT INTO tblDiscussionReply (seq, discussionBoard_seq, member_seq, reply, commitDate) VALUES (discussionReply_seq.NEXTVAL, 12, 9, '헤밍웨이의 『노인과 바다』는 인간의 의지와 극복을 통해 무엇이든 이겨낼 수 있다는 강한 메시지를 전달합니다. 현대 사회에서도 좌절과 어려움 속에서 의지를 잃지 않고 도전을 계속하는 태도가 중요합니다. 이 책은 끊임없이 노력하는 인간의 강인함을 상기시키며, 오늘날 우리에게 인내와 결단력의 가치를 가르쳐 줍니다.', SYSDATE);
+INSERT INTO tblDiscussionReply (seq, discussionBoard_seq, member_seq, reply, commitDate) VALUES (discussionReply_seq.NEXTVAL, 13, 8, '『동물 농장』은 권력의 부패가 얼마나 빠르고 무서운 속도로 발생할 수 있는지를 경고하는 작품입니다. 현대 사회에서는 권력의 부패를 막기 위한 투명성과 책임성, 시민의 감시가 필수적입니다. 이 책이 주는 교훈은 오늘날 정치적 시스템의 개선과 부패 방지를 위한 노력을 촉구합니다.', SYSDATE);
+INSERT INTO tblDiscussionReply (seq, discussionBoard_seq, member_seq, reply, commitDate) VALUES (discussionReply_seq.NEXTVAL, 14, 7, '『연금술사』는 꿈을 추구하는 과정에서의 자기 발견과 전환을 이야기합니다. 현대 사회에서도 자신의 꿈을 이루기 위해서는 끊임없는 자기 성찰과 도전이 필요합니다. 이 책은 개인이 꿈을 추구하며 겪는 성장의 과정을 통해 우리 모두가 겪는 내적 여정을 상징합니다.', SYSDATE);
+INSERT INTO tblDiscussionReply (seq, discussionBoard_seq, member_seq, reply, commitDate) VALUES (discussionReply_seq.NEXTVAL, 15, 20, '전쟁은 인간의 본성을 적나라하게 드러내는 극한의 상황입니다. 『무기여 잘 있거라』는 전쟁의 참혹함과 인간의 복잡한 감정을 깊이 있게 다룹니다. 현대 사회에서도 전쟁과 갈등을 이해하고 평화적인 해결책을 모색하는 데 이 책의 통찰이 큰 도움이 될 것입니다.', SYSDATE);
+INSERT INTO tblDiscussionReply (seq, discussionBoard_seq, member_seq, reply, commitDate) VALUES (discussionReply_seq.NEXTVAL, 16, 3, '인간의 집착은 때로는 삶을 파괴로 이끌기도 합니다. 『모비 딕』은 이러한 집착과 운명에 대한 경고를 담고 있으며, 현대 사회에서도 우리는 지나친 집착이 불러오는 결과를 깊이 숙고해야 합니다. 이 책은 인간이 스스로 설정한 목표와 그에 따르는 희생에 대해 생각하게 만듭니다.', SYSDATE);
+INSERT INTO tblDiscussionReply (seq, discussionBoard_seq, member_seq, reply, commitDate) VALUES (discussionReply_seq.NEXTVAL, 17, 2, '『걸리버 여행기』는 사회와 인간 본성을 신랄하게 풍자하며, 현대 사회의 문제를 바라보는 새로운 시각을 제공합니다. 풍자를 통해 사회의 부조리와 모순을 비판하고, 그것을 해결하기 위한 통찰을 제시하는 이 책은 오늘날의 사회적 갈등을 분석하는 데 여전히 유효한 도구가 됩니다.', SYSDATE);
+INSERT INTO tblDiscussionReply (seq, discussionBoard_seq, member_seq, reply, commitDate) VALUES (discussionReply_seq.NEXTVAL, 18, 1, '『돈키호테』는 이상과 현실 사이의 갈등을 다루며, 이상을 추구하면서도 현실을 직시해야 하는 우리의 모습을 그립니다. 현대 사회에서도 우리는 이상과 현실 사이에서 균형을 유지하는 노력이 필요하며, 이 책은 그러한 갈등 속에서 어떻게 삶을 지혜롭게 살아가야 할지에 대해 생각하게 만듭니다.', SYSDATE);
+INSERT INTO tblDiscussionReply (seq, discussionBoard_seq, member_seq, reply, commitDate) VALUES (discussionReply_seq.NEXTVAL, 19, 7, '고전이 제공하는 지혜는 시대를 초월한 가치와 통찰을 담고 있어, 현대 사회에서도 유용할 수 있습니다. 예를 들어, 고전에서 말하는 도덕적 원칙이나 인간의 본성에 대한 이해는 현대인의 삶에 많은 교훈을 줄 수 있습니다. 특히 윤리적 갈등이나 삶의 방향에 대해 고민할 때, 고전의 교훈이 현대적인 시각과 조화를 이루며 문제 해결에 도움을 줄 수 있습니다. 고전을 통해 배울 수 있는 것은 단순한 역사적 지식이 아니라, 인간 존재에 대한 깊은 이해와 지혜입니다.', SYSDATE);
+INSERT INTO tblDiscussionReply (seq, discussionBoard_seq, member_seq, reply, commitDate) VALUES (discussionReply_seq.NEXTVAL, 20, 4, '정유정의 『영원한 천국』은 이상과 현실 사이의 간극을 조명하며, 현대 사회에서 우리가 추구하는 가치와 그것의 실현 가능성에 대해 성찰할 기회를 제공합니다. 특히 이상향에 대한 갈망은 많은 사람들이 경험하는 공통된 심리적 현상입니다. 이 책을 통해 우리는 환상적인 이상이 현실에서 어떻게 적용되거나 왜곡될 수 있는지를 이해하고, 보다 실질적이고 균형 잡힌 접근 방식을 모색할 수 있습니다. 환상과 현실의 경계를 명확히 하면서도, 우리의 이상을 실현하기 위한 노력을 계속하는 것이 중요할 것입니다.', SYSDATE);
+
+
+
+-- 9. 평점
+INSERT INTO tblRank VALUES(rank_seq.NEXTVAL, 9788934942467, 1 , 5, '2024-02-23'); 
+INSERT INTO tblRank VALUES(rank_seq.NEXTVAL, 9788937443848, 4 , 5, '2024-03-10'); 
+INSERT INTO tblRank VALUES(rank_seq.NEXTVAL, 9788932473901, 7 , 3, '2024-04-05'); 
+INSERT INTO tblRank VALUES(rank_seq.NEXTVAL, 9788937460883, 10, 4, '2024-05-17'); 
+INSERT INTO tblRank VALUES(rank_seq.NEXTVAL, 9788937460388, 3 , 5, '2024-06-28'); 
+INSERT INTO tblRank VALUES(rank_seq.NEXTVAL, 9788993178692, 9 , 5, '2024-07-12'); 
+INSERT INTO tblRank VALUES(rank_seq.NEXTVAL, 9791171830114, 5 , 1, '2024-08-03'); 
+INSERT INTO tblRank VALUES(rank_seq.NEXTVAL, 9788994054483, 11, 3, '2024-01-20'); 
+INSERT INTO tblRank VALUES(rank_seq.NEXTVAL, 9788934942467, 8 , 5, '2024-02-11'); 
+INSERT INTO tblRank VALUES(rank_seq.NEXTVAL, 9788937462672, 2 , 3, '2024-03-09'); 
+INSERT INTO tblRank VALUES(rank_seq.NEXTVAL, 9791192300245, 17, 3, '2024-04-24'); 
+INSERT INTO tblRank VALUES(rank_seq.NEXTVAL, 9788937460944, 12, 5, '2024-05-30'); 
+INSERT INTO tblRank VALUES(rank_seq.NEXTVAL, 9788934942467, 20, 3, '2024-06-15'); 
+INSERT INTO tblRank VALUES(rank_seq.NEXTVAL, 9791139717891, 13, 5, '2024-07-25'); 
+INSERT INTO tblRank VALUES(rank_seq.NEXTVAL, 9788934972464, 6 , 5, '2024-08-01'); 
+INSERT INTO tblRank VALUES(rank_seq.NEXTVAL, 9788936456085, 15, 4, '2024-01-12'); 
+INSERT INTO tblRank VALUES(rank_seq.NEXTVAL, 9791193506387, 18, 2, '2024-02-05'); 
+INSERT INTO tblRank VALUES(rank_seq.NEXTVAL, 9788920037054, 14, 5, '2024-03-22'); 
+INSERT INTO tblRank VALUES(rank_seq.NEXTVAL, 9791160024357, 19, 4, '2024-04-18');
+INSERT INTO tblRank VALUES(rank_seq.NEXTVAL, 9791191393163, 16, 4, '2024-05-02');
+
+
+
+-- 10. 북마크 > 회원seq, 날짜
+INSERT INTO tblBookMark (seq, regDate, book_seq, member_seq, famousline) VALUES (bookMark_seq.NEXTVAL, SYSDATE, 9788974255954, 1, '세상에서 가장 설득하기 힘든 것은 나 자신이다.세상에 지지 말자. 안될 거라고 말하는 세상에 쉽게 설득 당하지 말자');
+INSERT INTO tblBookMark (seq, regDate, book_seq, member_seq, famousline) VALUES (bookMark_seq.NEXTVAL, SYSDATE, 9788937462788, 2, '인간은 패배하도록 만들어진 것은 아니다. 인간은 파괴될 지언정 패배할 수는 없다');
+INSERT INTO tblBookMark (seq, regDate, book_seq, member_seq, famousline) VALUES (bookMark_seq.NEXTVAL, SYSDATE, 9788932917245, 3, '네 장미꽃을 그렇게 소중하게 만든 것은 그 꽃을 위해 네가 소비한 시간이란다. 가장 중요한 것은 눈에 보이지 않는 법이다.');
+INSERT INTO tblBookMark (seq, regDate, book_seq, member_seq, famousline) VALUES (bookMark_seq.NEXTVAL, SYSDATE, 9788954429900, 4, '삶의 후회를 남기지 말고, 사랑하는데 이유를 달지 마세요.');
+INSERT INTO tblBookMark (seq, regDate, book_seq, member_seq, famousline) VALUES (bookMark_seq.NEXTVAL, SYSDATE, 9788993734966, 5, '우리는 인생의 날들을 늘릴수는 없지만, 그 날들에 생기를 불어 넣을 수는 있다.');
+INSERT INTO tblBookMark (seq, regDate, book_seq, member_seq, famousline) VALUES (bookMark_seq.NEXTVAL, SYSDATE, 9788937437564, 6, '인간은 가장 깊은 절망의 순간에서조차 아름다운의 법칙에 따라 자신의 삶을 작곡한다.');
+INSERT INTO tblBookMark (seq, regDate, book_seq, member_seq, famousline) VALUES (bookMark_seq.NEXTVAL, SYSDATE, 9788934976417, 7, '천재는 노력하는 사람을 이기지 못하고, 노력하는 사람은 즐기는 사람을 이기지 못한다. 그러나 즐기는 사람은 돈 받고 일하는 사람에게는 이길 수 없다.');
+INSERT INTO tblBookMark (seq, regDate, book_seq, member_seq, famousline) VALUES (bookMark_seq.NEXTVAL, SYSDATE, 9788932917207, 8, '수백 년 동안 졌다고 해서 시작하기도 전에 이기려는 노력도 하지 말아야 할 까닭은 없으니까');
+INSERT INTO tblBookMark (seq, regDate, book_seq, member_seq, famousline) VALUES (bookMark_seq.NEXTVAL, SYSDATE, 9788954620437, 9, '우리가 중요시 여기는 것은 D를 강조한 네가지입니다. DANCE(춤), DRAMTICS(연극), DEBATING(토론), DATING(이성교제)');
+INSERT INTO tblBookMark (seq, regDate, book_seq, member_seq, famousline) VALUES (bookMark_seq.NEXTVAL, SYSDATE, 9791197377150, 10, '인생에 지나가는 사람들에게 상처받지 말자. 그들은 어자피 인생에서 지나가는 사람들일 뿐이다.');
+
+
+
+-- 11. 선호도
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,1,529,1);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,2,2072,3);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,3,3036,5);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,5,1193,4);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,7,1181,3);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,11,8891,1);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,13,1290,3);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,17,8863,4);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,19,2159,5);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,23,27,3);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,29,7477,2);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,31,8340,2);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,37,9302,3);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,41,7800,1);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,43,4835,4);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,47,736,5);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,53,1500,3);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,59,2096,4);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,61,9379,1);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,67,8547,4);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,71,3367,3);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,73,7104,1);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,79,727,3);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,83,9458,2);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,89,8590,5);
+INSERT INTO tblPreference VALUES(preference_seq.NEXTVAL,97,8978,3);
+
+
+
+-- 12. 도서관 찾기 카테고리
+insert into tblCategory values (1,'도서관');
+insert into tblCategory values (2,'서점');
+
+-- 13. 도서관 찾기
+insert into tblLibrary values (library_seq.nextval,'광진정보도서관',37.552088, 127.110380,'서울특별시 광진구 아차산로78길 90',1);
+insert into tblLibrary values (library_seq.nextval,'아차산숲속도서관',37.554061, 127.100767,'서울특별시 광진구 영화사로 139',1);
+insert into tblLibrary values (library_seq.nextval,'소나무언덕1호작은도서관',37.527954, 127.118019,'서울특별시 송파구 올림픽로47길 9 3층',1);
+insert into tblLibrary values (library_seq.nextval,'소나무언덕2호도서관',37.507918, 127.094346,'서울특별시 송파구 석촌호수로 155 2층',1);
+insert into tblLibrary values (library_seq.nextval,'서울특별시교육청 송파도서관',37.501147, 127.134348,'서울특별시 송파구 동남로 263',1);
+insert into tblLibrary values (library_seq.nextval,'별마당 도서관',37.510747, 127.060448,'서울특별시 강남구 영동대로 513 스타필드 코엑스몰 B1',1);
+insert into tblLibrary values (library_seq.nextval,'도곡정보문화도서관',37.489472, 127.039027,'서울특별시 강남구 도곡로18길 57',1);
+insert into tblLibrary values (library_seq.nextval,'서울도서관',37.567516, 126.977643,'서울특별시 중구 세종대로 110',1);
+insert into tblLibrary values (library_seq.nextval,'성동구립도서관',37.560136, 127.034676,'서울특별시 성동구 고산자로10길 9',1);
+insert into tblLibrary values (library_seq.nextval,'손기정문화도서관',37.557192, 126.964471,'서울특별시 중구 손기정로 101-3',1);
+insert into tblLibrary values (library_seq.nextval,'서울특별시교육청 남산도서관',37.554539, 126.981895,'서울특별시 용산구 소월로 109',1);
+insert into tblLibrary values (library_seq.nextval,'서울특별시교육청 정독도서관',37.581819, 126.983268,'서울특별시 종로구 북촌로5길 48',1);
+insert into tblLibrary values (library_seq.nextval,'서울특별시교육청 종로도서관',37.577874, 126.966875,'서울특별시 종로구 사직로9길 15-14',1);
+insert into tblLibrary values (library_seq.nextval,'마포중앙도서관',37.565135, 126.907910,'서울특별시 마포구 성산로 128',1);
+insert into tblLibrary values (library_seq.nextval,'국회도서관',37.532467, 126.917103,'서울특별시 영등포구 의사당대로 1',1);
+insert into tblLibrary values (library_seq.nextval,'용산도서관',37.552761, 126.979710,'서울특별시 용산구 두텁바위로 160',1);
+insert into tblLibrary values (library_seq.nextval,'서울특별시교육청 서대문도서관',37.584948, 126.941105,'서울특별시 서대문구 모래내로 412',1);
+insert into tblLibrary values (library_seq.nextval,'서대문구립이진아기념도서관',37.574132, 126.955096,'서울특별시 서대문구 독립문공원길 80',1);
+insert into tblLibrary values (library_seq.nextval,'마포구립 소금나루도서관',37.550894, 126.946762,'서울특별시 마포구 숭문길 72',1);
+insert into tblLibrary values (library_seq.nextval,'마포구립서강도서관',37.548920, 126.931398,'서울특별시 마포구 독막로 165',1);
+insert into tblLibrary values (library_seq.nextval,'연세대학교 중앙도서관',37.565182, 126.937492,'서울특별시 서대문구 연세로 50',1);
+insert into tblLibrary values (library_seq.nextval,'이화여자대학교 중앙도서관',37.563821, 126.947706,'서울특별시 서대문구 이화여대길 52 이화여자대학교 중앙도서관',1);
+insert into tblLibrary values (library_seq.nextval,'서울특별시교육청 마포평생학습관',37.555453, 126.924446,'서울특별시 마포구 홍익로2길 16',1);
+insert into tblLibrary values (library_seq.nextval,'구산동도서관마을',37.610699, 126.913492,'서울특별시 은평구 연서로13길 29-23',1);
+insert into tblLibrary values (library_seq.nextval,'등빛도서관',37.565896, 126.842553,'서울특별시 강서구 강서로62길 48',1);
+insert into tblLibrary values (library_seq.nextval,'가양도서관',37.562358, 126.864697,'서울특별시 강서구 양천로61길 101',1);
+insert into tblLibrary values (library_seq.nextval,'우장산숲속도서관',37.551199, 126.841866,'서울특별시 강서구 우현로 34',1);
+insert into tblLibrary values (library_seq.nextval,'내를건너서숲으로 도서관',37.593648, 126.907441,'서울특별시 은평구 증산로17길 50',1);
+insert into tblLibrary values (library_seq.nextval,'인천광역시교육청계양도서관',37.552089, 126.726779,'인천광역시 계양구 계양산로134번길 18',1);
+insert into tblLibrary values (library_seq.nextval,'고척도서관',37.510432, 126.852091,'서울특별시 구로구 고척로45길 31',1);
+insert into tblLibrary values (library_seq.nextval,'광명시립철산도서관',37.482104, 126.871661,'경기도 광명시 철산로 56',1);
+insert into tblLibrary values (library_seq.nextval,'풍무도서관',37.610042, 126.729525,'경기도 김포시 풍무로146번길 101',1);
+insert into tblLibrary values (library_seq.nextval,'부천시립상동도서관',37.495725, 126.746348,'경기도 부천시 상이로 12',1);
+insert into tblLibrary values (library_seq.nextval,'부천시립역곡도서관',37.494090, 126.802996,'경기도 부천시 지봉로51번길 54',1);
+insert into tblLibrary values (library_seq.nextval,'양천중앙도서관',37.521053, 126.833552,'서울특별시 양천구 신정로7길 81',1);
+insert into tblLibrary values (library_seq.nextval,'김영삼도서관',37.510896, 126.948496,'서울특별시 동작구 매봉로 1',1);
+insert into tblLibrary values (library_seq.nextval,'강동구립 해공도서관',37.547653, 127.127024,'서울특별시 강동구 올림픽로 702',1);
+insert into tblLibrary values (library_seq.nextval,'강동구립 천호도서관',37.546292, 127.132517,'서울특별시 강동구 성안로31마길 1',1);
+insert into tblLibrary values (library_seq.nextval,'강동구립 성내도서관',37.537308, 127.135264,'서울특별시 강동구 성안로 106-1',1);
+insert into tblLibrary values (library_seq.nextval,'국립중앙박물관 도서관',37.527033, 126.981986,'서울특별시 용산구 서빙고로 137',1);
+insert into tblLibrary values (library_seq.nextval,'강남도서관',37.515557, 127.047335,'서울특별시 강남구 선릉로116길 45',1);
+insert into tblLibrary values (library_seq.nextval,'대치도서관',37.498418, 127.063965,'서울특별시 강남구 삼성로 212 은마 복지상가 대치도서관 2층 215호',1);
+insert into tblLibrary values (library_seq.nextval,'논현도서관',37.518714, 127.036723,'37.519037, 127.036213',1);
+insert into tblLibrary values (library_seq.nextval,'도봉문화정보도서관',37.646871, 127.044548,'서울특별시 도봉구 덕릉로 315',1);
+insert into tblLibrary values (library_seq.nextval,'노원중앙도서관',37.662642, 127.064323,'서울특별시 노원구 노원로34길 43',1);
+insert into tblLibrary values (library_seq.nextval,'별빛도서관',37.653386, 127.119465,'경기도 남양주시 별내중앙로 102',1);
+insert into tblLibrary values (library_seq.nextval,'성북길빛도서관',37.613718, 127.027226,'서울특별시 성북구 숭인로8길 52',1);
+insert into tblLibrary values (library_seq.nextval,'도봉도서관',37.657385, 127.014234,'서울특별시 도봉구 삼양로 556',1);
+insert into tblLibrary values (library_seq.nextval,'강북구립도서관',37.627024, 127.036987,'서울특별시 강북구 오현로 145',1);
+insert into tblLibrary values (library_seq.nextval,'오동 숲속도서관',37.610850, 127.040528,'서울특별시 성북구 화랑로13가길 110-10',1);
+insert into tblLibrary values (library_seq.nextval,'교보문고 수유 바로드림센터',37.644231, 127.025816,'서울특별시 강북구 도봉로 348 교보문고 지하 1층',2);
+insert into tblLibrary values (library_seq.nextval,'교보문고 은평점',37.642062, 126.915881,'서울특별시 은평구 통일로 1050',2);
+insert into tblLibrary values (library_seq.nextval,'교보문고 청량리바로드림센터',37.584607, 127.046676,'서울특별시 동대문구 왕산로 214',2);
+insert into tblLibrary values (library_seq.nextval,'교보문고 동대문점',37.573640, 127.008805,'서울특별시 중구 장충단로13길 20',2);
+insert into tblLibrary values (library_seq.nextval,'교보문고 광화문점',37.573359, 126.977732,'서울특별시 종로구 종로 1',2);
+insert into tblLibrary values (library_seq.nextval,'교보문고 이화여대점',37.563774, 126.945683,'서울특별시 서대문구 이화여대길 52',2);
+insert into tblLibrary values (library_seq.nextval,'교보문고 합정점',37.552888, 126.912209,'서울특별시 마포구 월드컵로3길 14',2);
+insert into tblLibrary values (library_seq.nextval,'교보문고 건대스타시티점',37.541864, 127.072198,'서울특별시 광진구 능동로 92',2);
+insert into tblLibrary values (library_seq.nextval,'교보문고 천호점',37.543089, 127.125241,'서울특별시 강동구 올림픽로 664',2);
+insert into tblLibrary values (library_seq.nextval,'교보문고 잠실점',37.516815, 127.100007,'서울특별시 송파구 올림픽로 269 롯데캐슬골드 B1F',2);
+insert into tblLibrary values (library_seq.nextval,'교보문고 강남점',37.504832, 127.023446,'서울특별시 서초구 강남대로 465 지하2층 교보타워 지하 1층',2);
+insert into tblLibrary values (library_seq.nextval,'교보문고 가든파이브바로드림센터',37.480043, 127.125413,'서울특별시 송파구 충민로 66',2);
+insert into tblLibrary values (library_seq.nextval,'교보문고 서울대점',37.463685, 126.951906,'서울특별시 관악구 관악로 1',2);
+insert into tblLibrary values (library_seq.nextval,'교보문고 영등포점',37.520857, 126.903419,'서울특별시 영등포구 영중로 15 타임스퀘어 멀티플렉스 2층',2);
+insert into tblLibrary values (library_seq.nextval,'교보문고 신도림디큐브시티점',37.511053, 126.888657,'서울특별시 구로구 경인로 662 현대백화점 지하 1층',2);
+insert into tblLibrary values (library_seq.nextval,'교보문고 목동점',37.530523, 126.875954,'서울특별시 양천구 목동서로 159-1',2);
+insert into tblLibrary values (library_seq.nextval,'종로서적 종로본점',37.573203, 126.984591,'서울특별시 종로구 종로타워빌딩 지하 종로서적 2층',2);
+insert into tblLibrary values (library_seq.nextval,'종로서적 강남점',37.505986, 127.056143,'서울특별시 강남구 대치동 892',2);
+insert into tblLibrary values (library_seq.nextval,'영풍문고 스타필드 고양',37.657053, 126.896035,'경기도 고양시 덕양구 고양대로 1955 스타 필드 3 층',2);
+insert into tblLibrary values (library_seq.nextval,'영풍문고 미아롯데점',37.621166, 127.029931,'서울특별시 강북구 도봉로 62',2);
+insert into tblLibrary values (library_seq.nextval,'영풍문고 구리 롯데아울렛점',37.616075, 127.138613,'경기도 구리시 동구릉로136번길 47 롯데아울렛 1층',2);
+insert into tblLibrary values (library_seq.nextval,'영풍문고 왕십리역점',37.567548, 127.037360,'서울특별시 성동구 왕십리광장로 17 비트플렉스 3층',2);
+insert into tblLibrary values (library_seq.nextval,'영풍문고 종각종로본점',37.574344, 126.981425,'서울특별시 종로구 청계천로 41',2);
+insert into tblLibrary values (library_seq.nextval,'영풍문고 홍대점',37.563341, 126.924282,'서울특별시 마포구 양화로 161',2);
+insert into tblLibrary values (library_seq.nextval,'영풍문고 용산아이파크몰점',37.536938, 126.966511,'서울특별시 용산구 한강로3가 한강대로23길 55 리빙파크 3층',2);
+insert into tblLibrary values (library_seq.nextval,'영풍문고 스타필드코엑스몰점',37.514338, 127.058521,'서울특별시 강남구 삼성동 159',2);
+insert into tblLibrary values (library_seq.nextval,'영풍문고 스타필드하남점',37.547827, 127.225720,'경기도 하남시 미사대로 750',2);
+insert into tblLibrary values (library_seq.nextval,'영풍문고 스타필드시티위례점',37.485194, 127.147785,'경기도 하남시 위례대로 200',2);
+insert into tblLibrary values (library_seq.nextval,'영풍문고 강남역점',37.502083, 127.025562,'서울특별시 강남구 강남대로 408',2);
+insert into tblLibrary values (library_seq.nextval,'영풍문고 사당역점',37.482470, 126.982304,'서울특별시 서초구 방배천로 11 파스텔시티 지하 2층',2);
+insert into tblLibrary values (library_seq.nextval,'영풍문고 신림점',37.491213, 126.929558,'서울특별시 관악구 신림로 330',2);
+insert into tblLibrary values (library_seq.nextval,'영풍문고 가산마리오점',37.485257, 126.880479,'서울특별시 금천구 벚꽃로 266 6층',2);
+insert into tblLibrary values (library_seq.nextval,'서울책보고',37.521987, 127.103739,'서울특별시 송파구 오금로 1',1);
+insert into tblLibrary values (library_seq.nextval,'아크앤북 롯데월드몰점',37.516110, 127.102235,'서울특별시 송파구 올림픽로 300 4층',2);
+insert into tblLibrary values (library_seq.nextval,'아크앤북 이태원점',37.533920, 126.990775,'서울특별시 용산구 장문로 23',2);
+insert into tblLibrary values (library_seq.nextval,'아크앤북 신촌점',37.571624, 126.937234,'서울특별시 서대문구 연세로 13',2);
+insert into tblLibrary values (library_seq.nextval,'아크앤북 - TP 타워 여의도점',37.531884, 126.917321,'서울특별시 영등포구 의사당대로 96',2);
+insert into tblLibrary values (library_seq.nextval,'YES24 강서NC점 신간서점',37.571113, 126.833670,'서울특별시 강서구 등촌제3동 발산역.NC백화점',2);
+insert into tblLibrary values (library_seq.nextval,'고래서점',37.547919, 126.972557,'서울특별시 용산구 한강대로 307',2);
+insert into tblLibrary values (library_seq.nextval,'공손서점',37.546087, 127.102472,'서울특별시 광진구 광장동 아차산로70길 17-17',2);
+
+
+-- 14. 단어 검색 > 크롤링
+
+-- 15. 책 리뷰 > 크롤링
+
+
+-- 추가사항
+-- 16. 명언 이미지 추가 필요
+
+-- 17. 회원 선호 도서
+
+-- 18. 추천 or 신간 도서 리스트
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

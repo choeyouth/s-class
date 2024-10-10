@@ -1,6 +1,6 @@
---show user;
---create user rebook identified by java1234;
---grant connect, resource, dba to rebook;
+show user;
+create user rebook identified by java1234;
+grant connect, resource, dba to rebook;
 
 drop table tblPreference;
 drop table tblBookmark;
@@ -83,13 +83,19 @@ CREATE TABLE tblDiscussionBoard (
     title VARCHAR2(100) NOT NULL,                       
     content VARCHAR2(4000) NOT NULL,                    
     postDate DATE NOT NULL,              
-    likes NUMBER DEFAULT 0 NULL,
+    likes NUMBER DEFAULT 0 NOT NULL,
+    readcount NUMBER DEFAULT 0 NOT NULL,
     FOREIGN KEY (book_seq) REFERENCES tblBook(seq),     
     FOREIGN KEY (member_seq) REFERENCES tblMember(seq)  
 );   
                                             
                                                      
 CREATE SEQUENCE discussionBoard_seq;
+
+drop table tblDiscussionBoard;
+drop table tblDiscussionReply;
+drop SEQUENCE discussionBoard_seq;
+drop SEQUENCE discussionReply_seq;
 
 
 CREATE TABLE tblDiscussionReply (                                      
@@ -163,15 +169,30 @@ CREATE TABLE tblBookMark (
     seq NUMBER PRIMARY KEY,                                                
     book_seq NUMBER NOT NULL,  
     member_seq NUMBER NOT NULL,
-    famousline VARCHAR2(4000) NOT NULL,                                    
+    famousline VARCHAR2(4000) NOT NULL,        
+    regDate DATE NOT NULL,
     CONSTRAINT fk_book_seq FOREIGN KEY (book_seq) REFERENCES tblBook(seq),
     CONSTRAINT fk_member_seq FOREIGN KEY (member_seq) REFERENCES tblMember(seq) 
 );                                                                     
 
 
+create table tblCategory (
+    seq number primary key,             -- PK
+    category varchar2(300) not null     -- 1 - 도서관, 2 - 서점
+);
 
 
+create table tblLibrary (
+    seq number primary key,         -- PK
+    name varchar2(600) not null,    -- 도서관 or 서점명
+    lat number not null,            -- 위도
+    lng number not null,            -- 경도
+    address varchar2(600) not null, -- 주소
+    category number not null,        -- 카테고리 : 1 - 도서관, 2 - 서점
+    
+    constraint fk_category foreign key (category) references tblCategory(seq)
+);
 
-
+create sequence library_seq;
 
 
