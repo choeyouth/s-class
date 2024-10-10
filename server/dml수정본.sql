@@ -126,22 +126,41 @@ create table tblQuoteList (
     seq number primary key,
     quote varchar2(4000) not null,
     author varchar2(1000) not null,
+    engAuthor varchar2(1000) not null,
     authorPic varchar2(400) null
 );
 
 -- 사진명 추가 필요*****************************************
-INSERT INTO tblQueteList VALUES (quote_seq.nextval, '책 없는 방은 영혼 없는 육체와 같다.', '키케로','');
-INSERT INTO tblQueteList VALUES (quote_seq.nextval, '양서는 처음 읽을 때는 새 친구를 얻은 것 같고, 전에 정독한 책을 다시 읽을 때는 옛 친구를 만나는 것 같다.', '골드 스미스');
-INSERT INTO tblQueteList VALUES (quote_seq.nextval, '내가 세계를 알게 된 것은 책에 의해서였다.', '사르트르');
-INSERT INTO tblQueteList VALUES (quote_seq.nextval, '약으로 병을 고치듯이 독서로 마음을 다스린다.', '카이사르');
-INSERT INTO tblQueteList VALUES (quote_seq.nextval, '독서는 완성된 사람을 만들고, 담론은 재치있는 사람을 만들며, 필기는 정확한 사람을 만든다.', '베이컨');
-INSERT INTO tblQueteList VALUES (quote_seq.nextval, '남의 책을 읽는 것에 시간을 보내라. 남이 고생한 것에 의해서 자신을 쉽게 개선할 수 있다.', '소크라테스');
-INSERT INTO tblQueteList VALUES (quote_seq.nextval, '언제든 괴로운 환상을 위로하고자 한다면 너의 책으로 달려가라. 책은 언제나 변함없는 친절로 너를 대한다.', '풀러');
-INSERT INTO tblQueteList VALUES (quote_seq.nextval, '내가 인생을 안 것은 사람과 접촉했기 때문이 아니라 책과 접촉했었기 때문이다.', '아나톨 프랑스');
-INSERT INTO tblQueteList VALUES (quote_seq.nextval, '모든 양서를 읽는 것은 지난 몇 세기 동안 걸친 가장 훌륭한 사람들과 대화하는 것과 같다.', '데카르트');
-INSERT INTO tblQueteList VALUES (quote_seq.nextval, '책을 사느라 들인 돈은 결코 손해가 아니다. 오히려 훗날에 만 배의 이익을 얻게 될 것이다.', '왕안석');
-INSERT INTO tblQueteList VALUES (quote_seq.nextval, '오늘의 나를 있게 한 것은 우리 마을의 도서관이었다. 하버드 졸업자보다도 소중한 것이 독서하는 습관이다.', '빌 게이츠');
-INSERT INTO tblQueteList VALUES (quote_seq.nextval, '책 속에는 과거의 모든 영혼이 가로누워 있다.', '칼라일');
-INSERT INTO tblQueteList VALUES (quote_seq.nextval, '책이란 넓디넓은 시간의 바다를 지나가는 배이다.', '프랜시스 베이컨');
-INSERT INTO tblQueteList VALUES (quote_seq.nextval, '당신에게 가장 필요한 책은 당신으로 하여금 가장 많이 생각하게 만드는 책이다.', '마크 트웨인');
-INSERT INTO tblQueteList VALUES (quote_seq.nextval, '보기 드문 지식인을 만났을 때는 그가 어떤 책을 읽는가를 물어보아야 한다.', '에머슨');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '책 없는 방은 영혼 없는 육체와 같다.', '마르쿠스 툴리우스 키케로','Marcus Tullius Cicero','1.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '양서는 처음 읽을 때는 새 친구를 얻은 것 같고, 전에 정독한 책을 다시 읽을 때는 옛 친구를 만나는 것 같다.', '골드 스미스','Gold Smiths','2.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '내가 세계를 알게 된 것은 책에 의해서였다.', '장폴 사르트르','Jean-Paul Sartre','3.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '약으로 병을 고치듯이 독서로 마음을 다스린다.', '카이사르','Caesar','4.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '독서는 완성된 사람을 만들고, 담론은 재치있는 사람을 만들며, 필기는 정확한 사람을 만든다.', '프랜시스 베이컨','Francis Bacon','5.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '남의 책을 읽는 것에 시간을 보내라. 남이 고생한 것에 의해서 자신을 쉽게 개선할 수 있다.', '소크라테스','Socrates','6.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '언제든 괴로운 환상을 위로하고자 한다면 너의 책으로 달려가라. 책은 언제나 변함없는 친절로 너를 대한다.', '토마스 풀러','Thomas Fuller','7.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '내가 인생을 안 것은 사람과 접촉했기 때문이 아니라 책과 접촉했었기 때문이다.', '아나톨 프랑스','Anatole France','8.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '모든 양서를 읽는 것은 지난 몇 세기 동안 걸친 가장 훌륭한 사람들과 대화하는 것과 같다.', '르네 데카르트','René Descartes','9.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '책을 사느라 들인 돈은 결코 손해가 아니다. 오히려 훗날에 만 배의 이익을 얻게 될 것이다.', '왕안석','Wang Anshi','10.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '오늘의 나를 있게 한 것은 우리 마을의 도서관이었다. 하버드 졸업자보다도 소중한 것이 독서하는 습관이다.', '빌 게이츠','Bill Gates','11.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '책 속에는 과거의 모든 영혼이 가로누워 있다.', '토마스 칼라일','Thomas Carlyle','12.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '책이란 넓디넓은 시간의 바다를 지나가는 배이다.', '프랜시스 베이컨','Francis Bacon','5.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '당신에게 가장 필요한 책은 당신으로 하여금 가장 많이 생각하게 만드는 책이다.', '마크 트웨인','Mark Twain','14.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '보기 드문 지식인을 만났을 때는 그가 어떤 책을 읽는가를 물어보아야 한다.', '랠프 월도 에머슨','Ralph Waldo Emerson','15.png');
+
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '어떤 책은 맛보고, 어떤 책은 삼키고, 소수의 어떤 책은 잘 씹어서 소화해야 한다.', '프랜시스 베이컨','Francis Bacon','5.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '독서는 정신적으로 충실한 사람을 만든다. 사색은 사려 깊은 사람을 만든다. 그리고 논술은 확실한 사람을 만든다.','벤저민 프랭클린','Benjamin Franklin','17.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '사람은 책을 만들고 책은 사람을 만든다.','신용호','Shin Yong-ho','18.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '기록을 살펴보면 사람이 늙어가며 겪는 생활의 가치는 그 사람이 사는 동안에 얼마나 책을 읽었는가에 따라서 달라진다.','매슈 아널드','Matthew Arnold','');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '하루라도 책을 읽지 않으면 입에 가시가 돋는다.','안중근','Ahn Jung-geun','20.png');
+
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '책은 이를 펴보지 않으면 나뭇조각이나 같다.','영국격언','',null);
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '좋은 책은 좋은 친구와 같다.','베르나르댕 드 생피에르','Bernardin de Saint-Pierre','22.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '단 한 권의 책밖에 읽은 적이 없는 인간을 경계하라.','벤저민 디즈레일리','Benjamin Disraeli','23.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '독서란 자기의 머리가 남의 머리로 생각하는 일이다.','아르투어 쇼펜하우어','Arthur Schopenhauer','24.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '책은 가끔 문명을 승리로 전진시키는 수단이 된다.','윈스턴 처칠','Winston Churchill','25.png');
+
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '좋은 책을 읽는 것은 과거의 가장 뛰어난 사람들과 대화를 나누는 것과 같다.','르네 데카르트','René Descartes','9.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '사람은 음식물로 체력을 배양하고, 독서로 정신력을 배양한다.','아르투어 쇼펜하우어','Arthur Schopenhauer','24.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '독서는 일종의 탐험이어서 신대륙을 탐험하고 미개지를 개척하는 것과 같다.','존 듀이','John Dewey','28.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '독서같이 값싸게 주어지는 영속적인 쾌락은 또 없다.','미셸 에켐 드 몽테뉴','Michel Eyquem de Montaigne','29.png');
+INSERT INTO tblQuoteList VALUES (quote_seq.nextval, '배 없이 해전에서 승리할 수 없는 것 이상으로, 책 없이 사상전에서 이길 수는 없다.','프랭클린 D. 루스벨트','Franklin D. Roosevelt','30.png');

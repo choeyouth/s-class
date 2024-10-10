@@ -2,6 +2,8 @@ show user;
 create user rebook identified by java1234;
 grant connect, resource, dba to rebook;
 
+drop table tblCategory;
+drop table tblLibrary;
 drop table tblPreference;
 drop table tblBookmark;
 drop table tblQuoteList;
@@ -16,6 +18,60 @@ drop table tblManager;
 drop table tblBook;
 drop table tblSubGenre;
 drop table tblGenreList;
+
+drop SEQUENCE category_seq;
+drop SEQUENCE library_seq;
+drop SEQUENCE preference_seq;
+drop SEQUENCE bookmark_seq;
+drop SEQUENCE quotelist_seq;
+drop SEQUENCE wordlist_seq;
+drop SEQUENCE rank_seq;
+drop SEQUENCE bookReview_seq;
+drop SEQUENCE discussionReply_seq;
+drop SEQUENCE discussionBoard_seq;
+drop SEQUENCE memberInfo_seq;
+drop SEQUENCE member_seq;
+drop SEQUENCE manager_seq;
+drop SEQUENCE book_seq;
+drop SEQUENCE subGenre_seq;
+drop SEQUENCE genreList_seq;
+
+drop SEQUENCE category_seq;
+drop SEQUENCE library_seq;
+drop SEQUENCE preference_seq;
+drop SEQUENCE bookmark_seq;
+drop SEQUENCE quotelist_seq;
+drop SEQUENCE wordlist_seq;
+drop SEQUENCE rank_seq;
+drop SEQUENCE bookReview_seq;
+drop SEQUENCE discussionReply_seq;
+drop SEQUENCE discussionBoard_seq;
+drop SEQUENCE memberInfo_seq;
+drop SEQUENCE member_seq;
+drop SEQUENCE manager_seq;
+drop SEQUENCE book_seq;
+drop SEQUENCE subGenre_seq;
+drop SEQUENCE genreList_seq;
+
+
+create SEQUENCE category_seq;
+create SEQUENCE library_seq;
+create SEQUENCE preference_seq;
+create SEQUENCE bookmark_seq;
+create SEQUENCE quotelist_seq;
+create SEQUENCE wordlist_seq;
+create SEQUENCE rank_seq;
+create SEQUENCE bookReview_seq;
+create SEQUENCE discussionReply_seq;
+create SEQUENCE discussionBoard_seq;
+create SEQUENCE memberInfo_seq;
+create SEQUENCE member_seq;
+create SEQUENCE manager_seq;
+create SEQUENCE book_seq;
+create SEQUENCE subGenre_seq;
+create SEQUENCE genreList_seq;
+
+
 
 
 CREATE TABLE tblGenreList (
@@ -49,7 +105,6 @@ CREATE TABLE tblManager (
    regDate DATE DEFAULT SYSDATE NOT NULL
 );
 
-CREATE SEQUENCE manager_seq;
 
 CREATE TABLE tblMember (
     seq NUMBER PRIMARY KEY,
@@ -57,8 +112,6 @@ CREATE TABLE tblMember (
     password VARCHAR2(20) NOT NULL,
     ing NUMBER(1) DEFAULT 1 NOT NULL
 );
-
-CREATE SEQUENCE member_seq;
 
 
 CREATE TABLE tblMemberInfo (                         
@@ -74,8 +127,6 @@ CREATE TABLE tblMemberInfo (
 );            
 
 
-CREATE SEQUENCE memberInfo_seq;
-
 CREATE TABLE tblDiscussionBoard (                   
     seq NUMBER PRIMARY KEY,                             
     book_seq NUMBER NOT NULL,                           
@@ -90,12 +141,6 @@ CREATE TABLE tblDiscussionBoard (
 );   
                                             
                                                      
-CREATE SEQUENCE discussionBoard_seq;
-
-drop table tblDiscussionBoard;
-drop table tblDiscussionReply;
-drop SEQUENCE discussionBoard_seq;
-drop SEQUENCE discussionReply_seq;
 
 
 CREATE TABLE tblDiscussionReply (                                      
@@ -110,7 +155,6 @@ CREATE TABLE tblDiscussionReply (
 );                                                                     
 
 
-CREATE SEQUENCE discussionReply_seq;
 
 CREATE TABLE tblBookReview (                          
     seq NUMBER(10) PRIMARY KEY,                           
@@ -122,7 +166,6 @@ CREATE TABLE tblBookReview (
     FOREIGN KEY (member_seq) REFERENCES tblMember(seq)    
 );                                
 
-CREATE SEQUENCE bookreview_seq;
 
 CREATE TABLE tblRank (                             
     seq NUMBER PRIMARY KEY,                            
@@ -134,7 +177,7 @@ CREATE TABLE tblRank (
     FOREIGN KEY (member_seq) REFERENCES tblMember(seq) 
 );           
 
-CREATE SEQUENCE rank_seq;
+
 
 CREATE TABLE tblPreference (                           
     seq NUMBER PRIMARY KEY,                                
@@ -145,7 +188,7 @@ CREATE TABLE tblPreference (
     FOREIGN KEY (subGenre_seq) REFERENCES tblSubGenre(seq) 
 );           
 
-CREATE SEQUENCE preference_seq;
+
 
 CREATE TABLE tblWordList (          
     target_code NUMBER PRIMARY KEY,     
@@ -154,6 +197,7 @@ CREATE TABLE tblWordList (
     definition VARCHAR2(1000) NOT NULL  
 );           
 
+
 CREATE TABLE tblQuoteList (     
     seq NUMBER PRIMARY KEY,         
     quote VARCHAR2(4000) NOT NULL,  
@@ -161,8 +205,6 @@ CREATE TABLE tblQuoteList (
     authorPic VARCHAR2(300) NULL
 );                        
 
-
-CREATE SEQUENCE quote_seq;
 
 
 CREATE TABLE tblBookMark (                                           
@@ -193,6 +235,6 @@ create table tblLibrary (
     constraint fk_category foreign key (category) references tblCategory(seq)
 );
 
-create sequence library_seq;
+
 
 
