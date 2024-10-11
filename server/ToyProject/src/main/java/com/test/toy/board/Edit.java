@@ -1,6 +1,7 @@
 package com.test.toy.board;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -26,6 +27,8 @@ public class Edit extends HttpServlet {
 		
 		//1. 데이터 가져오기(seq)
 		String seq = req.getParameter("seq");
+		String column = req.getParameter("column");
+		String word = req.getParameter("word");
 		
 		//2. DB 작업 > select
 		BoardDAO dao = BoardDAO.getInstance();
@@ -33,6 +36,8 @@ public class Edit extends HttpServlet {
 		
 		//3. DTO 반환 > JSP 호출하기
 		req.setAttribute("dto", dto);
+		req.setAttribute("column", column);
+		req.setAttribute("word", word);
 		
 				
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/board/edit.jsp");
@@ -52,10 +57,12 @@ public class Edit extends HttpServlet {
 		HttpSession session = req.getSession();
 		
 		//1. 데이터 가져오기(subject, content)
-		String seq = req.getParameter("seq");	
 		String subject = req.getParameter("subject");
 		String content = req.getParameter("content");
-		String id = session.getAttribute("auth").toString();
+		//String id = session.getAttribute("auth").toString();
+		String seq = req.getParameter("seq");
+		String column = req.getParameter("column");
+		String word = req.getParameter("word");
 		
 		//2. DB 작업 > insert
 		BoardDAO dao = BoardDAO.getInstance();
@@ -63,7 +70,7 @@ public class Edit extends HttpServlet {
 		BoardDTO dto = new BoardDTO();
 		dto.setSubject(subject);
 		dto.setContent(content);
-		dto.setId(id);
+		//dto.setId(id);
 		dto.setSeq(seq);
 		
 		int result = dao.edit(dto);
@@ -71,12 +78,10 @@ public class Edit extends HttpServlet {
 		
 		//3. 결과 처리
 		if (result == 1) {
-			resp.sendRedirect("/toy/board/view.do?seq=" + seq);
+			resp.sendRedirect("/toy/board/view.do?seq=" + seq + "&column=" + column + "&word=" + URLEncoder.encode(word, "UTF-8"));
 		} else {
-			OutputUtil.redirect(resp, "수정하기 실패!");
+			OutputUtil.redirect(resp, "수정하기 실패;");
 		}
-	
-	
+		
 	}
-	
 }

@@ -30,10 +30,12 @@
 			</tr>
 		</table>
 		<div>
-			<button type="button" class="back" class="back" onclick="location.href='/toy/board/view.do?seq=${dto.seq}';">돌아가기</button>
+			<button type="button" class="back" class="back" onclick="location.href='/toy/board/view.do';">돌아가기</button>
 			<button type="submit" class="edit primary">수정하기</button>
 		</div>
 		<input type="hidden" name="seq" value="${dto.seq}">
+		<input type="hidden" name="column" value="${column}">
+		<input type="hidden" name="word" value="${word}">
 		</form>
 	</div>
 

@@ -24,6 +24,19 @@
 }
 
 
+/* 페이지 바 */
+#pagebar {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+
+
+
+
+
+
+
 /* 게시판 > 목록보기 */
 #list th:nth-child(1) { width: 50px; }
 #list th:nth-child(2) { width: auto; }
@@ -52,20 +65,22 @@
 }
 
 
-/* */
-
+/* 페이지바 */
 #labelSearchResult {
 	margin: .5rem;
 	text-align: center;
 }
 
 
+/* 댓글 보기 */
+#comment td:nth-child(1) { width: auto; }
+#comment td:nth-child(2) { width: 150px; text-align: center; }
+#comment td:nth-child(1) > div:last-child { font-size: 12px; text-align: right; }
 
+#addComment td:nth-child(1) { width: auto; }
+#addComment td:nth-child(2) { width: 150px; text-align: center; }
 
-
-
-
-
-
+#comment span { cursor: pointer; }
+#comment span:hover { color: cornflowerblue; }
 
 

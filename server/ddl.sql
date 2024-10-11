@@ -36,22 +36,7 @@ drop SEQUENCE book_seq;
 drop SEQUENCE subGenre_seq;
 drop SEQUENCE genreList_seq;
 
-drop SEQUENCE category_seq;
-drop SEQUENCE library_seq;
-drop SEQUENCE preference_seq;
-drop SEQUENCE bookmark_seq;
-drop SEQUENCE quotelist_seq;
-drop SEQUENCE wordlist_seq;
-drop SEQUENCE rank_seq;
-drop SEQUENCE bookReview_seq;
-drop SEQUENCE discussionReply_seq;
-drop SEQUENCE discussionBoard_seq;
-drop SEQUENCE memberInfo_seq;
-drop SEQUENCE member_seq;
-drop SEQUENCE manager_seq;
-drop SEQUENCE book_seq;
-drop SEQUENCE subGenre_seq;
-drop SEQUENCE genreList_seq;
+
 
 
 create SEQUENCE category_seq;
@@ -189,7 +174,6 @@ CREATE TABLE tblPreference (
 );           
 
 
-
 CREATE TABLE tblWordList (          
     target_code NUMBER PRIMARY KEY,     
     word VARCHAR(200) NOT NULL,         
@@ -198,13 +182,13 @@ CREATE TABLE tblWordList (
 );           
 
 
-CREATE TABLE tblQuoteList (     
-    seq NUMBER PRIMARY KEY,         
-    quote VARCHAR2(4000) NOT NULL,  
-    author VARCHAR2(1000) NOT NULL,
-    authorPic VARCHAR2(300) NULL
-);                        
-
+create table tblQuoteList (
+    seq number primary key,
+    quote varchar2(4000) not null,
+    author varchar2(1000) not null,
+    engAuthor varchar2(1000) not null,
+    authorPic varchar2(400) null
+);
 
 
 CREATE TABLE tblBookMark (                                           

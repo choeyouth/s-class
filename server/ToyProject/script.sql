@@ -48,14 +48,27 @@ commit;
 select * from tblUser where id = ? and pw = ?;
 
 
+select * from (select a.*, rownum as rnum from vwBoard a) where rnum between 1 and 10;
 
 
 
+-- 댓글 테이블
+create table tblComment (
+    seq number primary key,                             --번호(PK)
+    content varchar2(2000) not null,                    --댓글
+    regdate date default sysdate not null,              --날짜
+    id varchar2(5) not null references tblUser(id),     --유저(FK)
+    bseq number not null references tblBoard(seq)       --부모번호(FK)
+);
 
+create sequence seqComment;
 
+select * from tblComment;
 
+select tblComment.*, (select name from tblUser where id = tblComment.id) as name from tblComment where bseq = 1 order by seq desc;
 
-
+select tblComment.*, (select name from tblUser where id = tblComment.id) as name 
+from tblComment where bseq = 275 order by seq desc;
 
 
 

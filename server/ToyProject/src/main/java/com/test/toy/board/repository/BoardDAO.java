@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.test.toy.board.model.BoardDTO;
+import com.test.toy.board.model.CommentDTO;
 import com.test.util.DBUtil;
 
 public class BoardDAO {
@@ -67,8 +68,8 @@ public class BoardDAO {
 		
 		try {
 			
-			//목록 보기: select * form vwBoard
-			//목록 보기: select * form vwBoard
+			//목록보기: select * form vwBoard
+			//검색하기: select * form vwBoard where 조건 
 			
 			String where = "";
 			
@@ -93,8 +94,12 @@ public class BoardDAO {
 				}
 			}
 			
-			String sql = String.format("select * from vwBoard %s "
-										, where);
+			// select * from (select a.*, rownum as rnum from vwBoard a)
+		    // where rnum between 1 and 10;
+			String sql = String.format("select * from (select a.*, rownum as rnum from vwBoard a %s) where rnum between %s and %s "
+										, where
+										, map.get("begin")
+										, map.get("end"));
 			
 			stat = conn.createStatement();
 			rs = stat.executeQuery(sql);
@@ -223,6 +228,134 @@ public class BoardDAO {
 		
 		return 0;
 	}
-	
-	
+
+	public int getTotalCout(HashMap<String,String> map) {
+
+		try {
+
+			String where = "";
+			
+			if (map.get("search").equals("y")) { 
+				
+				if (!map.get("column").equals("all")) {
+					where = String.format("where %s like '%%%s%%'"
+										, map.get("column")
+										, map.get("word"));
+				} else {
+					where = String.format("where subject like '%%%s%%' or content like '%%%s%%' or name like '%%%s%%'"
+										, map.get("word")
+										, map.get("word")
+										, map.get("word"));
+				}
+			}			
+			
+			String sql = String.format("select count(*) as cnt from vwBoard %s", where);
+
+			stat = conn.createStatement();
+			rs = stat.executeQuery(sql);
+
+			if (rs.next()) {
+				return rs.getInt("cnt");
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+ 		
+		return 0;
+	}
+
+	public int addComment(CommentDTO dto) {
+		
+		try {
+
+			String sql = "insert into tblComment (seq, content, regdate, id, bseq) values(seqComment.nextVal, ?, default, ?, ?)";
+
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, dto.getContent());
+			pstat.setString(2, dto.getId());
+			pstat.setString(3, dto.getBseq());
+
+			return pstat.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+
+	public ArrayList<CommentDTO> listComment(String bseq) {
+
+		try {
+					
+			String sql = "select tblComment.*, (select name from tblUser where id = tblComment.id) as name from tblComment where bseq = ? order by seq desc";
+			
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, bseq);
+			
+			rs = pstat.executeQuery();
+			
+			ArrayList<CommentDTO> list = new ArrayList<CommentDTO>();
+			
+			while (rs.next()) {
+				
+				CommentDTO dto = new CommentDTO();
+				
+				dto.setSeq(rs.getString("seq"));
+				dto.setContent(rs.getString("content"));
+				dto.setRegdate(rs.getString("regdate"));
+				dto.setId(rs.getString("id"));
+				dto.setBseq(rs.getString("bseq"));
+				dto.setName(rs.getString("name"));
+				
+				list.add(dto);
+			}	
+			
+			return list;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
+	public int delComment(String cseq) {
+		
+		try {
+			
+			String sql = "delete from tblComment where seq = ?";
+			
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, cseq);
+			
+			return pstat.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("BoardDAO.delComment");
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+
+	public int editComment(CommentDTO dto) {
+		
+		try {
+
+			String sql = "update tblComment set content = ? where seq = ?";
+			
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, dto.getContent());
+			pstat.setString(2, dto.getSeq());
+
+			return pstat.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
 }

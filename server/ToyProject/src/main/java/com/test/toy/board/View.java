@@ -28,6 +28,9 @@ public class View extends HttpServlet {
 		
 		//1. 데이터 가져오기(seq)
 		String seq = req.getParameter("seq");
+		String word = req.getParameter("word");
+		String column = req.getParameter("column");
+		String page = req.getParameter("page");
 		
 		//2. DB 작업 > select
 		BoardDAO dao = BoardDAO.getInstance();
@@ -42,14 +45,26 @@ public class View extends HttpServlet {
 		BoardDTO dto = dao.get(seq);
 		
 		//2.5 DTO 조작
+		//개행문자 처리
 		String content = dto.getContent();
 		content = content.replace("\r\n", "<br>");
+		
+		//검색어 강조
+		//"한승원 작가는 11일 방송된"
+		// > "<span style='color:tomato; background-color:gold; >한승원</span> 작가는 11일 방송된"
+		
+		if (column.equals("content")) { 
+			content = content.replace(word, "<span style='color:tomato;background-color:gold;'>" + word + "</span>");
+		}
+		
 		dto.setContent(content);
 		
 		
 		//3. 결과(DTO) > JSP 호출하기		
 		req.setAttribute("dto", dto);
-		
+		req.setAttribute("column", column);
+		req.setAttribute("word", word);
+		req.setAttribute("page", page);
 		
 
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/board/view.jsp");
