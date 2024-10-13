@@ -24,8 +24,8 @@ public class ex04_basicBooksSave {
         try {
             // 1. 데이터베이스 연결
             String dbUrl = "jdbc:oracle:thin:@localhost:1521:xe";  // 오라클 DB 주소
-            String user = "rebook";  // 오라클 DB 사용자 이름
-            String password = "java1234";  // 오라클 DB 비밀번호
+            String user = "system";  // 오라클 DB 사용자 이름
+            String password = "oracle";  // 오라클 DB 비밀번호
             conn = DriverManager.getConnection(dbUrl, user, password);
             System.out.println("DB 연결 성공!");
 
@@ -219,6 +219,7 @@ public class ex04_basicBooksSave {
                             pstmt.setDate(5, java.sql.Date.valueOf(pubDate));  // 발행일 처리
                             pstmt.setString(6, description);
                             pstmt.setString(7, cover);
+                            System.out.println("데이터 저장 완료: ");
 
                             pstmt.executeUpdate();  // 데이터베이스에 저장
                             System.out.println("데이터 저장 완료: " + bookTitle);

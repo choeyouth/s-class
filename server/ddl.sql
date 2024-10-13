@@ -1,6 +1,6 @@
 show user;
-create user rebook identified by java1234;
-grant connect, resource, dba to rebook;
+create user bookReview identified by java1234;
+grant connect, resource, dba to bookReview;
 
 drop table tblCategory;
 drop table tblLibrary;
@@ -36,8 +36,7 @@ drop SEQUENCE book_seq;
 drop SEQUENCE subGenre_seq;
 drop SEQUENCE genreList_seq;
 
-
-
+select * from tabs;
 
 create SEQUENCE category_seq;
 create SEQUENCE library_seq;
@@ -55,9 +54,7 @@ create SEQUENCE manager_seq;
 create SEQUENCE book_seq;
 create SEQUENCE subGenre_seq;
 create SEQUENCE genreList_seq;
-
-
-
+create SEQUENCE wishBook_seq;
 
 CREATE TABLE tblGenreList (
     seq NUMBER PRIMARY KEY, 
@@ -82,20 +79,13 @@ CREATE TABLE tblBook (
    FOREIGN KEY (subGenre_seq) REFERENCES tblSubGenre(seq)
 );
 
-CREATE TABLE tblManager (
-   seq NUMBER PRIMARY KEY, 
-   id VARCHAR2(20) NOT NULL, 
-   password VARCHAR2(20) NOT NULL,
-   name VARCHAR2(20) NOT NULL,
-   regDate DATE DEFAULT SYSDATE NOT NULL
-);
-
 
 CREATE TABLE tblMember (
     seq NUMBER PRIMARY KEY,
     id VARCHAR2(20),
     password VARCHAR2(20) NOT NULL,
-    ing NUMBER(1) DEFAULT 1 NOT NULL
+    ing NUMBER(1) DEFAULT 1 NOT NULL,
+    lv NUMBER(1) DEFAULT 1 NOT NULL
 );
 
 
@@ -103,13 +93,16 @@ CREATE TABLE tblMemberInfo (
     seq NUMBER PRIMARY KEY,                              
     member_seq NUMBER NOT NULL,                          
     name VARCHAR2(20) NOT NULL,                          
-    address VARCHAR2(2000) NOT NULL,                     
     tel VARCHAR2(20) NOT NULL,                           
     email VARCHAR2(200) NOT NULL,            
     pic VARCHAR2(300) DEFAULT 'basic.png' NULL,
+    address VARCHAR2(2000) NOT NULL,                
+    addrDetail VARCHAR2(300) NOT NULL,
+    zipcode NUMBER NOT NULL,
     regDate date DEFAULT SYSDATE NOT NULL,
     FOREIGN KEY (member_seq) REFERENCES tblMember(seq)   
 );            
+           
 
 
 CREATE TABLE tblDiscussionBoard (                   
@@ -219,6 +212,14 @@ create table tblLibrary (
     constraint fk_category foreign key (category) references tblCategory(seq)
 );
 
+
+create table tblWishTable (
+    seq NUMBER PRIMARY KEY,
+    member_seq NUMBER,
+    book_seq NUMBER,
+    FOREIGN KEY (member_seq) REFERENCES tblMember(seq),    
+    FOREIGN KEY (book_seq) REFERENCES tblBook(seq) 
+);
 
 
 
