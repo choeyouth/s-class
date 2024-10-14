@@ -49,8 +49,19 @@
 
 #list .isnew { font-size: 14px; color: tomato; }
 
+#list .commentCount { font-size: 12px; }
+#list .commentCount span { font-size: 15px; }
+
 /* 게시판 > 상세보기 */
 #view tr:nth-child(4) { height: 200px; }
+#view #imgPlace { max-width: 570px; border: 1px solid #CCC; }
+#view #map { width: 570px; height: 300px; border: 1px solid #CCC; }
+
+#view #goodbad { display: flex; align-items: center; }
+
+#view #goodbad span:nth-child(odd) { margin-right: 5px; cursor: pointer; }
+#view #goodbad span:nth-chlid(even) { margin-right: 20px; }
+
 
 /* 게시판 > 검색 */
 #searchForm {

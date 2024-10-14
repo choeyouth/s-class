@@ -24,7 +24,7 @@ public class ex18_bestsellerSave {
         try {
             // 1. 데이터베이스 연결
             String dbUrl = "jdbc:oracle:thin:@localhost:1521:xe";  // 오라클 DB 주소
-            String user = "server";  // 오라클 DB 사용자 이름
+            String user = "rebook";  // 오라클 DB 사용자 이름
             String password = "java1234";  // 오라클 DB 비밀번호
             conn = DriverManager.getConnection(dbUrl, user, password);
             System.out.println("DB 연결 성공!");

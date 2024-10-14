@@ -3,8 +3,9 @@
 
 //해당 객체가 브라우저에 의해 로딩되었을 때 발생
 //document 읽기를 완료한 직후에 발생
-$(document).ready(()=> {
-	
+//$(document).ready(()=> {
+window.onload = () => {
+		
 	//댓글 쓰기
 	$('#btnAddComment').click(()=>{
 		
@@ -72,7 +73,7 @@ $(document).ready(()=> {
 					let temp = `
 					<tr data-seq="${item.seq}">
 						<td>
-							<div>${item.content}</div>
+							<div>${item.content.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</div>
 							<div>${item.regdate}</div>
 						</td>
 						<td>
@@ -111,7 +112,91 @@ $(document).ready(()=> {
 		}
 	});
 	
-});//ready
+			
+	//좋아요
+	$('#btnGood').click(()=>{
+		
+		$.ajax({
+			type: 'POST',
+			url: '/toy/board/goodbad.do',
+			data: {
+				state: 1,
+				bseq: $(event.target).data('seq')
+			},
+			dataType: 'json',
+			success: function(result) {
+				//alert(result.result);
+				loadGoodBad();
+			},
+			error: function(a,b,c) {
+				console.log(a,b,c);
+			}
+		});
+	});
+	
+	//싫어요
+	$('#btnBad').click(()=>{
+		$.ajax({
+			type: 'POST',
+			url: '/toy/board/goodbad.do',
+			data: {
+				state: 0,
+				bseq: $(event.target).data('seq')
+			},
+			dataType: 'json',
+			success: function(result) {
+				//alert(result.result);
+				loadGoodBad();
+			},
+			error: function(a,b,c) {
+				console.log(a,b,c);
+			}
+		});
+	});//싫어요
+	
+	function loadGoodBad() {
+		
+		$.ajax({
+			type: 'GET',
+			url: '/toy/board/loadgoodbad.do',
+			data: {
+				bseq: seq
+			},
+			dataType: 'json',
+			success: function(result) {
+				console.log(result);
+				//alert(result.state);
+				
+				if (result.state == '1') {
+					$('#btnGood').css('color', 'cornflowerblue');
+					$('#btnBad').css('color', '#555');
+				} else if (result.state == '0') {
+					$('#btnBad').css('color', 'tomato');
+					$('#btnGood').css('color', '#555');
+				}
+				
+				$('#good').text(0);
+				$('#bad').text(0);
+				
+				$(result.arr).each((index,item)=>{
+					
+					//{cnt: '2', state: '1'}
+					if (item.state == '1') {
+						$('#good').text(item.cnt);
+					} else if (item.state == '0') {
+						$('#bad').text(item.cnt)
+					}
+				});
+			},
+			error: function(a,b,c) {
+				console.log(a,b,c);
+			}
+		});
+	}
+	
+	loadGoodBad();
+	
+};//ready
 
 function delComment(cseq) {
 	
@@ -144,6 +229,8 @@ function delComment(cseq) {
 	});
 }
 
+let temp_content;
+
 function editComment(cseq) {
 	
 	//이전 눌렀던 수정 폼을 되돌리기
@@ -157,6 +244,7 @@ function editComment(cseq) {
 	
 	const div = $(event.target).parents('tr').children().eq(0).children().eq(0);
 	const content = div.text();
+	temp_content = content;
 	const seq = $(event.target).parents('tr').data('seq');
 	
 	div.html('');
@@ -201,12 +289,13 @@ function editComment(cseq) {
 				
 				let item = $(evt.target).parents('tr');
 				
-				const content = $(item).children().eq(0).children().eq(0).children().eq(0).val();
 				$(item).children().eq(0).children().eq(0).html('');
-				$(item).children().eq(0).children().eq(0).text(content);
+				$(item).children().eq(0).children().eq(0).text(temp_content);
+			
 			}
 		})
 		.appendTo(div);
+		
 }
 
 

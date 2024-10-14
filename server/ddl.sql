@@ -2,22 +2,25 @@ show user;
 create user bookReview identified by java1234;
 grant connect, resource, dba to bookReview;
 
-drop table tblCategory;
 drop table tblLibrary;
+drop table tblCategory;
 drop table tblPreference;
 drop table tblBookmark;
 drop table tblQuoteList;
 drop table tblWordList;
 drop table tblRank;
 drop table tblBookReview;
+drop table tblReplyLike;
+drop table tblBoardLike;
 drop table tblDiscussionReply;
 drop table tblDiscussionBoard;
 drop table tblMemberInfo;
+drop table tblWishTable;
 drop table tblMember;
-drop table tblManager;
 drop table tblBook;
 drop table tblSubGenre;
 drop table tblGenreList;
+
 
 drop SEQUENCE category_seq;
 drop SEQUENCE library_seq;
@@ -29,14 +32,17 @@ drop SEQUENCE rank_seq;
 drop SEQUENCE bookReview_seq;
 drop SEQUENCE discussionReply_seq;
 drop SEQUENCE discussionBoard_seq;
+drop SEQUENCE replyLike_seq;
+drop SEQUENCE boardLike_seq;
 drop SEQUENCE memberInfo_seq;
 drop SEQUENCE member_seq;
 drop SEQUENCE manager_seq;
 drop SEQUENCE book_seq;
 drop SEQUENCE subGenre_seq;
 drop SEQUENCE genreList_seq;
+drop SEQUENCE wishBook_seq;
+drop SEQUENCE recomendbook_seq;
 
-select * from tabs;
 
 create SEQUENCE category_seq;
 create SEQUENCE library_seq;
@@ -48,6 +54,8 @@ create SEQUENCE rank_seq;
 create SEQUENCE bookReview_seq;
 create SEQUENCE discussionReply_seq;
 create SEQUENCE discussionBoard_seq;
+create SEQUENCE replyLike_seq;
+create SEQUENCE boardLike_seq;
 create SEQUENCE memberInfo_seq;
 create SEQUENCE member_seq;
 create SEQUENCE manager_seq;
@@ -55,6 +63,11 @@ create SEQUENCE book_seq;
 create SEQUENCE subGenre_seq;
 create SEQUENCE genreList_seq;
 create SEQUENCE wishBook_seq;
+create SEQUENCE recomendbook_seq;
+
+select * from tblDiscussionBoard;
+select * from tblDiscussionReply;
+select * from tblMember;
 
 CREATE TABLE tblGenreList (
     seq NUMBER PRIMARY KEY, 
@@ -103,7 +116,19 @@ CREATE TABLE tblMemberInfo (
     FOREIGN KEY (member_seq) REFERENCES tblMember(seq)   
 );            
            
-
+CREATE TABLE tblMemberInfo (                         
+    seq NUMBER PRIMARY KEY,                              
+    member_seq NUMBER NOT NULL,                          
+    name VARCHAR2(20) NOT NULL,                          
+    address VARCHAR2(2000) NOT NULL,                
+    addrDetail VARCHAR2(300) NOT NULL,
+    zipcode VARCHAR2(10) NOT NULL,
+    tel VARCHAR2(20) NOT NULL,                           
+    email VARCHAR2(200) NOT NULL,            
+    pic VARCHAR2(300) DEFAULT 'basic.png' NULL,
+    regDate date DEFAULT SYSDATE NOT NULL,
+    FOREIGN KEY (member_seq) REFERENCES tblMember(seq)   
+); 
 
 CREATE TABLE tblDiscussionBoard (                   
     seq NUMBER PRIMARY KEY,                             
@@ -111,27 +136,39 @@ CREATE TABLE tblDiscussionBoard (
     member_seq NUMBER NOT NULL,                         
     title VARCHAR2(100) NOT NULL,                       
     content VARCHAR2(4000) NOT NULL,                    
-    postDate DATE NOT NULL,              
-    likes NUMBER DEFAULT 0 NOT NULL,
+    postDate DATE NOT NULL,             
     readcount NUMBER DEFAULT 0 NOT NULL,
     FOREIGN KEY (book_seq) REFERENCES tblBook(seq),     
     FOREIGN KEY (member_seq) REFERENCES tblMember(seq)  
 );   
-                                            
-                                                     
-
+                                                                                            
 
 CREATE TABLE tblDiscussionReply (                                      
     seq NUMBER PRIMARY KEY,                                                
     discussionBoard_seq NUMBER NOT NULL,                                   
     member_seq NUMBER NOT NULL,                                            
     reply VARCHAR2(1000) NOT NULL,                                         
-    commitDate DATE NOT NULL,                      
-    likes NUMBER DEFAULT 0 NULL,
+    commitDate DATE NOT NULL,        
     FOREIGN KEY (discussionBoard_seq) REFERENCES tblDiscussionBoard(seq),  
     FOREIGN KEY (member_seq) REFERENCES tblMember(seq)                     
 );                                                                     
 
+
+CREATE TABLE tblBoardLike (
+    seq NUMBER PRIMARY KEY,
+    discussionBoard_seq NUMBER NOT NULL,
+    member_seq NUMBER NOT NULL,
+    FOREIGN KEY (discussionBoard_seq) REFERENCES tblDiscussionBoard(seq),
+    FOREIGN KEY (member_seq) REFERENCES tblMember(seq)
+);
+
+CREATE TABLE tblReplyLike (
+    seq NUMBER PRIMARY KEY,
+    discussionReply_seq NUMBER NOT NULL,
+    member_seq NUMBER NOT NULL,
+    FOREIGN KEY (discussionReply_seq) REFERENCES tblDiscussionReply(seq),
+    FOREIGN KEY (member_seq) REFERENCES tblMember(seq)
+);
 
 
 CREATE TABLE tblBookReview (                          
@@ -213,13 +250,16 @@ create table tblLibrary (
 );
 
 
-create table tblWishTable (
-    seq NUMBER PRIMARY KEY,
-    member_seq NUMBER,
-    book_seq NUMBER,
-    FOREIGN KEY (member_seq) REFERENCES tblMember(seq),    
-    FOREIGN KEY (book_seq) REFERENCES tblBook(seq) 
+CREATE TABLE tblRecomendBook (
+    seq NUMBER PRIMARY KEY, 
+    book_seq NUMBER NOT NULL, 
+    FOREIGN KEY (book_seq) REFERENCES tblBook(seq)
 );
 
-
-
+CREATE TABLE tblWishBook (
+    seq NUMBER PRIMARY KEY,
+    member_seq NUMBER NOT NULL,
+    book_seq NUMBER NOT NULL,
+    FOREIGN KEY (member_seq) REFERENCES tblMember(seq),
+    FOREIGN KEY (book_seq) REFERENCES tblBook(seq)
+);
