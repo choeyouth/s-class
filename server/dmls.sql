@@ -1,4 +1,3 @@
-
 -- 1. 장르 
 INSERT INTO tblGenreLIst VALUES(1,'가정/요리/뷰티');
 INSERT INTO tblGenreLIst VALUES(2,'가정/원예/인테리어');
