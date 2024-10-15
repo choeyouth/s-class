@@ -2,6 +2,7 @@ package com.test.toy.user;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -61,6 +62,9 @@ public class Login extends HttpServlet {
 			session.setAttribute("auth", id);
 			session.setAttribute("lv", result.getLv());
 			session.setAttribute("name", result.getName());
+			
+			//접속 기록
+			dao.addLog(id);
 			
 			resp.sendRedirect("/toy/index.do");
 			

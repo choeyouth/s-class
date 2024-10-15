@@ -104,7 +104,6 @@ window.onload = () => {
 		});
 	}
 	
-	loadComment();
 	
 	$('#addComment input[name=content]').keydown((evt)=>{
 		if (evt.keyCode == 13) {
@@ -194,7 +193,10 @@ window.onload = () => {
 		});
 	}
 	
-	loadGoodBad();
+	if (location.href.indexOf('view.do') > -1) {
+		loadComment();
+		loadGoodBad();
+	}
 	
 };//ready
 

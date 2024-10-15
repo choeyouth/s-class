@@ -6,6 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<%@include file="/WEB-INF/views/inc/asset.jsp"%>		
+	<link rel="stylesheet" href="/toy/asset/css/tagify.css">
 	<style>
 		
 	</style>
@@ -31,6 +32,10 @@
 				<td><textarea name="content" id="content" required class="full"></textarea></td>
 			</tr>
 			<tr>
+				<th>태그</th>
+				<td><input type="text" name="tag" id="tag" class="full"></td>
+			</tr>
+			<tr>
 				<th>장소</th>
 				<td><input type="file" name="attach" class="full" accept="image/*"></td>
 			</tr>
@@ -46,7 +51,17 @@
 		</form>
 	</div>
 	
+	<script src="/toy/asset/js/tagify.js"></script>
 	<script>
+		
+		new Tagify(document.getElementById('tag'));
+	
+		/*
+		//[{"value":"자바"},{"value":"게시판"}]
+		window.onclick = function() {
+			alert(document.getElementById('tag').value);
+		}
+		*/
 		
 	</script>
 </body>

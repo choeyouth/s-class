@@ -158,6 +158,13 @@ public class List extends HttpServlet {
 		session.setAttribute("read", "n");
 		
 		
+		//해시태그
+		// - list.do
+		// - list.do?tag=게시판
+		String tag = req.getParameter("tag");
+		map.put("tag", tag);
+			
+		
 		//1.
 		ArrayList<BoardDTO> list = dao.list(map);
 		

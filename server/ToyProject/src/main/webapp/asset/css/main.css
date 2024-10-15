@@ -49,8 +49,11 @@
 
 #list .isnew { font-size: 14px; color: tomato; }
 
+
 #list .commentCount { font-size: 12px; }
 #list .commentCount span { font-size: 15px; }
+#list .isTag { font-size: 15px; }
+
 
 /* 게시판 > 상세보기 */
 #view tr:nth-child(4) { height: 200px; }
@@ -93,5 +96,104 @@
 
 #comment span { cursor: pointer; }
 #comment span:hover { color: cornflowerblue; }
+
+
+
+.tagify.full {
+	border: 1px solid #BBB;
+	border-radius: 3px;
+	outline: none;
+	width: calc(100% - 5px);
+}
+
+
+
+/* 달력 */
+#tblCalendar th {
+	width: 108px;
+}
+
+#tblCalendar td {
+	height: 90px;
+	position: relative;
+}
+
+#tblCalendar td .no {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	font-size: 14px;
+}
+
+#tblCalendar td:first-child .no {
+	color: tomato;
+}
+
+
+#tblCalendar td:nth-child(7) .no {
+	color: cornflowerblue;
+}
+
+
+
+#titleCalendar {
+	display: flex;
+	justify-content: space-between;
+	width: 735px;
+	margin-top: 50px;
+	user-select: none; 
+}
+
+#tblCalendar div {
+	margin-top: 15px;
+}
+
+#tblCalendar div > span {
+	border-radius: 50%;
+	display: inline-block;
+	width: 25px;
+	height: 20px;
+	text-align: center;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 6px;
+	margin-right: 2px;
+}
+
+#tblCalendar div > span.lcnt { background-color: tomato; color: white;}
+#tblCalendar div > span.bcnt { background-color: cornflowerblue; color: white;}
+#tblCalendar div > span.ccnt { background-color: gold; }
+
+#tblCalendar span:first-child span:last-child {
+	font-size: 1rem;
+}
+
+#tblCalendar .material-symbols-outlined {
+	cursor: pointer;
+}
+
+#tblCalendar .material-symbols-outlined:hover {
+	color: cornflowerblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

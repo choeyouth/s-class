@@ -95,7 +95,7 @@ CREATE TABLE tblBook (
 
 CREATE TABLE tblMember (
     seq NUMBER PRIMARY KEY,
-    id VARCHAR2(20),
+    id VARCHAR2(20) UNIQUE,
     password VARCHAR2(20) NOT NULL,
     ing NUMBER(1) DEFAULT 1 NOT NULL,
     lv NUMBER(1) DEFAULT 1 NOT NULL
@@ -106,7 +106,7 @@ CREATE TABLE tblMemberInfo (
     seq NUMBER PRIMARY KEY,                              
     member_seq NUMBER NOT NULL,                          
     name VARCHAR2(20) NOT NULL,                          
-    tel VARCHAR2(20) NOT NULL,                           
+    tel VARCHAR2(20) NOT NULL UNIQUE,                           
     email VARCHAR2(200) NOT NULL,            
     pic VARCHAR2(300) DEFAULT 'basic.png' NULL,
     address VARCHAR2(2000) NOT NULL,                

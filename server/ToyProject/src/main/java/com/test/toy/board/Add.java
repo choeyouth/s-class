@@ -11,6 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.test.toy.board.model.BoardDTO;
@@ -37,6 +42,7 @@ public class Add extends HttpServlet {
 		String mode = req.getParameter("mode");
 		String thread = req.getParameter("thread");
 		String depth = req.getParameter("depth");
+		
 		
 		req.setAttribute("mode", mode);
 		req.setAttribute("thread", thread);
@@ -75,6 +81,8 @@ public class Add extends HttpServlet {
 		String id = session.getAttribute("auth").toString();
 		String mode = multi.getParameter("mode");
 		String attach = multi.getFilesystemName("attach");
+		String tag = multi.getParameter("tag");
+		
 		
 		//2. DB 작업 > insert
 		BoardDAO dao = BoardDAO.getInstance();
@@ -128,6 +136,51 @@ public class Add extends HttpServlet {
 //		dto.setContent(content);
 		
 		int result = dao.add(dto);
+		
+		//게시물 번호를 알아야함 > 게시물 작성 후에 태그 처리
+		//해시태그
+		if (tag != null && !tag.equals("") && !tag.equals("[]")) {
+			
+			try {
+
+				//[{"value":"자바"},{"value":"게시판"}]
+				//JSON 파싱 객체 
+				JSONParser parser = new JSONParser();
+				JSONArray arr = (JSONArray)parser.parse(tag);
+				
+				for (Object obj : arr) {
+					JSONObject  tagObj = (JSONObject)obj;
+					String tagName = tagObj.get("value").toString();
+					System.out.println(tagName);
+				
+					//태그를 DB에 추가
+					if (dao.existHashtag(tagName)) {
+						dao.addHashtag(tagName);
+					}
+					
+					//관계 추가
+					//1. 게시물 번호
+					//2. 해시 태그 번호 
+					String bseq = dao.getBseq();
+					String hseq = dao.getHseq(tagName);
+					
+					HashMap<String,String> map = new HashMap<String,String>();
+					map.put("bseq", bseq);
+					map.put("hseq", hseq);
+					
+					System.out.println(map.get("bseq"));
+					System.out.println(map.get("hseq"));
+					
+					dao.addTagging(map);
+					
+				}
+				
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+			
+		}
+		
 		
 		//3. 결과 처리
 		if (result == 1) {

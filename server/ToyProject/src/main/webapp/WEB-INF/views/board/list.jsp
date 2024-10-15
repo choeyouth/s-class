@@ -75,6 +75,13 @@
 					<a href="/toy/board/view.do?seq=${dto.seq}&word=${map.word}&column=${map.column}&page=${nowPage}">${dto.subject}</a>
 					</c:if>
 					
+					<!-- 해시 태그 유무 -->
+					<c:if test="${dto.istag > 0}">
+					<span class="isTag">
+						<span class="material-symbols-outlined">sell</span>
+					</span>
+					</c:if>
+					
 					<!-- 댓글 -->
 					<c:if test="${dto.commentCount > 0}">
 					<span class="commentCount">
