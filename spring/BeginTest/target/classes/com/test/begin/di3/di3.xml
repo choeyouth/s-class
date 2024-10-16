@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- di3.xml -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 
+		스프링 빈
+		- 스프링 환경이 관리하는 객체(인스턴스)
+		
+		스프링 빈 선언 
+		- Hong hong = new Hong();
+	 -->
+	<bean id="hong" class="com.test.begin.di3.Hong"></bean>
+	
+	<!-- new Service() -->
+	<!-- <bean id="service" class="com.test.begin.di3.Service"></bean> -->
+	
+	<!-- new Service(hong) -->
+<!-- 	<bean id="service" class="com.test.begin.di3.Service">
+		<constructor-arg>
+			<bean class="com.test.begin.di3.Hong"></bean>
+		</constructor-arg>
+	</bean> -->
+	
+	
+	<bean id="service" class="com.test.begin.di3.Service">
+		<!-- 
+			Setter 의존 주입
+			name="hong" > setHong()		
+		 -->
+		<property name="hong" ref="hong"></property>
+	</bean>
+	
+	<!-- 여러개 만들수있지만 사용X 하나의 빈만 사용 -->
+	<bean id="aaa" class="com.test.begin.di3.Hong"></bean>
+	<bean id="bbb" class="com.test.begin.di3.Hong"></bean>
+	<bean id="ccc" class="com.test.begin.di3.Hong"></bean>
+
+	<bean id="h1" name="h2 h3 h4" class="com.test.begin.di3.Hong"></bean>
+	
+</beans>

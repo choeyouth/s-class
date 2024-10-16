@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- memo.xml -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	
+	<!--
+		
+		*** 스프링의 지원을 받으려면 무조건 빈이 되어야 한다.
+		    > 스프링 관리 하에 있는 객체만 스프링의 지원을 받을 수 있다. 
+		
+		Spring AOP
+		- 주업무 객체 > 빈으로 등록
+		- 보조업무 객체 > 빈으로 등록
+	
+	 -->
+	
+	<!-- 주업무 객체 -->
+	<bean id="memo" class="com.test.begin.aop.MemoImpl"></bean>
+	
+	<!-- 보조업무 객체 -->
+	<bean id="logger" class="com.test.begin.aop.Logger"></bean>
+	
+	<!-- 주업무 객체 + 보조업무 객체 -->
+	<aop:config>
+		
+		<!-- 보조업무 객체를 지정한다. 역할 부여 -->
+		<aop:aspect ref="logger">
+			
+			<!-- 
+				1. 주업무 객체를 지정
+				2. 메서드를 지정
+				1 + 2 = Pointcut > 보조업무를 결합 시킬 주업무의 메서드
+				
+				expression = "AspectJ 표현식"
+				- execution() 지시자 
+				- execution(특정 클래스 + 특정 메서드) 
+				- execution([접근 지정자] 반환형 [패키지.클래스].메서드(인자))
+				- execution(public void com.test.begin.aop.MemoImpl.add(String))
+			
+			 -->
+			
+			<!-- <aop:pointcut expression="주업무객체.메서드" id="식별자"/> -->
+			<aop:pointcut expression="execution(public void com.test.begin.aop.MemoImpl.add(String))" id="p1"/>
+			<aop:pointcut expression="execution(public String com.test.begin.aop.MemoImpl.read(int))" id="p2"/>
+			<aop:pointcut expression="execution(public void com.test.begin.aop.MemoImpl.add(String)) || execution(public String com.test.begin.aop.MemoImpl.read(int))" id="p3"/>
+			<aop:pointcut expression="execution(public * com.test.begin.aop.MemoImpl.*(..))" id="p4"/>
+			<aop:pointcut expression="execution(void add(String))" id="p5"/>
+			<aop:pointcut expression="execution(* *(..))" id="p6"/>
+			<aop:pointcut expression="execution(* add*(..))" id="p7"/>
+			
+			<!-- 
+			
+				보조업무 객체.메서드 + Pointcut > 위빙(Weaving)
+				= logger.m1() + memo.add()
+				
+				사용 도구 > Advice
+				1. After Advice
+					- 주업무 후에 보조업무 실행
+					
+				2. Before Advice
+					- 주업무 전에 보조업무 실행
+					- 예) 인증(로그인)
+				
+				3. Around Advice
+					- 주업무 전, 후 모두 실행
+					- 주업무를 감싼 형태 
+				
+				4. AfterThrowing Advice
+				5. AfterReturning Advice
+				
+				
+			 -->
+	
+			<!-- <aop:after method="m1" pointcut-ref="p1"/> -->
+			<!-- <aop:after method="m1" pointcut-ref="p2"/> -->
+			<!-- <aop:after method="m1" pointcut-ref="p3"/> -->
+			<!-- <aop:after method="m1" pointcut-ref="p4"/> --> 
+			<!-- <aop:after method="m1" pointcut-ref="p5"/> -->
+			<!-- <aop:after method="m1" pointcut-ref="p6"/> -->
+			<!-- <aop:after method="m1" pointcut-ref="p7"/> -->
+			
+			<!-- <aop:before method="m1" pointcut-ref="p1"/> -->
+			<!-- <aop:after method="m2" pointcut-ref="p1"/> -->
+			<!-- <aop:around method="m3" pointcut-ref="p6"/> -->
+			<!-- <aop:after-returning method="m4" pointcut-ref="p2" returning="memo"/> -->
+			<aop:after-throwing method="m5" pointcut-ref="p2" throwing="e"/>
+			
+		</aop:aspect>
+	</aop:config>
+	
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
