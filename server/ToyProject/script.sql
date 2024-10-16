@@ -1,10 +1,12 @@
 -- ToyProject > script.sql
 
-create user toy identified by java1234;
-grant connect, resource, dba to toy;
+create user book identified by java1234;
+grant connect, resource, dba to book;
 
 
 show user;
+
+select * from tblMemberInfo;
 
 -- 유저 테이블
 create table tblUser (
