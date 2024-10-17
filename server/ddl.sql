@@ -5,7 +5,7 @@ grant connect, resource, dba to bookReview;
 drop table tblLibrary;
 drop table tblCategory;
 drop table tblPreference;
-drop table tblBookmark;
+drop table tblBookMark;
 drop table tblQuoteList;
 drop table tblWordList;
 drop table tblRank;
@@ -68,6 +68,7 @@ create SEQUENCE recomendbook_seq;
 select * from tblDiscussionBoard;
 select * from tblDiscussionReply;
 select * from tblMember;
+select * from tblBook;
 
 CREATE TABLE tblGenreList (
     seq NUMBER PRIMARY KEY, 
@@ -227,8 +228,8 @@ CREATE TABLE tblBookMark (
     member_seq NUMBER NOT NULL,
     famousline VARCHAR2(4000) NOT NULL,        
     regDate DATE NOT NULL,
-    CONSTRAINT fk_book_seq FOREIGN KEY (book_seq) REFERENCES tblBook(seq),
-    CONSTRAINT fk_member_seq FOREIGN KEY (member_seq) REFERENCES tblMember(seq) 
+    FOREIGN KEY (member_seq) REFERENCES tblMember(seq),    
+    FOREIGN KEY (book_seq) REFERENCES tblBook(seq) 
 );                                                                     
 
 

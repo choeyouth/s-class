@@ -3,7 +3,6 @@
 create user book identified by java1234;
 grant connect, resource, dba to book;
 
-select * from tblQuoteList;
 
 show user;
 
