@@ -17,7 +17,6 @@ public class MemberController {
 	@GetMapping("/login.do")
 	public @ResponseBody String login() {
 		
-		
 		return "ok";
 	}
 }
