@@ -48,7 +48,7 @@ create SEQUENCE category_seq;
 create SEQUENCE library_seq;
 create SEQUENCE preference_seq;
 create SEQUENCE bookmark_seq;
-create SEQUENCE quotelist_seq;
+create SEQUENCE quote_seq;
 create SEQUENCE wordlist_seq;
 create SEQUENCE rank_seq;
 create SEQUENCE bookReview_seq;

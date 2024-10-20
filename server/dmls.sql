@@ -68,7 +68,6 @@ INSERT INTO tblGenreLIst VALUES(64,'기타');
 -- 2. 서브 장르 > 파일 늦게 열림 이클립스 추천 
 
 
-
 -- 3. 책 > basicBooksSave
 
 
@@ -613,8 +612,8 @@ INSERT INTO tblRecomendBook VALUES(recomendbook_seq.NEXTVAL, 9788992880169); -- 
 
 
 -- 18. 단어 검색 > 크롤링
-
-
+select * from tblSubGenre order by seq desc;
+delete from tblRecomendBook;
 
 -- 19. 책 리뷰 > 크롤링
 
