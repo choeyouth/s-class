@@ -33,6 +33,208 @@
 			gender = #{gender}
 				where seq = #{seq}
 	</update>
+	
+	<!-- 
+		SQL 태그 > 매개변수 타입 표시 - 참조형(parameterType)
+				or 반환값 타입 표시 - 참조형(resultType)
+	
+	-->
+	<select id="m4" resultType="Integer">
+		select count(*) from tblAddress
+	</select>
+	
+	<!--  
+		****** 식별자 규칙 > getter && setter
+		1. DB Column Name > age number(3) not null
+		2. <input type="text" name="age"
+		3. DTO 멤버변수 > private int age 
+	
+		1. select name
+		2. dto.setName()
+	-->
+	<select id="m5" parameterType="Integer" resultType="com.test.mybatis.dto.AddressDTO">
+		select * from tblAddress where seq = #{seq}
+	</select>
+	
+	<!--  
+		select의 반환값
+		- 레코드의 개수와 상관없이 레코드 1개를 담을 수 있는 자료형을 명시한다. 
+	-->
+	<select id="m6" resultType="String">
+		select name from tblAddress
+	</select>
+	
+	<select id="m7" resultType="dto">
+		select * from tblAddress
+	</select>
+	
+	<!--  
+		#{name} : 데이터 바인딩. SQL 상에서 사용할 데이터를 추가 
+		${name}: 키워드(식별자) 바인딩. 자료형 구분(X) > 무조건 추가 > 컬럼명 or 테이블명 전달용
+	-->
+	<select id="m8" parameterType="String" resultType="Integer">
+		select count(*) from ${table}
+		
+		<!-- 
+		where subject = '검색어'
+		where content = '검색어'
+		where name = '검색어'
+		-> Mybatis
+		
+		where ${subject} = #{word}
+		 -->
+	</select>
+	
+	
+	<!--  
+		parameterType: 생략 가능 (버전에 따라 다름, 현재 버전은 가능)
+		resultType: 생략 불가능
+		
+		
+		
+	-->
+	<select id="m9" parameterType="Integer" resultType="dto">
+	
+		<!-- 
+			select * from tblAddress where age &lt; 25
+		 -->
+		 
+		 select * from tblAddress
+		 	<![CDATA[
+		 	where age < #{age}
+		 	]]>
+		 <!-- CDATA로 묶으면 파싱을 하지 않음 > 문법 검사를 하지 않는 하나의 문자열로 구분함 -->
+	</select>
+	
+	
+	<select id="m10" resultType="dto">
+		select * from tblAddress
+			where address like '%${word}%'
+	</select>
+	
+	<!--  -->
+	<select id="m11" resultType="dto">
+		
+		<!-- 매개변수로 문자열이 1개 넘어왔을 때 주의!! -->
+ 		<if test="gender == 'm'.toString()">
+		select * from tblAddress
+			where gender = 'm'
+		</if>
+		
+		<if test='gender == "f"'>
+		select * from tblAddress
+			where gender = 'f'
+		</if> 
+		
+<!-- 		<if test="gender != null">
+		select * from tblAddress
+			where gender = #{gender}
+		</if> -->
+			
+		<if test="gender == null">
+		select * from tblAddress
+		</if>
+			
+	</select>
+	
+	
+	<select id="m12" resultType="dto">
+	
+		select * from tblAddress
+			<if test="gender != null">
+			where gender = #{gender}	
+			</if>
+				
+	</select>
+
+<!--<select id="m13" parameterType="java.util.HashMap" resultType="dto"> -->	
+<!--<select id="m13" parameterType="map" resultType="dto"> -->
+    <select id="m13" resultType="dto">
+		
+		
+<!-- 	<if test="gender == null and word == null">
+		select * from tblAddress
+		</if>
+		
+		<if test="gender != null and word == null">
+		select * from tblAddress
+			where gender = #{gender}
+		</if>
+		
+		<if test="gender == null and word != null">
+		select * from tblAddress
+			where address like '%' || #{word} || '%'
+		</if>
+		
+		<if test="gender != null and word != null">
+		select * from tblAddress
+			where gender = #{gender} and address like '%' || #{word} || '%'
+		</if> -->
+		
+<!-- 	select * from tblAddress
+		<if test="gender != null or word != null">
+		where
+		</if>
+			<if test="gender != null">
+			gender = #{gender}
+			</if>
+			
+			<if test="gender != null and word !=null">
+			and
+			</if>
+			
+			<if test="word != null">
+			address like '%' || #{word} || '%'
+			</if> -->
+				
+		<!-- 		
+		select * from tblAddress
+			where
+				1 = 1	
+				<if test="gender != null">
+				and gender = #{gender}
+				</if>
+				
+				<if test="word != null">
+				and address like '%' || #{word} || '%'
+				</if> 
+			-->
+			
+		select * from tblAddress
+			<where> 
+				<if test="gender != null">
+				gender = #{gender}
+				</if>
+				
+				<if test="word != null">
+				address like '%' || #{word} || '%'
+				</if> 
+			</where>
+		
+				
+	</select>
+	
+	<insert id="m14" parameterType="dto">
+	
+		<!-- 현재 인서트할 pk 값 전달 -->
+		<selectKey keyProperty="seq" order="BEFORE" resultType="String">
+			select seqAddress.nextVal from dual
+		</selectKey>
+	
+		insert into tblAddress values (#{seq}, #{name}, #{age}, #{address}, #{gender})
+	</insert>
+	
+	<select id="m15" resultType="dto">
+		
+		<!-- where name in ('강아지', '사자') -->
+		select * from tblAddress
+			<where>
+				<!-- collection 종류 > 무조건 list -->
+				<foreach collection="list" item="item" open="name in (" close=")" separator=",">
+					#{item}
+				</foreach>			
+			</where>
+	</select>
 </mapper>
 
 

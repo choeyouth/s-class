@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- HikariCP -->
+	<bean class="com.zaxxer.hikari.HikariConfig" id="hikariConfig">
+
+		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
+		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@localhost:1521:xe"></property>
+		
+		<property name="username" value="spring"></property>
+		<property name="password" value="java1234"></property>		
+	</bean>			
+	<bean class="com.zaxxer.hikari.HikariDataSource" id="dataSource">
+		<constructor-arg ref="hikariConfig"></constructor-arg>	
+	</bean>
+	
+	<!--
+		 MyBatis
+		 
+		 SqlSessionFactoryBean
+		 - Connection 관리하는 역할 
+
+	-->
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sessionFactory">
+		<property name="dataSource" ref="dataSource"></property> <!-- ref : hikariCP id -->
+		<property name="mapperLocations" value="classpath*:mapper/*.xml"></property>
+		<property name="configLocation" value="classpath:config/mybatis-config.xml"></property>
+	</bean>
+	
+	<!--  
+		JDBC > Statement(***) + ResultSet 역할
+	-->
+	<bean class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>
+</beans>

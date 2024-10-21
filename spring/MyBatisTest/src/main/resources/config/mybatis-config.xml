@@ -1,1 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"https://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
+<configuration>
+
+	<!-- 타입 별칭 -->
+	<typeAliases>
+		<typeAlias type="com.test.mybatis.dto.AddressDTO" alias="dto"/>	
+	</typeAliases>
+
+</configuration>
+
+

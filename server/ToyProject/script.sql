@@ -102,9 +102,6 @@ end fnRegdate;
 
 
 
-
-
-
 select tblBoard.*, (select name from tblUser where id = tblBoard.id) as name from tblBoard where seq = 10;
 
 

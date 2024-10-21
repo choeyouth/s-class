@@ -16,6 +16,10 @@
 	<h1>List</h1>
 	
 	<div>결과 ${result}</div>
+	<div>count: ${count}</div>
+	<div>dto: ${dto}</div>
+	<div>names: ${names}</div>
+	<div>list: ${list}</div>
 	
 	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 	<script src="https://bit.ly/4cMuheh"></script>
