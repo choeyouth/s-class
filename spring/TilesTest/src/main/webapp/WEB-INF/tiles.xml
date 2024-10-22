@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	
+	<!-- 특정 레이아웃을 가지는 페이지 1장 -->
+<!-- 	<definition name="test" template="/WEB-INF/views/layout/test.jsp">
+		조각 페이지(Attribute) 선언
+		<put-attribute name="menu" value="/WEB-INF/views/inc/main_menu.jsp"></put-attribute>
+	</definition> -->
+
+	<!-- member > info --> 
+<!-- 	<definition name="info" template="/WEB-INF/views/layout/member.jsp">
+		<put-attribute name="main_menu" value="/WEB-INF/views/inc/main_menu.jsp"></put-attribute>
+		<put-attribute name="member_menu" value="/WEB-INF/views/inc/member_menu.jsp"></put-attribute>
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/member/info.jsp"></put-attribute>
+	</definition>
+	
+	member > history 
+	<definition name="history" template="/WEB-INF/views/layout/member.jsp">
+		<put-attribute name="main_menu" value="/WEB-INF/views/inc/main_menu.jsp"></put-attribute>
+		<put-attribute name="member_menu" value="/WEB-INF/views/inc/member_menu.jsp"></put-attribute>
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/member/history.jsp"></put-attribute>
+	</definition>
+	
+	member > favorite 
+	<definition name="favorite" template="/WEB-INF/views/layout/member.jsp">
+		<put-attribute name="main_menu" value="/WEB-INF/views/inc/main_menu.jsp"></put-attribute>
+		<put-attribute name="member_menu" value="/WEB-INF/views/inc/member_menu.jsp"></put-attribute>
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/member/favorite.jsp"></put-attribute>
+	</definition> -->
+	
+	<!-- admin > log --> 
+<!-- 	<definition name="log" template="/WEB-INF/views/layout/admin.jsp">
+		<put-attribute name="main_menu" value="/WEB-INF/views/inc/main_menu.jsp"></put-attribute>
+		<put-attribute name="admin_menu" value="/WEB-INF/views/inc/admin_menu.jsp"></put-attribute>
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/admin/log.jsp"></put-attribute>
+	</definition>	
+	
+	admin > setting 
+	<definition name="setting" template="/WEB-INF/views/layout/admin.jsp">
+		<put-attribute name="main_menu" value="/WEB-INF/views/inc/main_menu.jsp"></put-attribute>
+		<put-attribute name="admin_menu" value="/WEB-INF/views/inc/admin_menu.jsp"></put-attribute>
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/admin/setting.jsp"></put-attribute>
+	</definition>	 -->	
+	
+	<!-- info & history & favorite -->
+<!-- 	<definition name="member.*" template="/WEB-INF/views/layout/member.jsp">
+		<put-attribute name="main_menu" value="/WEB-INF/views/inc/main_menu.jsp"></put-attribute>
+		<put-attribute name="member_menu" value="/WEB-INF/views/inc/member_menu.jsp"></put-attribute>
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/member/{1}.jsp"></put-attribute>
+	</definition>
+	
+	admin > log & setting 
+ 	<definition name="admin.*" template="/WEB-INF/views/layout/admin.jsp">
+		<put-attribute name="main_menu" value="/WEB-INF/views/inc/main_menu.jsp"></put-attribute>
+		<put-attribute name="admin_menu" value="/WEB-INF/views/inc/admin_menu.jsp"></put-attribute>
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/admin/{1}.jsp"></put-attribute>
+	</definition> -->
+	
+	<!-- member & admin -->
+	<definition name="*.*" template="/WEB-INF/views/layout/layout.jsp">
+		<put-attribute name="main_menu" value="/WEB-INF/views/inc/main_menu.jsp"></put-attribute>
+		<put-attribute name="sub_menu" value="/WEB-INF/views/inc/{1}_menu.jsp"></put-attribute>
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="*" template="/WEB-INF/views/layout/index.jsp">
+		<put-attribute name="main_menu" value="/WEB-INF/views/inc/main_menu.jsp"></put-attribute>
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/{1}.jsp"></put-attribute>
+	</definition>
+	<!-- * > 더 구체적인 레이아웃이 먼저 위치해야 함 -->
+	
+</tiles-definitions>
+
+
+
+
+
+
+
+
+
+
+
+
