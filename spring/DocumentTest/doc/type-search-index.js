@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"com.test.java.dao","l":"AddressDAO"},{"l":"All Classes","url":"allclasses-index.html"},{"p":"com.test.java","l":"HomeController"},{"p":"com.test.java.controller","l":"TestController"}]
