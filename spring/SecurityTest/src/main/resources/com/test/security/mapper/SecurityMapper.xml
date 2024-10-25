@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.security.mapper.SecurityMapper">
+	
+	<!-- String time2(); -->
+	<select id="time2" resultType="String">
+		select sysdate from dual
+	</select>
+	
+	<resultMap type="com.test.security.dto.MemberDTO" id="memberMap">
+		<id		property="memberid" 	column="memberid" />
+		<result property="memberpw" 	column="memberpw" />
+		<result property="membername" 	column="membername" />
+		<result property="enabled" 		column="enabled" />
+		<result property="age" 			column="age" />
+		<result property="email" 		column="email" />
+		<result property="gender" 		column="gender" />
+		<collection property="authList" resultMap="authMap" />
+	</resultMap>
+
+	<resultMap type="com.test.security.dto.AuthDTO" id="authMap">
+		<result property="memberid" column="memberid" />
+		<result property="auth"  	column="auth" />
+	</resultMap>
+	
+	<select id="loadUser" resultMap="memberMap">
+		select
+			m.memberid,
+			m.memberpw,
+			m.membername,
+			m.enabled,
+			m.age,
+			m.email,
+			m.gender,
+			a.auth
+		from member m
+			inner join member_auth a
+				on m.memberid = a.memberid
+					where m.memberid = #{username}
+	</select>
+	
+</mapper>
