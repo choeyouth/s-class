@@ -23,9 +23,33 @@
     </form>
 
     <script>
-        // Monaco Editor 초기화
         require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.1/min/vs' } });
         require(['vs/editor/editor.main'], function () {
+            // 사용자 정의 테마 정의
+            monaco.editor.defineTheme("myTheme", {
+                base: "vs",  // 기본 테마 사용 ("vs-dark", "vs-light" 등)
+                inherit: true,  // 기본 테마를 상속받음
+                rules: [
+                    { token: 'comment', foreground: '008800', fontStyle: 'italic' },
+                    { token: 'keyword', foreground: '0000FF', fontStyle: 'bold' },
+                    { token: 'string', foreground: 'A31515' },
+                    { token: 'number', foreground: '09885A' },
+                ],
+                colors: {
+                    "editor.foreground": "#000000",
+                    "editor.background": "#EDF9FA",
+                    "editorCursor.foreground": "#8B0000",
+                    "editor.lineHighlightBackground": "#0000FF20",
+                    "editorLineNumber.foreground": "#008800",
+                    "editor.selectionBackground": "#88000030",
+                    "editor.inactiveSelectionBackground": "#88000015",
+                }
+            });
+
+            // 사용자 정의 테마 적용
+            monaco.editor.setTheme("myTheme");
+
+            // Monaco Editor 초기화
             window.editor = monaco.editor.create(document.getElementById('editor'), {
                 value: [
                     'public class Test {',
@@ -34,7 +58,8 @@
                     '    }',
                     '}'
                 ].join('\n'),
-                language: 'java'
+                language: 'java',
+                theme: 'myTheme',  // 초기화 시 사용자 테마 적용
             });
 
             // IntelliSense 자동완성 기능 추가
