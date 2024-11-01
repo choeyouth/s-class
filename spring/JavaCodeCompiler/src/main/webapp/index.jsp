@@ -61,7 +61,7 @@
                 language: 'java',
                 theme: 'vs-dark',  // 초기화 시 사용자 테마 적용
             });
-
+   
             // IntelliSense 자동완성 기능 추가
             monaco.languages.registerCompletionItemProvider('java', {
                 provideCompletionItems: async function (model, position) {
