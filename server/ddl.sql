@@ -1,6 +1,6 @@
 show user;
-create user bookReview identified by java1234;
-grant connect, resource, dba to bookReview;
+create user spring identified by java1234;
+grant connect, resource, dba to spring;
 
 drop table tblLibrary;
 drop table tblCategory;
