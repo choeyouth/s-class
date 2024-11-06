@@ -31,6 +31,7 @@
 </div>  
 
     <script>
+
     require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.1/min/vs' } });
     require(['vs/editor/editor.main'], function () {
         // 사용자 정의 테마 정의
@@ -67,11 +68,11 @@
             language: 'java',
             theme: 'vs-dark',
         });
-
+        
         // IntelliSense 자동완성 기능 추가
-        monaco.languages.registerCompletionItemProvider('java', {
-            provideCompletionItems: function (model, position) {
-            	const suggestions = [
+    monaco.languages.registerCompletionItemProvider('java', {
+        provideCompletionItems: function (model, position) {
+            const customSuggestions = [
             		{
             		    label: 'sysout',
             		    kind: monaco.languages.CompletionItemKind.Snippet,
@@ -271,17 +272,24 @@
             		    documentation: "If-else-if statement template"
             		}
 
-
-
-            	    
-            	];
-
-                return { suggestions: suggestions };
-            }
+           		 ];
+	            return { suggestions: customSuggestions };
+	        }
         });
 
     }); // require 함수의 끝
 
+	    function fetchSuggestions(prefix) {
+    
+    		console.log(prefix);
+    
+	        fetch('/autocomplete?prefix=' + encodeURIComponent(prefix))
+	            .then(response => response.json())
+	            .then(suggestions => {
+	                console.log(suggestions);  // 받은 제안 결과를 확인
+	            })
+	            .catch(error => console.error("Error fetching suggestions:", error));
+	    }
 
         // 코드 제출 함수
         function submitCode() {

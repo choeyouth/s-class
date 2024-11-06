@@ -15,6 +15,7 @@ public class AutoCompleteServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         String prefix = request.getParameter("prefix");
+        System.out.println("prefix >>>>>>>> " + prefix);
         List<String> suggestions = getSuggestions(prefix);
 
         // JSON 형태로 반환
