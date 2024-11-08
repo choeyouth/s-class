@@ -35,6 +35,8 @@ BEGIN
 END;
 /
 
+update template set code = 'System.out.println(\\${1});\\${0}', keyword = 'sysout' where member_seq = '1';
+
 
 select * from tabs;
 
