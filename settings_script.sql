@@ -31,7 +31,7 @@ BEGIN
 END;
 
 BEGIN
-    insert_default_settings(2);
+    insert_default_settings(22);
 END;
 /
 
@@ -50,6 +50,30 @@ select * from template;
 update styleSetting set value = '#1E1E1E' where seq = 3;
 commit;
 
+
+UPDATE styleSetting 
+SET value = 
+CASE 
+WHEN styleType_seq = 1 THEN '16' 
+WHEN styleType_seq = 2 THEN '나눔 고딕 코딩' 
+END 
+WHERE styleType_seq IN (1, 2) AND member_seq = '1';
+
+
+UPDATE styleSetting 
+SET value = 
+CASE 
+WHEN styleType_seq = 1 THEN '16' 
+WHEN styleType_seq = 2 THEN '나눔 고딕 코딩' 
+END 
+WHERE styleType_seq IN (1, 2) AND member_seq = '1'; 
+commit;
+
+INSERT INTO styleSetting (seq, value, styleType_seq, member_seq) VALUES (seqStyleSetting.nextVal, '14', 1, p_member_seq);
+INSERT INTO styleSetting (seq, value, styleType_seq, member_seq) VALUES (seqStyleSetting.nextVal, 'Consolas', 2, p_member_seq);
+
+update styleSetting set value = 'Consolas' where styleType_seq = 2 and member_seq = 1;
+update styleSetting set value = '16' where styleType_seq = 1 and member_seq = 1;
 
 select * from styleSetting ss inner join styleType st on st.seq = ss.styleType_seq where category in ('fontSize', 'fontFamily') and member_seq = 1;
 select ss.seq, ss.value, ss.member_seq, st.category from styleSetting ss inner join styleType st on st.seq = ss.styleType_seq where category in ('fontSize', 'fontFamily') and member_seq = 1;
@@ -111,6 +135,21 @@ CREATE TABLE template (
 		inner join styleType st on st.seq = ss.styleType_seq 
 		where category in ('fontSize', 'fontFamily') 
 			and member_seq = 1;
+  
+UPDATE styleSetting
+SET value = 
+       CASE 
+           WHEN styleType_seq = 3 THEN '#1E1E1E'
+           WHEN styleType_seq = 4 THEN '#D4D4D4'
+           WHEN styleType_seq = 5 THEN '#608B4E'
+           WHEN styleType_seq = 6 THEN '#569CD6'
+           WHEN styleType_seq = 7 THEN '#CE9178' 
+       END
+WHERE styleType_seq BETWEEN 3 AND 7 AND member_seq = '1';            
+        
+commit;        
+          
+select * from styleSetting;
             
 select ss.seq, ss.value, ss.member_seq, ss.styleType_seq, st.category from styleSetting ss 
 inner join styleType st on st.seq = ss.styleType_seq where category in ('fontSize', 'fontFamily') 
@@ -131,6 +170,8 @@ INSERT INTO styleType (seq, category) VALUES (seqStyleType.nextVal, 'java.String
 delete from styleType;
 delete from styleSetting;
 select * from styleSetting;
+rollback;
+commit;
 
 drop sequence seqStyleSetting;
 create sequence seqStyleSetting;
