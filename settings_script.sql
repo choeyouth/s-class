@@ -11,30 +11,74 @@ BEGIN
     INSERT INTO styleSetting (seq, value, styleType_seq, member_seq) VALUES (seqStyleSetting.nextVal, '#569CD6', 6, p_member_seq); 
     INSERT INTO styleSetting (seq, value, styleType_seq, member_seq) VALUES (seqStyleSetting.nextVal, '#CE9178', 7, p_member_seq); 
     
-    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'sysout', 'System.out.println(\\${1});\\${0}');    
-    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'trycatch', 'try {\n    \\${1}\n} catch (\\${2:Exception} \\${3:e}) {\n    \\${4}\n}\\${0}');    
-    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'tryfinally', 'try {\n    \\${1}\n} finally {\n    \\${2}\n}\\${0}');    
-    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'main', 'public static void main(String[] args) {\n    \\${0}\n}');    
-    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'if', 'if (\\${1:condition}) {\n    \\${2}\n}\\${0}');    
-    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'else', 'else {\n    \\${1}\n}\\${0}');    
-    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'catch', 'catch (\\${1:Exception} \\${2:e}) {\n    \\${3}\n}\\${0}');    
-    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'finally', 'finally {\n    \\${1}\n}\\${0}');    
-    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'switch', 'switch (\\${1:key}) {\n    case \\${2:value}:\n        \\${0}\n        break;\n    default:\n        break;\n}');    
-    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'while', 'while (\\${1:condition}) {\n    \\${2}\n}\\${0}');    
-    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'dowhile', 'do {\n    \\${0}\n} while (\\${1:condition});');    
-    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'for', 'for (int \\${1:index} = 0; \\${1:index} < \\${2:array}.length; \\${1:index}++) {\n    \\${3}\n}\\${0}');    
-    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'foreach', 'for (\\${1:Type} \\${2:item} : \\${3:collection}) {\n    \\${0}\n}');    
-    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'syserr', 'System.err.println(\\${1});\\${0}');    
-    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'ifelse', 'if (\\${1:condition}) {\n    \\${2}\n} else {\n    \\${2}\n}\\${0}');    
-    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'ifelseif', 'if (\\${1:condition}) {\n    \\${2}\n} else if (\\${3:condition}) {\n    \\${4}\n} else {\n    \\${5}\n}\\${0}');
     
-END;
-
-BEGIN
-    insert_default_settings(22);
+    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'sysout', 'System.out.println(${1});${0}');    
+    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'trycatch', 'try {\n    ${1}\n} catch (${2:Exception} ${3:e}) {\n    ${4}\n}${0}');    
+    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'tryfinally', 'try {\n    ${1}\n} finally {\n    ${2}\n}${0}');    
+    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'main', 'public static void main(String[] args) {\n    ${0}\n}');    
+    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'if', 'if (${1:condition}) {\n    ${2}\n}${0}');    
+    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'else', 'else {\n    ${1}\n}${0}');    
+    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'catch', 'catch (${1:Exception} ${2:e}) {\n    ${3}\n}${0}');    
+    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'finally', 'finally {\n    ${1}\n}${0}');    
+    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'switch', 'switch (${1:key}) {\n    case ${2:value}:\n        ${0}\n        break;\n    default:\n        break;\n}');    
+    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'while', 'while (${1:condition}) {\n    ${2}\n}${0}');    
+    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'dowhile', 'do {\n    ${0}\n} while (${1:condition});');    
+    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'for', 'for (int ${1:index} = 0; ${1:index} < ${2:array}.length; ${1:index}++) {\n    ${3}\n}${0}');    
+    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'foreach', 'for (${1:Type} ${2:item} : ${3:collection}) {\n    ${0}\n}');    
+    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'syserr', 'System.err.println(${1});${0}');    
+    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'ifelse', 'if (${1:condition}) {\n    ${2}\n} else {\n    ${2}\n}${0}');    
+    INSERT INTO template (seq, member_seq, keyword, code) VALUES (seqTemplate.nextVal, p_member_seq, 'ifelseif', 'if (${1:condition}) {\n    ${2}\n} else if (${3:condition}) {\n    ${4}\n} else {\n    ${5}\n}${0}');
+    
+    
 END;
 /
 
+BEGIN
+    insert_default_settings(29);
+END;
+/
+
+
+CREATE OR REPLACE PROCEDURE switchTheme(
+    theme IN NUMBER,
+    member_seq IN NUMBER
+)
+AS
+BEGIN
+    IF theme = 1 THEN
+        -- 전환: 다크 모드에서 라이트 모드
+        UPDATE styleSetting SET value = '#FFFFFF' WHERE styleType_seq = 3 AND member_seq = member_seq;
+        UPDATE styleSetting SET value = '#000000' WHERE styleType_seq = 4 AND member_seq = member_seq;
+        UPDATE styleSetting SET value = '#3A7F25' WHERE styleType_seq = 5 AND member_seq = member_seq;
+        UPDATE styleSetting SET value = '#001EF5' WHERE styleType_seq = 6 AND member_seq = member_seq;
+        UPDATE styleSetting SET value = '#96261F' WHERE styleType_seq = 7 AND member_seq = member_seq;
+    ELSIF theme = 0 THEN
+        -- 전환: 라이트 모드에서 다크 모드
+        UPDATE styleSetting SET value = '#1E1E1E' WHERE styleType_seq = 3 AND member_seq = member_seq;
+        UPDATE styleSetting SET value = '#D4D4D4' WHERE styleType_seq = 4 AND member_seq = member_seq;
+        UPDATE styleSetting SET value = '#608B4E' WHERE styleType_seq = 5 AND member_seq = member_seq;
+        UPDATE styleSetting SET value = '#569CD6' WHERE styleType_seq = 6 AND member_seq = member_seq;
+        UPDATE styleSetting SET value = '#CE9178' WHERE styleType_seq = 7 AND member_seq = member_seq;
+    END IF;
+END switchTheme;
+/
+
+
+BEGIN
+    switchTheme(0, 1); -- 사용자 1에 대해 다크 모드에서 라이트 모드로 전환
+END;
+/
+
+BEGIN
+    switchTheme(1, 2); -- 사용자 2에 대해 라이트 모드에서 다크 모드로 전환
+END;
+/
+
+select * from styleSetting where member_seq = 29;
+
+commit;
+
+update theme set theme = '1' where member_seq = 22;
 update template set code = 'System.out.println(\\${1});\\${0}', keyword = 'sysout' where member_seq = '1';
 
 
@@ -42,7 +86,8 @@ select * from tabs;
 
 select * from chatbot;
 select * from member;
-
+select * from team;
+select * from memberTeam;
 select * from theme;
 select * from styleType;
 select * from styleSetting;
@@ -51,7 +96,9 @@ select * from template;
 
 update styleSetting set value = '#1E1E1E' where seq = 3;
 commit;
+rollback;
 
+DELETE FROM template WHERE seq = 73;	
 
 UPDATE styleSetting 
 SET value = 
@@ -169,6 +216,8 @@ INSERT INTO styleType (seq, category) VALUES (seqStyleType.nextVal, 'java.commen
 INSERT INTO styleType (seq, category) VALUES (seqStyleType.nextVal, 'java.keyword');
 INSERT INTO styleType (seq, category) VALUES (seqStyleType.nextVal, 'java.String');
 
+update styleType set category='java.string' where seq = 7;
+
 delete from styleType;
 delete from styleSetting;
 select * from styleSetting;
@@ -185,6 +234,12 @@ INSERT INTO styleSetting (seq, value, styleType_seq, member_seq) VALUES (seqStyl
 INSERT INTO styleSetting (seq, value, styleType_seq, member_seq) VALUES (seqStyleSetting.nextVal, '#569CD6', 6, 1); 
 INSERT INTO styleSetting (seq, value, styleType_seq, member_seq) VALUES (seqStyleSetting.nextVal, '#CE9178', 7, 1); 
 
+
+INSERT INTO styleSetting (seq, value, styleType_seq, member_seq) VALUES (seqStyleSetting.nextVal, '#FFFFFF', 3, 1); 
+INSERT INTO styleSetting (seq, value, styleType_seq, member_seq) VALUES (seqStyleSetting.nextVal, '#000000', 4, 1);   
+INSERT INTO styleSetting (seq, value, styleType_seq, member_seq) VALUES (seqStyleSetting.nextVal, '#3A7F25', 5, 1); 
+INSERT INTO styleSetting (seq, value, styleType_seq, member_seq) VALUES (seqStyleSetting.nextVal, '#001EF5', 6, 1); 
+INSERT INTO styleSetting (seq, value, styleType_seq, member_seq) VALUES (seqStyleSetting.nextVal, '#96261F', 7, 1); 
 		select 
 			ss.seq, ss.value, ss.member_seq, ss.styleType_seq, st.category 
 		from styleSetting ss 
@@ -194,132 +249,132 @@ INSERT INTO styleSetting (seq, value, styleType_seq, member_seq) VALUES (seqStyl
 commit;
 
 
+
 create sequence seqBasicTemplate;
 INSERT INTO basicTemplate (seq, keyword, code) 
-VALUES (seqBasicTemplate.nextVal, 'sysout', 'System.out.println(\\${1});\\${0}');
+VALUES (seqBasicTemplate.nextVal, 'sysout', 'System.out.println(${1});${0}');
 
 INSERT INTO basicTemplate (seq, keyword, code) 
-VALUES (seqBasicTemplate.nextVal, 'trycatch', 'try {\n    \\${1}\n} catch (\\${2:Exception} \\${3:e}) {\n    \\${4}\n}\\${0}');
+VALUES (seqBasicTemplate.nextVal, 'trycatch', 'try {\n    ${1}\n} catch (${2:Exception} ${3:e}) {\n    ${4}\n}${0}');
 
 INSERT INTO basicTemplate (seq, keyword, code) 
-VALUES (seqBasicTemplate.nextVal, 'tryfinally', 'try {\n    \\${1}\n} finally {\n    \\${2}\n}\\${0}');
+VALUES (seqBasicTemplate.nextVal, 'tryfinally', 'try {\n    ${1}\n} finally {\n    ${2}\n}${0}');
 
 INSERT INTO basicTemplate (seq, keyword, code) 
-VALUES (seqBasicTemplate.nextVal, 'main', 'public static void main(String[] args) {\n    \\${0}\n}');
+VALUES (seqBasicTemplate.nextVal, 'main', 'public static void main(String[] args) {\n    ${0}\n}');
 
 INSERT INTO basicTemplate (seq, keyword, code) 
-VALUES (seqBasicTemplate.nextVal, 'if', 'if (\\${1:condition}) {\n    \\${2}\n}\\${0}');
+VALUES (seqBasicTemplate.nextVal, 'if', 'if (${1:condition}) {\n    ${2}\n}${0}');
 
 INSERT INTO basicTemplate (seq, keyword, code) 
-VALUES (seqBasicTemplate.nextVal, 'else', 'else {\n    \\${1}\n}\\${0}');
+VALUES (seqBasicTemplate.nextVal, 'else', 'else {\n    ${1}\n}${0}');
 
 INSERT INTO basicTemplate (seq, keyword, code) 
-VALUES (seqBasicTemplate.nextVal, 'catch', 'catch (\\${1:Exception} \\${2:e}) {\n    \\${3}\n}\\${0}');
+VALUES (seqBasicTemplate.nextVal, 'catch', 'catch (${1:Exception} ${2:e}) {\n    ${3}\n}${0}');
 
 INSERT INTO basicTemplate (seq, keyword, code) 
-VALUES (seqBasicTemplate.nextVal, 'finally', 'finally {\n    \\${1}\n}\\${0}');
+VALUES (seqBasicTemplate.nextVal, 'finally', 'finally {\n    ${1}\n}${0}');
 
 INSERT INTO basicTemplate (seq, keyword, code) 
-VALUES (seqBasicTemplate.nextVal, 'switch', 'switch (\\${1:key}) {\n    case \\${2:value}:\n        \\${0}\n        break;\n    default:\n        break;\n}');
+VALUES (seqBasicTemplate.nextVal, 'switch', 'switch (${1:key}) {\n    case ${2:value}:\n        ${0}\n        break;\n    default:\n        break;\n}');
 
 INSERT INTO basicTemplate (seq, keyword, code) 
-VALUES (seqBasicTemplate.nextVal, 'while', 'while (\\${1:condition}) {\n    \\${2}\n}\\${0}');
+VALUES (seqBasicTemplate.nextVal, 'while', 'while (${1:condition}) {\n    ${2}\n}${0}');
 
 INSERT INTO basicTemplate (seq, keyword, code) 
-VALUES (seqBasicTemplate.nextVal, 'dowhile', 'do {\n    \\${0}\n} while (\\${1:condition});');
+VALUES (seqBasicTemplate.nextVal, 'dowhile', 'do {\n    ${0}\n} while (${1:condition});');
 
 INSERT INTO basicTemplate (seq, keyword, code) 
-VALUES (seqBasicTemplate.nextVal, 'for', 'for (int \\${1:index} = 0; \\${1:index} < \\${2:array}.length; \\${1:index}++) {\n    \\${3}\n}\\${0}');
+VALUES (seqBasicTemplate.nextVal, 'for', 'for (int ${1:index} = 0; ${1:index} < ${2:array}.length; ${1:index}++) {\n    ${3}\n}${0}');
 
 INSERT INTO basicTemplate (seq, keyword, code) 
-VALUES (seqBasicTemplate.nextVal, 'foreach', 'for (\\${1:Type} \\${2:item} : \\${3:collection}) {\n    \\${0}\n}');
+VALUES (seqBasicTemplate.nextVal, 'foreach', 'for (${1:Type} ${2:item} : ${3:collection}) {\n    ${0}\n}');
 
 INSERT INTO basicTemplate (seq, keyword, code) 
-VALUES (seqBasicTemplate.nextVal, 'syserr', 'System.err.println(\\${1});\\${0}');
+VALUES (seqBasicTemplate.nextVal, 'syserr', 'System.err.println(${1});${0}');
 
 INSERT INTO basicTemplate (seq, keyword, code) 
-VALUES (seqBasicTemplate.nextVal, 'ifelse', 'if (\\${1:condition}) {\n    \\${2}\n} else {\n    \\${2}\n}\\${0}');
+VALUES (seqBasicTemplate.nextVal, 'ifelse', 'if (${1:condition}) {\n    ${2}\n} else {\n    ${2}\n}${0}');
 
 INSERT INTO basicTemplate (seq, keyword, code) 
-VALUES (seqBasicTemplate.nextVal, 'ifelseif', 'if (\\${1:condition}) {\n    \\${2}\n} else if (\\${3:condition}) {\n    \\${4}\n} else {\n    \\${5}\n}\\${0}');
+VALUES (seqBasicTemplate.nextVal, 'ifelseif', 'if (${1:condition}) {\n    ${2}\n} else if (${3:condition}) {\n    ${4}\n} else {\n    ${5}\n}${0}');
 
 
 
 
 create sequence seqTemplate;
-delete from template;
 INSERT INTO template (seq, member_seq, keyword, code) 
-VALUES (seqTemplate.nextVal, 1, 'sysout', 'System.out.println(\\${1});\\${0}');
-
-INSERT INTO template (seq, member_seq, keyword, code) 
-VALUES (seqTemplate.nextVal, 1, 'trycatch', 'try {\n    \\${1}\n} catch (\\${2:Exception} \\${3:e}) {\n    \\${4}\n}\\${0}');
+VALUES (seqTemplate.nextVal, 1, 'sysout', 'System.out.println(${1});${0}');
 
 INSERT INTO template (seq, member_seq, keyword, code) 
-VALUES (seqTemplate.nextVal, 1, 'tryfinally', 'try {\n    \\${1}\n} finally {\n    \\${2}\n}\\${0}');
+VALUES (seqTemplate.nextVal, 1, 'trycatch', 'try {\n    ${1}\n} catch (${2:Exception} ${3:e}) {\n    ${4}\n}${0}');
 
 INSERT INTO template (seq, member_seq, keyword, code) 
-VALUES (seqTemplate.nextVal, 1, 'main', 'public static void main(String[] args) {\n    \\${0}\n}');
+VALUES (seqTemplate.nextVal, 1, 'tryfinally', 'try {\n    ${1}\n} finally {\n    ${2}\n}${0}');
 
 INSERT INTO template (seq, member_seq, keyword, code) 
-VALUES (seqTemplate.nextVal, 1, 'if', 'if (\\${1:condition}) {\n    \\${2}\n}\\${0}');
+VALUES (seqTemplate.nextVal, 1, 'main', 'public static void main(String[] args) {\n    ${0}\n}');
 
 INSERT INTO template (seq, member_seq, keyword, code) 
-VALUES (seqTemplate.nextVal, 1, 'else', 'else {\n    \\${1}\n}\\${0}');
+VALUES (seqTemplate.nextVal, 1, 'if', 'if (${1:condition}) {\n    ${2}\n}${0}');
 
 INSERT INTO template (seq, member_seq, keyword, code) 
-VALUES (seqTemplate.nextVal, 1, 'catch', 'catch (\\${1:Exception} \\${2:e}) {\n    \\${3}\n}\\${0}');
+VALUES (seqTemplate.nextVal, 1, 'else', 'else {\n    ${1}\n}${0}');
 
 INSERT INTO template (seq, member_seq, keyword, code) 
-VALUES (seqTemplate.nextVal, 1, 'finally', 'finally {\n    \\${1}\n}\\${0}');
+VALUES (seqTemplate.nextVal, 1, 'catch', 'catch (${1:Exception} ${2:e}) {\n    ${3}\n}${0}');
 
 INSERT INTO template (seq, member_seq, keyword, code) 
-VALUES (seqTemplate.nextVal, 1, 'switch', 'switch (\\${1:key}) {\n    case \\${2:value}:\n        \\${0}\n        break;\n    default:\n        break;\n}');
+VALUES (seqTemplate.nextVal, 1, 'finally', 'finally {\n    ${1}\n}${0}');
 
 INSERT INTO template (seq, member_seq, keyword, code) 
-VALUES (seqTemplate.nextVal, 1, 'while', 'while (\\${1:condition}) {\n    \\${2}\n}\\${0}');
+VALUES (seqTemplate.nextVal, 1, 'switch', 'switch (${1:key}) {\n    case ${2:value}:\n        ${0}\n        break;\n    default:\n        break;\n}');
 
 INSERT INTO template (seq, member_seq, keyword, code) 
-VALUES (seqTemplate.nextVal, 1, 'dowhile', 'do {\n    \\${0}\n} while (\\${1:condition});');
+VALUES (seqTemplate.nextVal, 1, 'while', 'while (${1:condition}) {\n    ${2}\n}${0}');
 
 INSERT INTO template (seq, member_seq, keyword, code) 
-VALUES (seqTemplate.nextVal, 1, 'for', 'for (int \\${1:index} = 0; \\${1:index} < \\${2:array}.length; \\${1:index}++) {\n    \\${3}\n}\\${0}');
+VALUES (seqTemplate.nextVal, 1, 'dowhile', 'do {\n    ${0}\n} while (${1:condition});');
 
 INSERT INTO template (seq, member_seq, keyword, code) 
-VALUES (seqTemplate.nextVal, 1, 'foreach', 'for (\\${1:Type} \\${2:item} : \\${3:collection}) {\n    \\${0}\n}');
+VALUES (seqTemplate.nextVal, 1, 'for', 'for (int ${1:index} = 0; ${1:index} < ${2:array}.length; ${1:index}++) {\n    ${3}\n}${0}');
 
 INSERT INTO template (seq, member_seq, keyword, code) 
-VALUES (seqTemplate.nextVal, 1, 'syserr', 'System.err.println(\\${1});\\${0}');
+VALUES (seqTemplate.nextVal, 1, 'foreach', 'for (${1:Type} ${2:item} : ${3:collection}) {\n    ${0}\n}');
 
 INSERT INTO template (seq, member_seq, keyword, code) 
-VALUES (seqTemplate.nextVal, 1, 'ifelse', 'if (\\${1:condition}) {\n    \\${2}\n} else {\n    \\${2}\n}\\${0}');
+VALUES (seqTemplate.nextVal, 1, 'syserr', 'System.err.println(${1});${0}');
 
 INSERT INTO template (seq, member_seq, keyword, code) 
-VALUES (seqTemplate.nextVal, 1, 'ifelseif', 'if (\\${1:condition}) {\n    \\${2}\n} else if (\\${3:condition}) {\n    \\${4}\n} else {\n    \\${5}\n}\\${0}');
+VALUES (seqTemplate.nextVal, 1, 'ifelse', 'if (${1:condition}) {\n    ${2}\n} else {\n    ${2}\n}${0}');
+
+INSERT INTO template (seq, member_seq, keyword, code) 
+VALUES (seqTemplate.nextVal, 1, 'ifelseif', 'if (${1:condition}) {\n    ${2}\n} else if (${3:condition}) {\n    ${4}\n} else {\n    ${5}\n}${0}');
 
 
 
 
 
 INSERT INTO template (seq, member_seq, keyword, code) 
-VALUES (seqTemplate.nextVal, 1, 'class', 'public class \\${1:ClassName} {\n\n    private \\${2:Type} \\${3:field};\n\n    public \\${1:ClassName}(\\${2:Type} \\${3:field}) {\n        this.\\${3:field} = \\${3:field};\n    }\n\n    public \\${2:Type} get\\${3:Field}() {\n        return \\${3:field};\n    }\n\n    public void set\\${3:Field}(\\${2:Type} \\${3:field}) {\n        this.\\${3:field} = \\${3:field};\n    }\n\n}\\${0}');
+VALUES (seqTemplate.nextVal, 1, 'class', 'public class ${1:ClassName} {\n\n    private ${2:Type} ${3:field};\n\n    public ${1:ClassName}(${2:Type} ${3:field}) {\n        this.${3:field} = ${3:field};\n    }\n\n    public ${2:Type} get${3:Field}() {\n        return ${3:field};\n    }\n\n    public void set${3:Field}(${2:Type} ${3:field}) {\n        this.${3:field} = ${3:field};\n    }\n\n}${0}');
 
 INSERT INTO template (seq, member_seq, keyword, code) 
-VALUES (seqTemplate.nextVal, 1, 'unittest', '@Test\npublic void \\${1:testMethod}() {\n    // given\n    \\${2:Setup code}\n\n    // when\n    \\${3:Execution code}\n\n    // then\n    assert\\${4:Condition}(\\${5:Expected}, \\${6:Actual});\n}\\${0}');
+VALUES (seqTemplate.nextVal, 1, 'unittest', '@Test\npublic void ${1:testMethod}() {\n    // given\n    ${2:Setup code}\n\n    // when\n    ${3:Execution code}\n\n    // then\n    assert${4:Condition}(${5:Expected}, ${6:Actual});\n}${0}');
 
 INSERT INTO template (seq, member_seq, keyword, code) 
-VALUES (seqTemplate.nextVal, 1, 'gettersetter', 'public \\${1:Type} get\\${2:Field}() {\n    return \\${3:field};\n}\n\npublic void set\\${2:Field}(\\${1:Type} \\${3:field}) {\n    this.\\${3:field} = \\${3:field};\n}\\${0}');
+VALUES (seqTemplate.nextVal, 1, 'gettersetter', 'public ${1:Type} get${2:Field}() {\n    return ${3:field};\n}\n\npublic void set${2:Field}(${1:Type} ${3:field}) {\n    this.${3:field} = ${3:field};\n}${0}');
 
 INSERT INTO template (seq, member_seq, keyword, code) 
-VALUES (seqTemplate.nextVal, 1, 'lambda', '\\${1:collection}.stream()\n    .filter(\\${2:item} -> \\${3:condition})\n    .forEach(\\${2:item} -> {\n        \\${0} \n    });');
+VALUES (seqTemplate.nextVal, 1, 'lambda', '${1:collection}.stream()\n    .filter(${2:item} -> ${3:condition})\n    .forEach(${2:item} -> {\n        ${0} \n    });');
 
 INSERT INTO template (seq, member_seq, keyword, code) 
-VALUES (seqTemplate.nextVal, 1, 'switchenum', 'switch (\\${1:enumVariable}) {\n    case \\${2:EnumValue1}:\n        \\${0} \n        break;\n    case \\${3:EnumValue2}:\n        \n        break;\n    default:\n        throw new IllegalArgumentException("Unexpected value: " + \\${1:enumVariable});\n}');
+VALUES (seqTemplate.nextVal, 1, 'switchenum', 'switch (${1:enumVariable}) {\n    case ${2:EnumValue1}:\n        ${0} \n        break;\n    case ${3:EnumValue2}:\n        \n        break;\n    default:\n        throw new IllegalArgumentException("Unexpected value: " + ${1:enumVariable});\n}');
 
 INSERT INTO template (seq, member_seq, keyword, code) 
-VALUES (seqTemplate.nextVal, 1, 'trywithresources', 'try (\\${1:ResourceType} \\${2:resource} = new \\${1:ResourceType}()) {\n    \\${0} \n} catch (\\${3:ExceptionType} \\${4:e}) {\n    \\${5} \n}');
+VALUES (seqTemplate.nextVal, 1, 'trywithresources', 'try (${1:ResourceType} ${2:resource} = new ${1:ResourceType}()) {\n    ${0} \n} catch (${3:ExceptionType} ${4:e}) {\n    ${5} \n}');
 
 INSERT INTO template (seq, member_seq, keyword, code) 
-VALUES (seqTemplate.nextVal, 1, 'jsonparse', 'ObjectMapper objectMapper = new ObjectMapper();\n\\${1:Type} \\${2:variable} = objectMapper.readValue(\\${3:jsonData}, \\${1:Type}.class);\\${0}');
+VALUES (seqTemplate.nextVal, 1, 'jsonparse', 'ObjectMapper objectMapper = new ObjectMapper();\n${1:Type} ${2:variable} = objectMapper.readValue(${3:jsonData}, ${1:Type}.class);${0}');
 
 commit;
 
@@ -371,8 +426,8 @@ CREATE TABLE memberTeam (
     constraint fk_memberTeam_team foreign key(team_seq) references team(seq)
 );
 
-create sequence seqTseamProject;
--- drop sequence seqTseamProject;
+create sequence seqTeamProject;
+-- drop sequence seqTeamProject;
 CREATE TABLE teamProject (
 	seq	number	primary key,
 	team_seq	number	NOT NULL,
@@ -474,7 +529,7 @@ create sequence seqVersionFile;
 CREATE TABLE versionFile (
 	seq	number	primary key,
 	name	varchar2(600)	NOT NULL,
-	code	blob	NULL,
+	code	clob	NULL,
 	versionInfo_seq	number	NOT NULL,
 	fileType_seq	number	NOT NULL,
 	parent_seq	number	NULL,
@@ -483,18 +538,114 @@ CREATE TABLE versionFile (
     constraint fk_versionFile_parent foreign key(parent_seq) references versionFile(seq)
 );
 
+drop table versionFile;
+
 
 create sequence seqBasicFile;
 -- drop sequence seqBasicFile;
 CREATE TABLE basicFile (
 	seq	number	primary key,
 	name	varchar2(600)	NOT NULL,
-	code	blob	NULL,
+	code	clob	NULL,
 	fileType_seq	number	NOT NULL,
 	parent_seq	number	NULL,
     constraint fk_basicFile_fileType foreign key(fileType_seq) references fileType(seq),
     constraint fk_basicFile_parent foreign key(parent_seq) references basicFile(seq)
 );
+
+drop table basicFile;
+
+insert into fileType (seq, fileType) values (seqFileType.nextVal, 'Project');
+insert into fileType (seq, fileType) values (seqFileType.nextVal, 'Folder');
+insert into fileType (seq, fileType) values (seqFileType.nextVal, 'Package');
+insert into fileType (seq, fileType) values (seqFileType.nextVal, 'Class');
+insert into fileType (seq, fileType) values (seqFileType.nextVal, 'Interface');
+insert into fileType (seq, fileType) values (seqFileType.nextVal, 'TextFile');
+insert into fileType (seq, fileType) values (seqFileType.nextVal, 'File');
+
+select * From basicFile;
+
+create sequence seqBasicFile;
+drop sequence seqBasicFile;
+
+INSERT INTO basicFile (seq, name, code, fileType_seq, parent_seq) VALUES (seqBasicFile.nextVal, 'TestProject', null, 1, null);
+INSERT INTO basicFile (seq, name, code, fileType_seq, parent_seq) VALUES (seqBasicFile.nextVal, 'src', null, 2, 1);
+INSERT INTO basicFile (seq, name, code, fileType_seq, parent_seq) VALUES (seqBasicFile.nextVal, 'com.test.main', null, 3, 2);
+INSERT INTO basicFile (seq, name, code, fileType_seq, parent_seq) VALUES (seqBasicFile.nextVal, 'Test.java', 'public class Test {\n    public static void main(String[] args) {\n        System.out.println("test");\n    }\n}', 4, 3);
+INSERT INTO basicFile (seq, name, code, fileType_seq, parent_seq) VALUES (seqBasicFile.nextVal, 'Inter.java', 'public interface Inter {\n\n}', 5, 3);
+INSERT INTO basicFile (seq, name, code, fileType_seq, parent_seq) VALUES (seqBasicFile.nextVal, 'txt.file', null, 6, 3);
+INSERT INTO basicFile (seq, name, code, fileType_seq, parent_seq) VALUES (seqBasicFile.nextVal, 'file', null, 7, 3);
+select * from template;
+
+commit;
+select * from versionFile;
+
+insert into versionInfo (seq, regdate, message, project_seq, member_seq) values (seqVersionInfo.nextVal, sysdate, 'test massge', 3, 1);
+commit;
+
+create sequence seqVersionFile;
+drop sequence seqVersionFile;
+select * from project;
+select * from versionFile;
+update versionFile set code ='public interface Inter {\n\n}' where seq = 5;
+insert into versionFile (seq, name, code, versionInfo_seq, fileType_seq, parent_seq) values (seqVersionFile.nextVal, 'DogProject', null,  22, 1, null);
+insert into versionFile (seq, name, code, versionInfo_seq, fileType_seq, parent_seq) values (seqVersionFile.nextVal, 'src', null,  21, 2, 44);
+insert into versionFile (seq, name, code, versionInfo_seq, fileType_seq, parent_seq) values (seqVersionFile.nextVal, 'com.test.main', null,  1, 3, 2);
+insert into versionFile (seq, name, code, versionInfo_seq, fileType_seq, parent_seq) values (seqVersionFile.nextVal, 'Test.java', 'public class Test {\n    public static void main(String[] args) {\n        System.out.println("test");\n    }\n}',  1, 4, 3);
+insert into versionFile (seq, name, code, versionInfo_seq, fileType_seq, parent_seq) values (seqVersionFile.nextVal, 'Inter.java', 'public interface Inter {\n\n}',  1, 5, 3);
+insert into versionFile (seq, name, code, versionInfo_seq, fileType_seq, parent_seq) values (seqVersionFile.nextVal, 'txt.file', null,  1, 6, 3);
+insert into versionFile (seq, name, code, versionInfo_seq, fileType_seq, parent_seq) values (seqVersionFile.nextVal, 'file', null,  1, 7, 3);
+delete from versionFile where seq = 21;
+
+create or replace view vwProjectFile
+as
+select 
+vf.seq AS seq, vf.name AS name, vf.code AS code, vf.fileType_seq, 
+m.seq AS member_seq, vi.seq AS versionInfo_seq, p.seq AS project_seq, tp.seq AS teamProject_seq, 
+t.seq AS team_seq, t.teamType AS teamType, mt.seq AS memberTeam_seq  
+from versionFile vf
+inner join versionInfo vi on vi.seq = vf.versionInfo_seq
+inner join project p on p.seq = vi.project_seq
+inner join teamProject tp on p.seq = tp.project_seq
+inner join team t on t.seq = tp.team_seq
+inner join memberTeam mt on t.seq = mt.team_seq
+inner join member m on m.seq = mt.member_seq
+order by vf.seq;
+
+select * from vwProjectFile;
+select * from team;
+
+
+    
+CREATE OR REPLACE VIEW vwMemberProject
+AS
+SELECT 
+    p.seq, p.projectName, p.projectEx, p.startDate, p.target, p.priority, p.regDate,
+    tp.seq AS teamProject_seq, t.seq AS team_seq, t.teamName, t.teamEx, t.teamType, t.regDate AS teamRegDate, 
+    mt.seq AS memberTeam_seq, mt.position, m.seq AS member_seq
+FROM project p
+INNER JOIN teamProject tp ON tp.project_seq = p.seq
+INNER JOIN team t ON tp.team_seq = t.seq
+INNER JOIN memberTeam mt ON mt.team_seq = t.seq
+INNER JOIN member m ON m.seq = mt.member_seq;
+
+
+select * from project;
+
+SELECT * FROM vwMemberProject WHERE member_seq = 22 AND team_seq = 1;
+SELECT * FROM vwMemberProject WHERE member_seq = 22;
+SELECT * FROM vwMemberProject v
+inner join versionInfo p on v.seq = p.project_seq;
+
+select m.seq as seq, m.id as id, m.nick as nick, m.color as color, m.oAuthType as oAuthType, m.ing as ing, 
+			t.seq as teamSeq, t.teamName as teamName, t.teamEx as teamEx, t.teamType as teamType, mt.position as position 
+			from member m inner join memberTeam mt
+			on m.seq = mt.member_seq
+			inner join team t
+			on mt.team_seq = t.seq where m.seq = 22;
+
+
+select * from team;
 
 -- 채팅 -----
 create sequence seqServerList;
