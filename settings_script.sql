@@ -573,28 +573,42 @@ INSERT INTO basicFile (seq, name, code, fileType_seq, parent_seq) VALUES (seqBas
 INSERT INTO basicFile (seq, name, code, fileType_seq, parent_seq) VALUES (seqBasicFile.nextVal, 'com.test.main', null, 3, 2);
 INSERT INTO basicFile (seq, name, code, fileType_seq, parent_seq) VALUES (seqBasicFile.nextVal, 'Test.java', 'public class Test {\n    public static void main(String[] args) {\n        System.out.println("test");\n    }\n}', 4, 3);
 INSERT INTO basicFile (seq, name, code, fileType_seq, parent_seq) VALUES (seqBasicFile.nextVal, 'Inter.java', 'public interface Inter {\n\n}', 5, 3);
-INSERT INTO basicFile (seq, name, code, fileType_seq, parent_seq) VALUES (seqBasicFile.nextVal, 'txt.file', null, 6, 3);
+INSERT INTO basicFile (seq, name, code, fileType_seq, parent_seq) VALUES (seqBasicFile.nextVal, 'text.txt', '텍스트파일이지롱', 6, 3);
 INSERT INTO basicFile (seq, name, code, fileType_seq, parent_seq) VALUES (seqBasicFile.nextVal, 'file', null, 7, 3);
-select * from template;
+select * from basicFile;
+delete from basicFile where seq between 41 and 47;
 
 commit;
-select * from versionFile;
+select * from vwProjectFile where member_seq = '22' and project_seq = '1' and versionInfo_seq 
+= (select max(versionInfo_seq) from vwProjectFile where member_seq = '22' and project_seq = 
+'1');
 
-insert into versionInfo (seq, regdate, message, project_seq, member_seq) values (seqVersionInfo.nextVal, sysdate, 'test massge', 3, 1);
+update versionFile set name = 'text.txt' where seq = 66;
+
+select * from vwProjectFile 
+where member_seq = 22 and project_seq = 1 and 
+versionInfo_seq = (select max(seq) from vwProjectFile where member_seq = 22 and project_seq = 1);
+
+select * from vwProjectFile where member_seq = 22 and project_seq = 1;
+
+
+select max(versionInfo_seq) from vwProjectFile where member_seq = 22 and project_seq = 1;
+
+insert into versionInfo (seq, regdate, message, project_seq, member_seq) values (seqVersionInfo.nextVal, sysdate, 'test version add', 1, 1);
 commit;
 
 create sequence seqVersionFile;
 drop sequence seqVersionFile;
-select * from project;
+select * from versionInfo;
 select * from versionFile;
 update versionFile set code ='public interface Inter {\n\n}' where seq = 5;
-insert into versionFile (seq, name, code, versionInfo_seq, fileType_seq, parent_seq) values (seqVersionFile.nextVal, 'DogProject', null,  22, 1, null);
-insert into versionFile (seq, name, code, versionInfo_seq, fileType_seq, parent_seq) values (seqVersionFile.nextVal, 'src', null,  21, 2, 44);
-insert into versionFile (seq, name, code, versionInfo_seq, fileType_seq, parent_seq) values (seqVersionFile.nextVal, 'com.test.main', null,  1, 3, 2);
-insert into versionFile (seq, name, code, versionInfo_seq, fileType_seq, parent_seq) values (seqVersionFile.nextVal, 'Test.java', 'public class Test {\n    public static void main(String[] args) {\n        System.out.println("test");\n    }\n}',  1, 4, 3);
-insert into versionFile (seq, name, code, versionInfo_seq, fileType_seq, parent_seq) values (seqVersionFile.nextVal, 'Inter.java', 'public interface Inter {\n\n}',  1, 5, 3);
-insert into versionFile (seq, name, code, versionInfo_seq, fileType_seq, parent_seq) values (seqVersionFile.nextVal, 'txt.file', null,  1, 6, 3);
-insert into versionFile (seq, name, code, versionInfo_seq, fileType_seq, parent_seq) values (seqVersionFile.nextVal, 'file', null,  1, 7, 3);
+insert into versionFile (seq, name, code, versionInfo_seq, fileType_seq, parent_seq) values (seqVersionFile.nextVal, 'DogProject', null,  41, 1, null);
+insert into versionFile (seq, name, code, versionInfo_seq, fileType_seq, parent_seq) values (seqVersionFile.nextVal, 'src', null,  41, 2, 44);
+insert into versionFile (seq, name, code, versionInfo_seq, fileType_seq, parent_seq) values (seqVersionFile.nextVal, 'com.test.main', null,  41, 3, 2);
+insert into versionFile (seq, name, code, versionInfo_seq, fileType_seq, parent_seq) values (seqVersionFile.nextVal, 'Test.java', 'public class Test {\n    public static void main(String[] args) {\n        System.out.println("test");\n    }\n}',  41, 4, 3);
+insert into versionFile (seq, name, code, versionInfo_seq, fileType_seq, parent_seq) values (seqVersionFile.nextVal, 'Inter.java', 'public interface Inter {\n\n}',  41, 5, 3);
+insert into versionFile (seq, name, code, versionInfo_seq, fileType_seq, parent_seq) values (seqVersionFile.nextVal, 'text.file', '텍스트 파일이지롱',  41, 6, 3);
+insert into versionFile (seq, name, code, versionInfo_seq, fileType_seq, parent_seq) values (seqVersionFile.nextVal, 'file', null,  41, 7, 3);
 delete from versionFile where seq = 21;
 
 create or replace view vwProjectFile
