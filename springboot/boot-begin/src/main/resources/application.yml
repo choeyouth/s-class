@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: boot-begin
+
+server:
+  port: 8090

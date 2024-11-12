@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: boot-jsp
+
+  #JSP 설정
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+
+server:
+  port: 8090	
+

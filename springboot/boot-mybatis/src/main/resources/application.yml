@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: boot-mybatis
+
+  #JSP 설정
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521/xe
+    username: springboot
+    password: java1234
+
+server:
+  port: 8090	
+
