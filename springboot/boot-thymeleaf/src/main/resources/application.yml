@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: boot-thymeleaf
+ 
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521/xe
+    username: springboot
+    password: java1234
+
+  thymeleaf:
+    cache: false
+
+server:
+  port: 8090
+  
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  

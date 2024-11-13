@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">    
+    <title></title>
+    <link rel="stylesheet" href="http://bit.ly/3WJ5ilK">
+
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>연산자</h1>
+
+    <!-- 
+    
+        타임리프 상수(리터럴)
+        - Text: 'hong', 'test', '100'
+        - Number: 10, 123, 3.12
+        - Boolean: true, false
+        - Null: null
+
+    -->
+    
+    <div>hong</div>
+    <div th:text="hong"></div>
+	<div th:text="'hong'"></div>
+    <div th:text="${'hong'}"></div>
+    <div th:text="${hong}">불가능</div>
+
+    <!-- 
+
+        타임리프 연산자
+        - 산술 연산자 > 동일
+        - 비교 연산자 > 동일
+        - 논리 연산자 > 동일
+        - 삼항 연산자 > 동일
+        - 문자열 연산자 > 동일 + 추가
+
+    -->
+    <div>10 + 3 = 13</div>
+    <div><span th:text="${a}"></span> + <span th:text="${b}"></span> 
+        = <span th:text="${a + b}"></span></div>
+
+    <div th:text="'10 + 3 = 13'"></div>
+    <div th:text="${a + ' + ' + b + ' = ' + (a + b)}"></div>
+    <div th:text="${a} + ' + ' + ${b} + ' = ' + ${a + b}"></div>
+
+    <div th:text="'${a} + ${b} = ${a + b}'"></div>
+    <div th:text="|${a} + ${b} = ${a + b}|"></div>
+
+	<hr>
+	
+	<div th:text="${a + b}"></div>
+	<div th:text="${a} + ${b}"></div>
+	<div th:text="${a} - ${b}"></div>
+	<div th:text="${a} * ${b}"></div>
+	<div th:text="${a} / ${b}"></div>
+	<div th:text="${a} % ${b}"></div>
+	<hr>
+	
+	<div th:text="${a > b}"></div>
+	<div th:text="${a} > ${b}"></div>
+	<div th:text="${a} >= ${b}"></div>
+	<div th:text="${a} < ${b}"></div>
+	<div th:text="${a} <= ${b}"></div>
+	<div th:text="${a} == ${b}"></div>
+	<div th:text="${a} != ${b}"></div>
+	<div th:text="${a} gt ${b}"></div>
+	<hr>
+	
+	<div th:text="${a} > 0 and ${a} < 20"></div>
+	<div th:text="true and true"></div>
+	<div th:text="true or false"></div>
+	<!-- and, or 특수문자(&&, ||) 불가능 -->
+	
+	<div th:text="!false"></div>
+	<div th:text="not false"></div>
+	<hr>
+	
+	<div th:text="${a} > 0 ? '양수' : '양수아님'"></div>
+	<div th:text="${a} > 0 ? '양수'"></div>
+	<div th:text="${a} < 0 ? '음수'"></div>
+	<div th:text="${a} > 0 ?: '양수아님'"></div>
+
+	<hr>
+	
+	<!-- 이름(O) > 이름, 이름(X) > 익명 사용자 -->
+	<div>이름: <span th:text="${name} != null ? ${name} : '익명사용자'"></span></div>
+	<div>이름: <span th:text="${name} ?: '익명사용자'"></span></div>
+
+</body>
+</html>

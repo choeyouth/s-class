@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">    
+    <title></title>
+    <link rel="stylesheet" href="http://bit.ly/3WJ5ilK">
+
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>HTML 속성 조작하기</h1>
+
+	<!--
+		
+		*** 타임리프의 표현식들은 th:속성과 같이 사용한다.
+		
+	-->
+
+	<div>${txt}</div>
+	<div th:text="${txt}"></div>
+	
+	<div>
+		<div><input type="text" name="num" th:value="${num}" th:size="${num}"></div>		
+		<div><input type="text" th:value="${txt}"></div>
+	</div>
+		
+	<div style="background-color: cornflowerblue;">Box</div>
+	<!-- <div th:style="background-color: ${color};">Box</div> -->
+	<!-- 인식 불가능한 문자열 > 더하기로 처리해야 오류 발생X -->
+	<div th:style="'background-color: ' + ${color} + ';'">Box</div>
+	<div th:style="|background-color: ${color};|">Box</div>
+	
+	<div th:text="test"></div>
+	
+</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.thymeleaf.mapper.AddressMapper">
+	
+	<select id="num" resultType="Integer">
+		select count(*)	from tblAddress
+	</select>
+	
+	<select id="txt" resultType="String">
+		select name from tblAddress where seq = 1
+	</select>
+	
+	<select id="get" resultType="com.test.thymeleaf.domain.AddressDTO">
+		select * from tblAddress where seq = 1
+	</select>
+	
+</mapper>
