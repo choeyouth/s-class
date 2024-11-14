@@ -17,4 +17,14 @@
 		select * from tblAddress where seq = 1
 	</select>
 	
+	<select id="names" resultType="String">
+        SELECT name FROM tblAddress WHERE ROWNUM &lt;= 10
+    </select>
+
+    <select id="list" resultType="com.test.thymeleaf.domain.AddressDTO">
+        <![CDATA[
+        SELECT * FROM tblAddress WHERE rownum <= 10
+        ]]>
+    </select>
+    
 </mapper>

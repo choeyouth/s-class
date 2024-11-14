@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">    
+    <title></title>
+    <link rel="stylesheet" href="http://bit.ly/3WJ5ilK">
+
+    <style>
+        
+    </style>
+</head>
+<body>
+	<!-- m07.html -->
+    <h1>Link</h1>
+    
+    <div>
+    	<a href="/m06.do">링크입니다.</a>
+    	<hr>
+    	
+    	<a th:href="'/m06.do?seq=' + ${seq}">링크입니다.</a>
+    	<a th:href="|/m06.do?seq=${seq}|">링크입니다.</a>
+    	<a href="/m06.do?seq=[[${seq}]]">링크입니다.</a>
+    	
+    	<hr>
+    	
+    	<!-- /m06.do?seq=10 -->
+    	<a th:href="@{/m06.do(seq=${seq})}">링크입니다.</a>
+    	
+    	<!-- /m06.do?seq=10&mode=add -->
+    	<!-- & == &amp;  -->
+    	<a href="/m06.do?seq=${seq}&mode=${mode}">링크입니다.</a>
+    	<a th:href="@{/m06.do(seq=${seq}, mode=${mode})}">링크입니다.</a>
+    	
+    	<!--  
+    		
+    		일반 웹 > Query String
+    		- m06.do?seq=10
+    		
+    		REST > 경로 변수
+    		- m06/10
+    		
+    	-->
+		<a href="/m06/${seq}">링크입니다.</a>    	
+
+		<a th:href="@{/m06/{seq}(seq=${seq})}">링크입니다.</a>    	
+    </div>
+    
+</body>
+</html>

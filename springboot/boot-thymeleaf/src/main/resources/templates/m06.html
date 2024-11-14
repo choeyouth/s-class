@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">    
+    <title></title>
+    <link rel="stylesheet" href="http://bit.ly/3WJ5ilK">
+
+    <style>
+        
+    </style>
+</head>
+<body>
+	<!-- m06.html -->
+    <h1>포맷 출력</h1>
+    
+    <h2>숫자</h2>
+    <div th:text="${num1}"></div>
+    <div th:text="${#numbers.formatInteger(num1, 1, 'COMMA')}"></div>
+    
+    <div th:text="${num2}"></div>
+    <div th:text="${#numbers.formatDecimal(num2, 1, 1)}"></div> <!-- 소수 이하 첫째자리 까지 -->
+    <div th:text="${#numbers.formatDecimal(num2, 1, 2)}"></div> <!-- 소수 이하 둘째자리 까지 -->
+    
+    <div th:text="${#numbers.formatDecimal(num2, 1, 'COMMA', 2, 'POINT')}"></div>
+    
+    <h2>날짜</h2>
+    <!-- <div th:text="${now}"></div> -->
+    <div th:text="${#dates.year(now)}"></div>
+    <div th:text="${#dates.month(now)}"></div>
+    <div th:text="${#dates.monthName(now)}"></div>
+    <div th:text="${#dates.monthNameShort(now)}"></div>
+    <div th:text="${#dates.day(now)}"></div>
+    <div th:text="${#dates.hour(now)}"></div>
+    <div th:text="${#dates.minute(now)}"></div>
+    <div th:text="${#dates.second(now)}"></div>
+    <div th:text="${#dates.millisecond(now)}"></div>
+    <div th:text="${#dates.dayOfWeek(now)}"></div>
+    <div th:text="${#dates.dayOfWeekName(now)}"></div>
+    <div th:text="${#dates.dayOfWeekNameShort(now)}"></div>
+    <div th:text="${#dates.month(now)}"></div>
+    <div th:text="${#dates.month(now)}"></div>
+    <div th:text="${#dates.month(now)}"></div>
+    <div th:text="${#dates.month(now)}"></div>
+    
+    <hr>
+    
+    <div th:text="${#dates.format(now)}"></div>
+    <div th:text="${#dates.format(now, 'yyyy-MM-dd HH:mm:ss')}"></div> <!-- 12시간 표기법 -->
+    <div th:text="${#dates.format(now, 'yyyy-MM-dd hh:mm:ss')}"></div> <!-- 24시간 표기법 -->
+    
+</body>
+</html>

@@ -1,5 +1,7 @@
 package com.test.thymeleaf.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.test.thymeleaf.domain.AddressDTO;
@@ -12,5 +14,9 @@ public interface AddressMapper {
 	String txt();
 
 	AddressDTO get();
+
+	List<String> names();
+
+	List<AddressDTO> list();
 
 }

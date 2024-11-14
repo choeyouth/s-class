@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">    
+    <title></title>
+    <link rel="stylesheet" href="http://bit.ly/3WJ5ilK">
+
+    <style>
+        
+    </style>
+</head>
+<body>
+	<!-- m05.html -->
+    <h1>Contents</h1>
+    
+    
+    <!--/*  
+
+        **타임리프 주석**
+        <!—/*
+        */—>
+    	
+        Tymeleaf Text
+    	1. th:text
+            - escaped text
+            - HTML 구문을 인식하지 않음
+            - obj.innerText
+
+
+        2. th:utext
+            - unescaped text
+            - HTML 구문을 인식함
+            - obj.innerHTML( > 작성된 태그가 실제로 동작함)
+
+		인라인 출력 
+		- 거의 대부분의 태그는 이 속성을 가지고 있다.
+		- th:inline="text"(기본값)
+		- th:inline="javascript"
+		- th:inline + [[]]
+		- th:inline + [()]	
+			
+    */-->
+
+
+    <div th:text="${txt1}"></div>
+    <div th:text="${txt2}"></div>
+    
+    <div th:utext="${txt1}"></div>
+    <div th:utext="${txt2}"></div>
+
+	<hr>
+
+    <div th:text="${txt1}"></div>
+    <div th:inline="text">[[${txt1}]]</div>
+    <div>[[${txt1}]]</div>
+	    
+    <div th:utext="${txt2}"></div>
+    <div th:inline="text">[(${txt2})]</div>
+    <div>[(${txt2})]</div>
+
+	
+	<hr>
+
+
+    <!-- PCDATA 조작하는 모든 방법 -->
+    <div>이름: 홍길동</div>
+    <div>이름: <span th:text="${name}"></span></div>
+	<div th:text="'이름: ' + ${name}"></div>
+	<div th:text="|이름: ${name}|"></div> <!-- template String 역할 -->
+	<div th:inline="text">이름: [[${name}]]</div>
+	<div>이름: [[${name}]]</div>
+	
+	<div id="list"></div>
+	
+    <script th:inline="text">
+        //let name1 = '${name}';
+        let name1 = '[[${name}]]';
+        let num1 = [[${num}]];
+        let dto1 = '[[${dto}]]';
+        let dto1_name = '[[${dto.name}]]';
+        let dto1_age = '[[${dto.age}]]';
+        let map1 = [[${map}]];
+        let names1 = '[[${names}]]';
+        let list1 = '[[${list}]]';
+        
+    </script>
+
+	
+	<script th:inline="javascript">
+		
+		//데이터의 성질에 따라 자바스크립트에 맞게 변환시켜줌
+		let name2 = [[${name}]]; 
+		let num2 = [[${num}]];
+		let dto2 = [[${dto}]];
+		let map2 = [[${map}]];
+		let names2= [[${names}]];
+		let list2 = [[${list}]];
+        
+		//alert(dto2.name);
+				
+		list2.forEach(item => {
+			
+			document.getElementById('list').innerHTML += `
+				<div>${item.name} - ${item.age} - ${item.address}</div>
+			`;
+		
+		});
+				
+	</script>
+		
+</body>
+</html>
