@@ -1,0 +1,311 @@
+3. 준비 과정 -> 공부(실력)
+공부(+실력) vs 취업
+    공부를 위한 노력과 취업을 위한 노력은 따로 있다 (교집합도 있음)
+
+
+
+3주 취업
+1. 준비 과정 -> 서류 ->
+    - 이력서 -> 신입은 (당연하게도) 별 내용이 없음
+    - 자소서 -> 어디서 베껴온듯이 쓰지 말고 진솔하게!
+    - 포트폴리오 -> 개인 프로젝트 or 팀 프로젝트
+        - 자신있는 프로젝트만?
+        - 모든 프로젝트 추가? (강사님 픽!)
+            - 어차피 면접관들 입장에서는 자신있는 프로젝트만 추려도 그래 보이진 않음!
+            - 차라리 물량으로 밀어붙여라!
+                -> 개인업무용 프로젝트로 1-2주 짜리를 20개 모아놓으면 양이 많아보임!
+
+    -- 노력 여하에 따라서 자소서, 포트폴리오는 개선 가능
+    -- GPT로 자소서 틀을 잡아도 괜찮다!
+
+2. 구직 -> 이력서 제출
+    - 잡코리아, 사람인, IT 인력 사이트
+    - 센터 알선(10~20%) or 스스로 구직(80~90%)
+    - 자바, 개발자, 웹개발자, 프로트엔드, 백엔드, SI, SM, Solution
+    - 지원
+        - 지원은 최대한 많이!
+        - 뛰엄뛰엄 지원하지 말고 한 번에 여러군데 지원하기!
+
+    - 경력/신입
+        - 경력직 모집이어도 TO가 나면 신입을 뽑을 수 있음
+        - 경력 모집인데 연락이 온다 -> 포폴이 맘에 든다 -> 취업률 높음
+    - 지역
+        - SI면 본사가 강남이고 다른 곳으로 파견 나가기 때문에
+        - 면접 가서 본사 근무인지 파견 근무지가 어디인지 물어봐라!
+    - 연봉
+        - 회사 마다 최소한의 연봉테이블이 있음
+        - '회사내규에 따름' -> 어느 정도 유두리가 있다
+
+    - 면접
+        - 면접관의 시간보다 많이 질문을 해야함 -> 정보를 얻어야 함
+        - 근무지가 어딘가요?
+        - 파견이라면 어디로 가고 얼마나 파견 가나요?
+        - 연봉이 얼마인가요?
+        - 어떤 업무?
+        - 샘플질문
+            -----------------------샘플 질문-------------------------
+            To make a strong impression and gather meaningful insights during your interview, here are some thoughtful questions that will demonstrate your interest in the company, team dynamics, and technical challenges. These questions are broadly applicable and can help you assess if the company is a good fit, regardless of the specific technologies they use.
+
+            1. **Questions about the Company and Team Culture**
+            - *"How would you describe the team dynamics here? Do teams typically work in a collaborative, cross-functional manner?"*
+            - *"What does success look like for someone in this role in the first 90 days? After one year?"*
+            - *"How does the company support professional development, learning, and skill-building for developers?"*
+            - *"Can you describe the company's approach to work-life balance, especially during tight deadlines or high-priority projects?"*
+
+            2. **Questions on Project Management and Workflow**
+            - *"How do you handle project prioritization and time management? Are there any specific tools or methodologies you rely on, such as Agile, Scrum, or Kanban?"*
+            - *"How often do code reviews happen, and who typically reviews the code? What are the team's expectations around code quality?"*
+            - *"What is the general process when a team encounters a technical roadblock or needs to pivot due to unforeseen issues?"*
+
+            3. **Questions on Technical Challenges and Problem-Solving**
+            - *"What is one of the most technically challenging projects the team has worked on recently? How did you address and overcome the difficulties?"*
+            - *"Are there any large-scale issues the engineering team is actively working on solving or optimizing?"*
+            - *"How does the company approach technical debt? Are there regular reviews or dedicated time to refactor and improve existing code?"*
+
+            4. **Questions about Growth and Innovation**
+            - *"How does the company encourage and manage innovation within the engineering team? Are there opportunities for developers to suggest or lead new initiatives?"*
+            - *"What are some of the goals for the development team in the coming year? How does this role align with those goals?"*
+            - *"Is the team currently exploring any emerging technologies or new tools that could significantly impact future projects?"*
+
+            5. **Questions on Collaboration and Cross-Functional Interaction**
+            - *"How do engineers typically collaborate with other departments, such as design, product, or QA? What does that process look like?"*
+            - *"Are there regular touchpoints between the development team and business units to ensure alignment on goals and expectations?"*
+
+            6. **Questions on Testing, Security, and Quality Assurance**
+            - *"What is the team's approach to testing and quality assurance? Are there dedicated QA engineers, or is testing a shared responsibility?"*
+            - *"How does the company ensure data security, and what are the key security practices for code and infrastructure?"*
+            - *"Is there a particular emphasis on specific testing methodologies, such as unit testing, integration testing, or end-to-end testing?"*
+
+            7. **Questions on Onboarding and Mentorship**
+            - *"How does the company handle onboarding for new developers? Is there a structured program in place?"*
+            - *"Does the team have any mentorship opportunities for junior developers or newer team members?"*
+
+            8. **Questions about the Company’s Technical Stack and Long-Term Vision**
+            - *"What does the current tech stack look like, and how often does the team reassess or update it?"*
+            - *"How does the engineering team balance adopting new technologies with maintaining stable production environments?"*
+
+            9. **Questions on the Interviewer’s Personal Experience**
+            - *"What do you personally find most rewarding about working here, and what has kept you with the company?"*
+            - *"What has been one of your most memorable projects, and what did you learn from it?"*
+
+            10. **Closing Question**
+                - *"Is there anything about my background or experience that I could clarify further to ensure I'm a strong match for this role?"*
+
+            These questions should help you better understand the company and the team’s culture, while also showing that you’re proactive, thoughtful, and keen to integrate well into their environment.
+
+            ---
+
+            **Q1:** How can I tell if a company has a positive, growth-oriented culture during an interview?
+
+            **Q2:** What follow-up questions could I ask if the team mostly manages technical debt on an ad-hoc basis?
+
+            **Q3:** How do I gauge a company's commitment to developer mentorship and learning if they don't mention it directly?
+
+            Certainly! Here’s a set of practical, no-nonsense questions that can help you get a clearer picture of the working conditions, company expectations, and whether this role aligns with your personal goals and lifestyle. While these questions are more direct, they can still be phrased diplomatically to show that you're genuinely interested in understanding the reality of the role.
+
+            1. **Compensation and Benefits**
+            - *"Could you provide more detail on the salary range for this role and any performance-based incentives?"*
+            - *"How often do salary reviews or promotions occur, and what criteria are they based on?"*
+            - *"What are the additional benefits or perks offered by the company beyond health insurance and paid time off?"*
+
+            2. **Location and Work Arrangements**
+            - *"Where will I primarily be located, and is there an expectation to work from specific offices or client sites?"*
+            - *"If I’m stationed at a location other than the main branch, how long would that assignment typically last?"*
+            - *"Is there flexibility in working from home, or is remote work discouraged here? If hybrid, how is that structured?"*
+
+            3. **Travel and Relocation Expectations**
+            - *"Are there frequent travel requirements for this role, and if so, how often?"*
+            - *"Is there any expectation for relocation, either now or potentially in the future as the team grows or projects shift?"*
+            - *"If relocation is required, does the company assist with relocation expenses, and how does it support employees in transitioning smoothly?"*
+
+            4. **Work Hours and Flexibility**
+            - *"What are the typical working hours for this role? Are there often expectations to work overtime or during weekends?"*
+            - *"How does the company handle work-life balance, particularly during peak periods or project crunch times?"*
+            - *"Is there any flexibility in terms of work hours if I need to adjust for personal obligations occasionally?"*
+
+            5. **Project Assignment and Duration**
+            - *"How are projects typically assigned to team members? Is it based on individual strengths, or are team members expected to cover a variety of projects?"*
+            - *"Can you give me an idea of the average project length and how often developers transition between projects?"*
+            - *"Is there a set timeline for specific projects, or could I be reassigned if other priorities come up?"*
+
+            6. **Career Growth and Development**
+            - *"How does the company support career progression, and what are the realistic timelines for advancement?"*
+            - *"Does the company prioritize promoting from within, or are external candidates often brought in for higher-level positions?"*
+            - *"If I wanted to transition into a different department or a more specialized role in the future, how easy is it to do so within the company?"*
+
+            7. **Job Security and Performance Expectations**
+            - *"What are the company's expectations for someone in this role within the first six months, and how is performance evaluated?"*
+            - *"How does the company handle underperformance or mismatches between role expectations and employee output?"*
+            - *"Is this position tied to specific projects or funding sources, and would it be impacted if project priorities or funding changed?"*
+
+            8. **Team Dynamics and Managerial Style**
+            - *"How would you describe the management style here? Is it more hands-on, or is there a preference for autonomous work?"*
+            - *"How are conflicts or disagreements within the team typically handled?"*
+            - *"Does the team have any regular activities or meetings outside of work hours, and is there an expectation to attend?"*
+
+            9. **Long-Term Vision and Stability**
+            - *"What are some of the company’s long-term goals, and how does this team contribute to them?"*
+            - *"Has the company experienced major reorganizations or restructuring in recent years, and if so, how have those changes impacted teams?"*
+            - *"What are the main factors driving growth for the company, and do you anticipate any major shifts in focus or priorities soon?"*
+
+            10. **Team Turnover and Satisfaction**
+                - *"Could you give me an idea of the team turnover rate? Has the company seen a lot of changes in the team composition recently?"*
+                - *"What are some of the main reasons people choose to stay with the company long-term, and what challenges have been reported in employee satisfaction?"*
+                - *"Is there anything about this role or the team that you believe could be challenging for new hires?"*
+
+            These questions can help you gain insight into aspects of the job that may not come up in a typical interview but are important for your decision-making. Adjust the phrasing if needed to suit the tone of your conversation, as this direct approach may be better suited for later interview stages or when speaking with a hiring manager.
+
+            ---
+
+            **Q1:** What’s the best way to gauge how open a company is to flexible work arrangements without sounding too demanding?
+
+            **Q2:** How can I tactfully ask about job security if I sense that a position may be tied to specific projects or funding?
+
+            **Q3:** How do I bring up career growth without making it seem like I'm already looking to leave the role?
+
+            1. **회사와 팀 문화에 관한 질문**
+            - *"여기 팀의 다이나믹스는 어떤가요? 팀 간 협업이나 교차 기능적 협력이 활발한 편인가요?"*
+            - *"이 역할에서 첫 90일 동안 또는 1년 후에 성공적인 모습은 어떤 것인가요?"*
+            - *"개발자를 위한 전문성 개발과 학습, 스킬 향상을 회사는 어떻게 지원하나요?"*
+            - *"긴 마감 기한이나 우선 순위가 높은 프로젝트가 있을 때 회사는 워라밸(일과 삶의 균형)을 어떻게 유지하나요?"*
+
+            2. **프로젝트 관리와 워크플로우에 관한 질문**
+            - *"프로젝트 우선순위 설정과 시간 관리는 어떻게 이루어지나요? Agile, Scrum, Kanban 같은 특정 툴이나 방법론을 사용하는지 궁금합니다."*
+            - *"코드 리뷰는 얼마나 자주 이루어지며, 주로 누가 리뷰를 담당하나요? 코드 품질에 대한 팀의 기대치는 어떤가요?"*
+            - *"기술적 장애물에 직면하거나 예기치 못한 이유로 방향을 전환해야 할 때 일반적인 프로세스는 어떻게 되나요?"*
+
+            3. **기술적 과제와 문제 해결에 관한 질문**
+            - *"최근 팀이 작업한 가장 기술적으로 도전적인 프로젝트는 무엇이었나요? 문제를 해결하거나 극복하기 위해 어떤 접근을 했나요?"*
+            - *"현재 엔지니어링 팀이 해결하거나 최적화하려고 적극적으로 작업하고 있는 대규모 문제는 있나요?"*
+            - *"기술적 부채에 대해 회사는 어떤 접근 방식을 가지고 있나요? 리팩터링이나 기존 코드 개선을 위해 정기적으로 리뷰가 이루어지나요?"*
+
+            4. **성장과 혁신에 관한 질문**
+            - *"엔지니어링 팀 내에서 혁신을 장려하고 관리하기 위해 회사는 어떤 시스템을 운영하나요? 새로운 아이디어를 제안하거나 주도할 기회가 있나요?"*
+            - *"향후 1년간 개발팀의 목표는 무엇인가요? 이 역할이 그 목표와 어떻게 일치하는지 궁금합니다."*
+            - *"팀이 현재 프로젝트에 큰 영향을 미칠 수 있는 새로운 기술이나 도구를 탐구하고 있나요?"*
+
+            5. **협업 및 교차 기능 상호작용에 관한 질문**
+            - *"개발자들이 디자인, 제품, QA와 협력할 때 일반적으로 어떤 방식으로 협업이 이루어지나요?"*
+            - *"개발팀과 다른 부서 간의 목표와 기대가 일치하도록 정기적으로 만나서 논의하는 자리가 있나요?"*
+
+            6. **테스트, 보안, 품질 보증에 관한 질문**
+            - *"팀의 테스트와 품질 보증 접근 방식은 어떤가요? 전담 QA 엔지니어가 있나요, 아니면 테스트가 공동 책임인가요?"*
+            - *"회사는 데이터 보안을 어떻게 관리하며, 코드와 인프라의 보안을 위해 어떤 주요 보안 방식을 사용하는지 궁금합니다."*
+            - *"단위 테스트, 통합 테스트, 종단 간 테스트 같은 특정 테스트 방법론에 대해 중점을 두고 있나요?"*
+
+            7. **온보딩 및 멘토링에 관한 질문**
+            - *"신규 개발자 온보딩은 어떻게 진행되나요? 구조화된 프로그램이 있나요?"*
+            - *"주니어 개발자나 새 팀원들을 위한 멘토링 기회가 마련되어 있나요?"*
+
+            8. **기술 스택 및 장기적 비전에 관한 질문**
+            - *"현재 기술 스택은 어떤 모습이며, 팀은 얼마나 자주 이를 재평가하거나 업데이트하나요?"*
+            - *"새로운 기술을 도입할 때 안정적인 프로덕션 환경을 유지하는 것과 어떻게 균형을 맞추나요?"*
+
+            9. **인터뷰어의 개인 경험에 관한 질문**
+            - *"여기서 일하는 것의 가장 큰 보람은 무엇이라고 느끼며, 회사에 오래 머물게 만든 이유는 무엇인가요?"*
+            - *"가장 기억에 남는 프로젝트는 무엇이었으며, 그 프로젝트를 통해 얻은 배움은 무엇인가요?"*
+
+            10. **마무리 질문**
+                - *"제 배경이나 경험에서 이 역할에 잘 맞는지 추가적으로 설명드릴 부분이 있을까요?"*
+
+            ---
+
+            이 질문들은 회사와 팀의 문화를 더 잘 이해하고, 지원자로서 회사에 대한 깊은 관심과 준비된 모습을 보여줄 수 있을 것입니다.
+
+            ---
+
+            **Q1:** 면접 중에 회사가 긍정적이고 성장 지향적인 문화를 가지고 있는지 어떻게 알 수 있을까요?
+
+            **Q2:** 기술적 부채를 주로 수시로 관리하는 경우, 추가적으로 어떤 질문을 할 수 있을까요?
+
+            **Q3:** 개발자 멘토링과 학습에 대한 회사의 의지를 간접적으로 평가하는 방법이 있을까요?
+
+            물론입니다! 아래에 영어와 한국어로 된 현실적인 질문들을 준비했습니다. 이러한 질문들은 실질적인 업무 조건과 회사의 기대치를 이해하는 데 도움이 되며, 개인적인 목표와 생활방식에 부합하는지 확인할 수 있도록 도와줄 것입니다.
+
+            ---
+
+            1. **급여 및 복지에 관한 질문**
+            - *"이 역할의 급여 범위와 성과 기반 인센티브에 대해 조금 더 자세히 알려주실 수 있을까요?"*
+            - *"급여 검토나 승진은 얼마나 자주 이루어지며, 어떤 기준에 따라 결정되나요?"*
+            - *"건강보험과 유급 휴가 외에 추가적인 복지 혜택이나 특전이 있는지 궁금합니다."*
+
+            2. **근무지 및 근무 형태에 관한 질문**
+            - *"주로 어느 위치에서 근무하게 되나요? 특정 지사나 고객사에서 일할 필요가 있는지 궁금합니다."*
+            - *"본사 외 다른 지역에 배치될 경우, 그 배치가 일반적으로 얼마나 지속되나요?"*
+            - *"재택근무가 가능한지 아니면 회사가 권장하지 않는 편인지 궁금합니다. 하이브리드 형태라면, 그 구조는 어떻게 되나요?"*
+
+            3. **출장 및 이주 요구사항에 관한 질문**
+            - *"이 역할에서 자주 출장이 필요한가요? 그렇다면, 얼마나 자주 있는지 궁금합니다."*
+            - *"지금 또는 미래에 팀의 성장이나 프로젝트 변화로 인해 이주 요구가 발생할 가능성이 있나요?"*
+            - *"이주가 필요한 경우, 회사에서 이주 비용을 지원하는지, 그리고 직원이 원활히 적응할 수 있도록 어떤 지원을 제공하는지 궁금합니다."*
+
+            4. **근무 시간과 유연성에 관한 질문**
+            - *"이 역할의 일반적인 근무 시간은 어떻게 되나요? 주말이나 초과근무가 자주 요구되는지 궁금합니다."*
+            - *"프로젝트가 바쁜 시기에도 워라밸을 회사는 어떻게 보장하나요?"*
+            - *"가끔 개인적인 사정으로 근무 시간을 조정해야 할 때 어느 정도 유연성을 허용하나요?"*
+
+            5. **프로젝트 배정 및 지속 기간에 관한 질문**
+            - *"프로젝트는 팀원들에게 어떤 기준으로 배정되나요? 개인의 강점에 기반하여 배정되는지, 아니면 다양한 프로젝트를 커버하는 것을 기대하나요?"*
+            - *"평균적인 프로젝트 길이는 어느 정도이며, 팀원들은 얼마나 자주 프로젝트를 변경하나요?"*
+            - *"특정 프로젝트에 대한 고정된 타임라인이 있나요, 아니면 다른 우선순위가 발생하면 재배정될 수 있나요?"*
+
+            6. **경력 성장 및 개발에 관한 질문**
+            - *"회사에서 경력 발전을 어떻게 지원하나요? 승진까지의 현실적인 타임라인은 어떻게 되나요?"*
+            - *"내부 승진을 우선시하는 편인가요, 아니면 고위직을 외부에서 채용하는 경우가 많은가요?"*
+            - *"향후 다른 부서나 보다 전문화된 역할로 전환하고 싶다면, 회사 내에서 그 과정이 쉬운 편인가요?"*
+
+            7. **직무 안정성 및 성과 기대치에 관한 질문**
+            - *"이 역할에서 첫 6개월 동안 회사가 기대하는 성과는 무엇이며, 성과 평가는 어떻게 이루어지나요?"*
+            - *"성과가 기대에 미치지 못하거나 역할 기대와 실제 결과 사이에 불일치가 있을 경우, 회사는 어떻게 대처하나요?"*
+            - *"이 포지션은 특정 프로젝트나 자금 출처에 연계되어 있는지, 프로젝트 우선순위나 자금이 변경되면 이 역할에 영향을 미칠 가능성이 있는지 궁금합니다."*
+
+            8. **팀 역학 및 관리 스타일에 관한 질문**
+            - *"여기서의 관리 스타일은 어떤가요? 관리자가 세세하게 관여하는 편인가요, 아니면 자율적인 작업을 선호하나요?"*
+            - *"팀 내 갈등이나 의견 차이는 주로 어떻게 해결되나요?"*
+            - *"근무 시간 외에도 팀에서 정기적인 활동이나 모임이 있는지, 참석이 기대되는지 궁금합니다."*
+
+            9. **장기적인 비전 및 안정성에 관한 질문**
+            - *"회사의 장기적인 목표는 무엇이며, 이 팀이 그 목표에 어떻게 기여하나요?"*
+            - *"최근 몇 년간 회사가 큰 재조정이나 구조 조정을 겪었나요? 그렇다면, 그 변화가 팀에 어떤 영향을 미쳤나요?"*
+            - *"회사의 성장을 이끄는 주요 요인은 무엇이며, 향후 우선순위나 초점에 큰 변화가 예상되나요?"*
+
+            10. **팀 이직률 및 만족도에 관한 질문**
+                - *"팀의 이직률에 대해 설명해 주실 수 있나요? 최근에 팀 구성에 큰 변화가 있었나요?"*
+                - *"직원들이 장기적으로 회사에 머무르는 주된 이유는 무엇이고, 직원 만족도에서 보고된 주요 과제는 무엇인가요?"*
+                - *"이 역할이나 팀에 대해 신입 직원에게 어려움이 될 수 있는 부분이 있나요?"*
+
+            이러한 질문들은 회사와 팀의 실제 업무 환경을 이해하는 데 도움을 줄 수 있으며, 적합한지 판단할 수 있도록 해줍니다. 대화의 톤에 맞게 질문의 어조를 조정해 보세요. 이러한 직접적인 접근 방식은 채용 담당자와의 인터뷰 후반부나 관리자를 만나는 단계에서 더 적합할 수 있습니다.
+
+            ---
+
+            **Q1:** 회사에서 유연한 근무 방식을 얼마나 허용하는지 알아보려면 어떻게 묻는 게 좋을까요?
+
+            **Q2:** 특정 프로젝트나 자금에 연계된 포지션이라면, 직무 안정성에 대해 어떻게 물어보는 게 적절할까요?
+
+            **Q3:** 경력 성장에 대해 물어보면서도 처음부터 떠날 생각이 있는 것처럼 보이지 않으려면 어떻게 말하는 게 좋을까요?
+            -----------------------샘플 질문-------------------------
+
+2. 준비 과정 -> 면접
+    - 인사 잘하기 -> 인성, 기술, 임원
+    - 수업 중 문제 -> 정리
+    - 질의 -> 수업 수준 사이
+    - 15 ~ 30초 사이
+
+4. 구직 -> 어떤 회사?
+    - 나중에 친해지면 어디로 이직하게 되는지 사수/상사한테 물어보기
+    - 이직할 때 낮은데로 가면 도망쳐!!!
+    - 그래도 최소 1년은 쌓고 나가라!
+    - 첫번째 회사 갔는데 마음에 든다 그러면 최소 2-3년은 있는 거 추천!
+    - 신입인데 이직이 잦으면 사람을 의심하게 됨
+    - 월급 밀리면 나와라!
+    - 죽이고 싶은 사람 있으면 나와라!
+
+5. 구직 -> 어떤 직종?
+6. 구직 -> 고려 요소?
+
+미래 사수: 상수님, 미국에서 오래 계셨다고 했는데 회사생활하시려면 
+한국사회 문화 좀 배우셔야할 것 같습니다. 
+속마음: ㄴ울 ㅏㅜㅏㅓ ㅁ넝뤄하ㅓ;ㄴㅁㄹ ㅓ딪나;라ㅓㄹㅇ나ㅣ
+
+미래 사수2: 상수님, 제가 어제 한국사회 문화 공부하시라고 했잖아여
+그러고 다니시면 안된다고 말씀드렸죠^-^ 
