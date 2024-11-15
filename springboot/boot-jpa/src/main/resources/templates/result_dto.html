@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">    
+    <title></title>
+    <link rel="stylesheet" href="http://bit.ly/3WJ5ilK">
+
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>Result DTO</h1>
+
+    <table>
+        <tr>
+            <th>번호</th>
+            <th>이름</th>
+            <th>나이</th>
+            <th>주소</th>
+            <th>성별</th>
+        </tr>
+        <tr>
+            <td th:text="${dto.seq}"></td>
+            <td th:text="${dto.name}"></td>
+            <td th:text="${dto.age}"></td>
+            <td th:text="${dto.address}"></td>
+            <td th:text="${dto.gender}"></td>
+        </tr>
+    </table>
+</body>
+</html>
