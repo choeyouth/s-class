@@ -182,4 +182,9 @@ public class ThymeleafController {
 		
 		return "m08";
 	}
+	
+	@GetMapping("/m09.do")
+	public String m09(Model model) {
+		return "m09";
+	}
 }

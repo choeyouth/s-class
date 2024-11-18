@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">    
+    <title></title>
+    <!-- <link rel="stylesheet" href="http://bit.ly/3WJ5ilK"> -->
+	<th:block th:insert="~{inc/sub2.html :: css}"></th:block>
+	
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>조각 페이지</h1>
+    <!--  
+    	template > m09.html
+    	template > inc > sub.html
+    	template > inc > sub2.html
+    	
+    	Thymeleaf Fragment
+    	
+    	1. th:fragment
+    		- 조각 페이지(코드) 정의
+    	
+    	2. th:insert
+    		- 조각 페이지(코드) 삽입
+    	
+    	3. th:replace
+		    - 조각 페이지(코드) 삽입 
+		    
+		JSP + 보안 > 시큐리티 > 태그 
+		
+    -->
+    
+    <div th:insert="~{inc/sub.html}"></div>
+    <div th:replace="~{inc/sub.html}"></div>
+    
+    <hr>
+    
+    <th:block th:insert="~{inc/sub.html}"></th:block>
+    <th:block th:replace="~{inc/sub.html}"></th:block>
+    
+    <hr>
+
+    <div th:insert="~{inc/sub.html}"></div>
+
+	<!-- 확장자 생략 가능 -->
+    <div th:insert="~{inc/sub}"></div>
+
+	<!-- ~{} 생략 가능 -->
+    <div th:replace="inc/sub"></div>
+    
+    
+    <!-- 제목 출력 -->
+    <div th:insert="~{inc/sub2.html :: title1}"></div>
+    
+    <!-- 내용 출력 -->
+    <div th:insert="~{inc/sub2.html :: content1}"></div>
+    <div th:insert="~{inc/sub2.html :: content1}"></div>
+    <div th:insert="~{inc/sub2.html :: content1}"></div>
+    
+    <hr>
+    
+    <div th:insert="~{inc/sub2.html :: info('홍길동', '010-1234-5678')}"></div>
+    <div th:insert="~{inc/sub2.html :: info('아무개', '010-1111-2222')}"></div>
+    
+    <th:block th:insert="~{inc/sub2.html :: jquery}"></th:block>
+    <script>
+    
+    </script>
+</body>
+</html>

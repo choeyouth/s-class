@@ -85,4 +85,16 @@ public class Address {
 		
 	}
 	
+	//*** JPA의 Entity는 MVC에서 흔히 사용하는 DTO는 역할이 다르다.
+	//- DTO > 계층 간의 데이터 전달
+	//	- setName() 호출 > 전달할 데이터 추가 or 변경
+	//- Entity > DB 조작 
+	//	- setName() 호출 > DB 데이터 추가 or 변경
+	
+	
+	//주소 수정 Setter
+	public void updateAddress(String address) {
+		this.address = address;
+	}
+	
 }

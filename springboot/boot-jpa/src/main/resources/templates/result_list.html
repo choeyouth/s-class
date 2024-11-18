@@ -11,5 +11,40 @@
 </head>
 <body>
     <h1>Result List</h1>
+    
+    <table th:if="${list != null}">
+        <tr>
+            <th colspan="5">결과: <span th:text="${list.size()}"></span> 행</th>
+        </tr>
+        <tr>
+            <th>번호</th>
+            <th>이름</th>
+            <th>나이</th>
+            <th>주소</th>
+            <th>성별</th>
+        </tr>
+        <tr th:each="dto : ${list}">
+            <td th:text="${dto.seq}"></td>
+            <td th:text="${dto.name}"></td>
+            <td th:text="${dto.age}"></td>
+            <td th:text="${dto.address}"></td>
+            <td th:text="${dto.gender}"></td>
+        </tr>
+    </table>
+
+    <table th:if="${list2 != null}">
+        <tr>
+            <th colspan="5">결과: <span th:text="${list2.size()}"></span> 행</th>
+        </tr>
+        <tr> 
+            <th>이름</th>
+            <th>나이</th> 
+        </tr>
+        <tr th:each="dto : ${list2}"> 
+            <td th:text="${dto.name}"></td>
+            <td th:text="${dto.age}"></td> 
+        </tr>
+    </table>
+    
 </body>
 </html>
