@@ -277,6 +277,6 @@ select * from tabs;
 desc tblAddress;
 
 
-
+commit;
 
 

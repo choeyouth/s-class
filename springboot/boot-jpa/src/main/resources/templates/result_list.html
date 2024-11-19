@@ -13,7 +13,7 @@
     <h1>Result List</h1>
     
     <table th:if="${list != null}">
-        <tr>
+        <tr th:if="${list instanceof T(java.util.ArrayList)}">
             <th colspan="5">결과: <span th:text="${list.size()}"></span> 행</th>
         </tr>
         <tr>
@@ -26,11 +26,14 @@
         <tr th:each="dto : ${list}">
             <td th:text="${dto.seq}"></td>
             <td th:text="${dto.name}"></td>
-            <td th:text="${dto.age}"></td>
+            <td th:text="${dto.age} + ', ' + ${dto.birthYear}"></td>
             <td th:text="${dto.address}"></td>
             <td th:text="${dto.gender}"></td>
         </tr>
     </table>
+    
+    <!-- <div th:text="${sb}"></div> -->
+    <div th:utext="${sb}"></div>
 
     <table th:if="${list2 != null}">
         <tr>
@@ -44,6 +47,15 @@
             <td th:text="${dto.name}"></td>
             <td th:text="${dto.age}"></td> 
         </tr>
+    </table>
+    
+    <table th:if="${names != null}">
+    	<tr>
+    		<th>이름</th>
+    	</tr>
+    	<tr th:each="name : ${names}">
+    		<td th:text="${name}">
+    	</tr>
     </table>
     
 </body>

@@ -5,7 +5,10 @@ import java.util.Optional;
 
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
+import com.test.jpa.dto.AddressDTO;
 import com.test.jpa.entity.Address;
 import com.test.jpa.entity.AddressNameAgeMapping;
 
@@ -76,5 +79,30 @@ public interface AddressRepository extends JpaRepository<Address, Long>{
 	List<Address> findByGender(Sort age, String gender);
 
 	List<AddressNameAgeMapping> findAllByGender(String gender);
+	
+	//JPQL > @Query
+	//1. Address(엔티티)를 대상으로 한다. 
+	//2. 반드시 엔티티의 별칭을 만든다. 
+	//3. 컬럼은 테이블 소속을 표시한다. 
+	//@Query("select a.name from Address as a")
+	@Query(value="select name from tblAddress", nativeQuery = true)
+	List<String> listName();
+
+	@Query("select a from Address as a") //JPQL에서 엔티티의 엘리아스 > SQL *와 같은 역할 > 모든 컬럼 가져오기
+	List<Address> listAll();
+
+	@Query("select a from Address as a where a.gender = ?1") //index > oracle 기준 1부터 시작
+	List<Address> listAll(String gender);
+	
+	@Query("select a from Address as a where a.age >= :age")
+	List<Address> listAll(@Param(value="age") int age);
+
+	@Query("select a from Address as a where a.gender = :#{#dto.gender} and a.address like '%' || :#{#dto.address} || '%'") //dto.getGender == :#{#dto.gender}
+	List<Address> listAll(@Param(value="dto") AddressDTO dto);
+
+	//AddressDTO로 변환된 All 가져오기
+	//current_date > jpa 함수
+	@Query("select new com.test.jpa.dto.AddressDTO(a.seq, a.name, a.age, a.address, a.gender, year(current_date) - a.age) from Address as a")
+	List<AddressDTO> listCustomAll();
 	
 }
