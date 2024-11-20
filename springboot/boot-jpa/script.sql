@@ -18,3 +18,15 @@ alter session set "_ORACLE_SCRIPT" = true;
 
 create user springboot identified by java1234;
 grant connect, resource, dba to springboot;
+
+
+    select
+        a1_0.gender,
+        count(a1_0.seq),
+        avg(a1_0.age) 
+    from
+        tblAddress a1_0 
+    group by
+        a1_0.gender 
+    having
+        avg(a1_0.age)>4.5;
