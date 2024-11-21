@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">    
+    <title>Spring Boot Security</title>
+    <link rel="stylesheet" href="http://bit.ly/3WJ5ilK">
+
+    <style>
+        
+    </style>
+</head>
+<body>
+    <th:block th:insert="~{inc/header.html :: menu}"></th:block>
+    <h2>Join</h2>
+
+    <form method="POST" action="/joinok">
+    <table class="vertical">
+        <tr>
+            <th>아이디</th>
+            <td><input type="text" name="username" required></td>
+        </tr>
+        <tr>
+            <th>암호</th>
+            <td><input type="password" name="password" required></td>
+        </tr> 
+        <tr>
+            <th>권한</th>
+            <td>
+                <select name="role">
+                    <option value="ROLE_MEMBER">일반회원</option>
+                    <option value="ROLE_ADMIN">관리자</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <div><button>가입하기</button></div>
+    </form>
+</body>
+</html>

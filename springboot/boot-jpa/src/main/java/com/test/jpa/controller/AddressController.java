@@ -709,6 +709,60 @@ public class AddressController {
 		return "result_list";
 	}	
 	
+	
+	@GetMapping("/m34.do")
+    public String m34(Model model) {
+
+        //서브뤄리 > Query DSL
+        //    - where절 > 비교값 > DSL구현 가능
+        //    - select절 > 컬럼값 > DSL구현 가능
+        //    - from절 > 테이블 > DSL구현 불가능
+
+        //select * from tblAddress where age = (select max(age) from tblAddress);
+        List<Address> list = customAddressRepository.findAllByMaxAge();
+
+        model.addAttribute("list", list);
+
+        return "result_list";
+    }
+	
+	@GetMapping("/m35.do")
+	public String m35(Model model) {
+
+		//서브뤄리 > Query DSL
+        //    - select절 > 컬럼값 > DSL구현 가능
+		
+		//select name, age, 평균나이 from tblAddress
+		//1. DTO + 평균나이 변수 추가 
+		//2. Tuple
+		List<Tuple> talist = customAddressRepository.findAllByAvgAge();
+		
+		model.addAttribute("talist", talist);
+		
+		return "result_list";
+	}
+	
+	@GetMapping("/m36.do")
+	public String m36(Model model
+						, @RequestParam(name = "gender", required = false) String gender
+						, @RequestParam(name = "age", required = false) Integer age) {
+	
+		System.out.println(gender);
+		System.out.println(age);
+		
+		//동적 쿼리
+		//- m36.do > select * from tblAddress
+		//- m36.do?gender=m > select * from tblAddress where gender = 'm'
+		//- m36.do?age=3 > select * from tblAddress where age = 3
+		//- m36.do?gender=m&age=3 > select * from tblAddress where gender = 'm' and age = 3
+		
+		List<Address> list = customAddressRepository.findAllMultiParameter(gender, age);
+		
+		model.addAttribute("list", list);
+		
+		return "result_list";
+	}
+	
 	/*
 	@GetMapping("/m.do")
 	public String m(Model model) {

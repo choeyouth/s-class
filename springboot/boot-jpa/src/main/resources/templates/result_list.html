@@ -139,5 +139,18 @@
             </td>
         </tr>
     </table>
+    
+    <table th:if="${talist != null}"> 
+        <tr> 
+            <th>성별</th>
+            <th>나이</th>
+            <th>평균 나이</th>
+        </tr>
+        <tr th:each="tuple : ${talist}">
+            <td th:text="${tuple.get(0, String)}"></td>  
+            <td th:text="${tuple.get(1, Integer)}"></td>
+            <td th:text="${tuple.get(2, Double)}"></td>
+        </tr>
+    </table>
 </body>
 </html>
