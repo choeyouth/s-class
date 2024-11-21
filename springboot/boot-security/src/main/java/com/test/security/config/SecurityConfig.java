@@ -29,7 +29,7 @@ public class SecurityConfig {
 		);
 		
 		//CSRF 토큰 해제
-		http.csrf(auth -> auth.disable());
+		//http.csrf(auth -> auth.disable());
 		
 		//커스텀 로그인 설정
 		http.formLogin(auth -> auth
