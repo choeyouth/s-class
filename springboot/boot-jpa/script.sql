@@ -30,3 +30,5 @@ grant connect, resource, dba to springboot;
         a1_0.gender 
     having
         avg(a1_0.age)>4.5;
+        
+        select * from tblUser;
