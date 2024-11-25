@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: boot-mysql
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mysql?serverTimezone=Asia/Seoul
+    username: springboot
+    password: java1234
+
+  thymeleaf:
+    cache: false
+
+  # JPA 설정
+  jpa:
+    database: oracle
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true # 자동 생성된 SQL을 로그에 출력
+    properties:
+      hibernate:
+        format_sql: true # SQL을 이쁘게
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+server:
+  port: 80
