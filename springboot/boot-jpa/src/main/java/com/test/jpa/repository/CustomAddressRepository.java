@@ -16,6 +16,7 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import com.test.jpa.dto.AddressDTO;
 import com.test.jpa.entity.Address;
 import com.test.jpa.entity.Info;
+import com.test.jpa.entity.Memo;
 import com.test.jpa.entity.QAddress;
 
 import lombok.RequiredArgsConstructor;
@@ -289,6 +290,26 @@ public class CustomAddressRepository {
 					   age != null ? address1.age.eq(age) : null)
 				.fetch();
 	
+	}
+
+	public List<Address> m37() {
+
+		//단방향 매핑
+		//- 부모 > 자식 
+		return jpaQueryFactory
+					.selectFrom(address1) //부모 엔티티 
+					.join(address1.memo, memo1) //자식 엔티티 
+					.fetch()
+					;
+	}
+
+	public List<Memo> m38() {
+
+		return jpaQueryFactory
+				.selectFrom(memo1)
+				.join(memo1.address, address1)
+				.fetch()
+				;
 	}
 	
 }

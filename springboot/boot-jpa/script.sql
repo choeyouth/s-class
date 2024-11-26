@@ -5,7 +5,7 @@ select * from tblAddress where seq = 1;
 select * from tblAddress;
 select seqAddress.nextVal from dual;
 
-
+select * from tblmemo;
 select * from v$version;
 
 --계정 생성

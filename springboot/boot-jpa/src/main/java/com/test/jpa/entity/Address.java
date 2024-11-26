@@ -102,7 +102,8 @@ public class Address {
 	}
 	
 	//private Info info;
-	
+
+	//메모 관련 매핑
 	@OneToMany
 	@JoinColumn(name="aseq")
 	private List<Memo> memo; 

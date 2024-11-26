@@ -7,6 +7,7 @@ import com.querydsl.core.types.dsl.*;
 import com.querydsl.core.types.PathMetadata;
 import javax.annotation.processing.Generated;
 import com.querydsl.core.types.Path;
+import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
@@ -17,7 +18,11 @@ public class QMemo extends EntityPathBase<Memo> {
 
     private static final long serialVersionUID = -1209975837L;
 
+    private static final PathInits INITS = PathInits.DIRECT2;
+
     public static final QMemo memo1 = new QMemo("memo1");
+
+    public final QAddress address;
 
     public final NumberPath<Long> aseq = createNumber("aseq", Long.class);
 
@@ -28,15 +33,24 @@ public class QMemo extends EntityPathBase<Memo> {
     public final NumberPath<Long> seq = createNumber("seq", Long.class);
 
     public QMemo(String variable) {
-        super(Memo.class, forVariable(variable));
+        this(Memo.class, forVariable(variable), INITS);
     }
 
     public QMemo(Path<? extends Memo> path) {
-        super(path.getType(), path.getMetadata());
+        this(path.getType(), path.getMetadata(), PathInits.getFor(path.getMetadata(), INITS));
     }
 
     public QMemo(PathMetadata metadata) {
-        super(Memo.class, metadata);
+        this(metadata, PathInits.getFor(metadata, INITS));
+    }
+
+    public QMemo(PathMetadata metadata, PathInits inits) {
+        this(Memo.class, metadata, inits);
+    }
+
+    public QMemo(Class<? extends Memo> type, PathMetadata metadata, PathInits inits) {
+        super(type, metadata, inits);
+        this.address = inits.isInitialized("address") ? new QAddress(forProperty("address")) : null;
     }
 
 }
