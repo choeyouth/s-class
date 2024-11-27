@@ -18,7 +18,16 @@ alter session set "_ORACLE_SCRIPT" = true;
 
 create user springboot identified by java1234;
 grant connect, resource, dba to springboot;
-
+    select
+        a1_0.seq,
+        a1_0.address,
+        a1_0.age,
+        a1_0.gender,
+        a1_0.name 
+    from
+        tblAddress a1_0 
+    where
+        a1_0.seq=1
 
     select
         a1_0.gender,
