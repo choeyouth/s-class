@@ -5,7 +5,7 @@ select * from tblAddress where seq = 1;
 select * from tblAddress;
 select seqAddress.nextVal from dual;
 
-
+select * from tblmemo;
 select * from v$version;
 
 --계정 생성
@@ -18,7 +18,16 @@ alter session set "_ORACLE_SCRIPT" = true;
 
 create user springboot identified by java1234;
 grant connect, resource, dba to springboot;
-
+    select
+        a1_0.seq,
+        a1_0.address,
+        a1_0.age,
+        a1_0.gender,
+        a1_0.name 
+    from
+        tblAddress a1_0 
+    where
+        a1_0.seq=1
 
     select
         a1_0.gender,
@@ -30,3 +39,5 @@ grant connect, resource, dba to springboot;
         a1_0.gender 
     having
         avg(a1_0.age)>4.5;
+        
+        select * from tblUser;

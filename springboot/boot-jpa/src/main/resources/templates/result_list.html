@@ -152,5 +152,50 @@
             <td th:text="${tuple.get(2, Double)}"></td>
         </tr>
     </table>
+    
+    <!-- 부모가 기준 -->
+   	<table th:if="${m37List != null}"> 
+        <tr> 
+			<th>번호</th>
+			<th>이름</th>
+			<th>나이</th>
+			<th>주소</th>
+			<th>성별</th>
+			<th>메모</th>
+        </tr>
+        <tr th:each="address : ${m37List}">
+            <td th:text="${address.seq}"></td>
+            <td th:text="${address.name}"></td>
+            <td th:text="${address.age}"></td>
+            <td th:text="${address.address}"></td>
+            <td th:text="${address.gender}"></td> 
+            <td>
+                <ul>
+                    <li th:each="memo : ${address.memo}" th:text="${memo.memo}">
+                </ul>
+            </td>
+        </tr>
+    </table>
+    
+    
+    <!-- 자식이 기준 -->
+   	<table th:if="${m38List != null}"> 
+        <tr> 
+			<th>번호</th>
+			<th>이름</th>
+			<th>나이</th>
+			<th>주소</th>
+			<th>성별</th>
+			<th>메모</th>
+        </tr>
+        <tr th:each="memo : ${m38List}">
+            <td th:text="${memo.address.seq}"></td>
+            <td th:text="${memo.address.name}"></td>
+            <td th:text="${memo.address.age}"></td>
+            <td th:text="${memo.address.address}"></td>
+            <td th:text="${memo.address.gender}"></td> 
+            <td th:text="${memo.memo}"></td> 
+        </tr>
+    </table>
 </body>
 </html>
