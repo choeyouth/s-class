@@ -1,3 +1,235 @@
+create sequence seqMember;
+-- drop sequence seqMember;
+CREATE TABLE member (
+	seq	number	primary key,
+	id	varchar2(150) unique	NOT NULL,
+	pw	varchar2(100)	NOT NULL,
+	nick	varchar2(100) unique	NOT NULL,
+	regdate	date	DEFAULT sysdate	NOT NULL,
+	ing	number	DEFAULT 1	NOT NULL,
+	color	number	DEFAULT 1	NOT NULL,
+	oAuthType	number	DEFAULT 1	NOT NULL
+);
+
+create sequence seqTeam;
+-- drop sequence seqTeam;
+CREATE TABLE team (
+	seq	number	primary key,
+	teamName	varchar2(50)	NOT NULL,
+	teamEx	varchar2(1000)	NULL,
+	teamType	number	DEFAULT 2	NOT NULL,
+	regdate	date	DEFAULT sysdate	NOT NULL
+);
+
+create sequence seqProject;
+-- drop sequence seqProject;
+CREATE TABLE project (
+	seq	number	primary key,
+	projectName	varchar2(50)	NOT NULL,
+	projectEx	varchar2(1000)	NULL,
+	startDate	date	DEFAULT sysdate	NOT NULL,
+	target	date	DEFAULT sysdate	NOT NULL,
+	priority	number	DEFAULT 3	NOT NULL,
+	regdate	date	DEFAULT sysdate	NOT NULL
+);
+
+create sequence seqMemberTeam;
+-- drop sequence seqMemberTeam;
+CREATE TABLE memberTeam (
+	seq	number	primary key,
+	member_seq	number	NOT NULL,
+	team_seq	number	NOT NULL,
+	position	number	DEFAULT 2	NOT NULL,
+    constraint fk_memberTeam_member foreign key(member_seq) references member(seq),
+    constraint fk_memberTeam_team foreign key(team_seq) references team(seq)
+);
+
+create sequence seqTseamProject;
+-- drop sequence seqTseamProject;
+CREATE TABLE teamProject (
+	seq	number	primary key,
+	team_seq	number	NOT NULL,
+	project_seq	number	NOT NULL,
+    constraint fk_teamProject_project foreign key(project_seq) references project(seq)
+);
+
+create sequence seqCalendar;
+-- drop sequence seqCalendar;
+CREATE TABLE calendar (
+	seq	number	primary key,
+	teamProject_seq	number	NOT NULL,
+	startDate	date	DEFAULT sysdate	NOT NULL,
+	target	date	NULL,
+	priority	number	NULL,
+	schedule	varchar2(100)	NOT NULL,
+    constraint fk_calendar_teamProject foreign key(teamProject_seq) references teamProject(seq)
+);
+
+-- 챗봇 -----
+create sequence seqChatbot;
+-- drop sequence seqChatbot;
+CREATE TABLE chatbot (
+	seq	number	primary key,
+	member_seq	number	NOT NULL,
+	memberMsg	varchar2(2000)	NOT NULL,
+	botMsg	varchar2(2000)	NOT NULL,
+	chatDate	date	DEFAULT sysdate	NOT NULL,
+    constraint fk_chatbot_member foreign key(member_seq) references member(seq)
+);
+
+-- 코드 편집기 -----
+create sequence seqTheme;
+-- drop sequence seqTheme;
+CREATE TABLE theme (
+	seq	number	NOT NULL,
+	theme	number(1)	DEFAULT 0	NOT NULL,
+	member_seq	number	NOT NULL,
+    constraint fk_theme_member foreign key(member_seq) references member(seq)
+);
+
+create sequence seqStyleType;
+-- drop sequence seqStyleType;
+CREATE TABLE styleType (
+	seq	number	primary key,
+	category	varchar2(50)	NOT NULL
+);
+
+create sequence seqStyleSetting;
+-- drop sequence seqStyleSetting;
+CREATE TABLE styleSetting (
+	seq	number	primary key,
+	value	varchar2(100)	NOT NULL,
+	member_seq	number	NOT NULL,
+	styleType_seq	number	NOT NULL,
+    constraint fk_styleSetting_member foreign key(member_seq) references member(seq),
+    constraint fk_styleSetting_styleType foreign key(styleType_seq) references styleType(seq)
+);
+
+create sequence seqBasicTemplate;
+-- drop sequence seqBasicTemplate;
+CREATE TABLE basicTemplate (
+	seq	number	NOT NULL,
+	keyword	varchar2(100)	NOT NULL,
+	code	varchar2(2000)	NOT NULL
+);
+
+create sequence seqTemplate;
+-- drop sequence seqTemplate;
+CREATE TABLE template (
+	seq	number	primary key,
+	keyword	varchar2(100)	NOT NULL,
+	code	varchar2(2000)	NOT NULL,
+	member_seq	number	NOT NULL,
+    constraint fk_template_member foreign key(member_seq) references member(seq)
+);
+
+create sequence seqVersionInfo;
+-- drop sequence seqVersionInfo;
+CREATE TABLE versionInfo (
+	seq	number	primary key,
+	regdate	date	DEFAULT sysdate	NOT NULL,
+	message	varchar2(300)	NULL,
+	project_seq	number	NOT NULL,
+	member_seq	number	NOT NULL,
+    constraint fk_versionInfo_project foreign key(project_seq) references project(seq),
+    constraint fk_versionInfo_member foreign key(member_seq) references member(seq)
+);
+
+create sequence seqFileType;
+-- drop sequence seqFileType;
+CREATE TABLE fileType (
+	seq	number	primary key,
+	fileType	varchar2(100)	NOT NULL
+);
+
+create sequence seqVersionFile;
+-- drop sequence seqVersionFile;
+CREATE TABLE versionFile (
+	seq	number	primary key,
+	name	varchar2(600)	NOT NULL,
+	code	blob	NULL,
+	versionInfo_seq	number	NOT NULL,
+	fileType_seq	number	NOT NULL,
+	parent_seq	number	NULL,
+    constraint fk_versionFile_versionInfo foreign key(versionInfo_seq) references versionInfo(seq),
+    constraint fk_versionFile_fileType foreign key(fileType_seq) references fileType(seq),
+    constraint fk_versionFile_parent foreign key(parent_seq) references versionFile(seq)
+);
+
+
+create sequence seqBasicFile;
+-- drop sequence seqBasicFile;
+CREATE TABLE basicFile (
+	seq	number	primary key,
+	name	varchar2(600)	NOT NULL,
+	code	blob	NULL,
+	fileType_seq	number	NOT NULL,
+	parent_seq	number	NULL,
+    constraint fk_basicFile_fileType foreign key(fileType_seq) references fileType(seq),
+    constraint fk_basicFile_parent foreign key(parent_seq) references basicFile(seq)
+);
+
+-- 채팅 -----
+create sequence seqServerList;
+-- drop sequence seqServerList;
+CREATE TABLE serverList (
+	seq	number	primary key,
+	serverName	varchar2(100)	NOT NULL,
+	projectServerCheck	varchar2(1)	DEFAULT 'N'	NOT NULL
+);
+
+create sequence seqTextChannel;
+-- drop sequence seqTextChannel;
+CREATE TABLE textChannel (
+	seq	number	primary key,
+	textChannelName	varchar2(100)	DEFAULT '채팅채널1번' 	NULL,
+	serverList_seq	number	NOT NULL,
+    constraint fk_textchannel_serverList foreign key(serverList_seq) references serverList(seq)
+);
+
+create sequence seqTextContent;
+-- drop sequence seqTextContent;
+CREATE TABLE textContent (
+	seq	number	primary key,
+	content	clob	NOT NULL,
+	messageSentTime	date	NOT NULL,
+	textChannel_seq	number	NOT NULL,
+    constraint fk_textContent_textChannel foreign key(textChannel_seq) references textChannel(seq)
+);
+
+create sequence seqMemberServer;
+-- drop sequence seqMemberServer;
+CREATE TABLE memberServer (
+	seq	number	primary key,
+	serverList_seq	number	NOT NULL,
+	member_seq	number	NOT NULL,
+    constraint fk_memberServer_serverList foreign key(serverList_seq) references serverList(seq),
+    constraint fk_memberServer_member foreign key(member_seq) references member(seq)
+);
+
+create sequence seqVoiceChannel;
+-- drop sequence seqVoiceChannel;
+CREATE TABLE voiceChannel (
+	seq	number	primary key,
+	voiceChannelName	varchar(100)	DEFAULT '음성채널1번' 	NULL,
+	serverList_seq	number	NOT NULL,
+    constraint fk_voiceChannel_serverList foreign key(serverList_seq) references serverList(seq)
+);
+
+create sequence seqVoiceChannelSetting;
+-- drop sequence seqVoiceChannelSetting;
+CREATE TABLE voiceChannelSetting (
+	seq	number	primary key,
+	audioDevice	varchar2(1000)	DEFAULT '시스템 기본장치'	NULL,
+	audioVolume	number	DEFAULT 50	NULL,
+	recordingDevice	varchar2(1000)	DEFAULT '시스템 기본장치'	NULL,
+	recordingVolume	number	DEFAULT 50	NULL,
+	voiceChannel_seq	number	NOT NULL,
+    constraint fk_voiceSetting_voiceChannel foreign key(voiceChannel_seq) references voiceChannel(seq)
+);
+
+
+
 CREATE OR REPLACE PROCEDURE insert_default_settings(p_member_seq NUMBER) AS
 BEGIN
 
@@ -629,7 +861,12 @@ order by vf.seq;
 select * from vwProjectFile;
 select * from team;
 
-
+select * From member;
+select * From team;
+select * From project;
+select * From teamProject;
+select * From calendar;
+select * from userTeam;
     
 CREATE OR REPLACE VIEW vwMemberProject
 AS
@@ -644,9 +881,9 @@ INNER JOIN memberTeam mt ON mt.team_seq = t.seq
 INNER JOIN member m ON m.seq = mt.member_seq;
 
 
-select * from project;
+select * from memberTeam;
 
-SELECT * FROM vwMemberProject WHERE member_seq = 22 AND team_seq = 1;
+SELECT * FROM vwMemberProject WHERE member_seq = 2 AND team_seq = 1;
 SELECT * FROM vwMemberProject WHERE member_seq = 22;
 SELECT * FROM vwMemberProject v
 inner join versionInfo p on v.seq = p.project_seq;
