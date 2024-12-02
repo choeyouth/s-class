@@ -11,7 +11,7 @@ public class BasicInfo {
 
     // 오라클 DB 연결 정보
     private String url = "jdbc:oracle:thin:@localhost:1521:xe"; // 오라클 DB URL
-    private String user = "rebook"; // 오라클 사용자 이름
+    private String user = "server"; // 오라클 사용자 이름
     private String password = "java1234"; // 오라클 비밀번호
 
     // DB 연결을 위한 메서드

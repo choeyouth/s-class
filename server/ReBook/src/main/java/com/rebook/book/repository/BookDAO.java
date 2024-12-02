@@ -1,5 +1,5 @@
 package com.rebook.book.repository;
 
-public class BookDAO {
-
+public class BookDAO { 
+	
 }

@@ -30,7 +30,7 @@ public class WordDAO {
     public class wordSearch {
 
         // XML 파싱 시 특정 태그의 값을 가져오는 헬퍼 메서드
-        private static String getValue(String tag, Element element) {
+        private String getValue(String tag, Element element) {
             NodeList nodeList = element.getElementsByTagName(tag);
             if (nodeList.getLength() > 0 && nodeList.item(0).getFirstChild() != null) {
                 return nodeList.item(0).getFirstChild().getNodeValue();

@@ -23,8 +23,8 @@ public class ex17_bestsellerSave {
 
         try {
             // 1. 데이터베이스 연결
-            String dbUrl = "jdbc:oracle:thin:@43.203.106.58:1521:xe";  // 오라클 DB 주소
-            String user = "rebook";  // 오라클 DB 사용자 이름
+            String dbUrl = "jdbc:oracle:thin:@localhost:1521:xe";  // 오라클 DB 주소
+            String user = "sever";  // 오라클 DB 사용자 이름
             String password = "java1234";  // 오라클 DB 비밀번호
             conn = DriverManager.getConnection(dbUrl, user, password);
             System.out.println("DB 연결 성공!");

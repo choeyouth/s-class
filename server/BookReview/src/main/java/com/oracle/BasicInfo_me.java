@@ -10,9 +10,9 @@ import java.sql.SQLException;
 public class BasicInfo_me {
 
     // 오라클 DB 연결 정보
-    private String url = "jdbc:oracle:thin:@asdsad:1521:xe"; // 오라클 DB URL
-    private String user = "project"; // 오라클 사용자 이름
-    private String password = "java1234"; // 오라클 비밀번호
+    String dbUrl = "jdbc:oracle:thin:@localhost:1521:xe";  // 오라클 DB 주소
+    String user = "sever";  // 오라클 DB 사용자 이름
+    String password = "java1234";  // 오라클 DB 비밀번호
 
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////

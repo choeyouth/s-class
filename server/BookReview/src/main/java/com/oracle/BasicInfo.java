@@ -10,10 +10,10 @@ import java.sql.SQLException;
 public class BasicInfo {
 
     // 오라클 DB 연결 정보
-    private String url = "jdbc:oracle:thin:@43.203.106.58:1521:xe"; // 오라클 DB URL
-    private String user = "rebook"; // 오라클 사용자 이름
-    private String password = "java1234"; // 오라클 비밀번호
-
+    String url = "jdbc:oracle:thin:@localhost:1521:xe";  // 오라클 DB 주소
+    String user = "server";  // 오라클 DB 사용자 이름
+    String password = "java1234";  // 오라클 DB 비밀번호
+    
     // DB 연결을 위한 메서드
     public Connection getConnection() throws SQLException {
         return DriverManager.getConnection(url, user, password);

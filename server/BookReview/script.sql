@@ -14,6 +14,7 @@ SELECT * FROM tblQuoteList;
 SELECT * FROM tblFamousLine;
 SELECT * FROM tblBookmark;
 SELECT * FROM tblPreference;
+SELECT * FROM vwDiscussion;
 
 SELECT B.NAME, R.COMMEND FROM tblBookReview R INNER JOIN tblBook B ON R.BOOK_SEQ = B.SEQ WHERE B.seq = 9791171177028;
 
