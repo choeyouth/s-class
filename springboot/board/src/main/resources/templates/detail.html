@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -40,20 +40,26 @@
         <th>contents</th>
         <td th:text="${board.boardContents}"></td>
     </tr>
-<!--    <tr th:if="${board.fileAttached == 1}">-->
-<!--        <th>image</th>-->
-<!--        <td th:each="boardFile: ${boardFileList}">-->
-<!--            <img th:src="@{|/upload/${boardFile.storedFileName}|}" alt="" width="200" height="200">-->
-<!--        </td>-->
-<!--    </tr>-->
+    <tr th:if="${board.fileAttached == 1}">
+        <th>image</th>
+        <td th:each="boardFile : ${boardFileList}">
+            <img th:src="@{|/upload/${boardFile.storedFileName}|}" alt="" width="200" height="200">
+        </td>
+    </tr>
 </table>
 <button onclick="listReq()">목록</button>
 <button onclick="updateReq()">수정</button>
 <button onclick="deleteReq()">삭제</button>
 </body>
-    <script>
+    <script th:inline="javascript">
         const listReq = () => {
             location.href = "/list"
+        }
+        const updateReq = () => {
+            location.href = `/update/[[${board.id}]]`;
+        }
+        const deleteReq = () => {
+            location.href = `/delete/[[${board.id}]]`;
         }
     </script>
 </html>
