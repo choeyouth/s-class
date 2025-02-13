@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: re-jpa
+
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521/xe
+    username: springboot
+    password: java1234
+
+  thymeleaf:
+    cache: false
+
+  # JPA 설정
+  jpa:
+    database: oracle
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      show-sql: true # 자동 생성된 SQL을 로그에 출력
+      properties:
+        hibernate:
+          format_sql: true # SQL을 이쁘게
+
+server:
+  port: 8091
