@@ -1,6 +1,6 @@
 spring:
   application:
-    name: re-jpa
+    name: boot-jpa
 
   datasource:
     driver-class-name: oracle.jdbc.OracleDriver
@@ -19,10 +19,10 @@ spring:
       ddl-auto: none
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-      show-sql: true # 자동 생성된 SQL을 로그에 출력
-      properties:
-        hibernate:
-          format_sql: true # SQL을 이쁘게
+    show-sql: true # 자동 생성된 SQL을 로그에 출력
+    properties:
+      hibernate:
+        format_sql: true # SQL을 이쁘게
 
 server:
-  port: 8091
+  port: 8091    

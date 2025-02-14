@@ -1,5 +1,8 @@
 -- boot-mybatis > script.sql
 
+select * from tblAddress order by seq desc;
+delete tblAddress;
+
 show user;
 
 create user editor identified by java1234;

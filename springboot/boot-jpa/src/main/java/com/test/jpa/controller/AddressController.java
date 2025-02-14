@@ -119,7 +119,7 @@ public class AddressController {
 //								 .seq(52L)
 //								 .build();
 
-		Address address = addressRepository.findById(53L).get();
+		Address address = addressRepository.findById(55L).get();
 		
 		addressRepository.delete(address);
 		
