@@ -1,11 +1,16 @@
 package com.test.jpa.entity;
 
+import java.util.List;
+
 import com.test.jpa.dto.AddressDTO;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -79,6 +84,15 @@ public class Address {
 	}
 	
 	
+	//메모 관련 매핑
+//	@OneToMany
+//	@JoinColumn(name="aseq")
+//	private List<Memo> memo;
+	// -> join시 1+N 문제 발생 
+	
+	@OneToMany
+	@JoinColumn(name="aseq")
+	private List<Memo> memo;
 	
 	
 }

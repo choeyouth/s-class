@@ -16,5 +16,15 @@
 	
 	<div th:if="${result}">있음</div>
 	<div th:unless="${result}">없음</div>
+	
+	<div th:if="${tuple != null}">
+		<div th:text="${tuple.get(0, Long)}"></div>
+		<div th:text="${tuple.get(1, Double)}"></div>
+		<div th:text="${tuple.get(2, Long)}"></div>
+		<div th:text="${tuple.get(3, Long)}"></div>
+		<div th:text="${tuple.get(4, Long)}"></div>
+	</div>
+	
+	
 </body>
 </html>

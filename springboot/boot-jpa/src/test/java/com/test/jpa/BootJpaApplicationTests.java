@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BootJpaApplicationTests {
+public class BootJpaApplicationTests {
 	
 	@Autowired
 	private Random rnd;
